@@ -13,12 +13,18 @@ Using this approach should make it very simple to also detect floppy drive acces
 
 ## Media
 ### Prototype ISA board: August 2025
+Initial prototype of an ISA board that can be mounted within the PC to draw power from the ISA +5v rail
+
 ![Prototype ISA board](images/ISAPrototype1.jpg)
 
 ### Prototype board: August 2025
+Using detection of the PC HDD controller activity LED voltage to detect activity and drive the HDD Synth
+
 [![Proof of concept video](https://img.youtube.com/vi/yZhKAbbrKRM/0.jpg)](https://youtu.be/yZhKAbbrKRM)
 
 ### Proof of concept: July 2022
+Not connected to a PC, but purely to validate if the Pi Pico could produce a convincing sounding HDD subsitution. I'd say it does!
+
 [![Proof of concept video](https://img.youtube.com/vi/V0S9wBl7J3U/0.jpg)](https://youtu.be/V0S9wBl7J3U)
 
 
