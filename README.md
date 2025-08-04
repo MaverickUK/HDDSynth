@@ -7,6 +7,8 @@ Inspired by seeing the HDD Clicker project and wanting to more faithfully recrea
 
 The initial prototypes require a hook up to the PCs HDD LED to detect activity, however after advice from [Ian Scott](https://picog.us/) I'm looking into detecting HDD activity directly from the ISA bus which will make this a plug and play device.
 
+Using this approach should make it very simple to also detect floppy drive access. This would mean this card could also be used by systems with a solid state floppy drive, like the GoTek.
+
 ## Media
 ### Prototype ISA board: August 2025
 ![Prototype ISA board](images/ISAPrototype1.jpg)
@@ -37,4 +39,4 @@ Peter Bridger at [maverickuk@gmail.com](maverickuk@gmail.com)
 ## Acknowledgments
 - Inspired by the [HDD Clicker project](https://www.serdashop.com/HDDClicker)
 - A big thanks to [Ian Scott of PicoGUS fame](https://picog.us/) for sharing his resource sources and knowledge of using the Pi Pico with the ISA bus which gave me the confidence to take this project to the next level
-- [Marten Electric](https://www.martenelectric.cz/) for his excellent ISA prototyping boards which made it very easy to wire up the Pico to my computer
+- [Marten Electric](https://www.martenelectric.cz/) for the excellent ISA prototyping boards which made it very easy to wire up the Pico to my computer

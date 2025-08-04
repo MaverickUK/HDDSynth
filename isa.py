@@ -20,7 +20,7 @@ DATA_PINS = [
 ]
 
 IOR_PIN = machine.Pin(16, machine.Pin.OUT)  # IOR#
-CS_PIN = machine.Pin(17, machine.Pin.OUT)   # Chip select, if needed
+CS_PIN = machine.Pin(17, machine.Pin.OUT)   # Chip select, if needed (Hopefully not)
 
 def set_address(addr):
     for i, pin in enumerate(ADDRESS_PINS):
@@ -48,6 +48,10 @@ def hdd_active(status):
 # IDE controller base addresses
 PRIMARY_BASE = 0x1f0
 SECONDARY_BASE = 0x170
+
+# For floppy disk controller
+# PRIMARY_BASE = 0x3f0  # Floppy controller base
+# STATUS_REG_OFFSET = 4 # Main Status Register (0x3F4)
 
 print("Monitoring HDD activity. Press Ctrl+C to stop.")
 try:
