@@ -1,4 +1,9 @@
 # State machine that watches /IOR and /IOW. When one of them goes low (active), the state machine reads the address lines and encodes a message.
+# Each event is a 16-bit word:
+# 
+# Bits 0–9: ISA address lines A0–A9
+# Bit 10: 0 = read (/IOR), 1 = write (/IOW)
+# Bits 11–15: unused
 
 from machine import Pin
 import rp2
