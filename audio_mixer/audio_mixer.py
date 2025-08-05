@@ -24,6 +24,9 @@ class Sound:
         self.pos += 1
         return int(sample * self.volume)
 
+    def stop(self):
+        self.active = False
+
 class Mixer:
     def __init__(self):
         self.sounds = []
