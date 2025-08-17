@@ -1,4 +1,4 @@
-# hdd_synth_config.py
+# config.py
 # Configuration file for HDD Synth
 # Modify these settings to match your hardware setup
 
@@ -25,7 +25,7 @@ MUTE_PIN = 22              # Mute pin for amplifier (active low)
 # --- Audio Configuration ---
 SAMPLE_RATE_HZ = 16000     # Audio sample rate
 BITS_PER_SAMPLE = 16       # Audio bit depth
-CHANNELS = 2               # 1 = Mono, 2 = Stereo
+CHANNELS = 1               # 1 = Mono, 2 = Stereo
 BUFFER_SIZE = 512          # Audio buffer size (must be multiple of 128)
 
 # HDD Activity Detection
@@ -51,18 +51,61 @@ VERBOSE_LOGGING = True      # Enable verbose logging
 # These are created after importing machine module
 from machine import Pin, I2S
 
-# Create Pin objects for hardware connections
-SCK_PIN_OBJ = Pin(SCK_PIN, Pin.OUT)
-MOSI_PIN_OBJ = Pin(MOSI_PIN, Pin.OUT)
-MISO_PIN_OBJ = Pin(MISO_PIN, Pin.IN)
-CS_PIN_OBJ = Pin(CS_PIN, Pin.OUT)
-
-BCK_PIN_OBJ = Pin(BCK_PIN, Pin.OUT)
-WS_PIN_OBJ = Pin(WS_PIN, Pin.OUT)
-SD_PIN_OBJ = Pin(SD_PIN, Pin.OUT)
-MUTE_PIN_OBJ = Pin(MUTE_PIN, Pin.OUT)
-
 # I2S constants
 I2S_STEREO = I2S.STEREO
 I2S_MONO = I2S.MONO
 I2S_TX = I2S.TX
+
+def create_pin_objects():
+    """Create Pin objects for hardware connections after configuration validation."""
+    global SCK_PIN_OBJ, MOSI_PIN_OBJ, MISO_PIN_OBJ, CS_PIN_OBJ
+    global BCK_PIN_OBJ, WS_PIN_OBJ, SD_PIN_OBJ, MUTE_PIN_OBJ
+    
+    # Create Pin objects for hardware connections
+    SCK_PIN_OBJ = Pin(SCK_PIN, Pin.OUT)
+    MOSI_PIN_OBJ = Pin(MOSI_PIN, Pin.OUT)
+    MISO_PIN_OBJ = Pin(MISO_PIN, Pin.IN)
+    CS_PIN_OBJ = Pin(CS_PIN, Pin.OUT)
+    
+    BCK_PIN_OBJ = Pin(BCK_PIN, Pin.OUT)
+    WS_PIN_OBJ = Pin(WS_PIN, Pin.OUT)
+    SD_PIN_OBJ = Pin(SD_PIN, Pin.OUT)
+    MUTE_PIN_OBJ = Pin(MUTE_PIN, Pin.OUT)
+
+def validate_config():
+    """Validate configuration values to catch errors early."""
+    # Validate GPIO pin ranges (Pico has GPIO 0-29)
+    pins_to_check = [
+        ADDR_PIN_BASE, IOR_PIN, IOW_PIN, SCK_PIN, MOSI_PIN, MISO_PIN, CS_PIN,
+        BCK_PIN, WS_PIN, SD_PIN, MUTE_PIN
+    ]
+    
+    for pin in pins_to_check:
+        if not (0 <= pin <= 29):
+            raise ValueError(f"Invalid GPIO pin number: {pin}")
+    
+    # Validate address pin count
+    if ADDR_PIN_COUNT <= 0 or ADDR_PIN_BASE + ADDR_PIN_COUNT > 30:
+        raise ValueError(f"Invalid address pin configuration: base={ADDR_PIN_BASE}, count={ADDR_PIN_COUNT}")
+    
+    # Validate audio settings
+    if SAMPLE_RATE_HZ <= 0:
+        raise ValueError(f"Invalid sample rate: {SAMPLE_RATE_HZ}")
+    if BITS_PER_SAMPLE not in [8, 16, 24, 32]:
+        raise ValueError(f"Invalid bit depth: {BITS_PER_SAMPLE}")
+    if CHANNELS not in [1, 2]:
+        raise ValueError(f"Invalid channel count: {CHANNELS}")
+    if BUFFER_SIZE <= 0 or BUFFER_SIZE % 128 != 0:
+        raise ValueError(f"Invalid buffer size: {BUFFER_SIZE} (must be multiple of 128)")
+    
+    # Validate activity detection settings
+    if ACTIVITY_THRESHOLD <= 0:
+        raise ValueError(f"Invalid activity threshold: {ACTIVITY_THRESHOLD}")
+    if ACTIVITY_TIMEOUT_MS <= 0:
+        raise ValueError(f"Invalid activity timeout: {ACTIVITY_TIMEOUT_MS}")
+    
+    print("Configuration validation passed")
+
+# Initialize pin objects and validate configuration
+create_pin_objects()
+validate_config()

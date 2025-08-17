@@ -1,7 +1,5 @@
 # HDD Synth - Quick Start Guide
 
-Get your HDD Synth up and running in minutes!
-
 ## What You Need
 
 ### Hardware
@@ -11,13 +9,18 @@ Get your HDD Synth up and running in minutes!
 - [ ] ISA Prototyping Board
 - [ ] MicroSD Card (FAT32 formatted)
 - [ ] Audio samples (WAV files)
+- [ ] 2 x TXS0108E level shifter (Convert 5v ISA signals to 3.3v Pico)
+- [ ] Prototyping ISA board
 
 ### Software
 - [ ] MicroPython firmware on Pico
 - [ ] `sdcard.py` library
 - [ ] HDD Synth files
 
-## 5-Minute Setup
+## Setup
+
+### Step 0: Aquire prototype ISA PCB
+Contains the TXS level shifters connected to the ISA address bus, IOR and IOW lines
 
 ### Step 1: Prepare Your Pico
 1. Download MicroPython firmware: https://micropython.org/download/rp2-pico/

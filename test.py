@@ -1,9 +1,14 @@
-# hdd_synth_test.py
+# test.py
 # Test script for HDD Synth - simulates HDD activity for testing
 # This script can be used to verify audio playback without ISA bus connection
 
 import time
 from machine import Pin
+
+# Test configuration constants
+TEST_IDLE_DURATION = 5      # Seconds to test idle sound
+TEST_TRANSITION_DELAY = 2   # Seconds between audio transitions
+TEST_PAUSE_BETWEEN_TESTS = 1  # Seconds between test runs
 
 # Import the main HDD Synth class
 try:
@@ -12,6 +17,20 @@ except ImportError:
     print("Error: Could not import HDDSynth class")
     print("Make sure main.py is in the same directory")
     exit(1)
+
+def test_executor(test_name):
+    """Decorator to handle test execution and error handling."""
+    def decorator(test_func):
+        def wrapper(self, *args, **kwargs):
+            try:
+                test_func(self, *args, **kwargs)
+                print(f"✅ {test_name}: PASSED")
+                return True
+            except Exception as e:
+                print(f"❌ {test_name}: FAILED - {e}")
+                return False
+        return wrapper
+    return decorator
 
 class HDDSynthTest:
     def __init__(self):
@@ -39,66 +58,58 @@ class HDDSynthTest:
         # In a real implementation, these would be the actual PIO state machines
         print("Mock ISA monitoring system created for testing")
     
+    @test_executor("Spinup Sound")
     def test_spinup(self):
         """Test the spinup sound."""
         print("\n=== Testing Spinup Sound ===")
         print("Playing HDD spinup sound...")
         
-        try:
-            # Play spinup sound
-            self.hdd_synth._play_audio_file("hdd_spinup.wav")
-            print("Spinup sound test completed")
-        except Exception as e:
-            print(f"Error testing spinup sound: {e}")
+        # Play spinup sound
+        self.hdd_synth._play_audio_file("hdd_spinup.wav")
+        print("Spinup sound test completed")
     
+    @test_executor("Idle Sound Loop")
     def test_idle_loop(self):
         """Test the idle sound loop."""
         print("\n=== Testing Idle Sound Loop ===")
-        print("Playing idle sound for 5 seconds...")
+        print(f"Playing idle sound for {TEST_IDLE_DURATION} seconds...")
         
-        try:
-            # Play idle sound for 5 seconds
-            start_time = time.time()
-            while time.time() - start_time < 5:
-                # This is a simplified test - in reality the idle sound would loop
-                print("Idle sound playing...")
-                time.sleep(1)
-            
-            print("Idle sound test completed")
-        except Exception as e:
-            print(f"Error testing idle sound: {e}")
+        # Play idle sound for configured duration
+        start_time = time.time()
+        while time.time() - start_time < TEST_IDLE_DURATION:
+            # This is a simplified test - in reality the idle sound would loop
+            print("Idle sound playing...")
+            time.sleep(1)
+        
+        print("Idle sound test completed")
     
+    @test_executor("Access Sound")
     def test_access_sound(self):
         """Test the access sound."""
         print("\n=== Testing Access Sound ===")
         print("Playing HDD access sound...")
         
-        try:
-            # Play access sound
-            self.hdd_synth._play_audio_file("hdd_access.wav")
-            print("Access sound test completed")
-        except Exception as e:
-            print(f"Error testing access sound: {e}")
+        # Play access sound
+        self.hdd_synth._play_audio_file("hdd_access.wav")
+        print("Access sound test completed")
     
+    @test_executor("Audio Transitions")
     def test_audio_transitions(self):
         """Test audio transitions between states."""
         print("\n=== Testing Audio Transitions ===")
         print("Simulating HDD activity changes...")
         
-        try:
-            # Simulate HDD becoming active
-            print("Simulating HDD access...")
-            self.hdd_synth._handle_audio_state_change(True)
-            time.sleep(2)
-            
-            # Simulate HDD becoming idle
-            print("Simulating HDD idle...")
-            self.hdd_synth._handle_audio_state_change(False)
-            time.sleep(2)
-            
-            print("Audio transition test completed")
-        except Exception as e:
-            print(f"Error testing audio transitions: {e}")
+        # Simulate HDD becoming active
+        print("Simulating HDD access...")
+        self.hdd_synth._handle_audio_state_change(True)
+        time.sleep(TEST_TRANSITION_DELAY)
+        
+        # Simulate HDD becoming idle
+        print("Simulating HDD idle...")
+        self.hdd_synth._handle_audio_state_change(False)
+        time.sleep(TEST_TRANSITION_DELAY)
+        
+        print("Audio transition test completed")
     
     def run_all_tests(self):
         """Run all tests."""
@@ -117,13 +128,9 @@ class HDDSynthTest:
         ]
         
         for test_name, test_func in tests:
-            try:
-                test_func()
-                print(f"✅ {test_name}: PASSED")
-            except Exception as e:
-                print(f"❌ {test_name}: FAILED - {e}")
+            test_func()  # Decorator handles success/failure reporting
             
-            time.sleep(1)  # Brief pause between tests
+            time.sleep(TEST_PAUSE_BETWEEN_TESTS)  # Configurable pause between tests
         
         print("\n" + "=" * 50)
         print("Test suite completed!")
