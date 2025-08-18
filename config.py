@@ -46,6 +46,7 @@ ADDRESS_BITMASK = 0xFF      # Bitmask for address comparison (lower 8 bits)
 # --- Debug Settings ---
 SIMULATION_MODE = True      # Simulate HDD activity for testing (like CircuitPython PoC)
 VERBOSE_ACTIVITY_LOGGING = False  # Enable verbose logging of individual HDD activity events
+USE_FLASH_STORAGE = True    # Use audio files stored on Pico flash memory instead of SD card
 
 # --- Simulation and Timing Configuration ---
 HDD_STATE_CHANGE_DELAY_MS = 50      # Delay for HDD state changes (milliseconds)
@@ -92,6 +93,8 @@ def validate_config():
         print(f"Warning: SIMULATION_MODE should be boolean, got: {type(SIMULATION_MODE)}")
     if not isinstance(VERBOSE_ACTIVITY_LOGGING, bool):
         print(f"Warning: VERBOSE_ACTIVITY_LOGGING should be boolean, got: {type(VERBOSE_ACTIVITY_LOGGING)}")
+    if not isinstance(USE_FLASH_STORAGE, bool):
+        print(f"Warning: USE_FLASH_STORAGE should be boolean, got: {type(USE_FLASH_STORAGE)}")
     
     print("Configuration validation passed")
 

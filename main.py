@@ -6,14 +6,10 @@ Based on the working CircuitPython PoC approach.
 
 import time
 import board
-import busio
 import digitalio
-import storage
-import sdcard
 import audiobusio
 import audiocore
 import audiomixer
-import rp2
 
 # Import configuration
 from config import *
@@ -27,15 +23,12 @@ class HDDSynth:
         
         # Initialize hardware components
         self._init_pins()
-        self._init_sd_card()
+        self._init_audio_storage()
         self._init_audio_system()
         self._init_isa_monitoring()
         
         # Audio state
         self.last_hdd = False
-        self.spinup = None
-        self.idle = None
-        self.access = None
         
         # HDD activity detection state (like main_mk3_debounce.py)
         self.hdd_activity_counter = 0
@@ -78,39 +71,47 @@ class HDDSynth:
         
         self._log(f"Initialized {len(self.addr_pins)} address pins, IOR, IOW, and mute pins")
     
-    def _init_sd_card(self):
-        """Initialize SD card for audio file storage."""
-        self._log("Initializing SD card...")
+    def _init_audio_storage(self):
+        """Initialize audio file storage from Pico flash memory."""
+        self._log("Initializing audio storage from flash memory...")
         
         try:
-            # Initialize SPI for SD card
-            self.spi = busio.SPI(
-                clock=getattr(board, f"GP{SCK_PIN}"),
-                MOSI=getattr(board, f"GP{MOSI_PIN}"),
-                MISO=getattr(board, f"GP{MISO_PIN}")
-            )
+            import os
             
-            # Initialize SD card
-            self.cs = digitalio.DigitalInOut(getattr(board, f"GP{CS_PIN}"))
-            self.sdcard = sdcard.SDCard(self.spi, self.cs)
+            # Check what's available in the root filesystem
+            root_contents = os.listdir('/')
+            self._log(f"Root filesystem contents: {root_contents}")
             
-            # Mount filesystem
-            self.vfs = storage.VfsFat(self.sdcard)
-            storage.mount(self.vfs, MOUNT_POINT)
+            # Look for our required audio files in the root filesystem
+            required_files = [SPINUP_FILE, IDLE_FILE, ACCESS_FILE]
+            available_files = [f for f in root_contents if f.endswith('.wav')]
+            self._log(f"Available WAV files: {available_files}")
+            
+            # Check if all required files are present
+            missing_files = []
+            for required_file in required_files:
+                if required_file not in available_files:
+                    missing_files.append(required_file)
+            
+            if missing_files:
+                raise Exception(f"Missing required audio files in flash memory: {missing_files}")
+            
+            # Store the mount point as root since files are in flash memory
+            self.audio_mount_point = '/'
             
             # List available audio files
-            self._log("SD card mounted successfully")
+            self._log("Audio storage accessible successfully with all required audio files")
             self._list_audio_files()
             
         except Exception as e:
-            self._log(f"SD card initialization failed: {e}", "ERROR")
+            self._log(f"Audio storage initialization failed: {e}", "ERROR")
             raise
     
     def _list_audio_files(self):
-        """List available audio files on SD card."""
+        """List available audio files in flash memory."""
         try:
             import os
-            files = os.listdir(MOUNT_POINT)
+            files = os.listdir(self.audio_mount_point)
             audio_files = [f for f in files if f.endswith('.wav')]
             self._log(f"Found {len(audio_files)} WAV files: {audio_files}")
         except Exception as e:
@@ -121,28 +122,20 @@ class HDDSynth:
         self._log("Initializing audio system...")
         
         try:
-            # Initialize I2S audio output
+            # Initialize I2S audio output (like the working PoC)
             self.audio_out = audiobusio.I2SOut(
                 bit_clock=getattr(board, f"GP{BCK_PIN}"),
                 word_select=getattr(board, f"GP{WS_PIN}"),
-                data=getattr(board, f"GP{SD_PIN}"),
-                sample_rate=SAMPLE_RATE_HZ
+                data=getattr(board, f"GP{SD_PIN}")
             )
             
-            # Create audio mixer for better control
-            self.mixer = audiomixer.Mixer(
-                voice_count=1,
-                sample_rate=SAMPLE_RATE_HZ,
-                channel_count=CHANNELS,
-                bits_per_sample=BITS_PER_SAMPLE,
-                samples_signed=True
-            )
-            
-            # Attach mixer to audio output
-            self.audio_out.play(self.mixer)
-            
-            # Load audio files
+            # Load audio files first
             self._load_audio_files()
+            
+            # Debug: Check what we actually have after loading
+            self._log(f"After loading - spinup: {self.spinup}")
+            self._log(f"After loading - idle: {self.idle}")
+            self._log(f"After loading - access: {self.access}")
             
             self._log("Audio system initialized successfully")
             
@@ -151,7 +144,7 @@ class HDDSynth:
             raise
     
     def _load_audio_files(self):
-        """Load audio files from SD card."""
+        """Load audio files from flash memory."""
         self._log("Loading audio files...")
         
         try:
@@ -163,66 +156,44 @@ class HDDSynth:
             }
             
             for audio_type, filename in audio_files.items():
-                file_path = f"{MOUNT_POINT}/{filename}"
-                setattr(self, audio_type, audiocore.WaveFile(open(file_path, "rb")))
-                self._log(f"Loaded {audio_type}: {filename}")
+                # Load from flash memory (root filesystem) - like the working PoC
+                try:
+                    self._log(f"Attempting to load {audio_type}: {filename}")
+                    audio_file = open(filename, "rb")
+                    self._log(f"File opened successfully, creating WaveFile object")
+                    wave_file = audiocore.WaveFile(audio_file)
+                    self._log(f"WaveFile object created: {type(wave_file)}")
+                    setattr(self, audio_type, wave_file)
+                    self._log(f"Set {audio_type} attribute to: {getattr(self, audio_type)}")
+                except OSError as e:
+                    raise FileNotFoundError(f"Could not load {filename} from flash memory: {e}")
+                except Exception as e:
+                    self._log(f"Error loading {filename}: {e}", "ERROR")
+                    raise
             
         except Exception as e:
             self._log(f"Failed to load audio files: {e}", "ERROR")
             raise
     
-    def _create_pio_program(self, program_name, pin_index):
-        """Helper method to create PIO program for ISA monitoring."""
-        program = f"""
-            .program {program_name}
-            .side_set 1
-            
-            wait 0 pin {pin_index}  ; Wait for pin to go low
-            in pins, {ADDR_PIN_COUNT}   ; Capture address lines
-            push          ; Push to FIFO
-            wait 1 pin {pin_index}  ; Wait for pin to go high
-        """
-        return rp2.asm_pio(program)
-    
-    def _create_state_machine(self, sm_id, pio_program, in_pin, freq):
-        """Helper method to create and configure a PIO state machine."""
-        return rp2.StateMachine(
-            sm_id, pio_program, freq=freq,
-            in_pins=in_pin,
-            in_shiftdir=rp2.PIO.SHIFT_LEFT,
-            in_autopush=True, 
-            autopush_thresh=ADDR_PIN_COUNT
-        )
+
     
     def _init_isa_monitoring(self):
-        """Initialize ISA bus monitoring using PIO."""
+        """Initialize ISA bus monitoring using simple pin monitoring."""
         self._log("Initializing ISA bus monitoring...")
         
         try:
-            # Create PIO programs for IOR and IOW monitoring
-            self.ior_sm = self._create_pio_program("ior_monitor", 0)
-            self.iow_sm = self._create_pio_program("iow_monitor", 1)
+            # Use simple pin monitoring approach (no PIO in CircuitPython)
+            self._log("Using simple pin monitoring for ISA bus")
             
-            # Create state machines
-            self.ior_state_machine = self._create_state_machine(
-                0, self.ior_sm, self.addr_pins[0], ISA_BUS_FREQ
-            )
-            self.iow_state_machine = self._create_state_machine(
-                1, self.iow_sm, self.addr_pins[0], ISA_BUS_FREQ
-            )
-            
-            # Start monitoring
-            self.ior_state_machine.active(1)
-            self.iow_state_machine.active(1)
+            # Set up monitoring state
+            self.last_ior_state = self.ior_pin.value
+            self.last_iow_state = self.iow_pin.value
             
             self._log("ISA bus monitoring initialized and active")
             
         except Exception as e:
             self._log(f"ISA bus monitoring initialization failed: {e}", "ERROR")
-            # Fall back to simple pin monitoring
-            self._log("Falling back to simple pin monitoring")
-            self.ior_state_machine = None
-            self.iow_state_machine = None
+            raise
     
     def _is_hdd_port_address(self, address):
         """Check if an address matches HDD port addresses."""
@@ -274,24 +245,34 @@ class HDDSynth:
         return False
     
     def _detect_hdd_activity_pio(self):
-        """Detect HDD activity using PIO state machines with threshold-based filtering."""
-        if not (self.ior_state_machine and self.iow_state_machine):
-            return False
+        """Detect HDD activity using simple pin monitoring with threshold-based filtering."""
+        # Check for changes in IOR and IOW pins
+        current_ior = self.ior_pin.value
+        current_iow = self.iow_pin.value
         
-        # Check for data in FIFOs
-        if self.ior_state_machine.rx_fifo() or self.iow_state_machine.rx_fifo():
-            # Read and check if it's HDD-related
-            ior_data = self.ior_state_machine.rx_fifo()
-            iow_data = self.iow_state_machine.rx_fifo()
+        # Detect transitions (active low signals)
+        ior_transition = (current_ior != self.last_ior_state) and (current_ior == False)
+        iow_transition = (current_iow != self.last_iow_state) and (current_iow == False)
+        
+        # Update state
+        self.last_ior_state = current_ior
+        self.last_iow_state = current_iow
+        
+        if ior_transition or iow_transition:
+            # Read address pins when IOR or IOW goes low
+            addr_value = 0
+            for i, pin in enumerate(self.addr_pins):
+                if pin.value:
+                    addr_value |= (1 << i)
             
-            # Update activity counters for both IOR and IOW data
-            if ior_data:
-                self._update_activity_counters(ior_data, "PIO-IOR")
-            if iow_data:
-                self._update_activity_counters(iow_data, "PIO-IOW")
+            # Update activity counters
+            source = "PIO-IOR" if ior_transition else "PIO-IOW"
+            self._update_activity_counters(addr_value, source)
+            
+            # Check if thresholds are exceeded
+            return self._check_activity_thresholds()
         
-        # Check if thresholds are exceeded
-        return self._check_activity_thresholds()
+        return False
     
     def _detect_hdd_activity_fallback(self):
         """Fallback HDD activity detection using simple pin monitoring with threshold-based filtering."""
@@ -327,29 +308,40 @@ class HDDSynth:
     def _play_spinup_sound(self):
         """Play the spinup sound and wait for completion."""
         self._log("Playing spinup sound...")
-        self.mixer.voice[0].play(self.spinup)
-        while self.mixer.voice[0].playing:
-            time.sleep(SPINUP_PLAYBACK_DELAY_MS / 1000.0)
+        self._log(f"Spinup audio object type: {type(self.spinup)}")
+        self._log(f"Spinup audio object value: {self.spinup}")
+        self._log(f"Audio out object type: {type(self.audio_out)}")
+        
+        try:
+            self.audio_out.play(self.spinup)
+            self._log("Audio play command executed successfully")
+            
+            while self.audio_out.playing:
+                time.sleep(SPINUP_PLAYBACK_DELAY_MS / 1000.0)
+                
+        except Exception as e:
+            self._log(f"Error playing spinup sound: {e}", "ERROR")
+            raise
     
     def _handle_hdd_state_change(self, hdd_active):
         """Handle HDD state changes by playing appropriate audio."""
         if hdd_active:
             self._log("Access")
-            self.mixer.voice[0].play(self.access)
+            self.audio_out.play(self.access)
         else:
             self._log("Idling")
-            self.mixer.voice[0].play(self.idle, loop=True)
+            self.audio_out.play(self.idle)
         
         # Small delay for state change
         time.sleep(HDD_STATE_CHANGE_DELAY_MS / 1000.0)
     
     def _ensure_audio_playing(self, hdd_active):
         """Ensure appropriate audio is playing based on HDD state."""
-        if not self.mixer.voice[0].playing:
+        if not self.audio_out.playing:
             if hdd_active:
-                self.mixer.voice[0].play(self.access)
+                self.audio_out.play(self.access)
             else:
-                self.mixer.voice[0].play(self.idle, loop=True)
+                self.audio_out.play(self.idle)
     
     def _run_simulation_mode(self, count):
         """Run simulation mode to generate test HDD activity."""
@@ -399,10 +391,10 @@ class HDDSynth:
         """Start the HDD Synth system using exact CircuitPython PoC logic."""
         self._log("Starting HDD Synth...")
         
-        # Unmute amplifier
+        # Unmute amplifier and play spinup sound
+        self._log(f"Mute pin before unmuting: {self.mute_pin.value}")
         self.mute_pin.value = False
-        
-        # Play spinup sound first
+        self._log(f"Mute pin after unmuting: {self.mute_pin.value}")
         self._play_spinup_sound()
         
         # Log startup information
@@ -424,18 +416,12 @@ class HDDSynth:
         
         try:
             # Stop all audio
-            if self.mixer:
-                self.mixer.voice[0].stop()
+            if self.audio_out:
+                self.audio_out.stop()
             
             # Mute amplifier
             if self.mute_pin:
                 self.mute_pin.value = True
-            
-            # Stop PIO state machines
-            if hasattr(self, 'ior_state_machine') and self.ior_state_machine:
-                self.ior_state_machine.active(0)
-            if hasattr(self, 'iow_state_machine') and self.iow_state_machine:
-                self.iow_state_machine.active(0)
             
             self._log("HDD Synth stopped")
             
@@ -455,8 +441,8 @@ def main():
         
     except Exception as e:
         print(f"Fatal error: {e}")
-        import sys
-        sys.print_exception(e)
+        import traceback
+        traceback.print_exception(type(e), e, e.__traceback__)
 
 
 if __name__ == "__main__":
