@@ -26,13 +26,12 @@ MUTE_PIN = 22              # Mute pin for amplifier (active low)
 SAMPLE_RATE_HZ = 16000     # Audio sample rate
 BITS_PER_SAMPLE = 16       # Audio bit depth
 CHANNELS = 1               # 1 = Mono, 2 = Stereo
-BUFFER_SIZE = 1024         # Audio buffer size (must be multiple of 128)
 
 # HDD Activity Detection
 HDD_DATA_PORT = 0x1F0      # HDD data port address
 HDD_STATUS_PORT = 0x1F7    # HDD status port address
-ACTIVITY_THRESHOLD = 20    # Threshold for sustained activity detection
-ACTIVITY_TIMEOUT_MS = 200   # Timeout for activity detection (milliseconds)
+ACTIVITY_THRESHOLD = 20    # Threshold for sustained activity detection (like main_mk3_debounce.py)
+ACTIVITY_TIMEOUT_MS = 50   # Timeout for activity detection (milliseconds) - reset counters if no activity
 
 # --- Audio File Names ---
 # These must match the exact filenames on your SD card
@@ -42,11 +41,11 @@ ACCESS_FILE = "nec_access.wav"      # HDD access sound
 
 # --- ISA Bus Configuration ---
 ISA_BUS_FREQ = 12_500_000  # PIO state machine frequency (12.5 MHz)
+ADDRESS_BITMASK = 0xFF      # Bitmask for address comparison (lower 8 bits)
 
 # --- Debug Settings ---
-DEBUG_MODE = False          # Enable debug output
-VERBOSE_LOGGING = True      # Enable verbose logging
 SIMULATION_MODE = True      # Simulate HDD activity for testing (like CircuitPython PoC)
+VERBOSE_ACTIVITY_LOGGING = False  # Enable verbose logging of individual HDD activity events
 
 # --- Simulation and Timing Configuration ---
 HDD_STATE_CHANGE_DELAY_MS = 50      # Delay for HDD state changes (milliseconds)
@@ -56,14 +55,7 @@ SIMULATION_ACTIVITY_PROBABILITY = 0.7  # Probability of HDD activity in simulati
 SIMULATION_INTERVAL_MS = 5000       # Simulation interval (milliseconds)
 
 # --- Pin Objects and Constants ---
-# These are created after importing machine module
-# Note: I2S constants will be set when machine module is available
-
-def create_pin_objects():
-    """Create Pin objects for hardware connections after configuration validation."""
-    # Note: This function requires machine.Pin to be available
-    # It should be called from the main program after imports
-    pass
+# Pin objects are created in the main program using digitalio.DigitalInOut
 
 def validate_config():
     """Validate configuration values to catch errors early."""
@@ -88,8 +80,6 @@ def validate_config():
         print(f"Warning: Invalid bit depth: {BITS_PER_SAMPLE}")
     if CHANNELS not in [1, 2]:
         print(f"Warning: Invalid channel count: {CHANNELS}")
-    if BUFFER_SIZE <= 0 or BUFFER_SIZE % 128 != 0:
-        print(f"Warning: Invalid buffer size: {BUFFER_SIZE} (must be multiple of 128)")
     
     # Validate activity detection settings
     if ACTIVITY_THRESHOLD <= 0:
@@ -97,6 +87,12 @@ def validate_config():
     if ACTIVITY_TIMEOUT_MS <= 0:
         print(f"Warning: Invalid activity timeout: {ACTIVITY_TIMEOUT_MS}")
     
+    # Validate debug settings
+    if not isinstance(SIMULATION_MODE, bool):
+        print(f"Warning: SIMULATION_MODE should be boolean, got: {type(SIMULATION_MODE)}")
+    if not isinstance(VERBOSE_ACTIVITY_LOGGING, bool):
+        print(f"Warning: VERBOSE_ACTIVITY_LOGGING should be boolean, got: {type(VERBOSE_ACTIVITY_LOGGING)}")
+    
     print("Configuration validation passed")
 
-# Note: Pin objects and configuration validation should be called from main program
+# Note: Configuration validation is called from main program

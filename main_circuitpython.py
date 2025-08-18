@@ -33,10 +33,14 @@ class HDDSynth:
         
         # Audio state
         self.last_hdd = False
-        self.audio = None
         self.spinup = None
         self.idle = None
         self.access = None
+        
+        # HDD activity detection state (like main_mk3_debounce.py)
+        self.hdd_activity_counter = 0
+        self.hdd_poll_counter = 0
+        self.last_activity_time = 0
         
         self._log("HDD Synth initialization complete")
     
@@ -45,6 +49,16 @@ class HDDSynth:
         timestamp = time.monotonic()
         print(f"[{timestamp:6.1f}s] {level}: {message}")
     
+    def _create_digital_pin(self, pin_number, direction, pull=None, initial_value=None):
+        """Helper method to create and configure a digital pin."""
+        pin = digitalio.DigitalInOut(getattr(board, f"GP{pin_number}"))
+        pin.direction = direction
+        if pull:
+            pin.pull = pull
+        if initial_value is not None:
+            pin.value = initial_value
+        return pin
+    
     def _init_pins(self):
         """Initialize GPIO pins for hardware connections."""
         self._log("Initializing GPIO pins...")
@@ -52,23 +66,15 @@ class HDDSynth:
         # ISA Bus Monitoring Pins
         self.addr_pins = []
         for i in range(ADDR_PIN_COUNT):
-            pin = digitalio.DigitalInOut(getattr(board, f"GP{ADDR_PIN_BASE + i}"))
-            pin.direction = digitalio.Direction.INPUT
-            pin.pull = digitalio.Pull.UP
+            pin = self._create_digital_pin(ADDR_PIN_BASE + i, digitalio.Direction.INPUT, digitalio.Pull.UP)
             self.addr_pins.append(pin)
         
-        self.ior_pin = digitalio.DigitalInOut(getattr(board, f"GP{IOR_PIN}"))
-        self.ior_pin.direction = digitalio.Direction.INPUT
-        self.ior_pin.pull = digitalio.Pull.UP
+        # IOR and IOW pins
+        self.ior_pin = self._create_digital_pin(IOR_PIN, digitalio.Direction.INPUT, digitalio.Pull.UP)
+        self.iow_pin = self._create_digital_pin(IOW_PIN, digitalio.Direction.INPUT, digitalio.Pull.UP)
         
-        self.iow_pin = digitalio.DigitalInOut(getattr(board, f"GP{IOW_PIN}"))
-        self.iow_pin.direction = digitalio.Direction.INPUT
-        self.iow_pin.pull = digitalio.Pull.UP
-        
-        # Mute pin for amplifier
-        self.mute_pin = digitalio.DigitalInOut(getattr(board, f"GP{MUTE_PIN}"))
-        self.mute_pin.direction = digitalio.Direction.OUTPUT
-        self.mute_pin.value = True  # Start muted
+        # Mute pin for amplifier (start muted)
+        self.mute_pin = self._create_digital_pin(MUTE_PIN, digitalio.Direction.OUTPUT, initial_value=True)
         
         self._log(f"Initialized {len(self.addr_pins)} address pins, IOR, IOW, and mute pins")
     
@@ -149,65 +155,60 @@ class HDDSynth:
         self._log("Loading audio files...")
         
         try:
-            # Load spinup sound
-            self.spinup = audiocore.WaveFile(open(f"{MOUNT_POINT}/{SPINUP_FILE}", "rb"))
-            self._log(f"Loaded spinup: {SPINUP_FILE}")
+            # Load all audio files
+            audio_files = {
+                'spinup': SPINUP_FILE,
+                'idle': IDLE_FILE,
+                'access': ACCESS_FILE
+            }
             
-            # Load idle sound (will be looped)
-            self.idle = audiocore.WaveFile(open(f"{MOUNT_POINT}/{IDLE_FILE}", "rb"))
-            self._log(f"Loaded idle: {IDLE_FILE}")
-            
-            # Load access sound
-            self.access = audiocore.WaveFile(open(f"{MOUNT_POINT}/{ACCESS_FILE}", "rb"))
-            self._log(f"Loaded access: {ACCESS_FILE}")
+            for audio_type, filename in audio_files.items():
+                file_path = f"{MOUNT_POINT}/{filename}"
+                setattr(self, audio_type, audiocore.WaveFile(open(file_path, "rb")))
+                self._log(f"Loaded {audio_type}: {filename}")
             
         except Exception as e:
             self._log(f"Failed to load audio files: {e}", "ERROR")
             raise
     
+    def _create_pio_program(self, program_name, pin_index):
+        """Helper method to create PIO program for ISA monitoring."""
+        program = f"""
+            .program {program_name}
+            .side_set 1
+            
+            wait 0 pin {pin_index}  ; Wait for pin to go low
+            in pins, {ADDR_PIN_COUNT}   ; Capture address lines
+            push          ; Push to FIFO
+            wait 1 pin {pin_index}  ; Wait for pin to go high
+        """
+        return rp2.asm_pio(program)
+    
+    def _create_state_machine(self, sm_id, pio_program, in_pin, freq):
+        """Helper method to create and configure a PIO state machine."""
+        return rp2.StateMachine(
+            sm_id, pio_program, freq=freq,
+            in_pins=in_pin,
+            in_shiftdir=rp2.PIO.SHIFT_LEFT,
+            in_autopush=True, 
+            autopush_thresh=ADDR_PIN_COUNT
+        )
+    
     def _init_isa_monitoring(self):
         """Initialize ISA bus monitoring using PIO."""
         self._log("Initializing ISA bus monitoring...")
         
-        # PIO program for IOR monitoring (read operations)
-        ior_program = """
-            .program ior_monitor
-            .side_set 1
-            
-            wait 0 pin 0  ; Wait for IOR to go low
-            in pins, 10   ; Capture 10 address lines
-            push          ; Push to FIFO
-            wait 1 pin 0  ; Wait for IOR to go high
-        """
-        
-        # PIO program for IOW monitoring (write operations)
-        iow_program = """
-            .program iow_monitor
-            .side_set 1
-            
-            wait 0 pin 1  ; Wait for IOW to go low
-            in pins, 10   ; Capture 10 address lines
-            push          ; Push to FIFO
-            wait 1 pin 1  ; Wait for IOW to go high
-        """
-        
         try:
-            # Initialize IOR state machine
-            self.ior_sm = rp2.asm_pio(ior_program)
-            self.ior_state_machine = rp2.StateMachine(
-                0, self.ior_sm, freq=ISA_BUS_FREQ, 
-                in_pins=self.addr_pins[0],  # Base address pin
-                in_shiftdir=rp2.PIO.SHIFT_LEFT,
-                in_autopush=True, autopush_thresh=10
-            )
+            # Create PIO programs for IOR and IOW monitoring
+            self.ior_sm = self._create_pio_program("ior_monitor", 0)
+            self.iow_sm = self._create_pio_program("iow_monitor", 1)
             
-            # Initialize IOW state machine
-            self.iow_sm = rp2.asm_pio(iow_program)
-            self.iow_state_machine = rp2.StateMachine(
-                1, self.iow_sm, freq=ISA_BUS_FREQ,
-                in_pins=self.addr_pins[0],  # Base address pin
-                in_shiftdir=rp2.PIO.SHIFT_LEFT,
-                in_autopush=True, autopush_thresh=10
+            # Create state machines
+            self.ior_state_machine = self._create_state_machine(
+                0, self.ior_sm, self.addr_pins[0], ISA_BUS_FREQ
+            )
+            self.iow_state_machine = self._create_state_machine(
+                1, self.iow_sm, self.addr_pins[0], ISA_BUS_FREQ
             )
             
             # Start monitoring
@@ -223,58 +224,188 @@ class HDDSynth:
             self.ior_state_machine = None
             self.iow_state_machine = None
     
+    def _is_hdd_port_address(self, address):
+        """Check if an address matches HDD port addresses."""
+        if address is None:
+            return False
+        masked_address = address & ADDRESS_BITMASK
+        return masked_address in [HDD_DATA_PORT & ADDRESS_BITMASK, HDD_STATUS_PORT & ADDRESS_BITMASK]
+    
+    def _update_activity_counters(self, addr_value, source="PIO"):
+        """Update HDD activity counters based on detected address."""
+        if not self._is_hdd_port_address(addr_value):
+            return
+        
+        current_time = time.monotonic() * 1000  # Convert to milliseconds
+        
+        # Reset counters if there has been no activity for a while
+        if current_time - self.last_activity_time > ACTIVITY_TIMEOUT_MS:
+            if self.hdd_activity_counter > 0 or self.hdd_poll_counter > 0:
+                self._log(f"{source}: Activity timeout - resetting counters")
+            self.hdd_activity_counter = 0
+            self.hdd_poll_counter = 0
+        
+        self.last_activity_time = current_time
+        
+        # Update activity counters based on detected addresses
+        if (addr_value & ADDRESS_BITMASK) == (HDD_DATA_PORT & ADDRESS_BITMASK):
+            self.hdd_activity_counter += 1
+            if VERBOSE_ACTIVITY_LOGGING:
+                self._log(f"{source}: HDD data activity detected (count: {self.hdd_activity_counter})")
+        elif (addr_value & ADDRESS_BITMASK) == (HDD_STATUS_PORT & ADDRESS_BITMASK):
+            self.hdd_poll_counter += 1
+            if VERBOSE_ACTIVITY_LOGGING:
+                self._log(f"{source}: HDD status poll detected (count: {self.hdd_poll_counter})")
+    
+    def _check_activity_thresholds(self):
+        """Check if activity thresholds have been exceeded and reset counters."""
+        # Check if the aggregated activity has exceeded the threshold
+        if self.hdd_activity_counter > ACTIVITY_THRESHOLD:
+            self._log(f"HDD activity threshold exceeded ({self.hdd_activity_counter} > {ACTIVITY_THRESHOLD})")
+            self.hdd_activity_counter = 0  # Reset the counter
+            return True
+        
+        # Check if the aggregated poll activity has exceeded the threshold
+        if self.hdd_poll_counter > ACTIVITY_THRESHOLD:
+            self._log(f"HDD poll threshold exceeded ({self.hdd_poll_counter} > {ACTIVITY_THRESHOLD})")
+            self.hdd_poll_counter = 0  # Reset the counter
+            return True
+        
+        return False
+    
+    def _detect_hdd_activity_pio(self):
+        """Detect HDD activity using PIO state machines with threshold-based filtering."""
+        if not (self.ior_state_machine and self.iow_state_machine):
+            return False
+        
+        # Check for data in FIFOs
+        if self.ior_state_machine.rx_fifo() or self.iow_state_machine.rx_fifo():
+            # Read and check if it's HDD-related
+            ior_data = self.ior_state_machine.rx_fifo()
+            iow_data = self.iow_state_machine.rx_fifo()
+            
+            # Update activity counters for both IOR and IOW data
+            if ior_data:
+                self._update_activity_counters(ior_data, "PIO-IOR")
+            if iow_data:
+                self._update_activity_counters(iow_data, "PIO-IOW")
+        
+        # Check if thresholds are exceeded
+        return self._check_activity_thresholds()
+    
+    def _detect_hdd_activity_fallback(self):
+        """Fallback HDD activity detection using simple pin monitoring with threshold-based filtering."""
+        if self.ior_pin.value == False or self.iow_pin.value == False:
+            # Check address pins for HDD port addresses
+            addr_value = 0
+            for i, pin in enumerate(self.addr_pins):
+                if pin.value:
+                    addr_value |= (1 << i)
+            
+            # Update activity counters
+            self._update_activity_counters(addr_value, "Fallback")
+            
+            # Check if thresholds are exceeded
+            return self._check_activity_thresholds()
+        
+        return False
+    
     def _detect_hdd_activity(self):
         """Detect HDD activity using ISA bus monitoring."""
         try:
-            # Check if PIO state machines are available
-            if self.ior_state_machine and self.iow_state_machine:
-                # Check for data in FIFOs
-                if self.ior_state_machine.rx_fifo() or self.iow_state_machine.rx_fifo():
-                    # Read and check if it's HDD-related
-                    ior_data = self.ior_state_machine.rx_fifo()
-                    iow_data = self.iow_state_machine.rx_fifo()
-                    
-                    # Check if address matches HDD ports
-                    if ior_data and (ior_data & 0xFF) in [HDD_DATA_PORT & 0xFF, HDD_STATUS_PORT & 0xFF]:
-                        return True
-                    if iow_data and (iow_data & 0xFF) in [HDD_DATA_PORT & 0xFF, HDD_STATUS_PORT & 0xFF]:
-                        return True
+            # Try PIO-based detection first
+            if self._detect_hdd_activity_pio():
+                return True
             
-            # Fallback: simple pin monitoring
-            if self.ior_pin.value == False or self.iow_pin.value == False:
-                # Check address pins for HDD port addresses
-                addr_value = 0
-                for i, pin in enumerate(self.addr_pins):
-                    if pin.value:
-                        addr_value |= (1 << i)
-                
-                # Check if address matches HDD ports
-                if (addr_value & 0xFF) in [HDD_DATA_PORT & 0xFF, HDD_STATUS_PORT & 0xFF]:
-                    return True
-            
-            return False
+            # Fall back to simple pin monitoring
+            return self._detect_hdd_activity_fallback()
             
         except Exception as e:
             self._log(f"Error detecting HDD activity: {e}", "ERROR")
             return False
     
+    def _play_spinup_sound(self):
+        """Play the spinup sound and wait for completion."""
+        self._log("Playing spinup sound...")
+        self.mixer.voice[0].play(self.spinup)
+        while self.mixer.voice[0].playing:
+            time.sleep(SPINUP_PLAYBACK_DELAY_MS / 1000.0)
+    
+    def _handle_hdd_state_change(self, hdd_active):
+        """Handle HDD state changes by playing appropriate audio."""
+        if hdd_active:
+            self._log("Access")
+            self.mixer.voice[0].play(self.access)
+        else:
+            self._log("Idling")
+            self.mixer.voice[0].play(self.idle, loop=True)
+        
+        # Small delay for state change
+        time.sleep(HDD_STATE_CHANGE_DELAY_MS / 1000.0)
+    
+    def _ensure_audio_playing(self, hdd_active):
+        """Ensure appropriate audio is playing based on HDD state."""
+        if not self.mixer.voice[0].playing:
+            if hdd_active:
+                self.mixer.voice[0].play(self.access)
+            else:
+                self.mixer.voice[0].play(self.idle, loop=True)
+    
+    def _run_simulation_mode(self, count):
+        """Run simulation mode to generate test HDD activity."""
+        if not SIMULATION_MODE:
+            return count, None
+        
+        count += 1
+        if count > SIMULATION_INTERVAL_MS:
+            import random
+            rnd = random.random()
+            hdd_active = rnd > (1.0 - SIMULATION_ACTIVITY_PROBABILITY)
+            
+            if hdd_active:
+                self._log("SIMULATION: HDD activity triggered")
+            else:
+                self._log("SIMULATION: HDD idle")
+            
+            return 0, hdd_active
+        
+        return count, None
+    
+    def _run_main_loop(self):
+        """Run the main monitoring and audio control loop."""
+        count = 0
+        
+        while True:
+            # Detect HDD activity
+            hdd_active = self._detect_hdd_activity()
+            
+            # Handle simulation mode
+            count, sim_hdd_active = self._run_simulation_mode(count)
+            if sim_hdd_active is not None:
+                hdd_active = sim_hdd_active
+            
+            # Handle HDD state changes
+            if hdd_active != self.last_hdd:
+                self._handle_hdd_state_change(hdd_active)
+            
+            # Ensure audio is playing
+            self._ensure_audio_playing(hdd_active)
+            
+            # Update state and delay
+            self.last_hdd = hdd_active
+            time.sleep(MAIN_LOOP_DELAY_MS / 1000.0)
+    
     def start(self):
         """Start the HDD Synth system using exact CircuitPython PoC logic."""
         self._log("Starting HDD Synth...")
-        self._log("Playing spinup sound...")
         
         # Unmute amplifier
         self.mute_pin.value = False
         
-        # Play spinup sound first (blocking)
-        self.mixer.voice[0].play(self.spinup)
-        while self.mixer.voice[0].playing:
-            time.sleep(SPINUP_PLAYBACK_DELAY_MS / 1000.0)
+        # Play spinup sound first
+        self._play_spinup_sound()
         
-        # Remember the previous HDD access value (like CircuitPython PoC)
-        last_hdd = False
-        hdd_active = False
-        
+        # Log startup information
         self._log("HDD Synth running - monitoring for HDD activity...")
         self._log(f"Monitoring ISA ports: 0x{HDD_DATA_PORT:03X} (data), 0x{HDD_STATUS_PORT:03X} (status)")
         if SIMULATION_MODE:
@@ -282,50 +413,7 @@ class HDDSynth:
         self._log("Press Ctrl+C to stop")
         
         try:
-            # Simple counter-based simulation exactly like CircuitPython PoC
-            count = 0
-            
-            while True:
-                # Detect HDD activity
-                hdd_active = self._detect_hdd_activity()
-                
-                # Simulation mode: generate random HDD activity for testing (exactly like CircuitPython PoC)
-                if SIMULATION_MODE:
-                    count = count + 1
-                    if count > SIMULATION_INTERVAL_MS:  # Every ~5 seconds (5000 * 1ms delay)
-                        import random
-                        rnd = random.random()
-                        if rnd > (1.0 - SIMULATION_ACTIVITY_PROBABILITY):  # Configurable chance of HDD activity
-                            hdd_active = True
-                            self._log("SIMULATION: HDD activity triggered")
-                        else:
-                            hdd_active = False
-                            self._log("SIMULATION: HDD idle")
-                        count = 0
-                
-                # Start playing sample on HDD activity change (exactly like CircuitPython PoC)
-                if hdd_active != self.last_hdd:
-                    if hdd_active:
-                        self._log("Access")
-                        self.mixer.voice[0].play(self.access)
-                        time.sleep(HDD_STATE_CHANGE_DELAY_MS / 1000.0)  # HDD_STATE_CHANGE_DELAY
-                    else:
-                        self._log("Idling")
-                        self.mixer.voice[0].play(self.idle, loop=True)
-                        time.sleep(HDD_STATE_CHANGE_DELAY_MS / 1000.0)  # HDD_STATE_CHANGE_DELAY
-                
-                # Loop sample if stopped (exactly like CircuitPython PoC)
-                if not self.mixer.voice[0].playing:
-                    if hdd_active:
-                        self.mixer.voice[0].play(self.access)
-                    else:
-                        self.mixer.voice[0].play(self.idle, loop=True)
-                
-                self.last_hdd = hdd_active
-                
-                # Small delay like CircuitPython PoC
-                time.sleep(MAIN_LOOP_DELAY_MS / 1000.0)
-                
+            self._run_main_loop()
         except KeyboardInterrupt:
             self._log("Stopping HDD Synth...")
             self.stop()
