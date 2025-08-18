@@ -3,7 +3,7 @@
   <img src="images/HDDSynthLogoSmall.png" alt="Logo">
 </div>
 
-Recreates the sound of mechanical spinning HDDs on retro PCs that use a solid state drive.
+### Recreates the sound of mechanical spinning HDDs on retro PCs that use a solid state drive.
 
 Inspired by seeing the HDD Clicker project and wanting to more faithfully recreate the sound of old mechanical hard drives spinning up and accessing data. Because the hard drive sounds come from samples, it's possible to replace them with any hard drive recording you'd like or something completely different!
 

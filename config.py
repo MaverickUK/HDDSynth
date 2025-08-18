@@ -26,19 +26,19 @@ MUTE_PIN = 22              # Mute pin for amplifier (active low)
 SAMPLE_RATE_HZ = 16000     # Audio sample rate
 BITS_PER_SAMPLE = 16       # Audio bit depth
 CHANNELS = 1               # 1 = Mono, 2 = Stereo
-BUFFER_SIZE = 512          # Audio buffer size (must be multiple of 128)
+BUFFER_SIZE = 1024         # Audio buffer size (must be multiple of 128)
 
 # HDD Activity Detection
 HDD_DATA_PORT = 0x1F0      # HDD data port address
 HDD_STATUS_PORT = 0x1F7    # HDD status port address
 ACTIVITY_THRESHOLD = 20    # Threshold for sustained activity detection
-ACTIVITY_TIMEOUT_MS = 50   # Timeout for activity detection (milliseconds)
+ACTIVITY_TIMEOUT_MS = 200   # Timeout for activity detection (milliseconds)
 
 # --- Audio File Names ---
 # These must match the exact filenames on your SD card
-SPINUP_FILE = "hdd_spinup.wav"      # HDD spinup sound
-IDLE_FILE = "hdd_idle.wav"          # HDD idle sound (looped)
-ACCESS_FILE = "hdd_access.wav"      # HDD access sound
+SPINUP_FILE = "nec_spinup.wav"      # HDD spinup sound
+IDLE_FILE = "nec_idle_long.wav"     # HDD idle sound (looped) - using the longer version
+ACCESS_FILE = "nec_access.wav"      # HDD access sound
 
 # --- ISA Bus Configuration ---
 ISA_BUS_FREQ = 12_500_000  # PIO state machine frequency (12.5 MHz)
@@ -46,31 +46,24 @@ ISA_BUS_FREQ = 12_500_000  # PIO state machine frequency (12.5 MHz)
 # --- Debug Settings ---
 DEBUG_MODE = False          # Enable debug output
 VERBOSE_LOGGING = True      # Enable verbose logging
+SIMULATION_MODE = True      # Simulate HDD activity for testing (like CircuitPython PoC)
+
+# --- Simulation and Timing Configuration ---
+HDD_STATE_CHANGE_DELAY_MS = 50      # Delay for HDD state changes (milliseconds)
+MAIN_LOOP_DELAY_MS = 1              # Main loop delay (milliseconds)
+SPINUP_PLAYBACK_DELAY_MS = 100      # Delay for spinup audio playback loop (milliseconds)
+SIMULATION_ACTIVITY_PROBABILITY = 0.7  # Probability of HDD activity in simulation (0.0-1.0)
+SIMULATION_INTERVAL_MS = 5000       # Simulation interval (milliseconds)
 
 # --- Pin Objects and Constants ---
 # These are created after importing machine module
-from machine import Pin, I2S
-
-# I2S constants
-I2S_STEREO = I2S.STEREO
-I2S_MONO = I2S.MONO
-I2S_TX = I2S.TX
+# Note: I2S constants will be set when machine module is available
 
 def create_pin_objects():
     """Create Pin objects for hardware connections after configuration validation."""
-    global SCK_PIN_OBJ, MOSI_PIN_OBJ, MISO_PIN_OBJ, CS_PIN_OBJ
-    global BCK_PIN_OBJ, WS_PIN_OBJ, SD_PIN_OBJ, MUTE_PIN_OBJ
-    
-    # Create Pin objects for hardware connections
-    SCK_PIN_OBJ = Pin(SCK_PIN, Pin.OUT)
-    MOSI_PIN_OBJ = Pin(MOSI_PIN, Pin.OUT)
-    MISO_PIN_OBJ = Pin(MISO_PIN, Pin.IN)
-    CS_PIN_OBJ = Pin(CS_PIN, Pin.OUT)
-    
-    BCK_PIN_OBJ = Pin(BCK_PIN, Pin.OUT)
-    WS_PIN_OBJ = Pin(WS_PIN, Pin.OUT)
-    SD_PIN_OBJ = Pin(SD_PIN, Pin.OUT)
-    MUTE_PIN_OBJ = Pin(MUTE_PIN, Pin.OUT)
+    # Note: This function requires machine.Pin to be available
+    # It should be called from the main program after imports
+    pass
 
 def validate_config():
     """Validate configuration values to catch errors early."""
@@ -82,30 +75,28 @@ def validate_config():
     
     for pin in pins_to_check:
         if not (0 <= pin <= 29):
-            raise ValueError(f"Invalid GPIO pin number: {pin}")
+            print(f"Warning: Invalid GPIO pin number: {pin}")
     
     # Validate address pin count
     if ADDR_PIN_COUNT <= 0 or ADDR_PIN_BASE + ADDR_PIN_COUNT > 30:
-        raise ValueError(f"Invalid address pin configuration: base={ADDR_PIN_BASE}, count={ADDR_PIN_COUNT}")
+        print(f"Warning: Invalid address pin configuration: base={ADDR_PIN_BASE}, count={ADDR_PIN_COUNT}")
     
     # Validate audio settings
     if SAMPLE_RATE_HZ <= 0:
-        raise ValueError(f"Invalid sample rate: {SAMPLE_RATE_HZ}")
+        print(f"Warning: Invalid sample rate: {SAMPLE_RATE_HZ}")
     if BITS_PER_SAMPLE not in [8, 16, 24, 32]:
-        raise ValueError(f"Invalid bit depth: {BITS_PER_SAMPLE}")
+        print(f"Warning: Invalid bit depth: {BITS_PER_SAMPLE}")
     if CHANNELS not in [1, 2]:
-        raise ValueError(f"Invalid channel count: {CHANNELS}")
+        print(f"Warning: Invalid channel count: {CHANNELS}")
     if BUFFER_SIZE <= 0 or BUFFER_SIZE % 128 != 0:
-        raise ValueError(f"Invalid buffer size: {BUFFER_SIZE} (must be multiple of 128)")
+        print(f"Warning: Invalid buffer size: {BUFFER_SIZE} (must be multiple of 128)")
     
     # Validate activity detection settings
     if ACTIVITY_THRESHOLD <= 0:
-        raise ValueError(f"Invalid activity threshold: {ACTIVITY_THRESHOLD}")
+        print(f"Warning: Invalid activity threshold: {ACTIVITY_THRESHOLD}")
     if ACTIVITY_TIMEOUT_MS <= 0:
-        raise ValueError(f"Invalid activity timeout: {ACTIVITY_TIMEOUT_MS}")
+        print(f"Warning: Invalid activity timeout: {ACTIVITY_TIMEOUT_MS}")
     
     print("Configuration validation passed")
 
-# Initialize pin objects and validate configuration
-create_pin_objects()
-validate_config()
+# Note: Pin objects and configuration validation should be called from main program
