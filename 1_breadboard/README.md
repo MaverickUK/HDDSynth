@@ -3,6 +3,8 @@
 
 Initial work to prove the concept is possible using breadboards and other prototyping hardware along with a series of software based PoCs.
 
+![Prototype ISA board](/images/ISAPrototype1.jpg)
+
 ## Hardware Requirements
 
 ### Core Components
