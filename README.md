@@ -11,7 +11,7 @@ Inspired by seeing the HDD Clicker project and wanting to more faithfully recrea
 
 - **Plug and Play**: Uses direct ISA bus monitoring to detect HDD activity, so all you have to do it plug it in
 - **SD Card Storage**: Audio samples stored on removable SD card for easy customization
-- **Configurable**: Future software based enhancement planned
+- **Configurable**: Future software based enhancements planned
 
 ## Progress
 ### ✅ [Phase 1: Breadboard prototype](1_breadboard/README.md) 
