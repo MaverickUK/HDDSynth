@@ -1,0 +1,150 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+
+# Virtual environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# CircuitPython/MicroPython
+*.pyc
+*.pyo
+
+# Audio files (if you don't want to commit large audio files)
+#*.wav
+#*.mp3
+#*.flac
+#*.aac
+
+# KiCad Hardware Design Files
+# ===========================
+
+# KiCad temporary files
+*.tmp
+*.cache
+*.log
+*.bak
+*.backup
+
+# KiCad generated files
+*.net
+*.dsn
+*.ses
+*.bck
+*.kicad_dru
+
+# KiCad output files (can be regenerated)
+*.gbr
+*.drl
+*.pos
+*.bom
+*.rpt
+*.zip
+*.tar.gz
+
+# KiCad plot files
+*.plt
+*.ps
+*.hpgl
+
+# KiCad 3D viewer cache
+*.3dshapes
+
+# KiCad project backups
+*.kicad_pro-bak
+*.kicad_pcb-bak
+*.kicad_sch-bak
+
+# KiCad footprints cache
+*.kicad_mod-bak
+
+# KiCad symbols cache
+*.kicad_sym-bak
+
+# KiCad workspace backups
+*.kicad_wks-bak
+
+# KiCad library cache
+fp-lib-table-bak
+sym-lib-table-bak
+
+# KiCad project settings backups
+*.json-bak
+
+# KiCad plot directory
+plot/
+
+# KiCad 3D models cache
+*.3dshapes-cache
+
+# KiCad DRC/ERC reports
+drc_result.txt
+erc_result.txt
+
+# KiCad export files
+*.step
+*.stp
+*.iges
+*.igs
+*.dxf
+*.svg
+
+# KiCad temporary directories
+tmp/
+temp/

@@ -1,0 +1,5 @@
+"Reference","Qty","Value","DNP","Exclude from BOM","Exclude from Board","Footprint","Datasheet"
+"A1","1","RaspberryPi_Pico","","","","Module:RaspberryPi_Pico_Common_Unspecified","https://datasheets.raspberrypi.com/pico/pico-datasheet.pdf"
+"D1","1","D_Schottky","","","","Diode_SMD:D_SMA","~"
+"J2","1","Bus_ISA_8bit","","","","Connector_PCBEdge:BUS_AT","https://en.wikipedia.org/wiki/Industry_Standard_Architecture"
+"U1,U2","2","SN74LVC8T245","","","","Package_SO:TSSOP-24_4.4x7.8mm_P0.65mm","https://www.ti.com/lit/ds/symlink/sn74lvc8t245.pdf"
