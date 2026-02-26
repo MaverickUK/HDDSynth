@@ -1,0 +1,5 @@
+Adafruit CircuitPython 10.1.3 on 2026-02-20; Raspberry Pi Pico 2 with rp2350a
+Board ID:raspberry_pi_pico2
+UID:2F5D56616770F55D
+boot.py output:
+Booting in USB Mode (Code cannot write)
