@@ -47,9 +47,15 @@ if microcontroller.nvm[settings.NVM_ADDRESS_MODE] == sample_cache.MODE_WRITE:
         # We should only be in WRITE mode if a change HDD Sample Pack operation was triggered
         desired_pack = sample_changer.get_desired_pack()
 
-        # TODO Refactor this to not be awful
-        pack_files = [f"{settings.SDCARD_SAMPLE_DIR}/{sample_changer.get_desired_pack()}/spinup.wav", f"{settings.SDCARD_SAMPLE_DIR}/{sample_changer.get_desired_pack()}/idle.wav", f"{settings.SDCARD_SAMPLE_DIR}/{sample_changer.get_desired_pack()}/access.wav"]
+        base_path = f"{settings.SDCARD_SAMPLE_DIR}/{sample_changer.get_desired_pack()}"
 
+        # TODO: Refactor this        
+        pack_files = [
+            f"{base_path}/spinup.wav", 
+            f"{base_path}/spindown.wav", 
+            f"{base_path}/idle.wav", 
+            f"{base_path}/access.wav"
+        ]
         sdcard.initilise()    
 
         sample_cache.update_cache_files(pack_files)

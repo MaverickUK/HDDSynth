@@ -18,7 +18,8 @@ import sdcard
 import settings
 import audio
 import action_button
-  
+import power
+
 def run_synth():
     print("Starting HDD Synth...")
     print("HDD Sample Pack: " + sample_changer.get_desired_pack())
@@ -35,7 +36,8 @@ def run_synth():
         "jingle": SampleContainer(settings.JINGLE_FILE) if settings.PLAY_JINGLE else None,
         "spinup": SampleContainer(settings.SAMPLE_SPINUP_FILE),
         "idle": SampleContainer(settings.SAMPLE_IDLE_FILE),
-        "access": SampleContainer(settings.SAMPLE_ACCESS_FILE)
+        "access": SampleContainer(settings.SAMPLE_ACCESS_FILE),
+        "spindown": SampleContainer(settings.SAMPLE_SPINDOWN_FILE)
     }
 
     # Initialize I2S audio output
@@ -74,7 +76,7 @@ def run_synth():
         mixer.voice[1].level = 0 # Start with access muted
 
 
-    while True:
+    while power.external_power():
         last_access = access
         access = activity.get_access()
         led.value = access
@@ -102,6 +104,16 @@ def run_synth():
             audio.set_volume(mixer, access) # Mute access channel
 
         time.sleep(0.01)
+
+    # Spin down
+
+    # TODO: Refactor this to be an audio function
+    for i in range(settings.MIXER_VOICES):
+        mixer.voice[i].stop()
+    
+    print("Playing spindown")
+    audio.play_sample_active_pause2(mixer, samples["spindown"])
+
     
 if __name__ == "__main__":
     run_synth()

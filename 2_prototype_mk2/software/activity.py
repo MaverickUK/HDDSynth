@@ -42,7 +42,7 @@ def _init_physical_input():
 # Updated, more sensitive
 _last_active_time = 0
 
-def _detect_physical_access(hold_time_ms=50):
+def _detect_physical_access(hold_time_ms=settings.ACCESS_HOLD_TIME_MS):
     """
     Sensitive physical access detection.
     Triggers INSTANTLY on a LOW signal and holds 'True' for hold_time_ms.

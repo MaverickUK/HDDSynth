@@ -13,7 +13,9 @@ if [ -d "$DEST_DIR" ]; then
     # -v: verbose (shows you what is happening)
     # --delete: removes files on the Pico that you deleted from your Mac
     # --exclude: ignores hidden Mac system files that can clutter the Pico
-    rsync -av --delete \
+    # rsync -av --delete \
+    rsync -avm \
+        --include='*.py' --include='*/' --exclude='*' \
         --exclude '.DS_Store' \
         --exclude '.git/' \
         "$SOURCE_DIR" "$DEST_DIR"

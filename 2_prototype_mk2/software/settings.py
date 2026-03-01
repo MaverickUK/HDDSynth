@@ -1,9 +1,13 @@
 
 import board
 
-SIMULATION_MODE = True # Simulate HDD activity
+SIMULATION_MODE = False # Simulate HDD activity
 PLAY_SPINUP = True
 PLAY_JINGLE = False
+
+POWER_DETECTION = False # If True, use the power.py logic to detect if we have external power. If False, assume we always have power
+
+ACCESS_HOLD_TIME_MS = 100 # How long to hold the access sample after an access is detected (in ms)
 
 # Volume
 POT_PIN = board.GP27  # Potentiometer connected to GP27 (ADC1)
@@ -29,15 +33,16 @@ AMP_SD_PIN = board.GP18        # I2S Data (SD / DIN)
 SDCARD_MOUNT_POINT = '/sd'  # Mount point for the SD card
 SDCARD_SAMPLE_DIR = f"{SDCARD_MOUNT_POINT}/samples" # Directory on SD card where sample packs are stored
 
-# Default sample filenames
-SAMPLE_SPINUP_FILE = "cache/spinup.wav" # TODO - reference CACHE_DIR
-SAMPLE_IDLE_FILE = "cache/idle.wav"
-SAMPLE_ACCESS_FILE = "cache/access.wav"
-
-JINGLE_FILE = "sd/HDDSynthJingle_16hz_16bit.wav"
-
 # Caching
 CACHE_DIR = "/cache"
+
+# Default sample filenames
+SAMPLE_SPINUP_FILE = f"{CACHE_DIR}/spinup.wav"
+SAMPLE_IDLE_FILE = f"{CACHE_DIR}/idle.wav"
+SAMPLE_ACCESS_FILE = f"{CACHE_DIR}/access.wav"
+SAMPLE_SPINDOWN_FILE = f"{CACHE_DIR}/spindown.wav"
+
+JINGLE_FILE = "sd/HDDSynthJingle_16hz_16bit.wav"
 
 # NVM memory map
 NVM_ADDRESS_MODE = 0 # Byte 0 used to determine mode (0: USB, 1: WRITE)
