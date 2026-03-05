@@ -6,11 +6,10 @@ Making HDDs loud again!
 import time
 import activity
 import audiobusio
-import audiocore
 import audiomixer 
-import random
 import digitalio
 import board
+import microcontroller
 
 import sample_changer
 from sample_container import SampleContainer
@@ -19,6 +18,7 @@ import settings
 import audio
 import action_button
 import power
+import nvm_wrapper
 
 def run_synth():
     print("Starting HDD Synth...")
@@ -27,18 +27,6 @@ def run_synth():
     # Pico LED
     led = digitalio.DigitalInOut(board.LED)
     led.direction = digitalio.Direction.OUTPUT
-
-    # Ensure SD card is accessible
-    sdcard.initilise()    
-
-    # Init samples
-    samples = {
-        "jingle": SampleContainer(settings.JINGLE_FILE) if settings.PLAY_JINGLE else None,
-        "spinup": SampleContainer(settings.SAMPLE_SPINUP_FILE),
-        "idle": SampleContainer(settings.SAMPLE_IDLE_FILE),
-        "access": SampleContainer(settings.SAMPLE_ACCESS_FILE),
-        "spindown": SampleContainer(settings.SAMPLE_SPINDOWN_FILE)
-    }
 
     # Initialize I2S audio output
     audio_out = audiobusio.I2SOut(
@@ -49,18 +37,35 @@ def run_synth():
 
     mixer = audiomixer.Mixer(
         voice_count=settings.MIXER_VOICES,
-        sample_rate=samples["idle"].sample.sample_rate,
-        channel_count=samples["idle"].sample.channel_count,
-        bits_per_sample=samples["idle"].sample.bits_per_sample,
+        sample_rate=settings.DEFAULT_SAMPLE_RATE,
+        channel_count=settings.DEFAULT_CHANNEL_COUNT,
+        bits_per_sample=settings.DEFAULT_BITS_PER_SAMPLE,
     )
 
     audio_out.play(mixer)
-    audio.set_volume(mixer)
 
+    # Ensure SD card is accessible
+    sdcard.initilise(mixer)    
 
-    if settings.PLAY_JINGLE:
+    # Init samples
+    samples = {
+        "jingle": SampleContainer(settings.JINGLE_FILE),
+        "spinup": SampleContainer(settings.SAMPLE_SPINUP_FILE),
+        "idle": SampleContainer(settings.SAMPLE_IDLE_FILE),
+        "access": SampleContainer(settings.SAMPLE_ACCESS_FILE),
+        "spindown": SampleContainer(settings.SAMPLE_SPINDOWN_FILE)
+    }
+
+    if nvm_wrapper.safe_read(settings.NVM_ADDRESS_JINGLE) != nvm_wrapper.JINGLE_PLAYED or settings.ALWAYS_PLAY_JINGLE:
         print('Playing jingle...')  
-        audio.play_sample_active_pause2(mixer, samples["jingle"])
+
+        mixer.voice[0].level = 1.0 # MAX VOLUME!! Make HDDs loud again!
+        audio.play_sample_active_pause2(mixer, samples["jingle"], auto_volume=False) # Don't apply volume to jingle, play at full volume
+
+        if nvm_wrapper.safe_read(settings.NVM_ADDRESS_JINGLE) != nvm_wrapper.JINGLE_PLAYED:
+            nvm_wrapper.write(settings.NVM_ADDRESS_JINGLE, nvm_wrapper.JINGLE_PLAYED)
+
+    audio.set_volume(mixer)
 
     if settings.PLAY_SPINUP:
         print('Playing spinup')
@@ -113,6 +118,12 @@ def run_synth():
     
     print("Playing spindown")
     audio.play_sample_active_pause2(mixer, samples["spindown"])
+
+    # Watch for power restore and reset
+    while not power.external_power():
+        time.sleep(0.1)
+
+    microcontroller.reset()
 
     
 if __name__ == "__main__":

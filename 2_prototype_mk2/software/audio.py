@@ -9,11 +9,16 @@ import settings
 import volume
 import action_button
 
-def play_sample_active_pause2(mixer, sample):
+def stop_all(mixer):
+    for i in range(settings.MIXER_VOICES):
+        mixer.voice[i].stop()
+
+def play_sample_active_pause2(mixer, sample, auto_volume = True):
     mixer.voice[0].play(sample.sample)
 
     while (mixer.voice[0].playing):
-        set_volume(mixer)
+        if auto_volume:
+            set_volume(mixer)
         action_button.handler(mixer)
         time.sleep(0.01)
 

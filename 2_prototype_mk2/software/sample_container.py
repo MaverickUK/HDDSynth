@@ -1,6 +1,4 @@
-import gc
 import os
-import random
 
 import audio
 import audiocore

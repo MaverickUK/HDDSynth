@@ -3,9 +3,9 @@ import board
 
 SIMULATION_MODE = False # Simulate HDD activity
 PLAY_SPINUP = True
-PLAY_JINGLE = False
+ALWAYS_PLAY_JINGLE = False
 
-POWER_DETECTION = False # If True, use the power.py logic to detect if we have external power. If False, assume we always have power
+POWER_DETECTION = True # If True, use the power.py logic to detect if we have external power. If False, assume we always have power
 
 ACCESS_HOLD_TIME_MS = 100 # How long to hold the access sample after an access is detected (in ms)
 
@@ -42,13 +42,14 @@ SAMPLE_IDLE_FILE = f"{CACHE_DIR}/idle.wav"
 SAMPLE_ACCESS_FILE = f"{CACHE_DIR}/access.wav"
 SAMPLE_SPINDOWN_FILE = f"{CACHE_DIR}/spindown.wav"
 
-JINGLE_FILE = "sd/HDDSynthJingle_16hz_16bit.wav"
+JINGLE_FILE = "sd/jingle.wav"
 
 # NVM memory map
 NVM_ADDRESS_MODE = 0 # Byte 0 used to determine mode (0: USB, 1: WRITE)
 NVM_ADDRESS_START_PACK_CURRENT = 1 # Starting byte for 'Current' pack name (No longer used)
 NVM_ADDRESS_START_PACK_DESIRED = 65 # Starting byte for 'Desired' pack name
 NVM_PACK_LENGTH = 64 # Max length for pack names (in bytes)
+NVM_ADDRESS_JINGLE = 129 # Byte used to indicate if jingle has been played
 
 # Defaults used when SD is disabled but audio is still required
 # (sample metadata used to configure the Mixer)

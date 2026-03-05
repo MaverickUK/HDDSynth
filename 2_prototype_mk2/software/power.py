@@ -12,7 +12,7 @@ MAX_ADC_VALUE = 65535   # CircuitPython 16-bit scaling
 # --- User Setting ---
 # Change this to whatever external voltage (0V-5V) you want to trigger at
 # TODO: Move this to settings
-VOLTAGE_THRESHOLD_EXT = 4.6 
+VOLTAGE_THRESHOLD_EXT = 4.0 
 
 # --- Calculated Internal Threshold ---
 # Calculate the ratio: 2000 / (1000 + 2000) = 0.666

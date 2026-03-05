@@ -6,6 +6,7 @@ import os
 import time
 
 import settings
+import beep
 
 def test_spi_connection():
     """Test basic SPI communication."""
@@ -230,20 +231,26 @@ def run_sd_diagnostic():
 if __name__ == "__main__":
     run_sd_diagnostic()
 
-def initilise():
+def initilise(mixer=None):
     # Test 1: SPI connection
     spi, cs = test_spi_connection()
     if not spi:
         print("\n❌ DIAGNOSTIC FAILED: Cannot initialize SPI")
+        if (mixer is not None):
+            beep.play_beep_type(mixer, "NO_SD_CARD")
         return
     
     # Test 2: SD card detection
     sd = test_sd_card_detection(spi, cs)
     if not sd:
         print("\n❌ DIAGNOSTIC FAILED: Cannot detect SD card")
+        if (mixer is not None):
+            beep.play_beep_type(mixer, "NO_SD_CARD")
         return
     
     # Test 3: Mount filesystem
     if not mount_sd_card(sd):
         print("\n❌ DIAGNOSTIC FAILED: Cannot mount SD card")
+        if (mixer is not None):
+            beep.play_beep_type(mixer, "NO_SD_CARD")
         return

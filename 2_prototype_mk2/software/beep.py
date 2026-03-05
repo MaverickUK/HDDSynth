@@ -7,7 +7,7 @@ import synthio
 # Each profile contains the arguments for your play_beep function
 PROFILE = {
     ### Operations ###
-    "CHANGE_THEME": {
+    "CHANGE_PACK": {
         "pitch": "high",
         "count": 1,
         "length": "short",

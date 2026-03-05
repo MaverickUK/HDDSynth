@@ -4,6 +4,7 @@ import microcontroller
 
 import settings
 import sample_cache
+import nvm
 
 def initialize():
     """
@@ -85,11 +86,11 @@ def next_pack(reboot_after=True):
 # --- Public Abstraction Methods ---
 
 def get_desired_pack():
-    """Reads the 'Desired' pack name from NVM."""
+    """Reads the 'Desired' pack name from nvm_wrapper."""
     return _read_nvm_str(settings.NVM_ADDRESS_START_PACK_DESIRED)
 
 def set_desired_pack(name):
-    """Writes the 'Desired' pack name to NVM."""
+    """Writes the 'Desired' pack name to nvm_wrapper."""
     _write_nvm_str(settings.NVM_ADDRESS_START_PACK_DESIRED, name)
 
 # --- Private Helpers ---
