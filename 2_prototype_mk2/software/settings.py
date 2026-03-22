@@ -1,7 +1,7 @@
 
 import board
 
-SIMULATION_MODE = False # Simulate HDD activity
+SIMULATION_MODE = True # Simulate HDD activity
 PLAY_SPINUP = True
 ALWAYS_PLAY_JINGLE = False
 

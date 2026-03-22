@@ -9,7 +9,7 @@ import nvm_wrapper
 import settings
 
 # Action button state tracking
-keys = keypad.Keys((board.GP1,), value_when_pressed=False, pull=True)
+keys = keypad.Keys((board.GP2,), value_when_pressed=False, pull=True)
 
 # Internal state tracking
 _action_button_start_time = None
