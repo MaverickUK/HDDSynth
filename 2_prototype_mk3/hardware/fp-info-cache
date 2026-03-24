@@ -1,4 +1,4 @@
-26734220449879566
+26741317309957734
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -59352,6 +59352,13 @@ ceramic
 0
 3
 3
+CustomFootprints
+BUS_AT_8bit
+AT ISA 16 bits Bus Edge Connector
+BUS ISA AT Edge connector
+0
+62
+62
 Diode_SMD
 D_0201_0603Metric
 Diode SMD 0201 (0603 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: https://www.vishay.com/docs/20052/crcw0201e3.pdf), generated with kicad-footprint-generator
@@ -62468,6 +62475,13 @@ BOURNS-3362P_pot
 3
 3
 HDDSyncMKIII
+BUS_AT_8bit
+AT ISA 16 bits Bus Edge Connector
+BUS ISA AT Edge connector
+0
+62
+62
+HDDSyncMKIII
 MHDDLA_GB_40mm
 
 
@@ -62476,6 +62490,20 @@ MHDDLA_GB_40mm
 0
 HDDSyncMKIII
 MHDDLA_Sound_40mm
+
+
+0
+0
+0
+HDDSyncMKIII
+MKIII logo - 20mm
+
+
+0
+0
+0
+HDDSyncMKIII
+MKIII logo - 30mm
 
 
 0

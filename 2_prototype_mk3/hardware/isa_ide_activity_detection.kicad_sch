@@ -4,6 +4,9 @@
 	(generator_version "9.0")
 	(uuid "93e671ab-f615-4f39-8178-90d5e55646a0")
 	(paper "A4")
+	(title_block
+		(title "ISA IDE activity detection")
+	)
 	(lib_symbols
 		(symbol "74xx:74LS573"
 			(pin_names
@@ -6318,7 +6321,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Connector_PCBEdge:BUS_AT"
+		(property "Footprint" "HDDSyncMKIII:BUS_AT_8bit"
 			(at 101.6 71.12 0)
 			(effects
 				(font
