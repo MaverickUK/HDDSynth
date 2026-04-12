@@ -3633,7 +3633,7 @@
 	)
 	(wire
 		(pts
-			(xy 194.31 144.78) (xy 194.31 143.51)
+			(xy 194.31 143.51) (xy 194.31 146.05)
 		)
 		(stroke
 			(width 0)
@@ -4305,6 +4305,37 @@
 	(netclass_flag ""
 		(length 2.54)
 		(shape round)
+		(at 194.31 143.51 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "51f8e561-48e4-4bb9-9436-58cd176e33fb")
+		(property "Netclass" "POWER_5v"
+			(at 191.77 142.8115 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Component Class" ""
+			(at -43.18 5.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+	)
+	(netclass_flag ""
+		(length 2.54)
+		(shape round)
 		(at 130.81 43.18 90)
 		(fields_autoplaced yes)
 		(effects
@@ -4314,7 +4345,7 @@
 			(justify left bottom)
 		)
 		(uuid "f8c87eda-8137-4fc7-afa2-579e71e2df57")
-		(property "Netclass" "POWER_5v"
+		(property "Netclass" "POWER_5V_SUP"
 			(at 128.27 42.4815 90)
 			(effects
 				(font
@@ -4392,72 +4423,6 @@
 			(project "HDD Synth prototype MK3"
 				(path "/5a2f0aa7-670f-4d0d-8d56-ad98c847383a"
 					(reference "H12")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+5V")
-		(at 194.31 144.78 0)
-		(mirror x)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "0d41abfd-3900-4638-a44b-f04fe9662da4")
-		(property "Reference" "#PWR04"
-			(at 194.31 140.97 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+5V"
-			(at 194.31 149.86 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 194.31 144.78 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 194.31 144.78 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 194.31 144.78 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "3f1418a1-8888-4636-b706-cb237788fe48")
-		)
-		(instances
-			(project ""
-				(path "/5a2f0aa7-670f-4d0d-8d56-ad98c847383a"
-					(reference "#PWR04")
 					(unit 1)
 				)
 			)
@@ -6191,6 +6156,72 @@
 			(project "HDD Synth prototype MK3"
 				(path "/5a2f0aa7-670f-4d0d-8d56-ad98c847383a"
 					(reference "R7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 194.31 146.05 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "d290ea49-bf5f-4edd-89b7-eef2afc36cbf")
+		(property "Reference" "#PWR04"
+			(at 194.31 142.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 194.31 151.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 194.31 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 194.31 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 194.31 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "f235bc15-310f-4b3b-9716-3dae8c76cb4d")
+		)
+		(instances
+			(project ""
+				(path "/5a2f0aa7-670f-4d0d-8d56-ad98c847383a"
+					(reference "#PWR04")
 					(unit 1)
 				)
 			)

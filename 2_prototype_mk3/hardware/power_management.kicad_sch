@@ -1380,6 +1380,16 @@
 	)
 	(wire
 		(pts
+			(xy 148.59 80.01) (xy 148.59 81.28)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8293c34a-cd92-45f2-819c-bd0031f1a1f0")
+	)
+	(wire
+		(pts
 			(xy 165.1 116.84) (xy 170.18 116.84)
 		)
 		(stroke
@@ -1498,6 +1508,28 @@
 		)
 		(uuid "febc6dda-0185-481d-9144-d5d78b32f9ce")
 	)
+	(global_label "POWER_5V_SUP"
+		(shape bidirectional)
+		(at 148.59 80.01 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "4382f262-a488-4d1c-b8d9-20c1902f83c8")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 148.59 61.3993 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
 	(hierarchical_label "VSYS_5V_INPUT"
 		(shape input)
 		(at 170.18 116.84 0)
@@ -1521,7 +1553,7 @@
 			(justify left bottom)
 		)
 		(uuid "07eb2d85-8934-4eab-a0c3-7bb6c9e0b194")
-		(property "Netclass" "POWER_5v"
+		(property "Netclass" "POWER_5V_SUP"
 			(at 158.1785 78.74 0)
 			(effects
 				(font
@@ -1563,6 +1595,37 @@
 		)
 		(property "Component Class" ""
 			(at -59.69 6.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+	)
+	(netclass_flag ""
+		(length 2.54)
+		(shape round)
+		(at 152.4 93.98 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "a684a933-99ea-4e5d-99b9-39f4b63c839a")
+		(property "Netclass" "POWER_5V_SUP"
+			(at 153.0985 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Component Class" ""
+			(at -54.61 8.89 0)
 			(effects
 				(font
 					(size 1.27 1.27)
