@@ -1755,6 +1755,15 @@
 				(hide yes)
 			)
 		)
+		(property "Manufacturer_Part_Number" "0603B102K500NT"
+			(at 195.58 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "c3ceb8eb-e75f-428b-ac86-6aa59d9a8e61")
 		)
@@ -1817,6 +1826,15 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 212.09 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" ""
 			(at 212.09 106.68 0)
 			(effects
 				(font
@@ -1895,6 +1913,15 @@
 				(hide yes)
 			)
 		)
+		(property "Manufacturer_Part_Number" "CL10B104KO8NNNC"
+			(at 143.51 64.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "f79b6bc4-059b-4618-add4-45d424056ae0")
 		)
@@ -1956,6 +1983,15 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
+			(at 160.02 64.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "CL31A106KAHNNNE"
 			(at 160.02 64.77 0)
 			(effects
 				(font
@@ -2099,6 +2135,15 @@
 				(hide yes)
 			)
 		)
+		(property "Manufacturer_Part_Number" "MAX98357AETE+T"
+			(at 149.86 105.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "16"
 			(uuid "48513cae-344b-492a-a9c8-03cf3e15fbb2")
 		)
@@ -2214,6 +2259,15 @@
 				(hide yes)
 			)
 		)
+		(property "Manufacturer_Part_Number" "BLM21PG221SN1D"
+			(at 181.61 101.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "78654499-5cb5-41ba-a767-0d32a56b0939")
 		)
@@ -2284,6 +2338,15 @@
 				(hide yes)
 			)
 		)
+		(property "Manufacturer_Part_Number" "0603B102K500NT"
+			(at 204.47 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "24e5213e-dd97-4322-9619-cf5b279bc8d8")
 		)
@@ -2346,6 +2409,15 @@
 			)
 		)
 		(property "Description" "Ferrite bead, small symbol"
+			(at 172.72 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "BLM21PG221SN1D"
 			(at 172.72 106.68 0)
 			(effects
 				(font

@@ -1689,6 +1689,15 @@
 				(hide yes)
 			)
 		)
+		(property "Manufacturer_Part_Number" "SS12"
+			(at 142.24 90.17 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "6754e4cd-ca50-4ea7-8da1-d85357823ad8")
 		)
@@ -1749,6 +1758,15 @@
 			)
 		)
 		(property "Description" "Schottky diode"
+			(at 189.23 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "SS14"
 			(at 189.23 90.17 0)
 			(effects
 				(font
@@ -1818,6 +1836,15 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor, small symbol"
+			(at 148.59 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "DX-5R5V474U"
 			(at 148.59 96.52 0)
 			(effects
 				(font
@@ -1954,6 +1981,15 @@
 			)
 		)
 		(property "Description" "Resistor"
+			(at 154.94 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "RC1206FR-0733RL"
 			(at 154.94 90.17 0)
 			(effects
 				(font
@@ -2153,6 +2189,15 @@
 			)
 		)
 		(property "Description" "Generic connector, double row, 02x03, counter clockwise pin numbering scheme (similar to DIP package numbering), script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 114.3 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" ""
 			(at 114.3 93.98 0)
 			(effects
 				(font

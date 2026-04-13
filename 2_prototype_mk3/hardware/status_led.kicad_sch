@@ -1184,6 +1184,15 @@
 				(hide yes)
 			)
 		)
+		(property "Manufacturer_Part_Number" "LF05RGB-01"
+			(at 132.08 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "4"
 			(uuid "ce6c1413-5d9b-469f-b3c8-d41a90d94018")
 		)
@@ -1317,6 +1326,15 @@
 		)
 		(property "Description" "4 resistor network, parallel topology"
 			(at 149.86 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "YC164-JR-07330RL"
+			(at 149.86 90.17 90)
 			(effects
 				(font
 					(size 1.27 1.27)

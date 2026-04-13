@@ -6370,6 +6370,15 @@
 				(hide yes)
 			)
 		)
+		(property "Manufacturer_Part_Number" "CL10B104KO8NNNC"
+			(at 222.25 53.34 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "9fd22f1c-3694-4b54-b87b-511628a4641b")
 		)
@@ -6431,6 +6440,15 @@
 		)
 		(property "Description" "Resistor"
 			(at 86.36 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "RC0603FR-0710RL"
+			(at 86.36 132.08 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6589,6 +6607,15 @@
 				(hide yes)
 			)
 		)
+		(property "Manufacturer_Part_Number" ""
+			(at 209.55 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "13"
 			(uuid "57cdedf8-2d0c-415b-8749-d78a8595cf04")
 		)
@@ -6723,6 +6750,15 @@
 				(hide yes)
 			)
 		)
+		(property "Manufacturer_Part_Number" "CL10B104KO8NNNC"
+			(at 168.91 86.36 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "dc458851-87bf-4fd1-8ec8-00a883a8508f")
 		)
@@ -6793,6 +6829,15 @@
 				(hide yes)
 			)
 		)
+		(property "Manufacturer_Part_Number" "SS12"
+			(at 222.25 129.54 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "7fe77162-6e72-4214-b09c-c61bbfc25f69")
 		)
@@ -6855,6 +6900,15 @@
 			)
 		)
 		(property "Description" "8-bit Latch 3-state outputs"
+			(at 158.75 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "SN74HCT573APWR"
 			(at 158.75 107.95 0)
 			(effects
 				(font
@@ -6977,6 +7031,15 @@
 			)
 		)
 		(property "Description" "8-bit ISA-PC bus connector"
+			(at 101.6 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" ""
 			(at 101.6 71.12 0)
 			(effects
 				(font
@@ -7365,6 +7428,15 @@
 				(hide yes)
 			)
 		)
+		(property "Manufacturer_Part_Number" "RC0603FR-072K2L"
+			(at 212.09 157.48 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "e62ae47d-09c7-4569-860d-92d8f1a6c6c4")
 		)
@@ -7631,6 +7703,15 @@
 				(hide yes)
 			)
 		)
+		(property "Manufacturer_Part_Number" "RC0603FR-0710RL"
+			(at 99.06 132.08 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "a7393d4a-ba9d-4a5c-9597-724abb436eed")
 		)
@@ -7693,6 +7774,15 @@
 			)
 		)
 		(property "Description" "Resistor"
+			(at 222.25 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "RC0603FR-07330RL"
 			(at 222.25 116.84 0)
 			(effects
 				(font
@@ -7828,6 +7918,15 @@
 		)
 		(property "Description" "Unpolarized capacitor"
 			(at 167.64 33.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "CL10B104KO8NNNC"
+			(at 167.64 33.02 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8036,6 +8135,15 @@
 				(hide yes)
 			)
 		)
+		(property "Manufacturer_Part_Number" ""
+			(at 255.27 69.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "3"
 			(uuid "d25b51f5-481f-4b3d-a748-5eb01f29b1bb")
 		)
@@ -8101,6 +8209,15 @@
 			)
 		)
 		(property "Description" "8-bit Latch 3-state outputs"
+			(at 158.75 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "SN74HCT573APWR"
 			(at 158.75 55.88 0)
 			(effects
 				(font
@@ -8225,6 +8342,15 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x03, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 255.27 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" ""
 			(at 255.27 81.28 0)
 			(effects
 				(font
@@ -8370,6 +8496,15 @@
 				(hide yes)
 			)
 		)
+		(property "Manufacturer_Part_Number" "RC0603FR-0710KL"
+			(at 212.09 146.05 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "8ed9ff00-9312-4273-8c25-08d1ef507cfc")
 		)
@@ -8431,6 +8566,15 @@
 		)
 		(property "Description" "Unpolarized capacitor"
 			(at 212.09 135.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "CL31B225KCHNNNE"
+			(at 212.09 135.89 90)
 			(effects
 				(font
 					(size 1.27 1.27)
