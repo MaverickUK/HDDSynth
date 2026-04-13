@@ -1845,7 +1845,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC_Part_Number" ""
+		(property "LCSC_Part_Number" "C779384"
 			(at 88.9 77.47 0)
 			(effects
 				(font

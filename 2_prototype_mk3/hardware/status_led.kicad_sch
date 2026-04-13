@@ -1202,7 +1202,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC_Part_Number" ""
+		(property "LCSC_Part_Number" "C330759"
 			(at 132.08 90.17 0)
 			(effects
 				(font
@@ -1369,7 +1369,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC_Part_Number" ""
+		(property "LCSC_Part_Number" "C136828"
 			(at 149.86 90.17 90)
 			(effects
 				(font
