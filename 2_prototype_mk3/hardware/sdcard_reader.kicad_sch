@@ -1845,6 +1845,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC_Part_Number" ""
+			(at 88.9 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "4"
 			(uuid "24f5e364-3529-4b44-8786-f8bd5e4bea9b")
 		)
@@ -1951,6 +1960,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC_Part_Number" ""
+			(at 113.03 60.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "d6de894c-fe38-43df-a6cf-3456696df44a")
 		)
@@ -2029,6 +2047,15 @@
 			)
 		)
 		(property "Manufacturer" "Hirose Electric"
+			(at 147.32 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_Part_Number" "C719027"
 			(at 147.32 92.71 0)
 			(effects
 				(font
@@ -2138,6 +2165,15 @@
 			)
 		)
 		(property "Manufacturer" ""
+			(at 97.79 60.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_Part_Number" ""
 			(at 97.79 60.96 0)
 			(effects
 				(font
