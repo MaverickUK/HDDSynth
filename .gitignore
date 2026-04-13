@@ -148,3 +148,4 @@ erc_result.txt
 # KiCad temporary directories
 tmp/
 temp/
+.DS_Store
