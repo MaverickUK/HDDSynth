@@ -43,3 +43,10 @@ Peter Bridger at [maverickuk@gmail.com](maverickuk@gmail.com)
 - Inspired by the [HDD Clicker project](https://www.serdashop.com/HDDClicker)
 - A big thanks to [Ian Scott of PicoGUS fame](https://picog.us/) for sharing his resource sources and knowledge of using the Pi Pico with the ISA bus which gave me the confidence to take this project to the next level
 - [Marten Electric](https://www.martenelectric.cz/) for the excellent ISA prototyping boards which made it very easy to wire up the Pico to my computer
+
+## License
+This project is licensed under the GNU General Public License v3.0.
+
+- **Permissions:** Commercial use, modification, and distribution are allowed.
+- **Conditions:** You must include a copy of the license and the source code for any derivative works.
+- **Prohibitions:** You cannot close the source or use a different license for derivative works.

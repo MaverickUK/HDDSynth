@@ -5827,7 +5827,7 @@
 				)
 			)
 		)
-		(property "Value" "RotaryEncoder_Switch"
+		(property "Value" "PEC12R-2120F-S0012"
 			(at 185.42 45.72 0)
 			(effects
 				(font
@@ -5844,7 +5844,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://www.bourns.com/docs/Product-Datasheets/PEC12R.pdf"
 			(at 185.42 46.736 0)
 			(effects
 				(font
