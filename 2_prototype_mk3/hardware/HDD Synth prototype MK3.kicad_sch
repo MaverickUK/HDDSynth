@@ -4428,6 +4428,15 @@
 				(hide yes)
 			)
 		)
+		(property "Manufacturer" ""
+			(at 88.9 179.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(instances
 			(project "HDD Synth prototype MK3"
 				(path "/5a2f0aa7-670f-4d0d-8d56-ad98c847383a"
@@ -4493,6 +4502,15 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" ""
+			(at 58.42 184.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" ""
 			(at 58.42 184.15 0)
 			(effects
 				(font
@@ -4640,6 +4658,15 @@
 				(hide yes)
 			)
 		)
+		(property "Manufacturer" ""
+			(at 25.4 185.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "6555feaa-5790-4b70-aef8-b9f2052a6ade")
 		)
@@ -4708,6 +4735,15 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "RC0603FR-072KL"
+			(at 204.47 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" ""
 			(at 204.47 138.43 0)
 			(effects
 				(font
@@ -4787,6 +4823,15 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" ""
+			(at 58.42 189.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" ""
 			(at 58.42 189.23 0)
 			(effects
 				(font
@@ -4934,6 +4979,15 @@
 				(hide yes)
 			)
 		)
+		(property "Manufacturer" ""
+			(at 113.03 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "944ea9b6-467e-4c52-88e0-773c29bc558d")
 		)
@@ -5013,6 +5067,15 @@
 				(hide yes)
 			)
 		)
+		(property "Manufacturer" ""
+			(at 194.31 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "9af5ce68-5e08-451c-ac27-e4d7fe0f0903")
 		)
@@ -5084,6 +5147,15 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "SC1308"
+			(at 135.89 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Raspberry Pi"
 			(at 135.89 86.36 0)
 			(effects
 				(font
@@ -5349,6 +5421,15 @@
 				(hide yes)
 			)
 		)
+		(property "Manufacturer" ""
+			(at 66.04 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "2179bdc1-137c-44a3-9806-ae4b110ba045")
 		)
@@ -5420,6 +5501,15 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" ""
+			(at 88.9 189.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" ""
 			(at 88.9 189.23 0)
 			(effects
 				(font
@@ -5501,6 +5591,15 @@
 				(hide yes)
 			)
 		)
+		(property "Manufacturer" ""
+			(at 88.9 173.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(instances
 			(project "HDD Synth prototype MK3"
 				(path "/5a2f0aa7-670f-4d0d-8d56-ad98c847383a"
@@ -5566,6 +5665,15 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" ""
+			(at 25.4 175.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" ""
 			(at 25.4 175.26 0)
 			(effects
 				(font
@@ -5911,6 +6019,15 @@
 				(hide yes)
 			)
 		)
+		(property "Manufacturer" ""
+			(at 88.9 52.07 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "72b9668d-e332-4773-a8d9-fda4e0dcd965")
 		)
@@ -5980,6 +6097,15 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "PEC12R-2120F-S0012"
+			(at 185.42 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Bourns"
 			(at 185.42 53.34 0)
 			(effects
 				(font
@@ -6076,6 +6202,15 @@
 				(hide yes)
 			)
 		)
+		(property "Manufacturer" ""
+			(at 58.42 179.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(instances
 			(project "HDD Synth prototype MK3"
 				(path "/5a2f0aa7-670f-4d0d-8d56-ad98c847383a"
@@ -6142,6 +6277,15 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "EL357N(C)(TA)-VG"
+			(at 241.3 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Everlight"
 			(at 241.3 91.44 0)
 			(effects
 				(font
@@ -6235,6 +6379,15 @@
 				(hide yes)
 			)
 		)
+		(property "Manufacturer" ""
+			(at 58.42 173.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(instances
 			(project ""
 				(path "/5a2f0aa7-670f-4d0d-8d56-ad98c847383a"
@@ -6300,6 +6453,15 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "RC0603FR-073K3L"
+			(at 180.34 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" ""
 			(at 180.34 104.14 0)
 			(effects
 				(font
@@ -6588,6 +6750,15 @@
 				(hide yes)
 			)
 		)
+		(property "Manufacturer" "onsemi"
+			(at 105.41 31.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "3d0b1784-20fb-4e03-adf4-929497932980")
 		)
@@ -6662,6 +6833,15 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" ""
+			(at 71.12 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" ""
 			(at 71.12 52.07 0)
 			(effects
 				(font
@@ -6749,6 +6929,15 @@
 				(hide yes)
 			)
 		)
+		(property "Manufacturer" ""
+			(at 256.54 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "0cfbb845-1706-4580-a55b-6934f5b79f14")
 		)
@@ -6820,6 +7009,15 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" ""
+			(at 88.9 184.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" ""
 			(at 88.9 184.15 0)
 			(effects
 				(font

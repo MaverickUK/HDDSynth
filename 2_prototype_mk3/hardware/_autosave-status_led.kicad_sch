@@ -1202,6 +1202,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC_Part_Number" ""
+			(at 132.08 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "4"
 			(uuid "ce6c1413-5d9b-469f-b3c8-d41a90d94018")
 		)
@@ -1352,6 +1361,15 @@
 			)
 		)
 		(property "Manufacturer" ""
+			(at 149.86 90.17 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_Part_Number" ""
 			(at 149.86 90.17 90)
 			(effects
 				(font

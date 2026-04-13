@@ -1773,6 +1773,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC_Part_Number" ""
+			(at 195.58 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "c3ceb8eb-e75f-428b-ac86-6aa59d9a8e61")
 		)
@@ -1853,6 +1862,15 @@
 			)
 		)
 		(property "Manufacturer" "Phoenix Contact"
+			(at 212.09 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_Part_Number" "C3819527"
 			(at 212.09 106.68 0)
 			(effects
 				(font
@@ -1949,6 +1967,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC_Part_Number" ""
+			(at 143.51 64.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "f79b6bc4-059b-4618-add4-45d424056ae0")
 		)
@@ -2028,6 +2055,15 @@
 			)
 		)
 		(property "Manufacturer" ""
+			(at 160.02 64.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_Part_Number" ""
 			(at 160.02 64.77 0)
 			(effects
 				(font
@@ -2189,6 +2225,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC_Part_Number" "C910544"
+			(at 149.86 105.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "16"
 			(uuid "48513cae-344b-492a-a9c8-03cf3e15fbb2")
 		)
@@ -2322,6 +2367,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC_Part_Number" ""
+			(at 181.61 101.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "78654499-5cb5-41ba-a767-0d32a56b0939")
 		)
@@ -2410,6 +2464,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC_Part_Number" ""
+			(at 204.47 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "24e5213e-dd97-4322-9619-cf5b279bc8d8")
 		)
@@ -2490,6 +2553,15 @@
 			)
 		)
 		(property "Manufacturer" ""
+			(at 172.72 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_Part_Number" ""
 			(at 172.72 106.68 0)
 			(effects
 				(font
