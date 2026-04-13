@@ -3151,6 +3151,12 @@
 		(uuid "ccfb8280-6601-4d31-8ec2-d62a72d22c78")
 	)
 	(junction
+		(at 81.28 55.88)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "2c8fc822-5414-4a02-8b90-5d655356ec3b")
+	)
+	(junction
 		(at 152.4 77.47)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3229,6 +3235,12 @@
 		(uuid "bb4c4046-5e76-4227-8048-af2f7095779b")
 	)
 	(junction
+		(at 81.28 33.02)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "e211d3b2-71c7-4ac2-b19f-125d2906a24a")
+	)
+	(junction
 		(at 152.4 128.27)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3255,10 +3267,6 @@
 		(uuid "0b46225b-ddbc-47c2-aac2-81adbf0f2cc0")
 	)
 	(no_connect
-		(at 83.82 55.88)
-		(uuid "0d1e8815-182f-437a-8125-2e5b12525d2b")
-	)
-	(no_connect
 		(at 222.25 73.66)
 		(uuid "1de9e41e-5c76-48f3-82b9-7c6dccc9257a")
 	)
@@ -3269,10 +3277,6 @@
 	(no_connect
 		(at 83.82 104.14)
 		(uuid "35f05667-bf21-42fd-aa4b-044b90d1554c")
-	)
-	(no_connect
-		(at 83.82 109.22)
-		(uuid "3e8b0a77-e46b-4b4e-912e-d71fed9457f0")
 	)
 	(no_connect
 		(at 83.82 45.72)
@@ -3866,6 +3870,16 @@
 		)
 		(uuid "04774c90-f515-40d1-abf6-97abf22751ec")
 	)
+	(wire
+		(pts
+			(xy 81.28 55.88) (xy 83.82 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "04f23246-eca6-43c8-9ac7-00f37905fc77")
+	)
 	(bus
 		(pts
 			(xy 125.73 91.44) (xy 125.73 93.98)
@@ -4458,6 +4472,16 @@
 	)
 	(wire
 		(pts
+			(xy 81.28 55.88) (xy 81.28 109.22)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "577bfc56-6bd0-4b6f-8097-fdb3665617e2")
+	)
+	(wire
+		(pts
 			(xy 143.51 45.72) (xy 146.05 45.72)
 		)
 		(stroke
@@ -4545,6 +4569,16 @@
 			(type default)
 		)
 		(uuid "63f4341b-6ba0-4cae-bf79-d99d0fe9c431")
+	)
+	(wire
+		(pts
+			(xy 81.28 109.22) (xy 83.82 109.22)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "65471e41-ffec-49a2-8826-e97c4c2bba4d")
 	)
 	(wire
 		(pts
@@ -5135,6 +5169,16 @@
 			(type default)
 		)
 		(uuid "bb3978a9-6ca7-4475-afea-527cdaed6aa4")
+	)
+	(wire
+		(pts
+			(xy 81.28 33.02) (xy 81.28 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bb40d7bd-e69a-4e3c-9177-937e0934547d")
 	)
 	(wire
 		(pts
@@ -6890,7 +6934,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "74xx/74hc573.pdf"
+		(property "Datasheet" ""
 			(at 158.75 107.95 0)
 			(effects
 				(font
@@ -8199,7 +8243,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "74xx/74hc573.pdf"
+		(property "Datasheet" ""
 			(at 158.75 55.88 0)
 			(effects
 				(font
