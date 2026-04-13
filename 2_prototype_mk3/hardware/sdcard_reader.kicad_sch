@@ -1168,16 +1168,10 @@
 		(uuid "2878c4dc-fd03-43cb-8421-bb72aeae50e6")
 	)
 	(junction
-		(at 88.9 87.63)
+		(at 83.82 87.63)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "2979ec83-0dfa-488d-b1eb-60e4f946b83e")
-	)
-	(junction
-		(at 83.82 92.71)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "393f5d36-8151-482f-8e05-5b74eada7a18")
+		(uuid "6d1b3311-929e-4407-8713-f96e0aa2a877")
 	)
 	(junction
 		(at 113.03 67.31)
@@ -1214,6 +1208,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "e26ecea4-1a62-44dc-9ecd-cc535dce5d1e")
+	)
+	(junction
+		(at 88.9 92.71)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "eda427b1-f2e0-42ca-9e2d-40253b5d0a07")
 	)
 	(no_connect
 		(at 91.44 82.55)
@@ -1313,6 +1313,16 @@
 	)
 	(wire
 		(pts
+			(xy 88.9 82.55) (xy 88.9 92.71)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "43fcb91d-16ea-4cd0-bb4c-742ece7df61c")
+	)
+	(wire
+		(pts
 			(xy 97.79 57.15) (xy 107.95 57.15)
 		)
 		(stroke
@@ -1320,16 +1330,6 @@
 			(type default)
 		)
 		(uuid "477070cc-b1c6-47bd-ac40-b0d30b2a3b7e")
-	)
-	(wire
-		(pts
-			(xy 83.82 82.55) (xy 83.82 92.71)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "483ec8b4-3d20-4677-ba1b-eac725b9a5be")
 	)
 	(wire
 		(pts
@@ -1383,16 +1383,6 @@
 	)
 	(wire
 		(pts
-			(xy 88.9 82.55) (xy 88.9 87.63)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5b11c804-1f39-436a-bc71-ee902dde58c0")
-	)
-	(wire
-		(pts
 			(xy 107.95 113.03) (xy 167.64 113.03)
 		)
 		(stroke
@@ -1413,6 +1403,16 @@
 	)
 	(wire
 		(pts
+			(xy 88.9 92.71) (xy 96.52 92.71)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7465f6d9-d73d-4f10-817c-1eed53e98589")
+	)
+	(wire
+		(pts
 			(xy 107.95 97.79) (xy 107.95 113.03)
 		)
 		(stroke
@@ -1420,6 +1420,16 @@
 			(type default)
 		)
 		(uuid "7ca92211-a47c-4dc2-b7ff-35323e276b65")
+	)
+	(wire
+		(pts
+			(xy 83.82 87.63) (xy 124.46 87.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7d2833f1-1c4a-4ba3-861e-5ed1cd6b9551")
 	)
 	(wire
 		(pts
@@ -1433,7 +1443,7 @@
 	)
 	(wire
 		(pts
-			(xy 77.47 92.71) (xy 83.82 92.71)
+			(xy 77.47 92.71) (xy 88.9 92.71)
 		)
 		(stroke
 			(width 0)
@@ -1453,13 +1463,13 @@
 	)
 	(wire
 		(pts
-			(xy 83.82 92.71) (xy 96.52 92.71)
+			(xy 83.82 82.55) (xy 83.82 87.63)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "b73c0a0d-2e66-4c9a-ba95-8d0a276c4854")
+		(uuid "b34490f8-a648-4301-b873-713ed5bffbbb")
 	)
 	(wire
 		(pts
@@ -1513,23 +1523,13 @@
 	)
 	(wire
 		(pts
-			(xy 77.47 87.63) (xy 88.9 87.63)
+			(xy 77.47 87.63) (xy 83.82 87.63)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "df143302-6692-4aea-9304-e8ed92838352")
-	)
-	(wire
-		(pts
-			(xy 88.9 87.63) (xy 124.46 87.63)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "df2ff701-a478-4a2b-8234-eb293744d51b")
 	)
 	(wire
 		(pts
@@ -1974,7 +1974,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Connector_Card:microSD_HC_Molex_104031-0811"
+		(property "Footprint" "Connector_Card:microSD_HC_Hirose_DM3D-SF"
 			(at 176.53 85.09 0)
 			(effects
 				(font
@@ -1983,7 +1983,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.we-online.com/components/products/datasheet/693072010801.pdf"
+		(property "Datasheet" ""
 			(at 147.32 92.71 0)
 			(effects
 				(font
@@ -2001,7 +2001,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Part_Number" "104031-0811"
+		(property "Manufacturer_Part_Number" "DM3D-SF"
 			(at 147.32 92.71 0)
 			(effects
 				(font

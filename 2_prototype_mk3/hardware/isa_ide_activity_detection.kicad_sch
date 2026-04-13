@@ -6476,9 +6476,9 @@
 		(at 209.55 76.2 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "3bb85276-1c95-4d1f-8fcd-6cf0b5546d22")
 		(property "Reference" "U8"
@@ -6908,7 +6908,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Part_Number" "SN74HCT573APWR"
+		(property "Manufacturer_Part_Number" "SN74HC573APWR"
 			(at 158.75 107.95 0)
 			(effects
 				(font
@@ -6991,7 +6991,7 @@
 		(at 101.6 71.12 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
@@ -8217,7 +8217,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Part_Number" "SN74HCT573APWR"
+		(property "Manufacturer_Part_Number" "SN74HC573APWR"
 			(at 158.75 55.88 0)
 			(effects
 				(font

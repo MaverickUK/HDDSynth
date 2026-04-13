@@ -2152,7 +2152,7 @@
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(uuid "a15f2b63-d7a6-4f0d-af93-3a6e6886a13a")
 		(property "Reference" "H3"
 			(at 115.57 85.09 0)
