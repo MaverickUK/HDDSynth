@@ -1,4 +1,4 @@
-26741317309957734
+26760768047246545
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -62482,6 +62482,13 @@ BUS ISA AT Edge connector
 62
 62
 HDDSyncMKIII
+CF-Card_3M_N7E50-7516PK-20-WF
+Compact Flash Card connector (https://multimedia.3m.com/mws/media/22365O/3mtm-cf-card-header-compactflashtm-type-i-sm-ts0662.pdf)
+connector cf
+0
+54
+50
+HDDSyncMKIII
 MHDDLA_GB_40mm
 
 
@@ -62545,12 +62552,89 @@ TAYDA A1881
 5
 3
 HDDSyncMKIII
+SD_Kyocera_145638009211859+
+SD Card Connector, Normal Type, Outer Tail, Without Ejector (https://global.kyocera.com/prdct/electro/product/pdf/5638.pdf)
+sd card smt
+0
+13
+13
+HDDSyncMKIII
+SD_Kyocera_145638009511859+
+SD Card Connector, Normal Type, Outer Tail, Spring Eject Type (https://global.kyocera.com/prdct/electro/product/pdf/5638.pdf)
+sd card smt
+0
+13
+13
+HDDSyncMKIII
+SD_Kyocera_145638109211859+
+SD Card Connector, Reverse Type, Outer Tail, Without Ejector (https://global.kyocera.com/prdct/electro/product/pdf/5638.pdf)
+sd card smt
+0
+13
+13
+HDDSyncMKIII
+SD_Kyocera_145638109511859+
+SD Card Connector, Reverse Type, Outer Tail, Spring Eject Type (https://global.kyocera.com/prdct/electro/product/pdf/5638.pdf)
+sd card smt
+0
+13
+13
+HDDSyncMKIII
+SD_TE_2041021
+SD card connector, top mount, SMT (http://www.te.com/commerce/DocumentDelivery/DDEController?Action=showdoc&DocId=Customer+Drawing%7F2041021%7FB%7Fpdf%7FEnglish%7FENG_CD_2041021_B_C_2041021_B.pdf%7F2041021-4)
+sd card
+0
+15
+12
+HDDSyncMKIII
 Untitled
 
 
 0
 0
 0
+HDDSyncMKIII
+microSD_HC_Hirose_DM3AT-SF-PEJM5
+Micro SD, SMD, right-angle, push-pull (https://www.hirose.com/product/en/download_file/key_name/DM3AT-SF-PEJM5/category/Drawing%20(2D)/doc_file_id/44099/?file_category_id=6&item_id=06090031000&is_series=)
+Micro SD
+0
+14
+11
+HDDSyncMKIII
+microSD_HC_Hirose_DM3BT-DSF-PEJS
+Micro SD, SMD, reverse on-board, right-angle, push-pull (https://www.hirose.com/product/en/download_file/key_name/DM3BT-DSF-PEJS/category/Drawing%20(2D)/doc_file_id/44097/?file_category_id=6&item_id=06090029900&is_series=)
+Micro SD
+0
+16
+11
+HDDSyncMKIII
+microSD_HC_Hirose_DM3D-SF
+Micro SD, SMD, right-angle, push-pull (https://media.digikey.com/PDF/Data%20Sheets/Hirose%20PDFs/DM3D-SF.pdf)
+Micro SD
+0
+14
+11
+HDDSyncMKIII
+microSD_HC_Molex_104031-0811
+1.10mm Pitch microSD Memory Card Connector, Surface Mount, Push-Pull Type, 1.42mm Height, with Detect Switch (https://www.molex.com/pdm_docs/sd/1040310811_sd.pdf)
+microSD SD molex
+0
+14
+11
+HDDSyncMKIII
+microSD_HC_Wuerth_693072010801
+http://katalog.we-online.de/em/datasheet/693072010801.pdf
+Micro SD Wuerth Wurth Würth
+0
+12
+9
+HDDSyncMKIII
+microSIM_JAE_SF53S006VCBR2000
+https://www.jae.com/z-en/pdf_download_exec.cfm?param=SJ115712.pdf
+microSIM GSM Card
+0
+14
+7
 Heatsink
 Heatsink_35x26mm_1xFixation3mm_Fischer-SK486-35
 Heatsink, 35mm x 26mm, 1x Fixation 3mm, Fischer SK486-35
