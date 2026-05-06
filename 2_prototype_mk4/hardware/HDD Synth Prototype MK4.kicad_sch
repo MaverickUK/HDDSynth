@@ -5,6 +5,623 @@
 	(uuid "1a22431a-ba36-40a0-9a7e-c2a82ec69c53")
 	(paper "A4")
 	(lib_symbols
+		(symbol "Connector_Generic:Conn_01x02"
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "J"
+				(at 0 2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Conn_01x02"
+				(at 0 -5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "connector"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "Connector*:*_1x??_*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "Conn_01x02_1_1"
+				(rectangle
+					(start -1.27 1.27)
+					(end 1.27 -3.81)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(rectangle
+					(start -1.27 0.127)
+					(end 0 -0.127)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 -2.413)
+					(end 0 -2.667)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at -5.08 0 0)
+					(length 3.81)
+					(name "Pin_1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -2.54 0)
+					(length 3.81)
+					(name "Pin_2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Device:R"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "R"
+				(at 2.032 0 90)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "R"
+				(at 0 0 90)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at -1.778 0 90)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Resistor"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "R res resistor"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "R_*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "R_0_1"
+				(rectangle
+					(start -1.016 -2.54)
+					(end 1.016 2.54)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "R_1_1"
+				(pin passive line
+					(at 0 3.81 270)
+					(length 1.27)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -3.81 90)
+					(length 1.27)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Isolator:Optocoupler_DC_PhotoNPN_AKEC"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "U"
+				(at -5.08 5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "Optocoupler_DC_PhotoNPN_AKEC"
+				(at 0 5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" ""
+				(at -5.08 -5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(justify left)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Description" "Generic DC optocoupler with NPN phototransistor output, pins order: anode/cathode/emitter/collector"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "NPN DC Optocoupler"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "DIP*W7.62mm*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "Optocoupler_DC_PhotoNPN_AKEC_0_1"
+				(rectangle
+					(start -5.08 3.81)
+					(end 5.08 -3.81)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(polyline
+					(pts
+						(xy -5.08 2.54) (xy -2.54 2.54) (xy -2.54 -1.27) (xy -2.54 0.635)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -3.175 -0.635) (xy -1.905 -0.635)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.54 -0.635) (xy -2.54 -2.54) (xy -5.08 -2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.54 -0.635) (xy -3.175 0.635) (xy -1.905 0.635) (xy -2.54 -0.635)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -0.508 0.508) (xy 0.762 0.508) (xy 0.381 0.381) (xy 0.381 0.635) (xy 0.762 0.508)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -0.508 -0.508) (xy 0.762 -0.508) (xy 0.381 -0.635) (xy 0.381 -0.381) (xy 0.762 -0.508)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 1.905) (xy 2.54 -1.905)
+					)
+					(stroke
+						(width 0.508)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 0.635) (xy 4.445 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.048 -1.651) (xy 3.556 -1.143) (xy 4.064 -2.159) (xy 3.048 -1.651)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy 4.445 2.54) (xy 5.08 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 4.445 -2.54) (xy 2.54 -0.635)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy 4.445 -2.54) (xy 5.08 -2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "Optocoupler_DC_PhotoNPN_AKEC_1_1"
+				(pin passive line
+					(at -7.62 2.54 0)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -7.62 -2.54 0)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 7.62 -2.54 180)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 7.62 2.54 180)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "MCU_Module:RaspberryPi_Pico"
 			(pin_names
 				(offset 0.762)
@@ -1039,6 +1656,268 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Mechanical:MountingHole_Pad"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom no)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "H"
+				(at 0 6.35 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "MountingHole_Pad"
+				(at 0 4.445 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Mounting Hole with connection"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "mounting hole"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "MountingHole*Pad*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "MountingHole_Pad_0_1"
+				(circle
+					(center 0 1.27)
+					(radius 1.27)
+					(stroke
+						(width 1.27)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "MountingHole_Pad_1_1"
+				(pin input line
+					(at 0 -2.54 90)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "power:+3.3V"
+			(power global)
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "#PWR"
+				(at 0 -3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "+3.3V"
+				(at 0 3.556 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Power symbol creates a global label with name \"+3.3V\""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "global power"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "+3.3V_0_1"
+				(polyline
+					(pts
+						(xy -0.762 1.27) (xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 2.54) (xy 0.762 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 0) (xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "+3.3V_1_1"
+				(pin power_in line
+					(at 0 0 90)
+					(length 0)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "power:GND"
 			(power global)
 			(pin_numbers
@@ -1154,29 +2033,217 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "power:PWR_FLAG"
+			(power global)
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "#FLG"
+				(at 0 1.905 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "PWR_FLAG"
+				(at 0 3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Special symbol for telling ERC where power comes from"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "flag power"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "PWR_FLAG_0_0"
+				(pin power_out line
+					(at 0 0 90)
+					(length 0)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "PWR_FLAG_0_1"
+				(polyline
+					(pts
+						(xy 0 0) (xy 0 1.27) (xy -1.016 1.905) (xy 0 2.54) (xy 1.016 1.905) (xy 0 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 	)
-	(text "Add manual detect in/out\nAdd power down detection"
+	(rectangle
+		(start 19.05 157.48)
+		(end 74.93 189.23)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "1cb25943-4de2-44a7-b1a8-9500e504b5c3")
+	)
+	(rectangle
+		(start 77.47 157.48)
+		(end 128.27 189.23)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "c7defa61-9eea-4ace-9a62-769b4a03a8c5")
+	)
+	(rectangle
+		(start 19.05 110.49)
+		(end 54.61 154.94)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "ed775b1e-0f6c-4052-a76d-bf74267b50ff")
+	)
+	(text "Mounting holes"
 		(exclude_from_sim no)
-		(at 200.406 56.388 0)
+		(at 28.194 113.538 0)
 		(effects
 			(font
-				(size 2.54 2.54)
+				(size 1.27 1.27)
 				(thickness 0.254)
 				(bold yes)
 			)
 		)
-		(uuid "aea4f703-b07e-4208-81fe-b9aa130a763f")
+		(uuid "5d5e43f4-0d6b-4454-85fe-73aa5724079b")
 	)
-	(text "Change this to the Pico 2"
+	(text "HDD activity header (Manual override)"
 		(exclude_from_sim no)
-		(at 174.752 42.672 0)
+		(at 39.116 160.274 0)
 		(effects
 			(font
-				(size 5.08 5.08)
-				(color 255 0 22 1)
+				(size 1.27 1.27)
+				(thickness 0.254)
+				(bold yes)
 			)
 		)
-		(uuid "d10e2f35-0196-4531-9dd2-89a520215615")
+		(uuid "925affa5-502b-4205-8642-e235c757d7da")
+	)
+	(text "HDD LED out"
+		(exclude_from_sim no)
+		(at 84.836 159.766 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.254)
+				(bold yes)
+			)
+		)
+		(uuid "df29724c-9da3-41e2-aab1-86e90d73264b")
+	)
+	(junction
+		(at 124.46 53.34)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "29a9fa46-884a-459a-9326-297caa65247b")
+	)
+	(junction
+		(at 22.86 138.43)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "2d555c62-aad2-4455-9645-fe596a0ac270")
+	)
+	(junction
+		(at 22.86 129.54)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "54726695-267a-4b5e-9a02-cccf3a693f7d")
+	)
+	(junction
+		(at 22.86 146.05)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "8d248928-0c06-4b4c-888d-44944f24fa83")
 	)
 	(junction
 		(at 168.91 142.24)
@@ -1185,8 +2252,110 @@
 		(uuid "a8f645c1-904b-4f45-a1eb-dd2dd83d9854")
 	)
 	(no_connect
+		(at 121.92 105.41)
+		(uuid "08698e41-d635-464a-8baa-f382ab42c44b")
+	)
+	(no_connect
+		(at 167.64 92.71)
+		(uuid "09b38512-92c7-4fe4-8fb4-e36fcf517bf4")
+	)
+	(no_connect
+		(at 167.64 87.63)
+		(uuid "1876f4ee-46d1-4be1-8756-37ae706f8f82")
+	)
+	(no_connect
+		(at 121.92 102.87)
+		(uuid "304d81fe-f2e8-4fbb-90a1-eb5366b7fab3")
+	)
+	(no_connect
+		(at 167.64 100.33)
+		(uuid "31b67c46-e8e3-4185-81dc-c93fd91e281e")
+	)
+	(no_connect
+		(at 167.64 110.49)
+		(uuid "3f465149-a504-4b3e-8f0d-a392c3d71a42")
+	)
+	(no_connect
+		(at 121.92 74.93)
+		(uuid "457a2be4-9e1d-41fc-a6ad-6065f7baf3e6")
+	)
+	(no_connect
+		(at 121.92 77.47)
+		(uuid "5bfd8f9a-12d6-4970-9d4a-917c060e4018")
+	)
+	(no_connect
+		(at 121.92 97.79)
+		(uuid "5fbc1bf7-5b32-4dd9-a8b5-3fbdc9a897af")
+	)
+	(no_connect
+		(at 121.92 95.25)
+		(uuid "60b99e7e-c774-4a8e-b902-4351c2bf7692")
+	)
+	(no_connect
+		(at 167.64 95.25)
+		(uuid "71052ba6-9799-463c-85a2-0f4ab0577fa7")
+	)
+	(no_connect
+		(at 167.64 113.03)
+		(uuid "a433efd8-f7ce-4007-8297-05c40dfc98fa")
+	)
+	(no_connect
+		(at 121.92 100.33)
+		(uuid "b04e84e7-8e52-4deb-a731-2d2c1f929717")
+	)
+	(no_connect
+		(at 121.92 120.65)
+		(uuid "b875c45d-eec7-45e5-9fa3-c2a3e99f20ca")
+	)
+	(no_connect
+		(at 167.64 105.41)
+		(uuid "dc218d42-fe0e-4eb7-abbe-1359f9c394c6")
+	)
+	(no_connect
 		(at 144.78 59.69)
 		(uuid "e065d093-1956-4135-8fb7-9d1d5ce4c986")
+	)
+	(no_connect
+		(at 167.64 97.79)
+		(uuid "e2641b8e-ea4e-4bb9-bc77-cdda8038d603")
+	)
+	(no_connect
+		(at 167.64 90.17)
+		(uuid "f003a2e1-87da-483a-a290-7b4bc9ce129b")
+	)
+	(no_connect
+		(at 121.92 118.11)
+		(uuid "fb0ba09c-a178-469c-b0f5-bd4fa292f9c9")
+	)
+	(wire
+		(pts
+			(xy 97.79 96.52) (xy 115.57 96.52)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "007e82a9-8e75-4c70-8f94-fe45d06cdb22")
+	)
+	(wire
+		(pts
+			(xy 115.57 92.71) (xy 115.57 96.52)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "08c336de-cbe2-4f59-a162-a41c7ac93b3c")
+	)
+	(wire
+		(pts
+			(xy 50.8 171.45) (xy 53.34 171.45)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "14582e24-dfa7-4ec8-9431-3136be694c16")
 	)
 	(wire
 		(pts
@@ -1210,6 +2379,76 @@
 	)
 	(wire
 		(pts
+			(xy 121.92 92.71) (xy 115.57 92.71)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2236fdc6-7f21-4bc6-9ff1-48a87956ef9e")
+	)
+	(wire
+		(pts
+			(xy 30.48 176.53) (xy 30.48 179.07)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2d32eefc-d7da-435c-a07d-80ce61d15d77")
+	)
+	(wire
+		(pts
+			(xy 22.86 129.54) (xy 22.86 138.43)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3814131c-2ed0-4637-8f8a-9dda0f56e749")
+	)
+	(wire
+		(pts
+			(xy 113.03 90.17) (xy 113.03 93.98)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "40cfeacb-826f-48ac-8c3c-95f699cacdda")
+	)
+	(wire
+		(pts
+			(xy 113.03 49.53) (xy 134.62 49.53)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "412b5ef4-5096-49d4-85c8-0d93e645c380")
+	)
+	(wire
+		(pts
+			(xy 105.41 107.95) (xy 121.92 107.95)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4965b20c-1079-4081-9ca4-de3d2f30e8b3")
+	)
+	(wire
+		(pts
+			(xy 22.86 138.43) (xy 22.86 146.05)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4e0bcb53-7b56-4e42-bde8-93403ea9852d")
+	)
+	(wire
+		(pts
 			(xy 144.78 142.24) (xy 168.91 142.24)
 		)
 		(stroke
@@ -1217,6 +2456,16 @@
 			(type default)
 		)
 		(uuid "54d98f77-d741-4f34-852b-73473516fecd")
+	)
+	(wire
+		(pts
+			(xy 105.41 113.03) (xy 121.92 113.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5cf7cbfa-6964-4a67-8462-f044562950dd")
 	)
 	(wire
 		(pts
@@ -1230,6 +2479,186 @@
 	)
 	(wire
 		(pts
+			(xy 99.06 173.99) (xy 106.68 173.99)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "62295620-60f1-47ea-960e-88b5f69120f7")
+	)
+	(wire
+		(pts
+			(xy 22.86 129.54) (xy 30.48 129.54)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6a31f7c0-0b37-49ea-806f-dfeaf43e2318")
+	)
+	(wire
+		(pts
+			(xy 167.64 85.09) (xy 187.96 85.09)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6c7917fc-a599-4264-b052-255c9ba181e3")
+	)
+	(wire
+		(pts
+			(xy 22.86 138.43) (xy 30.48 138.43)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "75696bce-fd65-46e2-a7ff-7e5d664c81c2")
+	)
+	(wire
+		(pts
+			(xy 97.79 93.98) (xy 113.03 93.98)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "78de8eb5-4dd3-4935-aed8-52b7074e2503")
+	)
+	(wire
+		(pts
+			(xy 53.34 175.26) (xy 53.34 176.53)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "79221a63-1170-4e28-b315-797fd141de31")
+	)
+	(wire
+		(pts
+			(xy 109.22 171.45) (xy 113.03 171.45)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7dc20c1e-44cf-4637-b3df-ca3086416eff")
+	)
+	(wire
+		(pts
+			(xy 21.59 171.45) (xy 35.56 171.45)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "87ded13a-619e-4fa7-8a77-f28d7834b13a")
+	)
+	(wire
+		(pts
+			(xy 30.48 176.53) (xy 35.56 176.53)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "88d4abb6-b1eb-4327-a959-b063e3e16b22")
+	)
+	(wire
+		(pts
+			(xy 105.41 82.55) (xy 121.92 82.55)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8b059f05-db8e-4d08-8921-77b76f1a9bed")
+	)
+	(wire
+		(pts
+			(xy 99.06 171.45) (xy 101.6 171.45)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "94ae21f0-ee21-45f2-a20a-5d004828ad03")
+	)
+	(wire
+		(pts
+			(xy 124.46 53.34) (xy 139.7 53.34)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9ca132a4-b448-4d4d-b391-5bee80938e03")
+	)
+	(wire
+		(pts
+			(xy 105.41 110.49) (xy 121.92 110.49)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9edda7d6-0e87-4036-83ba-699c5422af59")
+	)
+	(wire
+		(pts
+			(xy 22.86 121.92) (xy 22.86 129.54)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a23a9ef5-e02a-4150-baab-95a0594e229f")
+	)
+	(wire
+		(pts
+			(xy 167.64 115.57) (xy 190.5 115.57)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "aba17589-85b2-4c06-b3c2-00747ed5bf30")
+	)
+	(wire
+		(pts
+			(xy 53.34 171.45) (xy 53.34 172.72)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ba8ab4fc-3c31-4ed1-9158-fb25ab20877f")
+	)
+	(wire
+		(pts
+			(xy 105.41 85.09) (xy 121.92 85.09)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c1b39eef-5b5f-4c47-9016-69ccff5b6451")
+	)
+	(wire
+		(pts
+			(xy 149.86 53.34) (xy 149.86 59.69)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d0f0d752-4ef0-40d2-9c6c-8b2d2def9a6f")
+	)
+	(wire
+		(pts
 			(xy 167.64 120.65) (xy 168.91 120.65)
 		)
 		(stroke
@@ -1240,13 +2669,562 @@
 	)
 	(wire
 		(pts
-			(xy 113.03 53.34) (xy 139.7 53.34)
+			(xy 105.41 87.63) (xy 121.92 87.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d8deacea-1850-4e90-aa86-ab9bb337cf31")
+	)
+	(wire
+		(pts
+			(xy 113.03 53.34) (xy 124.46 53.34)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "db641849-1464-4262-acb9-0bc4a7940ce2")
+	)
+	(wire
+		(pts
+			(xy 105.41 115.57) (xy 121.92 115.57)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e4287698-c8ea-4fc8-9cac-25c422c12912")
+	)
+	(wire
+		(pts
+			(xy 30.48 121.92) (xy 22.86 121.92)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e7c8f432-b9f9-442a-8a86-17ac30e4bbc9")
+	)
+	(wire
+		(pts
+			(xy 22.86 146.05) (xy 30.48 146.05)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f0c642d0-e9c8-4ce1-8b73-3d214a6cb76a")
+	)
+	(wire
+		(pts
+			(xy 121.92 90.17) (xy 113.03 90.17)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f4c1d781-057c-4f3d-8771-881294ae10f1")
+	)
+	(wire
+		(pts
+			(xy 53.34 176.53) (xy 50.8 176.53)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fe625a70-c2d7-4ab8-b87c-3cd62836351d")
+	)
+	(label "HDD_LED_IN"
+		(at 97.79 96.52 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "46f3ea2a-ac2b-4ebe-a1f8-1969b09c4c67")
+	)
+	(label "HDD_LED_OUT"
+		(at 113.03 171.45 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "781867c5-41f6-4baa-aa20-58aa740bab88")
+	)
+	(label "HDD_LED_OUT"
+		(at 97.79 93.98 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "882fe0a8-3679-44b5-82fd-cddcd484c9c7")
+	)
+	(label "VCC_DETECT"
+		(at 118.11 49.53 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "d7f2cd9a-95ec-4ac4-9ad1-f7ea4fa31832")
+	)
+	(label "HDD_LED_IN"
+		(at 21.59 171.45 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "e1227e88-2ee5-49bb-9482-723a334ee839")
+	)
+	(label "VCC_DETECT"
+		(at 173.99 115.57 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "ef33bfe3-30ba-47c3-b51e-9c696b7f56e8")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 30.48 179.07 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "044b9c60-be8f-42c9-a591-1c58dd082241")
+		(property "Reference" "#PWR026"
+			(at 30.48 185.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 30.48 184.15 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 30.48 179.07 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 30.48 179.07 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 30.48 179.07 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "c98694b6-e733-4722-ac10-295aa9e8124b")
+		)
+		(instances
+			(project "HDD Synth Prototype MK4"
+				(path "/1a22431a-ba36-40a0-9a7e-c2a82ec69c53"
+					(reference "#PWR026")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_01x02")
+		(at 93.98 171.45 0)
+		(mirror y)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "129bda2b-5b24-444c-bdba-e8e81e0bc975")
+		(property "Reference" "H2"
+			(at 91.44 171.4499 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Conn_01x02"
+			(at 91.44 173.9899 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"
+			(at 93.98 171.45 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 93.98 171.45 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 93.98 171.45 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer_Part_Number" ""
+			(at 93.98 171.45 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" ""
+			(at 93.98 171.45 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC_Part_Number" ""
+			(at 93.98 171.45 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "e2f9781b-c5db-450f-a58b-3b146fa58648")
+		)
+		(pin "2"
+			(uuid "4d2db521-5eec-4b4f-8153-63b830b572ef")
+		)
+		(instances
+			(project "HDD Synth Prototype MK4"
+				(path "/1a22431a-ba36-40a0-9a7e-c2a82ec69c53"
+					(reference "H2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mechanical:MountingHole_Pad")
+		(at 30.48 119.38 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "1e3bdb3b-5d4c-4cb9-a8f3-ef0199a8cf09")
+		(property "Reference" "H3"
+			(at 33.02 116.8399 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MountingHole_Pad"
+			(at 33.02 119.3799 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3_Pad"
+			(at 30.48 119.38 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 30.48 119.38 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Mounting Hole with connection"
+			(at 30.48 119.38 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "de7981e4-0e9f-4fa2-b86c-9f5087723abc")
+		)
+		(instances
+			(project "HDD Synth Prototype MK4"
+				(path "/1a22431a-ba36-40a0-9a7e-c2a82ec69c53"
+					(reference "H3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+3.3V")
+		(at 149.86 53.34 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "2327526d-8e27-42c1-87c9-c816d9ab94ef")
+		(property "Reference" "#PWR022"
+			(at 149.86 57.15 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "+3.3V"
+			(at 149.86 48.26 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 149.86 53.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 149.86 53.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
+			(at 149.86 53.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "7dc867e5-73d2-4d06-9f2b-b45a33bd54c3")
+		)
+		(instances
+			(project "HDD Synth Prototype MK4"
+				(path "/1a22431a-ba36-40a0-9a7e-c2a82ec69c53"
+					(reference "#PWR022")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mechanical:MountingHole_Pad")
+		(at 30.48 135.89 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "2c7c9017-2f8c-41fd-b692-1bc7f8214010")
+		(property "Reference" "H6"
+			(at 33.02 133.3499 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MountingHole_Pad"
+			(at 33.02 135.8899 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3_Pad"
+			(at 30.48 135.89 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 30.48 135.89 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Mounting Hole with connection"
+			(at 30.48 135.89 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "7eda1619-fdd3-4e65-add8-237250cc17c6")
+		)
+		(instances
+			(project "HDD Synth Prototype MK4"
+				(path "/1a22431a-ba36-40a0-9a7e-c2a82ec69c53"
+					(reference "H6")
+					(unit 1)
+				)
+			)
+		)
 	)
 	(symbol
 		(lib_id "power:GND")
@@ -1327,6 +3305,356 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector_Generic:Conn_01x02")
+		(at 58.42 172.72 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "64236aa8-ca67-4ff0-a88e-e2d8f5d37735")
+		(property "Reference" "H4"
+			(at 60.96 172.7199 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Conn_01x02"
+			(at 60.96 175.2599 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"
+			(at 58.42 172.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 58.42 172.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 58.42 172.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer_Part_Number" ""
+			(at 58.42 172.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" ""
+			(at 58.42 172.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC_Part_Number" ""
+			(at 58.42 172.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "043f891f-c0f2-4e01-a834-eed5ce5090d9")
+		)
+		(pin "2"
+			(uuid "0aa76b61-b5ae-4158-ba3b-6f9968de9c1c")
+		)
+		(instances
+			(project "HDD Synth Prototype MK4"
+				(path "/1a22431a-ba36-40a0-9a7e-c2a82ec69c53"
+					(reference "H4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mechanical:MountingHole_Pad")
+		(at 30.48 127 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "6dc9276f-2e79-4b26-86e7-9128373e15e5")
+		(property "Reference" "H5"
+			(at 33.02 124.4599 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MountingHole_Pad"
+			(at 33.02 126.9999 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3_Pad"
+			(at 30.48 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 30.48 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Mounting Hole with connection"
+			(at 30.48 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "cd720bea-a7f1-47d2-bbaf-6b22684a7a4a")
+		)
+		(instances
+			(project "HDD Synth Prototype MK4"
+				(path "/1a22431a-ba36-40a0-9a7e-c2a82ec69c53"
+					(reference "H5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 22.86 146.05 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "7278a9a7-6079-4a27-894e-5307ca3cddca")
+		(property "Reference" "#PWR024"
+			(at 22.86 152.4 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 22.86 151.13 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 22.86 146.05 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 22.86 146.05 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 22.86 146.05 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "04cbd84d-d160-4276-8b77-43e51a9f6d78")
+		)
+		(instances
+			(project "HDD Synth Prototype MK4"
+				(path "/1a22431a-ba36-40a0-9a7e-c2a82ec69c53"
+					(reference "#PWR024")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:PWR_FLAG")
+		(at 124.46 53.34 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "84391e25-4fbd-48ed-9113-e76ca107998d")
+		(property "Reference" "#FLG02"
+			(at 124.46 55.245 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "PWR_FLAG"
+			(at 124.46 58.42 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 124.46 53.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 124.46 53.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Special symbol for telling ERC where power comes from"
+			(at 124.46 53.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "36e87861-77e6-4858-8d50-45d5f13721c8")
+		)
+		(instances
+			(project "HDD Synth Prototype MK4"
+				(path "/1a22431a-ba36-40a0-9a7e-c2a82ec69c53"
+					(reference "#FLG02")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "MCU_Module:RaspberryPi_Pico")
 		(at 144.78 97.79 0)
 		(unit 1)
@@ -1349,7 +3677,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "RaspberryPi_Pico"
+		(property "Value" "RaspberryPi_Pico2"
 			(at 146.9233 134.62 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1371,7 +3699,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://datasheets.raspberrypi.com/pico/pico-datasheet.pdf"
+		(property "Datasheet" "https://pip-assets.raspberrypi.com/categories/1005-raspberry-pi-pico-2/documents/RP-008299-DS-2-pico-2-datasheet.pdf?disposition=inline"
 			(at 144.78 147.32 0)
 			(hide yes)
 			(show_name no)
@@ -1382,7 +3710,7 @@
 				)
 			)
 		)
-		(property "Description" "Versatile and inexpensive microcontroller module powered by RP2040 dual-core Arm Cortex-M0+ processor up to 133 MHz, 264kB SRAM, 2MB QSPI flash; also supports Raspberry Pi Pico 2"
+		(property "Description" "High-performance microcontroller module featuring the RP2350 chip; dual-core ARM Cortex-M33 or Hazard3 RISC-V processors up to 150 MHz, 520kB SRAM, and 4MB off-chip QSPI flash"
 			(at 144.78 149.86 0)
 			(hide yes)
 			(show_name no)
@@ -1522,9 +3850,400 @@
 			)
 		)
 	)
+	(symbol
+		(lib_id "Isolator:Optocoupler_DC_PhotoNPN_AKEC")
+		(at 43.18 173.99 0)
+		(mirror y)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "8e4977cd-e40b-4d8e-9610-02bfc52bba2d")
+		(property "Reference" "U2"
+			(at 43.18 165.1 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Optocoupler_DC_PhotoNPN_AKEC"
+			(at 43.18 167.64 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Package_SO:SO-4_4.4x3.6mm_P2.54mm"
+			(at 48.26 179.07 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" ""
+			(at 43.18 173.99 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Description" "Generic DC optocoupler with NPN phototransistor output, pins order: anode/cathode/emitter/collector"
+			(at 43.18 173.99 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer_Part_Number" "EL357N(C)(TA)-VG"
+			(at 43.18 173.99 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "Everlight"
+			(at 43.18 173.99 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC_Part_Number" "C2916312"
+			(at 43.18 173.99 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "d1339ccd-ccdd-49b5-8ecc-303ca142f176")
+		)
+		(pin "4"
+			(uuid "4e17a434-ff98-476a-b3f6-d3cf4d1932ae")
+		)
+		(pin "1"
+			(uuid "72b972a1-cff6-4158-8ab6-64e7f676be6d")
+		)
+		(pin "3"
+			(uuid "1b570f71-d54c-41e5-b788-8574a0d40771")
+		)
+		(instances
+			(project "HDD Synth Prototype MK4"
+				(path "/1a22431a-ba36-40a0-9a7e-c2a82ec69c53"
+					(reference "U2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 106.68 173.99 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "ab160b50-272e-49ea-bce4-5656df549eaa")
+		(property "Reference" "#PWR018"
+			(at 106.68 180.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 106.68 179.07 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 106.68 173.99 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 106.68 173.99 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 106.68 173.99 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "b33b8a99-c7c4-4e46-a47f-d70bb4943431")
+		)
+		(instances
+			(project "HDD Synth Prototype MK4"
+				(path "/1a22431a-ba36-40a0-9a7e-c2a82ec69c53"
+					(reference "#PWR018")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 105.41 171.45 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "bcc3256a-cf2b-483b-81fd-2bb8e69bae82")
+		(property "Reference" "R5"
+			(at 104.14 165.1 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "330R"
+			(at 105.41 167.64 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 105.41 173.228 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 105.41 171.45 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 105.41 171.45 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer_Part_Number" "RC0603FR-07330RL"
+			(at 105.41 171.45 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" ""
+			(at 105.41 171.45 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC_Part_Number" ""
+			(at 105.41 171.45 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "b469f65c-5e74-46a7-8249-763e06166a92")
+		)
+		(pin "1"
+			(uuid "ef522877-bbd3-450e-aee6-cfac7aba6b70")
+		)
+		(instances
+			(project "HDD Synth Prototype MK4"
+				(path "/1a22431a-ba36-40a0-9a7e-c2a82ec69c53"
+					(reference "R5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mechanical:MountingHole_Pad")
+		(at 30.48 143.51 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "c1775764-e432-4e77-8fda-966e43dccd4a")
+		(property "Reference" "H7"
+			(at 33.02 140.9699 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MountingHole_Pad"
+			(at 33.02 143.5099 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3_Pad"
+			(at 30.48 143.51 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 30.48 143.51 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Mounting Hole with connection"
+			(at 30.48 143.51 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "8b236cfd-de8d-4626-8543-ebd061a0dd3e")
+		)
+		(instances
+			(project "HDD Synth Prototype MK4"
+				(path "/1a22431a-ba36-40a0-9a7e-c2a82ec69c53"
+					(reference "H7")
+					(unit 1)
+				)
+			)
+		)
+	)
 	(sheet
-		(at 96.52 49.53)
-		(size 16.51 7.62)
+		(at 88.9 45.72)
+		(size 24.13 11.43)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
@@ -1539,7 +4258,7 @@
 		)
 		(uuid "045d9081-4e75-4a6b-9321-784f56d8310c")
 		(property "Sheetname" "Power"
-			(at 96.52 48.8184 0)
+			(at 88.9 45.0084 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1550,7 +4269,7 @@
 			)
 		)
 		(property "Sheetfile" "power.kicad_sch"
-			(at 96.52 57.7346 0)
+			(at 88.9 57.7346 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1570,6 +4289,16 @@
 				(justify right)
 			)
 		)
+		(pin "VCC_DETECT_POWER" output
+			(at 113.03 49.53 0)
+			(uuid "e78a8266-f83e-41e8-81f3-9a7e1246a753")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
 		(instances
 			(project "HDD Synth Prototype MK4"
 				(path "/1a22431a-ba36-40a0-9a7e-c2a82ec69c53"
@@ -1579,7 +4308,7 @@
 		)
 	)
 	(sheet
-		(at 187.96 88.9)
+		(at 187.96 80.01)
 		(size 19.05 8.89)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -1595,7 +4324,7 @@
 		)
 		(uuid "0e0ca74d-efe8-43e6-b653-a817032d1032")
 		(property "Sheetname" "IDE"
-			(at 187.96 88.1884 0)
+			(at 187.96 79.2984 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1606,7 +4335,7 @@
 			)
 		)
 		(property "Sheetfile" "IDE.kicad_sch"
-			(at 187.96 98.3746 0)
+			(at 187.96 89.4846 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1617,7 +4346,7 @@
 			)
 		)
 		(pin "IDE_ACTIVITY" input
-			(at 187.96 93.98 180)
+			(at 187.96 85.09 180)
 			(uuid "73936e85-ce7c-4559-9ee0-129c9dca512b")
 			(effects
 				(font
@@ -1635,7 +4364,7 @@
 		)
 	)
 	(sheet
-		(at 77.47 86.36)
+		(at 87.63 81.28)
 		(size 17.78 7.62)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -1651,7 +4380,7 @@
 		)
 		(uuid "2950dfc3-c685-4e23-94aa-d1af22619645")
 		(property "Sheetname" "Amplifer"
-			(at 77.47 85.6484 0)
+			(at 87.63 80.5684 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1662,7 +4391,7 @@
 			)
 		)
 		(property "Sheetfile" "amplifier.kicad_sch"
-			(at 77.47 94.5646 0)
+			(at 87.63 89.4846 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1673,7 +4402,7 @@
 			)
 		)
 		(pin "DIN" input
-			(at 95.25 87.63 0)
+			(at 105.41 82.55 0)
 			(uuid "8dd6c521-1b43-4f0d-8120-577b32ab9795")
 			(effects
 				(font
@@ -1683,7 +4412,7 @@
 			)
 		)
 		(pin "BCLK" input
-			(at 95.25 90.17 0)
+			(at 105.41 85.09 0)
 			(uuid "54460f98-d536-4a82-8989-96e36dab7f5d")
 			(effects
 				(font
@@ -1693,7 +4422,7 @@
 			)
 		)
 		(pin "LRCLK" input
-			(at 95.25 92.71 0)
+			(at 105.41 87.63 0)
 			(uuid "dd420eb2-9d92-4a20-bc3c-62447d43e9c6")
 			(effects
 				(font
@@ -1711,7 +4440,7 @@
 		)
 	)
 	(sheet
-		(at 77.47 101.6)
+		(at 87.63 106.68)
 		(size 17.78 10.16)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -1727,7 +4456,7 @@
 		)
 		(uuid "d1519e40-91bf-450d-a5bd-0730e6716e0a")
 		(property "Sheetname" "SD card reader"
-			(at 77.47 100.8884 0)
+			(at 87.63 105.9684 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1738,7 +4467,7 @@
 			)
 		)
 		(property "Sheetfile" "sdcard_reader.kicad_sch"
-			(at 77.47 112.3446 0)
+			(at 87.63 117.4246 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1749,7 +4478,7 @@
 			)
 		)
 		(pin "SD_MISO" input
-			(at 95.25 102.87 0)
+			(at 105.41 113.03 0)
 			(uuid "a47ef7c1-2a94-481c-892b-7727f2a25c99")
 			(effects
 				(font
@@ -1759,7 +4488,7 @@
 			)
 		)
 		(pin "SD_CS" input
-			(at 95.25 105.41 0)
+			(at 105.41 115.57 0)
 			(uuid "e2fa9153-5064-412b-a9e0-0cc8cab2dae8")
 			(effects
 				(font
@@ -1769,7 +4498,7 @@
 			)
 		)
 		(pin "SD_MOSI" input
-			(at 95.25 107.95 0)
+			(at 105.41 110.49 0)
 			(uuid "166aec08-971b-4659-ab14-4d6bef4fff26")
 			(effects
 				(font
@@ -1779,7 +4508,7 @@
 			)
 		)
 		(pin "SD_CLK" input
-			(at 95.25 110.49 0)
+			(at 105.41 107.95 0)
 			(uuid "98d3f620-70f4-492e-9ace-42d6733abb2d")
 			(effects
 				(font
