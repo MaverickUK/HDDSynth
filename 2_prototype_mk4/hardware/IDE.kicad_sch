@@ -5689,6 +5689,41 @@
 		)
 		(uuid "78b6d2c8-fc36-4ec4-bd30-324b54b66868")
 	)
+	(netclass_flag ""
+		(length 2.54)
+		(shape round)
+		(at 143.51 163.83 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "2cf460d1-6e0e-4c1b-a3f3-bd639f7942d8")
+		(property "Net Class" "Power"
+			(at 144.2085 161.29 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Component Class" ""
+			(at -68.58 15.24 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+	)
 	(symbol
 		(lib_id "power:+3.3V")
 		(at 228.6 86.36 270)
