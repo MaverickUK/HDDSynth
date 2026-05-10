@@ -2256,14 +2256,6 @@
 		(uuid "08698e41-d635-464a-8baa-f382ab42c44b")
 	)
 	(no_connect
-		(at 167.64 92.71)
-		(uuid "09b38512-92c7-4fe4-8fb4-e36fcf517bf4")
-	)
-	(no_connect
-		(at 167.64 87.63)
-		(uuid "1876f4ee-46d1-4be1-8756-37ae706f8f82")
-	)
-	(no_connect
 		(at 121.92 102.87)
 		(uuid "304d81fe-f2e8-4fbb-90a1-eb5366b7fab3")
 	)
@@ -2284,11 +2276,7 @@
 		(uuid "5bfd8f9a-12d6-4970-9d4a-917c060e4018")
 	)
 	(no_connect
-		(at 121.92 97.79)
-		(uuid "5fbc1bf7-5b32-4dd9-a8b5-3fbdc9a897af")
-	)
-	(no_connect
-		(at 121.92 95.25)
+		(at 121.92 90.17)
 		(uuid "60b99e7e-c774-4a8e-b902-4351c2bf7692")
 	)
 	(no_connect
@@ -2298,10 +2286,6 @@
 	(no_connect
 		(at 167.64 113.03)
 		(uuid "a433efd8-f7ce-4007-8297-05c40dfc98fa")
-	)
-	(no_connect
-		(at 121.92 100.33)
-		(uuid "b04e84e7-8e52-4deb-a731-2d2c1f929717")
 	)
 	(no_connect
 		(at 121.92 120.65)
@@ -2320,16 +2304,12 @@
 		(uuid "e2641b8e-ea4e-4bb9-bc77-cdda8038d603")
 	)
 	(no_connect
-		(at 167.64 90.17)
-		(uuid "f003a2e1-87da-483a-a290-7b4bc9ce129b")
-	)
-	(no_connect
 		(at 121.92 118.11)
 		(uuid "fb0ba09c-a178-469c-b0f5-bd4fa292f9c9")
 	)
 	(wire
 		(pts
-			(xy 97.79 96.52) (xy 115.57 96.52)
+			(xy 90.17 100.33) (xy 121.92 100.33)
 		)
 		(stroke
 			(width 0)
@@ -2339,13 +2319,13 @@
 	)
 	(wire
 		(pts
-			(xy 115.57 92.71) (xy 115.57 96.52)
+			(xy 167.64 90.17) (xy 189.23 90.17)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "08c336de-cbe2-4f59-a162-a41c7ac93b3c")
+		(uuid "098578f2-abcf-4333-a29c-e0725167f58a")
 	)
 	(wire
 		(pts
@@ -2379,16 +2359,6 @@
 	)
 	(wire
 		(pts
-			(xy 121.92 92.71) (xy 115.57 92.71)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2236fdc6-7f21-4bc6-9ff1-48a87956ef9e")
-	)
-	(wire
-		(pts
 			(xy 30.48 176.53) (xy 30.48 179.07)
 		)
 		(stroke
@@ -2406,16 +2376,6 @@
 			(type default)
 		)
 		(uuid "3814131c-2ed0-4637-8f8a-9dda0f56e749")
-	)
-	(wire
-		(pts
-			(xy 113.03 90.17) (xy 113.03 93.98)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "40cfeacb-826f-48ac-8c3c-95f699cacdda")
 	)
 	(wire
 		(pts
@@ -2499,7 +2459,17 @@
 	)
 	(wire
 		(pts
-			(xy 167.64 85.09) (xy 187.96 85.09)
+			(xy 170.18 72.39) (xy 170.18 85.09)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6b209ec1-1b61-4825-84e7-6d5ad9c6afe8")
+	)
+	(wire
+		(pts
+			(xy 170.18 72.39) (xy 189.23 72.39)
 		)
 		(stroke
 			(width 0)
@@ -2519,7 +2489,7 @@
 	)
 	(wire
 		(pts
-			(xy 97.79 93.98) (xy 113.03 93.98)
+			(xy 90.17 97.79) (xy 121.92 97.79)
 		)
 		(stroke
 			(width 0)
@@ -2536,6 +2506,16 @@
 			(type default)
 		)
 		(uuid "79221a63-1170-4e28-b315-797fd141de31")
+	)
+	(wire
+		(pts
+			(xy 167.64 85.09) (xy 170.18 85.09)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7b96812c-871f-49ff-b859-b5963dab3545")
 	)
 	(wire
 		(pts
@@ -2589,6 +2569,16 @@
 	)
 	(wire
 		(pts
+			(xy 167.64 92.71) (xy 189.23 92.71)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9c983ad1-e9be-40b7-baeb-5d6b17ce4bf0")
+	)
+	(wire
+		(pts
 			(xy 124.46 53.34) (xy 139.7 53.34)
 		)
 		(stroke
@@ -2626,6 +2616,26 @@
 			(type default)
 		)
 		(uuid "aba17589-85b2-4c06-b3c2-00747ed5bf30")
+	)
+	(wire
+		(pts
+			(xy 82.55 95.25) (xy 121.92 95.25)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "aee62573-0480-47e0-ab6a-9eef4ca1f89c")
+	)
+	(wire
+		(pts
+			(xy 82.55 92.71) (xy 121.92 92.71)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "af520a57-5c7c-463b-9aeb-fe83f99399ee")
 	)
 	(wire
 		(pts
@@ -2719,13 +2729,13 @@
 	)
 	(wire
 		(pts
-			(xy 121.92 90.17) (xy 113.03 90.17)
+			(xy 167.64 87.63) (xy 189.23 87.63)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "f4c1d781-057c-4f3d-8771-881294ae10f1")
+		(uuid "f74c9359-8430-4ae7-b923-1ec67eea0c3a")
 	)
 	(wire
 		(pts
@@ -2738,7 +2748,7 @@
 		(uuid "fe625a70-c2d7-4ab8-b87c-3cd62836351d")
 	)
 	(label "HDD_LED_IN"
-		(at 97.79 96.52 0)
+		(at 90.17 100.33 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2758,7 +2768,7 @@
 		(uuid "781867c5-41f6-4baa-aa20-58aa740bab88")
 	)
 	(label "HDD_LED_OUT"
-		(at 97.79 93.98 0)
+		(at 90.17 97.79 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4308,7 +4318,7 @@
 		)
 	)
 	(sheet
-		(at 187.96 80.01)
+		(at 189.23 67.31)
 		(size 19.05 8.89)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4324,7 +4334,7 @@
 		)
 		(uuid "0e0ca74d-efe8-43e6-b653-a817032d1032")
 		(property "Sheetname" "IDE"
-			(at 187.96 79.2984 0)
+			(at 189.23 66.5984 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4335,7 +4345,7 @@
 			)
 		)
 		(property "Sheetfile" "IDE.kicad_sch"
-			(at 187.96 89.4846 0)
+			(at 189.23 76.7846 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4346,7 +4356,7 @@
 			)
 		)
 		(pin "IDE_ACTIVITY" input
-			(at 187.96 85.09 180)
+			(at 189.23 72.39 180)
 			(uuid "73936e85-ce7c-4559-9ee0-129c9dca512b")
 			(effects
 				(font
@@ -4359,6 +4369,82 @@
 			(project "HDD Synth Prototype MK4"
 				(path "/1a22431a-ba36-40a0-9a7e-c2a82ec69c53"
 					(page "5")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 189.23 86.36)
+		(size 16.51 8.89)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "293c32c0-b0ed-4b60-a32a-d04548ae7be6")
+		(property "Sheetname" "Rotary encoder"
+			(at 189.23 85.6484 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "rotary_encoder.kicad_sch"
+			(at 189.23 95.8346 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "ENC_SWITCH" output
+			(at 189.23 92.71 180)
+			(uuid "669301ec-1a98-49ea-b4a9-79c0027f5274")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "ENC_B" output
+			(at 189.23 90.17 180)
+			(uuid "a6d7685b-cc66-4597-9989-6e0544e6a212")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "ENC_A" output
+			(at 189.23 87.63 180)
+			(uuid "5e33d3bb-fd8f-458d-8114-ba488e4b8c8a")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(instances
+			(project "HDD Synth Prototype MK4"
+				(path "/1a22431a-ba36-40a0-9a7e-c2a82ec69c53"
+					(page "7")
 				)
 			)
 		)
@@ -4435,6 +4521,72 @@
 			(project "HDD Synth Prototype MK4"
 				(path "/1a22431a-ba36-40a0-9a7e-c2a82ec69c53"
 					(page "2")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 64.77 90.17)
+		(size 17.78 7.62)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "4f2241a1-46db-49da-aeae-e06acaad5be6")
+		(property "Sheetname" "OLED"
+			(at 64.77 89.4584 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "oled.kicad_sch"
+			(at 64.77 98.3746 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "OLED_SCL" bidirectional
+			(at 82.55 95.25 0)
+			(uuid "5bc1a344-8aef-4e64-8e6c-a7cecda717ae")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "OLED_SDA" bidirectional
+			(at 82.55 92.71 0)
+			(uuid "92996776-0767-46ca-b3b7-ff2654d0dae3")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(instances
+			(project "HDD Synth Prototype MK4"
+				(path "/1a22431a-ba36-40a0-9a7e-c2a82ec69c53"
+					(page "6")
 				)
 			)
 		)

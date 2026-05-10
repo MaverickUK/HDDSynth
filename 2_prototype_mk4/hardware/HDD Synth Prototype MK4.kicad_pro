@@ -653,7 +653,7 @@
         "uuid": "1a22431a-ba36-40a0-9a7e-c2a82ec69c53"
       }
     ],
-    "used_designators": "#PWR24,H3,H5-7",
+    "used_designators": "SW2,J8,#PWR31-32",
     "variants": []
   },
   "sheets": [
@@ -676,6 +676,14 @@
     [
       "0e0ca74d-efe8-43e6-b653-a817032d1032",
       "IDE"
+    ],
+    [
+      "4f2241a1-46db-49da-aeae-e06acaad5be6",
+      "OLED"
+    ],
+    [
+      "293c32c0-b0ed-4b60-a32a-d04548ae7be6",
+      "Rotary encoder"
     ]
   ],
   "text_variables": {},
