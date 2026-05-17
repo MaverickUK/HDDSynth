@@ -780,7 +780,7 @@
 		)
 		(uuid "0727e8ec-02d2-4d90-ba26-926ffedca9a3")
 	)
-	(text "An optional component in the MKIV"
+	(text "Volume/balance encoder header (Optional)"
 		(exclude_from_sim no)
 		(at 194.31 71.12 0)
 		(effects

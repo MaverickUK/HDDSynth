@@ -1642,6 +1642,146 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Device:R"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "R"
+				(at 2.032 0 90)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "R"
+				(at 0 0 90)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at -1.778 0 90)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Resistor"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "R res resistor"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "R_*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "R_0_1"
+				(rectangle
+					(start -1.016 -2.54)
+					(end 1.016 2.54)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "R_1_1"
+				(pin passive line
+					(at 0 3.81 270)
+					(length 1.27)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -3.81 90)
+					(length 1.27)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Diode:1N4148"
 			(pin_numbers
 				(hide yes)
@@ -3270,18 +3410,6 @@
 		)
 		(uuid "14db9585-3626-4d13-9b5e-7af281d61225")
 	)
-	(text "RFU (Floating)"
-		(exclude_from_sim no)
-		(at 209.042 103.378 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-				(thickness 0.254)
-				(bold yes)
-			)
-		)
-		(uuid "020398ef-b854-40d3-ba44-71600e1cf19f")
-	)
 	(text "Disk activity is monitored via the Pico's \ninternal pull-up resistor on the GPIO, \nwith a BAT43 Schottky diode providing level \nisolation to protect the 3.3V logic from the \n5V IDE bus while maintaining a valid \nlogic-low threshold\n\nWhen the IDE controller pulls Pin 39 to \nground (Active low) the diode conducts \nand brings the GPIO low; conversely, \nwhen the bus is idle or at 5V, the diode \nblocks current flow,allowing the internal \npull-up to safely maintain a 3.3V \nlogic-high state"
 		(exclude_from_sim no)
 		(at 238.252 127.508 0)
@@ -3414,6 +3542,17 @@
 		)
 		(uuid "97fb463c-6c09-4460-b9d6-9a0906eff2cd")
 	)
+	(text "DMA acknowledge\nPull up"
+		(exclude_from_sim no)
+		(at 14.224 103.632 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "a33cf178-290b-4549-83c7-907991c784ec")
+	)
 	(text "CompactFlash adapter\nhttps://www.snapeda.com/parts/1734451-1/TE%20Connectivity/view-part/?ref=search&t=compactflash&ab_test_case=b"
 		(exclude_from_sim no)
 		(at 110.236 138.176 0)
@@ -3449,6 +3588,17 @@
 			)
 		)
 		(uuid "e452ac28-d0a3-4362-9140-9bc4609d9ace")
+	)
+	(text "DMA request\nPull down"
+		(exclude_from_sim no)
+		(at 14.478 79.502 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "fc88245d-25fb-4486-97c3-5021e6702b80")
 	)
 	(junction
 		(at 101.6 86.36)
@@ -3519,10 +3669,6 @@
 	(no_connect
 		(at 82.55 81.28)
 		(uuid "8888d821-3a69-4aad-90e2-5ee2cbf344e5")
-	)
-	(no_connect
-		(at 200.66 104.14)
-		(uuid "8d9efe9a-26d3-4f23-86bb-eaa66a1bb59e")
 	)
 	(no_connect
 		(at 180.34 88.9)
@@ -3950,6 +4096,16 @@
 	)
 	(wire
 		(pts
+			(xy 200.66 106.68) (xy 228.6 106.68)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3141de8b-69e9-46a2-bc39-5eb0b56f56ee")
+	)
+	(wire
+		(pts
 			(xy 82.55 83.82) (xy 101.6 83.82)
 		)
 		(stroke
@@ -4080,16 +4236,6 @@
 	)
 	(wire
 		(pts
-			(xy 50.8 93.98) (xy 69.85 93.98)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "567eb0dc-50ae-4fc0-bfad-a2cb955b5577")
-	)
-	(wire
-		(pts
 			(xy 200.66 86.36) (xy 228.6 86.36)
 		)
 		(stroke
@@ -4150,6 +4296,16 @@
 	)
 	(wire
 		(pts
+			(xy 22.86 83.82) (xy 25.4 83.82)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6a2a966f-87a8-4d8f-ba13-6c334fc442f8")
+	)
+	(wire
+		(pts
 			(xy 135.89 171.45) (xy 135.89 175.26)
 		)
 		(stroke
@@ -4167,16 +4323,6 @@
 			(type default)
 		)
 		(uuid "6eb9ed75-701f-4c47-b986-ca9cd0c49971")
-	)
-	(wire
-		(pts
-			(xy 50.8 83.82) (xy 69.85 83.82)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6f400089-ecf1-47f4-810f-6653ac202858")
 	)
 	(wire
 		(pts
@@ -4207,6 +4353,16 @@
 			(type default)
 		)
 		(uuid "72ba63e9-a17a-4fe3-881d-3d4f0a6d9a6f")
+	)
+	(wire
+		(pts
+			(xy 22.86 93.98) (xy 25.4 93.98)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "73dd08df-fb62-44bd-9283-f32703f28ea0")
 	)
 	(wire
 		(pts
@@ -4530,6 +4686,16 @@
 	)
 	(wire
 		(pts
+			(xy 200.66 104.14) (xy 228.6 104.14)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b408095d-bf01-4c01-bad1-fb11a39bb0b0")
+	)
+	(wire
+		(pts
 			(xy 50.8 81.28) (xy 69.85 81.28)
 		)
 		(stroke
@@ -4547,6 +4713,16 @@
 			(type default)
 		)
 		(uuid "bdf130a7-95b8-4dfe-99b0-26ca1523dff3")
+	)
+	(wire
+		(pts
+			(xy 33.02 93.98) (xy 69.85 93.98)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bf0caeae-2a58-4216-93ac-54fbd1e684ec")
 	)
 	(wire
 		(pts
@@ -4680,6 +4856,16 @@
 	)
 	(wire
 		(pts
+			(xy 33.02 83.82) (xy 69.85 83.82)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ddedde12-922d-404f-b597-06c430a98cfb")
+	)
+	(wire
+		(pts
 			(xy 200.66 73.66) (xy 236.22 73.66)
 		)
 		(stroke
@@ -4697,16 +4883,6 @@
 			(type default)
 		)
 		(uuid "df625f99-40ff-42ff-b707-8516011a1cf5")
-	)
-	(wire
-		(pts
-			(xy 200.66 106.68) (xy 228.6 106.68)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e2907cf3-2ac2-48d2-8ce5-3282868356ff")
 	)
 	(wire
 		(pts
@@ -5101,6 +5277,18 @@
 			(justify left bottom)
 		)
 		(uuid "50a39303-ce28-4902-8503-26d8f6eff5f8")
+	)
+	(label "IDE_DMARQ"
+		(at 201.93 104.14 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.254)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "50b58a20-3d02-400b-962c-801959c5a25c")
 	)
 	(label "IDE_CHIPSELECT_1"
 		(at 83.82 104.14 0)
@@ -5580,7 +5768,7 @@
 		)
 		(uuid "e866f116-ed78-47f2-b817-d87fa2715f0e")
 	)
-	(label "RFU_STABILITY"
+	(label "IDE_DMACK"
 		(at 201.93 106.68 0)
 		(effects
 			(font
@@ -6416,6 +6604,84 @@
 		)
 	)
 	(symbol
+		(lib_id "power:+3.3V")
+		(at 22.86 93.98 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "32d9a054-802c-4e7b-b369-348dfae2f542")
+		(property "Reference" "#PWR036"
+			(at 22.86 90.17 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "+3.3V"
+			(at 22.86 99.06 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 22.86 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 22.86 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
+			(at 22.86 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "fd3f1b69-032a-4b70-bb47-9a488ab6be79")
+		)
+		(instances
+			(project "HDD Synth Prototype MK4"
+				(path "/1a22431a-ba36-40a0-9a7e-c2a82ec69c53/0e0ca74d-efe8-43e6-b653-a817032d1032"
+					(reference "#PWR036")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 165.1 60.96 270)
 		(unit 1)
@@ -6489,6 +6755,164 @@
 			(project "HDD Synth Prototype MK4"
 				(path "/1a22431a-ba36-40a0-9a7e-c2a82ec69c53/0e0ca74d-efe8-43e6-b653-a817032d1032"
 					(reference "#PWR07")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 29.21 93.98 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "3ab5314e-8c35-48f7-8922-9cd2d7e1ec96")
+		(property "Reference" "R6"
+			(at 29.21 87.63 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "10K"
+			(at 29.21 90.17 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 29.21 92.202 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 29.21 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 29.21 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "abb9b302-950a-4bc1-bc67-05c546e2f6db")
+		)
+		(pin "2"
+			(uuid "a885144d-b4b0-4d8d-86f5-3f4c946c4f1d")
+		)
+		(instances
+			(project "HDD Synth Prototype MK4"
+				(path "/1a22431a-ba36-40a0-9a7e-c2a82ec69c53/0e0ca74d-efe8-43e6-b653-a817032d1032"
+					(reference "R6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 22.86 83.82 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "3bf21556-6786-4d3f-b8b0-254c77c789be")
+		(property "Reference" "#PWR033"
+			(at 22.86 90.17 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 22.86 88.9 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 22.86 83.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 22.86 83.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 22.86 83.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "3c85f60a-919b-4ae4-a69a-9917f05561e9")
+		)
+		(instances
+			(project "HDD Synth Prototype MK4"
+				(path "/1a22431a-ba36-40a0-9a7e-c2a82ec69c53/0e0ca74d-efe8-43e6-b653-a817032d1032"
+					(reference "#PWR033")
 					(unit 1)
 				)
 			)
@@ -6731,85 +7155,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:+3.3V")
-		(at 228.6 106.68 270)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "6da3443a-2484-4e3e-898a-9ba5bfde9b1f")
-		(property "Reference" "#PWR021"
-			(at 224.79 106.68 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+3.3V"
-			(at 232.41 106.6799 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 228.6 106.68 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 228.6 106.68 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
-			(at 228.6 106.68 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "82333e1e-e97a-4f6a-9809-69ed3c008694")
-		)
-		(instances
-			(project "HDD Synth Prototype MK4"
-				(path "/1a22431a-ba36-40a0-9a7e-c2a82ec69c53/0e0ca74d-efe8-43e6-b653-a817032d1032"
-					(reference "#PWR021")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Diode:1N4148")
 		(at 243.84 109.22 0)
 		(unit 1)
@@ -6906,6 +7251,86 @@
 			(project "HDD Synth Prototype MK4"
 				(path "/1a22431a-ba36-40a0-9a7e-c2a82ec69c53/0e0ca74d-efe8-43e6-b653-a817032d1032"
 					(reference "D2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 29.21 83.82 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "92358ca0-edcf-4878-b1fe-04ea8ec949c2")
+		(property "Reference" "R3"
+			(at 29.21 77.47 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "10K"
+			(at 29.21 80.01 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 29.21 82.042 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 29.21 83.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 29.21 83.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "a03828fe-5038-4de4-ae67-df9d17056d75")
+		)
+		(pin "2"
+			(uuid "76025bb6-692e-4b40-844d-2cafb6295a19")
+		)
+		(instances
+			(project "HDD Synth Prototype MK4"
+				(path "/1a22431a-ba36-40a0-9a7e-c2a82ec69c53/0e0ca74d-efe8-43e6-b653-a817032d1032"
+					(reference "R3")
 					(unit 1)
 				)
 			)
