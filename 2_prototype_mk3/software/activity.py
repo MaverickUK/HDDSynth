@@ -71,50 +71,6 @@ def _detect_physical_access(hold_time_ms=settings.ACCESS_HOLD_TIME_MS):
 
     return False
 
-# Stateful debounce variables for non-blocking detection
-# _last_phys_state = None
-# _last_phys_change_time = 0
-# _last_stable_active = False
-
-
-# def _detect_physical_access(debounce_ms=10):
-#     """Non-blocking physical access detection.
-
-#     Reads the GP16 input once per call and uses a simple stateful
-#     debounce so the function never sleeps or blocks the caller.
-#     Returns True when the input has been observed LOW (optocoupler
-#     conducting) and stable for at least `debounce_ms` milliseconds.
-#     """
-#     global _last_phys_state, _last_phys_change_time, _last_stable_active
-
-#     _init_physical_input()
-#     if _phys_input is None:
-#         return False
-
-#     now = time.monotonic()
-#     try:
-#         v = _phys_input.value
-#     except Exception:
-#         return False
-
-#     # Initialize on first read
-#     if _last_phys_state is None:
-#         _last_phys_state = v
-#         _last_phys_change_time = now
-
-#     # State changed: update timestamp
-#     if v != _last_phys_state:
-#         _last_phys_state = v
-#         _last_phys_change_time = now
-
-#     # If stable for debounce_ms, update stable active flag
-#     if (now - _last_phys_change_time) >= (debounce_ms / 1000.0):
-#         # With pull-up, LOW (False) means activity
-#         _last_stable_active = (not _last_phys_state)
-
-#     return _last_stable_active
-
-
 # Output pin for external HDD LED (lazy init)
 _led_output = None
 

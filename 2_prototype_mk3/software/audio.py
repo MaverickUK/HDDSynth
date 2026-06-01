@@ -7,6 +7,8 @@ import array
 
 import settings
 import volume
+import balance
+import rotary_enc
 import action_button
 
 def stop_all(mixer):
@@ -20,6 +22,7 @@ def play_sample_active_pause2(mixer, sample, auto_volume = True):
         if auto_volume:
             set_volume(mixer)
         action_button.handler(mixer)
+        rotary_enc.handler(mixer)
         time.sleep(0.01)
 
 def play_sample_active_pause(mixer, sample_container):
@@ -76,12 +79,16 @@ def get_duration(filepath, wave_obj):
     return data_size / bytes_per_second
 
 def set_volume(mixer, access=True):
-    for i in range(settings.MIXER_VOICES):
-        mixer.voice[i].level = volume.get_volume()
+    master = volume.get_volume()
 
-    # Mute access in dual voice mode
-    if settings.MIXER_VOICES == 2 and not access:
-        mixer.voice[1].level = 0
+    if settings.MIXER_VOICES == 1:
+        mixer.voice[0].level = master
+        return
+
+    # Dual-voice: voice[0] is idle, voice[1] is access — apply balance between them
+    bal = balance.get_balance()
+    mixer.voice[0].level = master * (1.0 - bal)
+    mixer.voice[1].level = master * bal if access else 0
 
 def play_sample(filename):
     audio_out = audiobusio.I2SOut(

@@ -1,7 +1,7 @@
 
 """
 HDD Synth
-Making HDDs loud again!
+Making HDDs loud again! (MDDDLA)
 """
 import time
 import activity
@@ -17,6 +17,7 @@ import sdcard
 import settings
 import audio
 import action_button
+import rotary_enc
 import power
 import nvm_wrapper
 
@@ -35,8 +36,10 @@ def run_synth():
         data=settings.AMP_SD_PIN
     )
 
+    # One extra voice on top of MIXER_VOICES is reserved for beeps so they don't
+    # interrupt the idle/access loops.
     mixer = audiomixer.Mixer(
-        voice_count=settings.MIXER_VOICES,
+        voice_count=settings.MIXER_VOICES + 1,
         sample_rate=settings.DEFAULT_SAMPLE_RATE,
         channel_count=settings.DEFAULT_CHANNEL_COUNT,
         bits_per_sample=settings.DEFAULT_BITS_PER_SAMPLE,
@@ -87,6 +90,7 @@ def run_synth():
         led.value = access
         activity.hdd_out(access)
         action_button.handler(mixer)
+        rotary_enc.handler(mixer)
 
         if settings.MIXER_VOICES == 1:
             audio.set_volume(mixer)

@@ -3,6 +3,8 @@ import math
 import array
 import synthio
 
+import settings
+
 # We use a dictionary to define "Profiles"
 # Each profile contains the arguments for your play_beep function
 PROFILE = {
@@ -19,6 +21,18 @@ PROFILE = {
         "length": "long",
         "wave": "triangle"
     },  
+    "VOLUME_MODE": {
+        "pitch": "high",
+        "count": 2,
+        "length": "short",
+        "wave": "triangle"
+    },    
+    "BALANCE_MODE": {
+        "pitch": "high",
+        "count": 3,
+        "length": "short",
+        "wave": "triangle"
+    },       
     ### Errors ###
     "NO_SD_CARD": {
         "pitch": "low",
@@ -96,26 +110,28 @@ def play_beep(mixer, pitch="medium", count=1, length="short", volume=0.8, wave="
     waveform = _get_waveform(wave)
     envelope = _get_envelope()
     synth = synthio.Synthesizer(sample_rate=mixer.sample_rate)
-    
-    mixer.voice[0].play(synth)
-    mixer.voice[0].level = volume
-    
+
+    # Use the dedicated beep voice so the idle/access loops keep playing underneath.
+    beep_voice = mixer.voice[settings.MIXER_VOICES]
+    beep_voice.play(synth)
+    beep_voice.level = volume
+
     # 3. Play Sequence
     for i in range(count):
         note = synthio.Note(frequency=freq, waveform=waveform, envelope=envelope)
-        
+
         synth.press(note)
         time.sleep(duration)
         synth.release(note)
-        
+
         # Small buffer for the envelope release to finish
         time.sleep(0.05)
-        
+
         # Inter-beep gap
         if i < count - 1:
             time.sleep(duration * 0.4)
-            
-    mixer.voice[0].stop()
+
+    beep_voice.stop()
 
 def play_beep_type(mixer, beep_type):
     """

@@ -25,12 +25,20 @@ ACTION_BUTTON_LONG_PRESS_S = 3.0       # Seconds the button must be held to regi
 MIXER_VOICES = 2 # If 1, swap out idle for access. If 2, play idle loop with access overlaid
 RANDOM_ACCESS_START = True # Start access sample in random position to reduce repetitiveness
 
-# Volume (rotary encoder)
-ENCODER_A_PIN = board.GP20    # Rotary encoder channel A
-ENCODER_B_PIN = board.GP21    # Rotary encoder channel B
+# Rotary Encoder (used for volume and balance)
+ENCODER_A_PIN = board.GP20       # Rotary encoder channel A
+ENCODER_B_PIN = board.GP21       # Rotary encoder channel B
+ENCODER_BUTTON_PIN = board.GP22  # Encoder push button (toggles volume <-> balance mode)
+
+# Volume
 VOLUME_DEFAULT = 0.5          # Starting volume (0.0 - 1.0)
 VOLUME_STEP = 0.1             # Volume change per encoder detent (0.0 - 1.0)
 VOLUME_PRINT = False          # Print volume changes to console
+
+# Balance (idle vs access mix when MIXER_VOICES == 2)
+BALANCE_DEFAULT = 0.5         # Starting balance (0.0 = idle only, 1.0 = access only)
+BALANCE_STEP = 0.1            # Balance change per encoder detent (0.0 - 1.0)
+BALANCE_PRINT = False         # Print balance changes to console
 
 # SD Card
 SDCARD_SCK_PIN = board.GP14    # SPI Clock

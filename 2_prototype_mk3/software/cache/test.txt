@@ -1,3 +1,0 @@
-This file was originally on the SD card
-
-If this is now on the Pi Pico flash the cache test was successful
