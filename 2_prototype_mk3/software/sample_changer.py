@@ -1,10 +1,8 @@
 import os
-import time
-import microcontroller
 
 import settings
 import sample_cache
-import nvm
+import nvm_wrapper
 
 def initialize():
     """
@@ -37,17 +35,12 @@ def initialize():
         print(f"[Changer] Initialization complete. Desired target: {get_desired_pack()}")
 
 def wipe_settings():
-    """
-    Clears the Current and Desired NVM slots.
-    """
+    """Clears the Desired pack NVM slot."""
     print("[Changer] Wiping NVM sample pack settings...")
-    
-    # Create a block of 128 null bytes (64 for Current + 64 for Desired)
-    empty_block = b'\x00' * (settings.NVM_PACK_LENGTH * 2)
-    
-    # Write the block starting from index 2
-    microcontroller.nvm[settings.NVM_ADDRESS_START_PACK_CURRENT : settings.NVM_ADDRESS_START_PACK_CURRENT + (settings.NVM_PACK_LENGTH * 2)] = empty_block
-    
+
+    empty_block = b'\x00' * settings.NVM_PACK_LENGTH
+    nvm_wrapper.write_bytes(settings.NVM_ADDRESS_START_PACK_DESIRED, empty_block)
+
     print("[Changer] Wipe complete.")
 
 def next_pack(reboot_after=True):
@@ -105,14 +98,15 @@ def _write_nvm_str(start, text):
     """Encodes string and pads with null bytes to clear previous data."""
     encoded = text.encode('utf-8')[:settings.NVM_PACK_LENGTH]
     padded = encoded + b'\x00' * (settings.NVM_PACK_LENGTH - len(encoded))
-    microcontroller.nvm[start : start + settings.NVM_PACK_LENGTH] = padded
-    time.sleep(0.5) # Allow NVM to settle after write
+    nvm_wrapper.write_bytes(start, padded)
+
 
 def _read_nvm_str(start):
     """Reads bytes and stops at the first null terminator."""
-    raw = microcontroller.nvm[start : start + settings.NVM_PACK_LENGTH]
+    raw = nvm_wrapper.read_bytes(start, settings.NVM_PACK_LENGTH)
     end = raw.find(b'\x00')
-    if end == -1: end = settings.NVM_PACK_LENGTH
+    if end == -1:
+        end = settings.NVM_PACK_LENGTH
     try:
         return raw[:end].decode('utf-8').strip()
     except UnicodeError:

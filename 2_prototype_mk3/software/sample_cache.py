@@ -1,19 +1,8 @@
 import os
-import microcontroller
-import time
 
 import settings
 import nvm_wrapper
 
-
-def test_sd_copy():
-    test_files = ['/sd/test.txt']
-    test_dest = '/sd/test'
-
-    _ensure_directory(test_dest)
-
-    for source_path in test_files:
-        _safe_copy_file(source_path, dest_dir=test_dest)    
 
 def update_cache_files(source_file_paths):
     """
@@ -26,22 +15,18 @@ def update_cache_files(source_file_paths):
         source_file_paths (list): List of file paths (e.g., '/sd/data.txt') to copy.
     """
 
-    try:
-        current_mode = microcontroller.nvm[settings.NVM_ADDRESS_MODE]
-    except IndexError:
-        # Handle rare edge case where NVM is totally inaccessible
-        current_mode = nvm_wrapper.MODE_USB    
+    current_mode = nvm_wrapper.safe_read(settings.NVM_ADDRESS_MODE)
+    if current_mode is None:
+        current_mode = settings.NVM_MODE_USB
 
-    if current_mode not in (nvm_wrapper.MODE_USB, nvm_wrapper.MODE_WRITE):
+    if current_mode not in (settings.NVM_MODE_USB, settings.NVM_MODE_WRITE):
         print(f"[Cache] WARNING: Unrecognized NVM state ({current_mode}), defaulting to USB mode.")
-        current_mode = nvm_wrapper.MODE_USB
+        current_mode = settings.NVM_MODE_USB
 
-    if current_mode == nvm_wrapper.MODE_USB:
+    if current_mode == settings.NVM_MODE_USB:
         print("[Cache] In USB Mode, unable to cache files")
-        # print("[Cache] Initiating update mode. Rebooting...")
-        # _trigger_write_mode()
-        
-    elif current_mode == nvm_wrapper.MODE_WRITE:
+
+    elif current_mode == settings.NVM_MODE_WRITE:
         print("[Cache] In Write Mode. Starting copy operation...")
         try:
             # 1. Ensure Directory Exists
@@ -64,11 +49,12 @@ def update_cache_files(source_file_paths):
 
 def trigger_write_mode():
     """Sets NVM flag to Write Mode and resets."""
-    nvm_wrapper.safe_write(settings.NVM_ADDRESS_MODE, nvm_wrapper.MODE_WRITE, reset=True)
+    nvm_wrapper.safe_write(settings.NVM_ADDRESS_MODE, settings.NVM_MODE_WRITE, reset=True)
+
 
 def trigger_usb_mode():
     """Sets NVM flag to USB Mode and resets."""
-    nvm_wrapper.safe_write(settings.NVM_ADDRESS_MODE, nvm_wrapper.MODE_USB, reset=True)
+    nvm_wrapper.safe_write(settings.NVM_ADDRESS_MODE, settings.NVM_MODE_USB, reset=True)
 
 def _ensure_directory(directory):
     """Creates the directory if it does not exist."""

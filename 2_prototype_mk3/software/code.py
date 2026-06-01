@@ -1,4 +1,3 @@
-import microcontroller
 import digitalio
 import board
 
@@ -9,32 +8,32 @@ import hddsynth
 import settings
 import nvm_wrapper
 
-# We are in USB mode (Normal operation)
-if microcontroller.nvm[settings.NVM_ADDRESS_MODE] == nvm_wrapper.MODE_USB:
-    print("Running in USB mode, normal operation")
-    hddsynth.run_synth()
+mode = nvm_wrapper.safe_read(settings.NVM_ADDRESS_MODE)
 
-# We are in Write Mode, cache the requested HDD Sample Pack
-if microcontroller.nvm[settings.NVM_ADDRESS_MODE] == nvm_wrapper.MODE_WRITE:
+if mode == settings.NVM_MODE_WRITE:
+    # Write Mode: cache the requested HDD sample pack
     try:
-        # Pico LED
+        # Pico LED on to indicate write mode is active
         led = digitalio.DigitalInOut(board.LED)
         led.direction = digitalio.Direction.OUTPUT
-        led.value = True  # Turn on LED to indicate write mode is active
+        led.value = True
 
         desired_pack = sample_changer.get_desired_pack()
+        base_path = f"{settings.SDCARD_SAMPLE_DIR}/{desired_pack}"
 
-        base_path = f"{settings.SDCARD_SAMPLE_DIR}/{sample_changer.get_desired_pack()}"
-
-        # TODO: Refactor this        
+        # TODO: Refactor this
         pack_files = [
-            f"{base_path}/spinup.wav", 
-            f"{base_path}/spindown.wav", 
-            f"{base_path}/idle.wav", 
-            f"{base_path}/access.wav"
+            f"{base_path}/spinup.wav",
+            f"{base_path}/spindown.wav",
+            f"{base_path}/idle.wav",
+            f"{base_path}/access.wav",
         ]
 
-        sdcard.initilise()    
+        sdcard.initialise()
         sample_cache.update_cache_files(pack_files)
     finally:
-        sample_cache.trigger_usb_mode() # Fail safe, always revert to USB
+        sample_cache.trigger_usb_mode()  # Fail safe, always revert to USB
+else:
+    # Anything other than WRITE (including USB and uninitialised NVM) → normal operation
+    print("Running in USB mode, normal operation")
+    hddsynth.run_synth()

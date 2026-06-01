@@ -1,4 +1,3 @@
-
 import board
 
 SIMULATION_MODE = True # Simulate HDD activity
@@ -17,13 +16,17 @@ POWER_ADC_REF_VOLTAGE = 3.3         # Pico's internal reference
 POWER_MAX_ADC_VALUE = 65535         # CircuitPython 16-bit scaling
 POWER_VOLTAGE_THRESHOLD_EXT = 4.0   # External voltage (0V-5V) that triggers "powered" state
 
+# HDD Activity
+ACTIVITY_INPUT_PIN = board.GP26    # Optocoupler output from HDD activity signal (LOW = active)
+HDD_LED_PIN = board.GP1            # External HDD activity LED
+
 # Action Button
-ACTION_BUTTON_PIN = board.GP2          # GPIO pin the action button is wired to
-ACTION_BUTTON_LONG_PRESS_S = 3.0       # Seconds the button must be held to register as a long press
+ACTION_BUTTON_PIN = board.GP2              # GPIO pin the action button is wired to
+ACTION_BUTTON_SHORT_PRESS_MAX_S = 1.0      # Max press duration to register as a short press
+ACTION_BUTTON_LONG_PRESS_S = 3.0           # Seconds the button must be held to register as a long press
 
 # Mixer
 MIXER_VOICES = 2 # If 1, swap out idle for access. If 2, play idle loop with access overlaid
-RANDOM_ACCESS_START = True # Start access sample in random position to reduce repetitiveness
 
 # Rotary Encoder (used for volume and balance)
 ENCODER_A_PIN = board.GP20       # Rotary encoder channel A
@@ -49,9 +52,9 @@ SDCARD_CS_PIN = board.GP13     # SPI Chip Select
 SDCARD_MOUNT_POINT = '/sd'  # Mount point for the SD card
 SDCARD_SAMPLE_DIR = f"{SDCARD_MOUNT_POINT}/samples" # Directory on SD card where sample packs are stored
 
-# Amplifier
+# Amplifier
 AMP_BCK_PIN = board.GP16       # I2S Bit Clock (BCK / SCLK)
-AMP_WS_PIN = board.GP17        # I2S Word Select / LRCK  
+AMP_WS_PIN = board.GP17        # I2S Word Select / LRCK
 AMP_SD_PIN = board.GP18        # I2S Data (SD / DIN)
 
 # Caching
@@ -63,20 +66,23 @@ SAMPLE_IDLE_FILE = f"{CACHE_DIR}/idle.wav"
 SAMPLE_ACCESS_FILE = f"{CACHE_DIR}/access.wav"
 SAMPLE_SPINDOWN_FILE = f"{CACHE_DIR}/spindown.wav"
 
-JINGLE_FILE = "sd/jingle.wav"
+JINGLE_FILE = f"{SDCARD_MOUNT_POINT}/jingle.wav"
 
-# NVM memory map
-NVM_ADDRESS_MODE = 0 # Byte 0 used to determine mode (0: USB, 1: WRITE)
-NVM_ADDRESS_START_PACK_CURRENT = 1 # Starting byte for 'Current' pack name (No longer used)
-NVM_ADDRESS_START_PACK_DESIRED = 65 # Starting byte for 'Desired' pack name
-NVM_PACK_LENGTH = 64 # Max length for pack names (in bytes)
-NVM_ADDRESS_JINGLE = 129 # Byte used to indicate if jingle has been played
-NVM_ADDRESS_VOLUME = 130 # Byte storing the last volume (0-100)
-NVM_ADDRESS_BALANCE = 131 # Byte storing the last balance (0-100)
+# NVM memory map (addresses + value constants)
+NVM_ADDRESS_MODE = 0              # Byte 0 used to determine mode (0: USB, 1: WRITE)
+NVM_MODE_USB = 0
+NVM_MODE_WRITE = 1
+NVM_ADDRESS_START_PACK_DESIRED = 65  # Starting byte for 'Desired' pack name
+NVM_PACK_LENGTH = 64                 # Max length for pack names (in bytes)
+NVM_ADDRESS_JINGLE = 129             # Byte used to indicate if jingle has been played
+NVM_JINGLE_PLAYED = 1
+NVM_JINGLE_NOT_PLAYED = 0
+NVM_ADDRESS_VOLUME = 130             # Byte storing the last volume (0-100)
+NVM_ADDRESS_BALANCE = 131            # Byte storing the last balance (0-100)
 
 # Volume / Balance persistence
-NVM_PERSIST_VOLUME_BALANCE = True # If True, volume and balance are saved to NVM
-NVM_PERSIST_DEBOUNCE_S = 5.0      # Seconds of no change before a value is written to NVM
+NVM_PERSIST_VOLUME_BALANCE = False # If True, volume and balance are saved to NVM
+NVM_PERSIST_DEBOUNCE_S = 5.0       # Seconds of no change before a value is written to NVM
 
 # Defaults used when SD is disabled but audio is still required
 # (sample metadata used to configure the Mixer)

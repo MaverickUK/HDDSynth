@@ -5,73 +5,83 @@ import synthio
 
 import settings
 
-# We use a dictionary to define "Profiles"
-# Each profile contains the arguments for your play_beep function
+# --- Pitch (Hz) ---
+PITCH_HIGH = 1200
+PITCH_MEDIUM = 440
+PITCH_LOW = 400
+
+# --- Length (seconds per beep) ---
+LENGTH_SHORT = 0.1
+LENGTH_MEDIUM = 0.8
+LENGTH_LONG = 1.0
+
+# --- Waveform ---
+WAVE_SIN = "sin"
+WAVE_TRIANGLE = "triangle"
+
+# Profiles map a named event to a set of play_beep arguments.
 PROFILE = {
     ### Operations ###
     "CHANGE_PACK": {
-        "pitch": "high",
+        "pitch": PITCH_HIGH,
         "count": 1,
-        "length": "short",
-        "wave": "triangle"
-    },    
+        "length": LENGTH_SHORT,
+        "wave": WAVE_TRIANGLE,
+    },
     "FACTORY_RESET": {
-        "pitch": "high",
+        "pitch": PITCH_HIGH,
         "count": 1,
-        "length": "long",
-        "wave": "triangle"
-    },  
+        "length": LENGTH_LONG,
+        "wave": WAVE_TRIANGLE,
+    },
     "VOLUME_MODE": {
-        "pitch": "high",
+        "pitch": PITCH_HIGH,
         "count": 2,
-        "length": "short",
-        "wave": "triangle"
-    },    
+        "length": LENGTH_SHORT,
+        "wave": WAVE_TRIANGLE,
+    },
     "BALANCE_MODE": {
-        "pitch": "high",
+        "pitch": PITCH_HIGH,
         "count": 3,
-        "length": "short",
-        "wave": "triangle"
-    },       
+        "length": LENGTH_SHORT,
+        "wave": WAVE_TRIANGLE,
+    },
     ### Errors ###
     "NO_SD_CARD": {
-        "pitch": "low",
+        "pitch": PITCH_LOW,
         "count": 1,
-        "length": "short"
+        "length": LENGTH_SHORT,
     },
     "NO_PACKS_ON_SD_CARD": {
-        "pitch": "low",
+        "pitch": PITCH_LOW,
         "count": 2,
-        "length": "short"
+        "length": LENGTH_SHORT,
     },
     "NOT_ENOUGH_SPACES_FOR_PACK": {
-        "pitch": "low",
+        "pitch": PITCH_LOW,
         "count": 3,
-        "length": "short"
+        "length": LENGTH_SHORT,
     },
     "CORRUPTED_PACK": {
-        "pitch": "low",
-        "count": 34,
-        "length": "short"
-    }    
+        "pitch": PITCH_LOW,
+        "count": 4,
+        "length": LENGTH_SHORT,
+    },
 }
 
-# --- Internal Helper Methods ---
+# --- Internal Helpers ---
 
-def _get_waveform(wave_type="sin"):
+def _get_waveform(wave_type=WAVE_SIN):
     """Generates a 512-sample lookup table for the synthesizer."""
     size = 512
-    debug_name = wave_type.lower()
-    
-    if debug_name == "sin":
-        # Smooth mathematical curve
+
+    if wave_type == WAVE_SIN:
         return array.array('h', [
-            int(math.sin(2 * math.pi * i / size) * 32767) 
+            int(math.sin(2 * math.pi * i / size) * 32767)
             for i in range(size)
         ])
-    
-    elif debug_name == "triangle":
-        # Linear ramp up and down
+
+    if wave_type == WAVE_TRIANGLE:
         samples = array.array('h', [0] * size)
         for i in range(size):
             if i < size // 2:
@@ -79,34 +89,23 @@ def _get_waveform(wave_type="sin"):
             else:
                 samples[i] = int(32767 - ((i - size // 2) * 65535 / (size // 2)))
         return samples
-    
-    # Default to a basic Sine if type is unknown
-    return _get_waveform("sin")
+
+    return _get_waveform(WAVE_SIN)
+
 
 def _get_envelope():
     """Returns a standard ADSR envelope to prevent clicking."""
     return synthio.Envelope(
-        attack_time=0.02, 
-        decay_time=0.1, 
-        sustain_level=0.8, 
-        release_time=0.05
+        attack_time=0.02,
+        decay_time=0.1,
+        sustain_level=0.8,
+        release_time=0.05,
     )
 
 # --- Public API ---
 
-def play_beep(mixer, pitch="medium", count=1, length="short", volume=0.8, wave="sin"):
-    """
-    Plays a smooth beep tone.
-    :param wave: "sin" (pure/soft) or "triangle" (audible/clear)
-    """
-    # 1. Map Configuration
-    pitches = {"high": 1200, "medium": 440, "low": 400}
-    durations = {"short": 0.1, "medium": 0.8, "long": 1}
-    
-    freq = pitches.get(pitch.lower(), 440)
-    duration = durations.get(length.lower(), 0.1)
-    
-    # 2. Prepare Synth
+def play_beep(mixer, pitch=PITCH_MEDIUM, count=1, length=LENGTH_SHORT, volume=0.8, wave=WAVE_SIN):
+    """Plays a smooth beep tone on the dedicated beep voice."""
     waveform = _get_waveform(wave)
     envelope = _get_envelope()
     synth = synthio.Synthesizer(sample_rate=mixer.sample_rate)
@@ -116,12 +115,11 @@ def play_beep(mixer, pitch="medium", count=1, length="short", volume=0.8, wave="
     beep_voice.play(synth)
     beep_voice.level = volume
 
-    # 3. Play Sequence
     for i in range(count):
-        note = synthio.Note(frequency=freq, waveform=waveform, envelope=envelope)
+        note = synthio.Note(frequency=pitch, waveform=waveform, envelope=envelope)
 
         synth.press(note)
-        time.sleep(duration)
+        time.sleep(length)
         synth.release(note)
 
         # Small buffer for the envelope release to finish
@@ -129,28 +127,23 @@ def play_beep(mixer, pitch="medium", count=1, length="short", volume=0.8, wave="
 
         # Inter-beep gap
         if i < count - 1:
-            time.sleep(duration * 0.4)
+            time.sleep(length * 0.4)
 
     beep_voice.stop()
 
+
 def play_beep_type(mixer, beep_type):
-    """
-    Looks up a beep profile by name and plays it.
-    :param beep_type: A string key from sounds.BEEPS (e.g., "NO_SD_CARD")
-    """
-    # 1. Get the settings from our constants file
-    # Use .get() to avoid crashing if a typo happens
+    """Looks up a beep profile by name and plays it."""
     config = PROFILE.get(beep_type.upper())
-    
-    if config:
-        # 2. Call the original play_beep function
-        # We use **config to "unpack" the dictionary into arguments automatically
-        play_beep(
-            mixer, 
-            pitch=config.get("pitch", "medium"),
-            count=config.get("count", 1),
-            length=config.get("length", "short"),
-            wave=config.get("wave", "sin")
-        )
-    else:
-        print(f"Warning: Beep type '{beep_type}' not found in sounds.py")
+
+    if config is None:
+        print(f"Warning: Beep type '{beep_type}' not found in beep.py")
+        return
+
+    play_beep(
+        mixer,
+        pitch=config.get("pitch", PITCH_MEDIUM),
+        count=config.get("count", 1),
+        length=config.get("length", LENGTH_SHORT),
+        wave=config.get("wave", WAVE_SIN),
+    )

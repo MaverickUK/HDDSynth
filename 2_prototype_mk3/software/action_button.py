@@ -22,8 +22,8 @@ def _factory_reset(mixer):
     sample_changer.wipe_settings()
     sample_changer.initialize() # Reset to first pack
 
-    nvm_wrapper.safe_write(settings.NVM_ADDRESS_JINGLE, nvm_wrapper.JINGLE_NOT_PLAYED)
-    nvm_wrapper.safe_write(settings.NVM_ADDRESS_MODE, nvm_wrapper.MODE_WRITE, reset=True)
+    nvm_wrapper.safe_write(settings.NVM_ADDRESS_JINGLE, settings.NVM_JINGLE_NOT_PLAYED)
+    nvm_wrapper.safe_write(settings.NVM_ADDRESS_MODE, settings.NVM_MODE_WRITE, reset=True)
 
 def _change_pack(mixer):
     print("Short Press Detected (on release)")
@@ -45,7 +45,7 @@ def handler(mixer):
             # Check for short press only if long press hasn't fired
             if not _action_button_long_pressed and _action_button_start_time is not None:
                 duration = time.monotonic() - _action_button_start_time
-                if duration < 1.0:
+                if duration < settings.ACTION_BUTTON_SHORT_PRESS_MAX_S:
                     _change_pack(mixer)
 
             _action_button_start_time = None # Reset
