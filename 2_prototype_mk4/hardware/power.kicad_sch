@@ -1694,10 +1694,10 @@
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(in_pos_files yes)
-		(dnp no)
+		(dnp yes)
 		(uuid "260a05b9-2133-494e-906b-b1f88c2fe2ba")
 		(property "Reference" "Super_Cap3"
 			(at 164.084 102.616 0)
@@ -1755,17 +1755,6 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "DX-5R5V474U"
-			(at 161.29 99.06 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Manufacturer" ""
 			(at 161.29 99.06 0)
 			(hide yes)
 			(show_name no)
@@ -2031,18 +2020,7 @@
 				)
 			)
 		)
-		(property "Manufacturer_Part_Number" "RC1206FR-0733RL"
-			(at 167.64 90.17 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Manufacturer" ""
+		(property "Manufacturer_Part_Number" "RC0603FR-0733RL"
 			(at 167.64 90.17 0)
 			(hide yes)
 			(show_name no)
@@ -2233,17 +2211,6 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "SS12"
-			(at 154.94 90.17 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Manufacturer" "onsemi / Taiwan Semi"
 			(at 154.94 90.17 90)
 			(hide yes)
 			(show_name no)
@@ -2746,17 +2713,6 @@
 				)
 			)
 		)
-		(property "Manufacturer" ""
-			(at 138.43 170.18 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC_Part_Number" ""
 			(at 138.43 170.18 0)
 			(hide yes)
@@ -2929,17 +2885,6 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "RC0603FR-072KL"
-			(at 148.59 170.18 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Manufacturer" ""
 			(at 148.59 170.18 0)
 			(hide yes)
 			(show_name no)

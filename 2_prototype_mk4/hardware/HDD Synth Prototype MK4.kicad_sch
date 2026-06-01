@@ -3033,17 +3033,6 @@
 				)
 			)
 		)
-		(property "Manufacturer" ""
-			(at 93.98 171.45 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC_Part_Number" ""
 			(at 93.98 171.45 0)
 			(hide yes)
@@ -3452,17 +3441,6 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" ""
-			(at 58.42 172.72 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Manufacturer" ""
 			(at 58.42 172.72 0)
 			(hide yes)
 			(show_name no)
@@ -4009,17 +3987,6 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Everlight"
-			(at 43.18 173.99 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC_Part_Number" "C2916312"
 			(at 43.18 173.99 0)
 			(hide yes)
@@ -4195,17 +4162,6 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "RC0603FR-07330RL"
-			(at 105.41 171.45 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Manufacturer" ""
 			(at 105.41 171.45 90)
 			(hide yes)
 			(show_name no)

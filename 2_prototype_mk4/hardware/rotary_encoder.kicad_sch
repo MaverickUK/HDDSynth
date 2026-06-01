@@ -1199,17 +1199,6 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Bourns"
-			(at 146.05 77.47 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC_Part_Number" "PEC12R-2220F-S0024"
 			(at 146.05 77.47 0)
 			(hide yes)

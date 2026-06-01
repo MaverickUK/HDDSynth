@@ -1,0 +1,130 @@
+
+"""
+HDD Synth
+Making HDDs loud again!
+"""
+import time
+import activity
+import audiobusio
+import audiomixer 
+import digitalio
+import board
+import microcontroller
+
+import sample_changer
+from sample_container import SampleContainer
+import sdcard
+import settings
+import audio
+import action_button
+import power
+import nvm_wrapper
+
+def run_synth():
+    print("Starting HDD Synth...")
+    print("HDD Sample Pack: " + sample_changer.get_desired_pack())
+
+    # Pico LED
+    led = digitalio.DigitalInOut(board.LED)
+    led.direction = digitalio.Direction.OUTPUT
+
+    # Initialize I2S audio output
+    audio_out = audiobusio.I2SOut(
+        bit_clock=settings.AMP_BCK_PIN,
+        word_select=settings.AMP_WS_PIN,
+        data=settings.AMP_SD_PIN
+    )
+
+    mixer = audiomixer.Mixer(
+        voice_count=settings.MIXER_VOICES,
+        sample_rate=settings.DEFAULT_SAMPLE_RATE,
+        channel_count=settings.DEFAULT_CHANNEL_COUNT,
+        bits_per_sample=settings.DEFAULT_BITS_PER_SAMPLE,
+    )
+
+    audio_out.play(mixer)
+
+    # Ensure SD card is accessible
+    sdcard.initilise(mixer)    
+
+    # Init samples
+    samples = {
+        "jingle": SampleContainer(settings.JINGLE_FILE),
+        "spinup": SampleContainer(settings.SAMPLE_SPINUP_FILE),
+        "idle": SampleContainer(settings.SAMPLE_IDLE_FILE),
+        "access": SampleContainer(settings.SAMPLE_ACCESS_FILE),
+        "spindown": SampleContainer(settings.SAMPLE_SPINDOWN_FILE)
+    }
+
+    if nvm_wrapper.safe_read(settings.NVM_ADDRESS_JINGLE) != nvm_wrapper.JINGLE_PLAYED or settings.ALWAYS_PLAY_JINGLE:
+        print('Playing jingle...')  
+
+        mixer.voice[0].level = 1.0 # MAX VOLUME!! Make HDDs loud again!
+        audio.play_sample_active_pause2(mixer, samples["jingle"], auto_volume=False) # Don't apply volume to jingle, play at full volume
+
+        if nvm_wrapper.safe_read(settings.NVM_ADDRESS_JINGLE) != nvm_wrapper.JINGLE_PLAYED:
+            nvm_wrapper.write(settings.NVM_ADDRESS_JINGLE, nvm_wrapper.JINGLE_PLAYED)
+
+    audio.set_volume(mixer)
+
+    if settings.PLAY_SPINUP:
+        print('Playing spinup')
+        audio.play_sample_active_pause2(mixer, samples["spinup"])
+        print("Spin up complete")
+
+    access = activity.get_access()
+
+    # Auto loop, access controlled via volum 
+    if settings.MIXER_VOICES == 2:
+        mixer.voice[0].play(samples["idle"].sample, loop=True)
+        mixer.voice[1].play(samples["access"].sample, loop=True)
+        mixer.voice[1].level = 0 # Start with access muted
+
+
+    while power.external_power():
+        last_access = access
+        access = activity.get_access()
+        led.value = access
+        activity.hdd_out(access)
+        action_button.handler(mixer)
+
+        if settings.MIXER_VOICES == 1:
+            audio.set_volume(mixer)
+
+            # If access state changes, stop current sample
+            if last_access != access:
+                    mixer.voice[0].stop()
+
+            # Idle
+            if not access and not mixer.voice[0].playing:
+                mixer.voice[0].play(samples["idle"].sample)
+                print(".", end="")
+
+            # Access
+            if access and not mixer.voice[0].playing:
+                mixer.voice[0].play(samples["access"].sample)
+                print(",", end="")
+
+        elif settings.MIXER_VOICES == 2:
+            audio.set_volume(mixer, access) # Mute access channel
+
+        time.sleep(0.01)
+
+    # Spin down
+
+    # TODO: Refactor this to be an audio function
+    for i in range(settings.MIXER_VOICES):
+        mixer.voice[i].stop()
+    
+    print("Playing spindown")
+    audio.play_sample_active_pause2(mixer, samples["spindown"])
+
+    # Watch for power restore and reset
+    while not power.external_power():
+        time.sleep(0.1)
+
+    microcontroller.reset()
+
+    
+if __name__ == "__main__":
+    run_synth()

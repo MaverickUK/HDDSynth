@@ -1908,17 +1908,6 @@
 				)
 			)
 		)
-		(property "Manufacturer" ""
-			(at 187.96 96.52 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC_Part_Number" ""
 			(at 187.96 96.52 0)
 			(hide yes)
@@ -2025,17 +2014,6 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "1984617"
-			(at 212.09 100.33 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Manufacturer" "Phoenix Contact"
 			(at 212.09 100.33 0)
 			(hide yes)
 			(show_name no)
@@ -2162,17 +2140,6 @@
 				)
 			)
 		)
-		(property "Manufacturer" ""
-			(at 143.51 64.77 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC_Part_Number" ""
 			(at 143.51 64.77 0)
 			(hide yes)
@@ -2278,17 +2245,6 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "CL31A106KAHNNNE"
-			(at 160.02 64.77 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Manufacturer" ""
 			(at 160.02 64.77 0)
 			(hide yes)
 			(show_name no)
@@ -2504,17 +2460,6 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Analog Devices"
-			(at 149.86 105.41 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC_Part_Number" "C910544"
 			(at 149.86 105.41 0)
 			(hide yes)
@@ -2674,17 +2619,6 @@
 				)
 			)
 		)
-		(property "Manufacturer" ""
-			(at 177.8 91.44 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC_Part_Number" "C85840"
 			(at 177.8 91.44 0)
 			(hide yes)
@@ -2801,17 +2735,6 @@
 				)
 			)
 		)
-		(property "Manufacturer" ""
-			(at 193.04 101.6 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC_Part_Number" ""
 			(at 193.04 101.6 0)
 			(hide yes)
@@ -2916,17 +2839,6 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "BLM21PG221SN1D"
-			(at 177.8 106.68 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Manufacturer" ""
 			(at 177.8 106.68 0)
 			(hide yes)
 			(show_name no)
