@@ -38,3 +38,7 @@ def handler(mixer):
             volume.adjust(delta)
         else:
             balance.adjust(delta)
+
+    # Debounced NVM persistence
+    volume.persist_if_due()
+    balance.persist_if_due()

@@ -71,6 +71,12 @@ NVM_ADDRESS_START_PACK_CURRENT = 1 # Starting byte for 'Current' pack name (No l
 NVM_ADDRESS_START_PACK_DESIRED = 65 # Starting byte for 'Desired' pack name
 NVM_PACK_LENGTH = 64 # Max length for pack names (in bytes)
 NVM_ADDRESS_JINGLE = 129 # Byte used to indicate if jingle has been played
+NVM_ADDRESS_VOLUME = 130 # Byte storing the last volume (0-100)
+NVM_ADDRESS_BALANCE = 131 # Byte storing the last balance (0-100)
+
+# Volume / Balance persistence
+NVM_PERSIST_VOLUME_BALANCE = True # If True, volume and balance are saved to NVM
+NVM_PERSIST_DEBOUNCE_S = 5.0      # Seconds of no change before a value is written to NVM
 
 # Defaults used when SD is disabled but audio is still required
 # (sample metadata used to configure the Mixer)
