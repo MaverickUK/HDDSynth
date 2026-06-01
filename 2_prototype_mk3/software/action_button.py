@@ -1,6 +1,5 @@
 import audio
 import keypad
-import board
 import time
 
 import beep
@@ -9,14 +8,14 @@ import nvm_wrapper
 import settings
 
 # Action button state tracking
-keys = keypad.Keys((board.GP2,), value_when_pressed=False, pull=True)
+keys = keypad.Keys((settings.ACTION_BUTTON_PIN,), value_when_pressed=False, pull=True)
 
 # Internal state tracking
 _action_button_start_time = None
 _action_button_long_pressed = False
 
 def _factory_reset(mixer):
-    print("Long Pressed Detected (3 seconds held down)")
+    print(f"Long Pressed Detected ({settings.ACTION_BUTTON_LONG_PRESS_S} seconds held down)")
     audio.stop_all(mixer)
     beep.play_beep_type(mixer, "FACTORY_RESET")
 
@@ -53,7 +52,7 @@ def handler(mixer):
             
     # 2. Check for "Live" Long Press (while button is still held)
     if _action_button_start_time is not None and not _action_button_long_pressed:
-        if (time.monotonic() - _action_button_start_time) >= 3.0:
+        if (time.monotonic() - _action_button_start_time) >= settings.ACTION_BUTTON_LONG_PRESS_S:
             _action_button_long_pressed = True
             _factory_reset(mixer)
 

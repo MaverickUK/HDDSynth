@@ -17,6 +17,10 @@ POWER_ADC_REF_VOLTAGE = 3.3         # Pico's internal reference
 POWER_MAX_ADC_VALUE = 65535         # CircuitPython 16-bit scaling
 POWER_VOLTAGE_THRESHOLD_EXT = 4.0   # External voltage (0V-5V) that triggers "powered" state
 
+# Action Button
+ACTION_BUTTON_PIN = board.GP2          # GPIO pin the action button is wired to
+ACTION_BUTTON_LONG_PRESS_S = 3.0       # Seconds the button must be held to register as a long press
+
 # Mixer
 MIXER_VOICES = 2 # If 1, swap out idle for access. If 2, play idle loop with access overlaid
 RANDOM_ACCESS_START = True # Start access sample in random position to reduce repetitiveness
