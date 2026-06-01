@@ -21,11 +21,12 @@ POWER_VOLTAGE_THRESHOLD_EXT = 4.0   # External voltage (0V-5V) that triggers "po
 MIXER_VOICES = 2 # If 1, swap out idle for access. If 2, play idle loop with access overlaid
 RANDOM_ACCESS_START = True # Start access sample in random position to reduce repetitiveness
 
-# Volume
-POT_PIN = board.GP27  # Potentiometer connected to GP27 (ADC1)
-VOLUME_DISCRETE = True # Round volume to discrete levels
-VOLUME_DISCRETE_RANGE = 50 # Number of possible volume levels
-VOLUME_PRINT = False # Print volume changes to console
+# Volume (rotary encoder)
+ENCODER_A_PIN = board.GP20    # Rotary encoder channel A
+ENCODER_B_PIN = board.GP21    # Rotary encoder channel B
+VOLUME_DEFAULT = 0.5          # Starting volume (0.0 - 1.0)
+VOLUME_STEP = 0.1             # Volume change per encoder detent (0.0 - 1.0)
+VOLUME_PRINT = False          # Print volume changes to console
 
 # SD Card
 SDCARD_SCK_PIN = board.GP14    # SPI Clock
