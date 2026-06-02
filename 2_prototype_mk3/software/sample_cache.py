@@ -29,10 +29,13 @@ def update_cache_files(source_file_paths):
     elif current_mode == settings.NVM_MODE_WRITE:
         print("[Cache] In Write Mode. Starting copy operation...")
         try:
-            # 1. Ensure Directory Exists
+            # 1. Clear existing cache so no stale files remain after a pack change or factory reset
+            _clear_cache_directory()
+
+            # 2. Ensure Directory Exists
             _ensure_directory(settings.CACHE_DIR)
-            
-            # 2. Process Files
+
+            # 3. Process Files
             for source_path in source_file_paths:
                 _safe_copy_file(source_path)
                 
@@ -55,6 +58,20 @@ def trigger_write_mode():
 def trigger_usb_mode():
     """Sets NVM flag to USB Mode and resets."""
     nvm_wrapper.safe_write(settings.NVM_ADDRESS_MODE, settings.NVM_MODE_USB, reset=True)
+
+def _clear_cache_directory():
+    """Remove all files inside CACHE_DIR, leaving the directory itself intact."""
+    try:
+        for filename in os.listdir(settings.CACHE_DIR):
+            path = f"{settings.CACHE_DIR}/{filename}"
+            try:
+                os.remove(path)
+                print(f"[Cache] Removed: {path}")
+            except OSError as e:
+                print(f"[Cache] Could not remove {path}: {e}")
+    except OSError:
+        pass  # Directory doesn't exist yet — nothing to clear
+
 
 def _ensure_directory(directory):
     """Creates the directory if it does not exist."""
