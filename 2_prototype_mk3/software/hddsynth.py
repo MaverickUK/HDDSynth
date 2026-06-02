@@ -44,8 +44,14 @@ def _init_audio():
 
 
 def _load_samples():
+    jingle = None
+    try:
+        jingle = SampleContainer(settings.JINGLE_FILE)
+    except OSError:
+        print(f"[hddsynth] Jingle not found: {settings.JINGLE_FILE}")
+
     return {
-        "jingle": SampleContainer(settings.JINGLE_FILE),
+        "jingle": jingle,
         "spinup": SampleContainer(settings.SAMPLE_SPINUP_FILE),
         "idle": SampleContainer(settings.SAMPLE_IDLE_FILE),
         "access": SampleContainer(settings.SAMPLE_ACCESS_FILE),
@@ -57,6 +63,10 @@ def _maybe_play_jingle(mixer, samples):
     """Play the jingle at full volume the first time the device boots."""
     already_played = nvm_wrapper.safe_read(settings.NVM_ADDRESS_JINGLE) == settings.NVM_JINGLE_PLAYED
     if already_played and not settings.ALWAYS_PLAY_JINGLE:
+        return
+
+    if samples["jingle"] is None:
+        print("[hddsynth] Skipping jingle — file not found.")
         return
 
     print("Playing jingle...")
