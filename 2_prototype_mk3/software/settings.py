@@ -84,6 +84,27 @@ NVM_ADDRESS_BALANCE = 131            # Byte storing the last balance (0-100)
 NVM_PERSIST_VOLUME_BALANCE = False # If True, volume and balance are saved to NVM
 NVM_PERSIST_DEBOUNCE_S = 5.0       # Seconds of no change before a value is written to NVM
 
+# GPIO Safety (pull-down unused pins at boot to prevent CMOS latchup)
+PULL_DOWN_UNUSED_GPIOS = True
+USED_GPIO_PINS = (
+    board.GP0,        # safety pin (boot.py)
+    board.LED,        # onboard LED
+    HDD_LED_PIN,
+    ACTION_BUTTON_PIN,
+    ACTIVITY_INPUT_PIN,
+    POWER_SENSE_PIN,
+    ENCODER_A_PIN,
+    ENCODER_B_PIN,
+    ENCODER_BUTTON_PIN,
+    SDCARD_SCK_PIN,
+    SDCARD_MOSI_PIN,
+    SDCARD_MISO_PIN,
+    SDCARD_CS_PIN,
+    AMP_BCK_PIN,
+    AMP_WS_PIN,
+    AMP_SD_PIN,
+)
+
 # Defaults used when SD is disabled but audio is still required
 # (sample metadata used to configure the Mixer)
 DEFAULT_SAMPLE_RATE = 16000
