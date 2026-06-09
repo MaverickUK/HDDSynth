@@ -75,21 +75,15 @@ def initialise(mixer=None):
     spi, cs = _test_spi_connection()
     if not spi:
         print("SD init failed: cannot initialize SPI")
-        if mixer is not None:
-            beep.play_beep_type(mixer, "NO_SD_CARD")
         return False
 
     sd = _test_sd_card_detection(spi, cs)
     if not sd:
         print("SD init failed: cannot detect SD card")
-        if mixer is not None:
-            beep.play_beep_type(mixer, "NO_SD_CARD")
         return False
 
     if not _mount_sd_card(sd):
         print("SD init failed: cannot mount SD card")
-        if mixer is not None:
-            beep.play_beep_type(mixer, "NO_SD_CARD")
         return False
 
     return True
