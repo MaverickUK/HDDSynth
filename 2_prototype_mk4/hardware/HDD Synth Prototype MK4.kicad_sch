@@ -2162,6 +2162,18 @@
 		(uuid "1cb25943-4de2-44a7-b1a8-9500e504b5c3")
 	)
 	(rectangle
+		(start 130.81 157.48)
+		(end 170.18 189.23)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "6cd49fd4-4b8f-435a-a7ea-690cb014ed0e")
+	)
+	(rectangle
 		(start 77.47 157.48)
 		(end 128.27 189.23)
 		(stroke
@@ -2184,6 +2196,18 @@
 			(type none)
 		)
 		(uuid "ed775b1e-0f6c-4052-a76d-bf74267b50ff")
+	)
+	(text "Action button"
+		(exclude_from_sim no)
+		(at 138.43 160.02 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.254)
+				(bold yes)
+			)
+		)
+		(uuid "10b4b284-d648-4983-aef7-b50ba7b9cb83")
 	)
 	(text "Mounting holes"
 		(exclude_from_sim no)
@@ -2268,20 +2292,8 @@
 		(uuid "3f465149-a504-4b3e-8f0d-a392c3d71a42")
 	)
 	(no_connect
-		(at 121.92 74.93)
-		(uuid "457a2be4-9e1d-41fc-a6ad-6065f7baf3e6")
-	)
-	(no_connect
 		(at 121.92 77.47)
 		(uuid "5bfd8f9a-12d6-4970-9d4a-917c060e4018")
-	)
-	(no_connect
-		(at 121.92 90.17)
-		(uuid "60b99e7e-c774-4a8e-b902-4351c2bf7692")
-	)
-	(no_connect
-		(at 167.64 95.25)
-		(uuid "71052ba6-9799-463c-85a2-0f4ab0577fa7")
 	)
 	(no_connect
 		(at 167.64 113.03)
@@ -2319,6 +2331,16 @@
 	)
 	(wire
 		(pts
+			(xy 105.41 74.93) (xy 121.92 74.93)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "08f377cc-b6e6-4340-bd94-80b232aa17ef")
+	)
+	(wire
+		(pts
 			(xy 167.64 90.17) (xy 189.23 90.17)
 		)
 		(stroke
@@ -2326,6 +2348,16 @@
 			(type default)
 		)
 		(uuid "098578f2-abcf-4333-a29c-e0725167f58a")
+	)
+	(wire
+		(pts
+			(xy 151.13 171.45) (xy 165.1 171.45)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0a474fe3-a8a0-47c7-80c2-08f1a948839b")
 	)
 	(wire
 		(pts
@@ -2356,6 +2388,16 @@
 			(type default)
 		)
 		(uuid "21fcc920-e45e-4f16-9b04-3361924950f0")
+	)
+	(wire
+		(pts
+			(xy 105.41 90.17) (xy 121.92 90.17)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "24ff1878-f004-44cf-8df3-77ded10d570c")
 	)
 	(wire
 		(pts
@@ -2406,6 +2448,16 @@
 			(type default)
 		)
 		(uuid "4e0bcb53-7b56-4e42-bde8-93403ea9852d")
+	)
+	(wire
+		(pts
+			(xy 151.13 173.99) (xy 158.75 173.99)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "52a64356-b126-4b0a-ab8e-246f3216c68f")
 	)
 	(wire
 		(pts
@@ -2479,6 +2531,16 @@
 	)
 	(wire
 		(pts
+			(xy 105.41 72.39) (xy 120.65 72.39)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "74909650-27f9-4ffb-9235-43f65094f1bb")
+	)
+	(wire
+		(pts
 			(xy 22.86 138.43) (xy 30.48 138.43)
 		)
 		(stroke
@@ -2526,6 +2588,16 @@
 			(type default)
 		)
 		(uuid "7dc20c1e-44cf-4637-b3df-ca3086416eff")
+	)
+	(wire
+		(pts
+			(xy 167.64 95.25) (xy 184.15 95.25)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7f92086e-34a7-4557-91a8-5836a3e60993")
 	)
 	(wire
 		(pts
@@ -2606,6 +2678,16 @@
 			(type default)
 		)
 		(uuid "a23a9ef5-e02a-4150-baab-95a0594e229f")
+	)
+	(wire
+		(pts
+			(xy 170.18 69.85) (xy 189.23 69.85)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a947bd04-ed80-4880-ab04-20aa67c27c57")
 	)
 	(wire
 		(pts
@@ -2757,6 +2839,16 @@
 		)
 		(uuid "46f3ea2a-ac2b-4ebe-a1f8-1969b09c4c67")
 	)
+	(label "IDE_RESET"
+		(at 170.18 69.85 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "7218df7e-c034-49e4-bd55-52a279766bfe")
+	)
 	(label "HDD_LED_OUT"
 		(at 113.03 171.45 0)
 		(effects
@@ -2767,6 +2859,16 @@
 		)
 		(uuid "781867c5-41f6-4baa-aa20-58aa740bab88")
 	)
+	(label "ACTION_BTN"
+		(at 171.45 95.25 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "801d8746-67fd-43bc-9697-a982ccbf4d2c")
+	)
 	(label "HDD_LED_OUT"
 		(at 90.17 97.79 0)
 		(effects
@@ -2776,6 +2878,26 @@
 			(justify left bottom)
 		)
 		(uuid "882fe0a8-3679-44b5-82fd-cddcd484c9c7")
+	)
+	(label "IDE_RESET"
+		(at 109.22 72.39 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "8f672a0d-b2fe-4793-9eca-6d40a378502a")
+	)
+	(label "ACTION_BTN"
+		(at 153.67 171.45 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "a26a3b51-67fa-4ff8-83c7-2afe0b37d503")
 	)
 	(label "VCC_DETECT"
 		(at 118.11 49.53 0)
@@ -4098,6 +4220,110 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector_Generic:Conn_01x02")
+		(at 146.05 171.45 0)
+		(mirror y)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "b1f24d19-ed8e-440a-aabf-ac73b45a8022")
+		(property "Reference" "H8"
+			(at 143.51 171.4499 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Conn_01x02"
+			(at 143.51 173.9899 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"
+			(at 146.05 171.45 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 146.05 171.45 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 146.05 171.45 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer_Part_Number" ""
+			(at 146.05 171.45 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC_Part_Number" ""
+			(at 146.05 171.45 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "90e40b0f-b945-4353-a79e-09a3a1b7e647")
+		)
+		(pin "2"
+			(uuid "eda5fbca-a5d2-4d0c-b50c-f724e4b9a623")
+		)
+		(instances
+			(project "HDD Synth Prototype MK4"
+				(path "/1a22431a-ba36-40a0-9a7e-c2a82ec69c53"
+					(reference "H8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R")
 		(at 105.41 171.45 90)
 		(unit 1)
@@ -4277,6 +4503,84 @@
 			)
 		)
 	)
+	(symbol
+		(lib_id "power:GND")
+		(at 158.75 173.99 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "d0aca403-2416-43d7-80b3-071b2e2f4867")
+		(property "Reference" "#PWR040"
+			(at 158.75 180.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 158.75 179.07 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 158.75 173.99 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 158.75 173.99 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 158.75 173.99 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "95aa7c2c-af5e-40da-b164-d1c508ef92cf")
+		)
+		(instances
+			(project "HDD Synth Prototype MK4"
+				(path "/1a22431a-ba36-40a0-9a7e-c2a82ec69c53"
+					(reference "#PWR040")
+					(unit 1)
+				)
+			)
+		)
+	)
 	(sheet
 		(at 88.9 45.72)
 		(size 24.13 11.43)
@@ -4381,9 +4685,19 @@
 				(justify left top)
 			)
 		)
-		(pin "IDE_ACTIVITY" input
+		(pin "IDE_ACTIVITY" output
 			(at 189.23 72.39 180)
 			(uuid "73936e85-ce7c-4559-9ee0-129c9dca512b")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "IDE_RESET" output
+			(at 189.23 69.85 180)
+			(uuid "53c175b5-98f3-4eea-b7f5-16fdeffaf780")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4477,7 +4791,7 @@
 	)
 	(sheet
 		(at 87.63 81.28)
-		(size 17.78 7.62)
+		(size 17.78 10.16)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
@@ -4503,7 +4817,7 @@
 			)
 		)
 		(property "Sheetfile" "amplifier.kicad_sch"
-			(at 87.63 89.4846 0)
+			(at 87.63 92.0246 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4536,6 +4850,16 @@
 		(pin "LRCLK" input
 			(at 105.41 87.63 0)
 			(uuid "dd420eb2-9d92-4a20-bc3c-62447d43e9c6")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "SD_MODE" input
+			(at 105.41 90.17 0)
+			(uuid "dfe6dec8-3b14-4f86-9cae-6c4859f0d178")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4613,6 +4937,72 @@
 			(project "HDD Synth Prototype MK4"
 				(path "/1a22431a-ba36-40a0-9a7e-c2a82ec69c53"
 					(page "6")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 87.63 68.58)
+		(size 17.78 7.62)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "793258e2-de63-4f09-86a3-fe48790268bf")
+		(property "Sheetname" "Reset"
+			(at 87.63 67.8684 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "reset.kicad_sch"
+			(at 87.63 76.7846 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "IDE_RESET" input
+			(at 105.41 72.39 0)
+			(uuid "88ce0946-95aa-4dd0-a403-8b69b78a7448")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "PICO_RUN" input
+			(at 105.41 74.93 0)
+			(uuid "4a1e1731-7aeb-4cf6-bc13-a9ec9b32297d")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(instances
+			(project "HDD Synth Prototype MK4"
+				(path "/1a22431a-ba36-40a0-9a7e-c2a82ec69c53"
+					(page "8")
 				)
 			)
 		)

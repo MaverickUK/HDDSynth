@@ -3410,7 +3410,7 @@
 		)
 		(uuid "14db9585-3626-4d13-9b5e-7af281d61225")
 	)
-	(text "Disk activity is monitored via the Pico's \ninternal pull-up resistor on the GPIO, \nwith a BAT43 Schottky diode providing level \nisolation to protect the 3.3V logic from the \n5V IDE bus while maintaining a valid \nlogic-low threshold\n\nWhen the IDE controller pulls Pin 39 to \nground (Active low) the diode conducts \nand brings the GPIO low; conversely, \nwhen the bus is idle or at 5V, the diode \nblocks current flow,allowing the internal \npull-up to safely maintain a 3.3V \nlogic-high state"
+	(text "Disk activity is monitored via the Pico's \ninternal pull-up resistor on the GPIO, \nwith a BAT43W Schottky diode providing level \nisolation to protect the 3.3V logic from the \n5V IDE bus while maintaining a valid \nlogic-low threshold\n\nWhen the IDE controller pulls Pin 39 to \nground (Active low) the diode conducts \nand brings the GPIO low; conversely, \nwhen the bus is idle or at 5V, the diode \nblocks current flow,allowing the internal \npull-up to safely maintain a 3.3V \nlogic-high state"
 		(exclude_from_sim no)
 		(at 238.252 127.508 0)
 		(effects
@@ -4363,6 +4363,16 @@
 	)
 	(wire
 		(pts
+			(xy 49.53 58.42) (xy 69.85 58.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "651e58a2-d3d7-424c-bf4a-a48df6d84c2d")
+	)
+	(wire
+		(pts
 			(xy 50.8 88.9) (xy 69.85 88.9)
 		)
 		(stroke
@@ -5090,16 +5100,6 @@
 			(type default)
 		)
 		(uuid "ef16bca3-9168-4444-952e-587218357e46")
-	)
-	(wire
-		(pts
-			(xy 49.53 58.42) (xy 69.85 58.42)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "efbbe471-4927-4edd-a2d9-c134f7bdf819")
 	)
 	(wire
 		(pts
@@ -6040,7 +6040,7 @@
 		)
 	)
 	(hierarchical_label "IDE_ACTIVITY"
-		(shape input)
+		(shape output)
 		(at 260.35 109.22 0)
 		(effects
 			(font
@@ -6051,6 +6051,17 @@
 			(justify left)
 		)
 		(uuid "78b6d2c8-fc36-4ec4-bd30-324b54b66868")
+	)
+	(hierarchical_label "IDE_RESET"
+		(shape output)
+		(at 49.53 58.42 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "8e5cf583-eecf-4025-baef-ff5ac40c3037")
 	)
 	(netclass_flag ""
 		(length 2.54)
@@ -6288,7 +6299,7 @@
 				(justify bottom)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.snapeda.com/parts/1734451-1/TE%20Connectivity/view-part/?ref=search&t=compactflash&ab_test_case=b"
 			(at 190.5 91.44 0)
 			(hide yes)
 			(show_name no)
@@ -7115,7 +7126,7 @@
 				)
 			)
 		)
-		(property "Value" "BAT43"
+		(property "Value" "BAT43W"
 			(at 243.84 105.41 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7136,7 +7147,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/1N4148_1N4448.pdf"
+		(property "Datasheet" ""
 			(at 243.84 109.22 0)
 			(hide yes)
 			(show_name no)
@@ -7395,7 +7406,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.lcsc.com/product-detail/C19193815.html?s_z=n_q_p_C2541WV-2X20P-A1&spm=wm.ssy.bg.13.stp&lcsc_vid=RFVXVVNXQlReBVQDFlULVl1VFgVaUlVQRFUIVgVTRlYxVlNRTlVYU11eRFhWVjsOAxUeFF5JWBYZEEoKFBINSQcJGk4dAgUUFAk%3D"
 			(at 74.93 81.28 0)
 			(hide yes)
 			(show_name no)

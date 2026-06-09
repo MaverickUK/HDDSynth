@@ -78,7 +78,19 @@
       ],
       "drc_exclusions": [
         [
+          "items_not_allowed|115446036|99897540|575c5972-fc47-428f-aaf2-5522b1a01f0e|00000000-0000-0000-0000-000000000000",
+          ""
+        ],
+        [
           "starved_thermal|136658679|81781319|fc5caaba-8d3e-4e83-a650-042278e58323|6d3118d9-9a1c-48b5-9d16-6be106ffca36|B.Cu",
+          ""
+        ],
+        [
+          "starved_thermal|88730000|68580000|fc5caaba-8d3e-4e83-a650-042278e58323|ece8e09c-d694-42a4-8470-e9bc4793e55a|B.Cu",
+          ""
+        ],
+        [
+          "unconnected_items|120302500|111412500|F.Cu|4|bd5a557b-7807-4ca6-8d90-fb94714246d3|57159bb4-5bdd-4049-b368-fb9791a19ec6",
           ""
         ]
       ],
@@ -596,7 +608,7 @@
     "netclass_patterns": [
       {
         "netclass": "CF_IDE_Signals",
-        "pattern": "/IDE/IDE_*"
+        "pattern": "*/IDE_*"
       },
       {
         "netclass": "CF_IDE_Signals",
@@ -612,7 +624,7 @@
     "last_paths": {
       "idf": "",
       "netlist": "",
-      "plot": "",
+      "plot": "Gerbers/",
       "specctra_dsn": "",
       "vrml": ""
     },
@@ -793,7 +805,7 @@
           "group_by": false,
           "label": "Description",
           "name": "Description",
-          "show": false
+          "show": true
         },
         {
           "group_by": false,
@@ -881,6 +893,10 @@
     [
       "293c32c0-b0ed-4b60-a32a-d04548ae7be6",
       "Rotary encoder"
+    ],
+    [
+      "793258e2-de63-4f09-86a3-fe48790268bf",
+      "Reset"
     ]
   ],
   "text_variables": {},

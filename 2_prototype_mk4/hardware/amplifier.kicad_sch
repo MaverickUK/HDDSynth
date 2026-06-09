@@ -1168,7 +1168,7 @@
 	)
 	(text "Connect to GND: 9dB gain (Quiet/Cleanest).\nConnect to VDD (5V): 12dB gain (Standard).\nConnect to VDD through a 100kOhm resistor: 15dB (Loud).\nLeave Floating (Unconnected): 6dB (Very quiet)."
 		(exclude_from_sim no)
-		(at 77.724 117.602 0)
+		(at 71.882 121.158 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1216,12 +1216,6 @@
 		(uuid "51f39484-0c2a-424e-95a9-68d87cbf3fa3")
 	)
 	(junction
-		(at 132.08 107.95)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "6e9cebbe-0cd0-4de3-88e4-378781ce6571")
-	)
-	(junction
 		(at 187.96 91.44)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1258,16 +1252,6 @@
 			(type default)
 		)
 		(uuid "12da697b-dad5-4fcf-bab7-2d5f89fcf3d7")
-	)
-	(wire
-		(pts
-			(xy 132.08 110.49) (xy 137.16 110.49)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "12e65cca-ec6f-4f6b-a740-a106a4200cd3")
 	)
 	(wire
 		(pts
@@ -1371,6 +1355,16 @@
 	)
 	(wire
 		(pts
+			(xy 118.11 107.95) (xy 137.16 107.95)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "45351363-cdd2-4875-8dc5-2456f5f6fa8b")
+	)
+	(wire
+		(pts
 			(xy 165.1 100.33) (xy 165.1 106.68)
 		)
 		(stroke
@@ -1411,16 +1405,6 @@
 	)
 	(wire
 		(pts
-			(xy 132.08 107.95) (xy 132.08 110.49)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6a16fc07-4b04-4343-8c6d-84e056550dae")
-	)
-	(wire
-		(pts
 			(xy 149.86 55.88) (xy 149.86 60.96)
 		)
 		(stroke
@@ -1428,16 +1412,6 @@
 			(type default)
 		)
 		(uuid "6c767590-4825-4c16-97fa-ec5756dfaa2d")
-	)
-	(wire
-		(pts
-			(xy 132.08 107.95) (xy 137.16 107.95)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8542afcb-920c-4e88-b148-526e5c2b4334")
 	)
 	(wire
 		(pts
@@ -1581,7 +1555,7 @@
 	)
 	(wire
 		(pts
-			(xy 121.92 107.95) (xy 132.08 107.95)
+			(xy 121.92 110.49) (xy 137.16 110.49)
 		)
 		(stroke
 			(width 0)
@@ -1615,7 +1589,7 @@
 	)
 	(global_label "POWER_5V_SUP"
 		(shape bidirectional)
-		(at 121.92 107.95 180)
+		(at 121.92 110.49 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1625,7 +1599,7 @@
 		)
 		(uuid "b49755ad-0ef3-4bf9-942f-f94a5de8fee9")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 103.3093 107.95 0)
+			(at 103.3093 110.49 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1647,6 +1621,17 @@
 			(justify right)
 		)
 		(uuid "78bb390f-6257-4595-9eea-0ccc03bde729")
+	)
+	(hierarchical_label "SD_MODE"
+		(shape input)
+		(at 118.11 107.95 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "8c6c8a51-a1ac-48b0-abb4-98ab4d156dda")
 	)
 	(hierarchical_label "BCLK"
 		(shape input)
@@ -1673,17 +1658,17 @@
 	(netclass_flag ""
 		(length 2.54)
 		(shape round)
-		(at 127 107.95 0)
+		(at 127 110.49 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify left bottom)
+			(justify right bottom)
 		)
 		(uuid "83a2dba3-923e-4ce1-a8af-2076411af574")
 		(property "Net Class" "Power"
-			(at 127.6985 105.41 0)
+			(at 127.6985 113.03 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1694,7 +1679,7 @@
 			)
 		)
 		(property "Component Class" ""
-			(at -46.99 13.97 0)
+			(at -46.99 16.51 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects

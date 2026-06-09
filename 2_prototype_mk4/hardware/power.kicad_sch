@@ -1694,10 +1694,10 @@
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
-		(in_bom no)
+		(in_bom yes)
 		(on_board yes)
 		(in_pos_files yes)
-		(dnp yes)
+		(dnp no)
 		(uuid "260a05b9-2133-494e-906b-b1f88c2fe2ba")
 		(property "Reference" "Super_Cap3"
 			(at 164.084 102.616 0)
@@ -1710,7 +1710,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "0.47F"
+		(property "Value" "1F"
 			(at 163.83 100.3362 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1721,7 +1721,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_THT:CP_Radial_D12.5mm_P5.00mm"
+		(property "Footprint" "Capacitor_THT:CP_Radial_D14.0mm_P5.00mm"
 			(at 161.29 99.06 0)
 			(hide yes)
 			(show_name no)
@@ -1732,7 +1732,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://resources.kitronik.co.uk/pdf/super_capacitor.pdf"
 			(at 161.29 99.06 0)
 			(hide yes)
 			(show_name no)
@@ -1743,7 +1743,7 @@
 				)
 			)
 		)
-		(property "Description" "Unpolarized capacitor, small symbol"
+		(property "Description" "polarized radial super capacitor, 1F 5.5V"
 			(at 161.29 99.06 0)
 			(hide yes)
 			(show_name no)
@@ -1754,7 +1754,7 @@
 				)
 			)
 		)
-		(property "Manufacturer_Part_Number" "DX-5R5V474U"
+		(property "Manufacturer_Part_Number" ""
 			(at 161.29 99.06 0)
 			(hide yes)
 			(show_name no)
