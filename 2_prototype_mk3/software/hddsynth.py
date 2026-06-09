@@ -20,6 +20,8 @@ import rotary_enc
 import power
 import hdd_led
 import nvm_wrapper
+import sd_settings
+import beep
 
 
 def _init_audio():
@@ -145,6 +147,30 @@ def run_synth():
 
     _, mixer = _init_audio()
     sdcard.initialise(mixer)
+
+    # Load settings from SD card if available
+    sd_overrides = sd_settings.load_settings()
+
+    # Apply settings overrides from SD card
+    if "PLAY_SPINUP" in sd_overrides:
+        settings.PLAY_SPINUP = sd_overrides["PLAY_SPINUP"]
+    if "PLAY_SPINDOWN" in sd_overrides:
+        settings.PLAY_SPINDOWN = sd_overrides["PLAY_SPINDOWN"]
+    if "PLAY_IDLE" in sd_overrides:
+        settings.PLAY_IDLE = sd_overrides["PLAY_IDLE"]
+    if "ACCESS_HOLD_TIME_MS" in sd_overrides:
+        settings.ACCESS_HOLD_TIME_MS = sd_overrides["ACCESS_HOLD_TIME_MS"]
+    if "VOLUME_DEFAULT" in sd_overrides:
+        settings.VOLUME_DEFAULT = sd_overrides["VOLUME_DEFAULT"]
+    if "BALANCE_DEFAULT" in sd_overrides:
+        settings.BALANCE_DEFAULT = sd_overrides["BALANCE_DEFAULT"]
+
+    # Handle sample pack installation from SD card
+    pack_install_ok = sd_settings.install_sample_pack_if_needed(sd_overrides)
+    if not pack_install_ok:
+        print("[hddsynth] Sample pack from SD settings not found, playing error beep")
+        beep.play_beep_type(mixer, "PACK_NOT_FOUND")
+
     samples = _load_samples()
 
     _maybe_play_jingle(mixer, samples)

@@ -67,6 +67,11 @@ PROFILE = {
         "count": 4,
         "length": LENGTH_SHORT,
     },
+    "PACK_NOT_FOUND": {
+        "pitch": PITCH_LOW,
+        "count": 5,
+        "length": LENGTH_SHORT,
+    },    
 }
 
 # --- Internal Helpers ---
