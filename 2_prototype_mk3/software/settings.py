@@ -37,7 +37,7 @@ ENCODER_BUTTON_PIN = board.GP22  # Encoder push button (toggles volume <-> balan
 
 # Volume
 VOLUME_DEFAULT = 0.5          # Starting volume (0.0 - 1.0)
-VOLUME_STEP = 0.1             # Volume change per encoder detent (0.0 - 1.0)
+VOLUME_STEP = 0.05             # Volume change per encoder detent (0.0 - 1.0)
 VOLUME_PRINT = False          # Print volume changes to console
 
 # Balance (idle vs access mix when MIXER_VOICES == 2)
