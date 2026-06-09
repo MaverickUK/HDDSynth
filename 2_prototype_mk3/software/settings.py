@@ -19,7 +19,7 @@ POWER_MAX_ADC_VALUE = 65535         # CircuitPython 16-bit scaling
 POWER_VOLTAGE_THRESHOLD_EXT = 4.0   # External voltage (0V-5V) that triggers "powered" state
 
 # HDD Activity
-ACTIVITY_INPUT_PIN = board.GP26    # Optocoupler output from HDD activity signal (LOW = active)
+ACTIVITY_INPUT_PIN = board.GP19    # Optocoupler output from HDD activity signal (LOW = active)
 HDD_LED_PIN = board.GP1            # External HDD activity LED
 
 # Action Button
