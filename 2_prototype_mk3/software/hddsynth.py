@@ -78,7 +78,8 @@ def _maybe_play_jingle(mixer, samples):
 
 def _start_dual_voice_loops(mixer, samples):
     """In dual-voice mode, the idle and access samples both loop continuously."""
-    mixer.voice[0].play(samples["idle"].sample, loop=True)
+    if settings.PLAY_IDLE:
+        mixer.voice[0].play(samples["idle"].sample, loop=True)
     mixer.voice[1].play(samples["access"].sample, loop=True)
     mixer.voice[1].level = 0  # Start with access muted
 
@@ -106,7 +107,7 @@ def _main_loop(mixer, samples, led):
                 mixer.voice[0].stop()
 
             # Idle
-            if not access and not mixer.voice[0].playing:
+            if not access and not mixer.voice[0].playing and settings.PLAY_IDLE:
                 mixer.voice[0].play(samples["idle"].sample)
                 print(".", end="")
 
@@ -122,9 +123,10 @@ def _main_loop(mixer, samples, led):
 
 
 def _spindown(mixer, samples):
-    print("Playing spindown")
-    audio.stop_all(mixer)
-    audio.play_sample_active_pause(mixer, samples["spindown"])
+    if settings.PLAY_SPINDOWN:
+        print("Playing spindown")
+        audio.stop_all(mixer)
+        audio.play_sample_active_pause(mixer, samples["spindown"])
 
 
 def _wait_for_power_and_reset():

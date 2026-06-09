@@ -2,6 +2,8 @@ import board
 
 SIMULATION_MODE = True # Simulate HDD activity
 PLAY_SPINUP = True
+PLAY_SPINDOWN = True
+PLAY_IDLE = True
 ALWAYS_PLAY_JINGLE = False
 
 ACCESS_HOLD_TIME_MS = 100 # How long to hold the access sample after an access is detected (in ms)
