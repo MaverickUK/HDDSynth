@@ -133,6 +133,9 @@ def _spindown(mixer, samples):
 
 def _apply_sd_settings(sd_overrides):
     """Apply settings overrides loaded from SD card."""
+    if "SIMULATION_MODE" in sd_overrides:
+        settings.SIMULATION_MODE = sd_overrides["SIMULATION_MODE"]
+        print(f"[SD Settings] SIMULATION_MODE = {settings.SIMULATION_MODE}")
     if "PLAY_SPINUP" in sd_overrides:
         settings.PLAY_SPINUP = sd_overrides["PLAY_SPINUP"]
         print(f"[SD Settings] PLAY_SPINUP = {settings.PLAY_SPINUP}")
