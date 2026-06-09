@@ -14,15 +14,11 @@ def load_settings():
     settings_file = f"{settings.SDCARD_MOUNT_POINT}/settings.json"
 
     try:
-        if not os.path.exists(settings_file):
-            return {}
-
         with open(settings_file, 'r') as f:
             data = json.load(f)
-
         print(f"[SD Settings] Loaded settings from {settings_file}")
         return data
-    except (OSError, json.JSONDecodeError) as e:
+    except (OSError, ValueError) as e:
         print(f"[SD Settings] Error loading settings: {e}")
         return {}
 
@@ -56,9 +52,8 @@ def install_sample_pack_if_needed(sd_settings):
     pack_path = f"{settings.SDCARD_SAMPLE_DIR}/{pack_name}"
 
     try:
-        if not os.path.exists(pack_path):
-            print(f"[SD Settings] Sample pack not found: {pack_path}")
-            return False
+        # Check if pack directory exists by listing it
+        os.listdir(pack_path)
 
         # Pack exists, set it as desired
         print(f"[SD Settings] Installing sample pack: {pack_name}")
@@ -70,5 +65,5 @@ def install_sample_pack_if_needed(sd_settings):
 
         return True
     except OSError:
-        print(f"[SD Settings] Error accessing sample pack directory")
+        print(f"[SD Settings] Sample pack not found: {pack_path}")
         return False

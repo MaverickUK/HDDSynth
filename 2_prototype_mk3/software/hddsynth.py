@@ -131,6 +131,28 @@ def _spindown(mixer, samples):
         audio.play_sample_active_pause(mixer, samples["spindown"])
 
 
+def _apply_sd_settings(sd_overrides):
+    """Apply settings overrides loaded from SD card."""
+    if "PLAY_SPINUP" in sd_overrides:
+        settings.PLAY_SPINUP = sd_overrides["PLAY_SPINUP"]
+        print(f"[SD Settings] PLAY_SPINUP = {settings.PLAY_SPINUP}")
+    if "PLAY_SPINDOWN" in sd_overrides:
+        settings.PLAY_SPINDOWN = sd_overrides["PLAY_SPINDOWN"]
+        print(f"[SD Settings] PLAY_SPINDOWN = {settings.PLAY_SPINDOWN}")
+    if "PLAY_IDLE" in sd_overrides:
+        settings.PLAY_IDLE = sd_overrides["PLAY_IDLE"]
+        print(f"[SD Settings] PLAY_IDLE = {settings.PLAY_IDLE}")
+    if "ACCESS_HOLD_TIME_MS" in sd_overrides:
+        settings.ACCESS_HOLD_TIME_MS = sd_overrides["ACCESS_HOLD_TIME_MS"]
+        print(f"[SD Settings] ACCESS_HOLD_TIME_MS = {settings.ACCESS_HOLD_TIME_MS}")
+    if "VOLUME_DEFAULT" in sd_overrides:
+        settings.VOLUME_DEFAULT = sd_overrides["VOLUME_DEFAULT"]
+        print(f"[SD Settings] VOLUME_DEFAULT = {settings.VOLUME_DEFAULT}")
+    if "BALANCE_DEFAULT" in sd_overrides:
+        settings.BALANCE_DEFAULT = sd_overrides["BALANCE_DEFAULT"]
+        print(f"[SD Settings] BALANCE_DEFAULT = {settings.BALANCE_DEFAULT}")
+
+
 def _wait_for_power_and_reset():
     while not power.external_power():
         time.sleep(0.1)
@@ -148,22 +170,9 @@ def run_synth():
     _, mixer = _init_audio()
     sdcard.initialise(mixer)
 
-    # Load settings from SD card if available
+    # Load and apply settings from SD card if available
     sd_overrides = sd_settings.load_settings()
-
-    # Apply settings overrides from SD card
-    if "PLAY_SPINUP" in sd_overrides:
-        settings.PLAY_SPINUP = sd_overrides["PLAY_SPINUP"]
-    if "PLAY_SPINDOWN" in sd_overrides:
-        settings.PLAY_SPINDOWN = sd_overrides["PLAY_SPINDOWN"]
-    if "PLAY_IDLE" in sd_overrides:
-        settings.PLAY_IDLE = sd_overrides["PLAY_IDLE"]
-    if "ACCESS_HOLD_TIME_MS" in sd_overrides:
-        settings.ACCESS_HOLD_TIME_MS = sd_overrides["ACCESS_HOLD_TIME_MS"]
-    if "VOLUME_DEFAULT" in sd_overrides:
-        settings.VOLUME_DEFAULT = sd_overrides["VOLUME_DEFAULT"]
-    if "BALANCE_DEFAULT" in sd_overrides:
-        settings.BALANCE_DEFAULT = sd_overrides["BALANCE_DEFAULT"]
+    _apply_sd_settings(sd_overrides)
 
     # Handle sample pack installation from SD card
     pack_install_ok = sd_settings.install_sample_pack_if_needed(sd_overrides)
