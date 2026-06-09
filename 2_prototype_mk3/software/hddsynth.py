@@ -153,32 +153,69 @@ def _apply_sd_settings(sd_overrides):
         print(f"[SD Settings] BALANCE_DEFAULT = {settings.BALANCE_DEFAULT}")
 
 
+def _no_op_action_button_handler(mixer):
+    """No-op handler when action button is disabled."""
+    pass
+
+
 def _wait_for_power_and_reset():
     while not power.external_power():
         time.sleep(0.1)
     microcontroller.reset()
 
 
+def _check_sample_pack_installed():
+    """Check if a sample pack is installed (by checking if desired pack is set)."""
+    return bool(sample_changer.get_desired_pack())
+
+
 def run_synth():
     print("Starting HDD Synth...")
-    print("HDD Sample Pack: " + sample_changer.get_desired_pack())
 
     # Pico onboard LED — mirrors access state for dev visibility
     led = digitalio.DigitalInOut(board.LED)
     led.direction = digitalio.Direction.OUTPUT
 
     _, mixer = _init_audio()
-    sdcard.initialise(mixer)
+
+    # Try to initialize SD card
+    sd_available = sdcard.initialise(mixer)
 
     # Load and apply settings from SD card if available
-    sd_overrides = sd_settings.load_settings()
-    _apply_sd_settings(sd_overrides)
+    if sd_available:
+        sd_overrides = sd_settings.load_settings()
+        _apply_sd_settings(sd_overrides)
+    else:
+        sd_overrides = {}
 
-    # Handle sample pack installation from SD card
-    pack_install_ok = sd_settings.install_sample_pack_if_needed(sd_overrides)
-    if not pack_install_ok:
-        print("[hddsynth] Sample pack from SD settings not found, playing error beep")
-        beep.play_beep_type(mixer, "PACK_NOT_FOUND")
+    # Check if sample pack is installed
+    sample_pack_installed = _check_sample_pack_installed()
+
+    # Handle SDCARD_REQUIRED logic
+    if not sd_available:
+        if settings.SDCARD_REQUIRED:
+            print("[hddsynth] SD card required but not available, exiting")
+            beep.play_beep_type(mixer, "NO_SD_CARD")
+            _wait_for_power_and_reset()
+            return
+
+        if not sample_pack_installed:
+            print("[hddsynth] No sample pack installed and SD card not available, playing error beep")
+            beep.play_beep_type(mixer, "PACK_NOT_FOUND")
+            _wait_for_power_and_reset()
+            return
+
+        print("[hddsynth] SD card not available but sample pack is installed, disabling action button")
+        action_button.handler = _no_op_action_button_handler
+
+    print("HDD Sample Pack: " + sample_changer.get_desired_pack())
+
+    # Handle sample pack installation from SD card (only if SD is available)
+    if sd_available:
+        pack_install_ok = sd_settings.install_sample_pack_if_needed(sd_overrides)
+        if not pack_install_ok:
+            print("[hddsynth] Sample pack from SD settings not found, playing error beep")
+            beep.play_beep_type(mixer, "PACK_NOT_FOUND")
 
     samples = _load_samples()
 

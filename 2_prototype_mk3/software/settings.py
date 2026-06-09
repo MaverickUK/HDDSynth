@@ -46,6 +46,7 @@ BALANCE_STEP = 0.1            # Balance change per encoder detent (0.0 - 1.0)
 BALANCE_PRINT = False         # Print balance changes to console
 
 # SD Card
+SDCARD_REQUIRED = False         # If True, device won't run without SD card. If False, device can run without SD (if sample pack is installed)
 SDCARD_SCK_PIN = board.GP14    # SPI Clock
 SDCARD_MOSI_PIN = board.GP15   # SPI MOSI
 SDCARD_MISO_PIN = board.GP12   # SPI MISO
