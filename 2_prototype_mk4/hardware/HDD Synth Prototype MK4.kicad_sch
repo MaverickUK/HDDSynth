@@ -2315,10 +2315,6 @@
 		(at 167.64 97.79)
 		(uuid "e2641b8e-ea4e-4bb9-bc77-cdda8038d603")
 	)
-	(no_connect
-		(at 121.92 118.11)
-		(uuid "fb0ba09c-a178-469c-b0f5-bd4fa292f9c9")
-	)
 	(wire
 		(pts
 			(xy 90.17 100.33) (xy 121.92 100.33)
@@ -2591,6 +2587,16 @@
 	)
 	(wire
 		(pts
+			(xy 105.41 128.27) (xy 118.11 128.27)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7ec4211d-feb2-48e2-9687-91febc0b8d74")
+	)
+	(wire
+		(pts
 			(xy 167.64 95.25) (xy 184.15 95.25)
 		)
 		(stroke
@@ -2721,6 +2727,16 @@
 	)
 	(wire
 		(pts
+			(xy 121.92 118.11) (xy 118.11 118.11)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b379c688-f458-4d62-a4d8-5d04c94a8f3c")
+	)
+	(wire
+		(pts
 			(xy 53.34 171.45) (xy 53.34 172.72)
 		)
 		(stroke
@@ -2788,6 +2804,16 @@
 			(type default)
 		)
 		(uuid "e4287698-c8ea-4fc8-9cac-25c422c12912")
+	)
+	(wire
+		(pts
+			(xy 118.11 118.11) (xy 118.11 128.27)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e7c590e9-bb3a-492e-8048-db3e8d33dfb7")
 	)
 	(wire
 		(pts
@@ -4937,6 +4963,62 @@
 			(project "HDD Synth Prototype MK4"
 				(path "/1a22431a-ba36-40a0-9a7e-c2a82ec69c53"
 					(page "6")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 87.63 125.73)
+		(size 17.78 5.08)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "779dbbe7-9583-41dc-a633-b3a85967b109")
+		(property "Sheetname" "RGB LED"
+			(at 87.63 125.0184 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "rgb_led.kicad_sch"
+			(at 87.63 131.3946 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "RGB_DATA" input
+			(at 105.41 128.27 0)
+			(uuid "1eb77ee0-0557-4b92-9013-ed070e15b182")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(instances
+			(project "HDD Synth Prototype MK4"
+				(path "/1a22431a-ba36-40a0-9a7e-c2a82ec69c53"
+					(page "9")
 				)
 			)
 		)

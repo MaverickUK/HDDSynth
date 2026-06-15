@@ -78,6 +78,10 @@
       ],
       "drc_exclusions": [
         [
+          "items_not_allowed|109030000|115110000|06942cad-876b-4105-9c53-79bf1ca0a5ec|00000000-0000-0000-0000-000000000000",
+          ""
+        ],
+        [
           "items_not_allowed|115446036|99897540|575c5972-fc47-428f-aaf2-5522b1a01f0e|00000000-0000-0000-0000-000000000000",
           ""
         ],
@@ -87,10 +91,6 @@
         ],
         [
           "starved_thermal|88730000|68580000|fc5caaba-8d3e-4e83-a650-042278e58323|ece8e09c-d694-42a4-8470-e9bc4793e55a|B.Cu",
-          ""
-        ],
-        [
-          "unconnected_items|120302500|111412500|F.Cu|4|bd5a557b-7807-4ca6-8d90-fb94714246d3|57159bb4-5bdd-4049-b368-fb9791a19ec6",
           ""
         ]
       ],
@@ -862,7 +862,7 @@
         "uuid": "1a22431a-ba36-40a0-9a7e-c2a82ec69c53"
       }
     ],
-    "used_designators": "",
+    "used_designators": "R7-9,Q1,C11,#PWR17,#PWR41-44,D3,H9",
     "variants": []
   },
   "sheets": [
@@ -897,6 +897,10 @@
     [
       "793258e2-de63-4f09-86a3-fe48790268bf",
       "Reset"
+    ],
+    [
+      "779dbbe7-9583-41dc-a633-b3a85967b109",
+      "RGB LED"
     ]
   ],
   "text_variables": {},

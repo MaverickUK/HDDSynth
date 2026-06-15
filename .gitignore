@@ -138,7 +138,7 @@ drc_result.txt
 erc_result.txt
 
 # KiCad export files
-*.step
+# *.step
 *.stp
 *.iges
 *.igs
