@@ -13,6 +13,14 @@ keys = keypad.Keys((settings.ACTION_BUTTON_PIN,), value_when_pressed=False, pull
 # Internal state tracking
 _action_button_start_time = None
 _action_button_long_pressed = False
+_reload_samples_fn = None
+
+
+def set_reload_callback(fn):
+    """Register a callback invoked on pack change when SDCARD_CACHE_SAMPLES is False."""
+    global _reload_samples_fn
+    _reload_samples_fn = fn
+
 
 def _factory_reset(mixer):
     print(f"Long Pressed Detected ({settings.ACTION_BUTTON_LONG_PRESS_S} seconds held down)")
@@ -23,13 +31,23 @@ def _factory_reset(mixer):
     sample_changer.initialize() # Reset to first pack
 
     nvm_wrapper.safe_write(settings.NVM_ADDRESS_JINGLE, settings.NVM_JINGLE_NOT_PLAYED)
-    nvm_wrapper.safe_write(settings.NVM_ADDRESS_MODE, settings.NVM_MODE_WRITE, reset=True)
+
+    if settings.SDCARD_CACHE_SAMPLES:
+        nvm_wrapper.safe_write(settings.NVM_ADDRESS_MODE, settings.NVM_MODE_WRITE, reset=True)
+    elif _reload_samples_fn:
+        _reload_samples_fn(mixer)
+
 
 def _change_pack(mixer):
     print("Short Press Detected (on release)")
     audio.stop_all(mixer)
     beep.play_beep_type(mixer, "CHANGE_PACK")
-    sample_changer.next_pack()
+    if settings.SDCARD_CACHE_SAMPLES:
+        sample_changer.next_pack()
+    else:
+        sample_changer.next_pack(reboot_after=False)
+        if _reload_samples_fn:
+            _reload_samples_fn(mixer)
 
 def handler(mixer):
     global _action_button_start_time, _action_button_long_pressed

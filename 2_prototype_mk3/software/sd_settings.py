@@ -59,9 +59,9 @@ def install_sample_pack_if_needed(sd_settings):
         print(f"[SD Settings] Installing sample pack: {pack_name}")
         sample_changer.set_desired_pack(pack_name)
 
-        # Trigger cache update for new pack
-        import sample_cache
-        sample_cache.trigger_write_mode()
+        if settings.SDCARD_CACHE_SAMPLES:
+            import sample_cache
+            sample_cache.trigger_write_mode()
 
         return True
     except OSError:

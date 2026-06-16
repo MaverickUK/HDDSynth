@@ -19,7 +19,7 @@ first_boot.run_if_needed()
 
 mode = nvm_wrapper.safe_read(settings.NVM_ADDRESS_MODE)
 
-if mode == settings.NVM_MODE_WRITE:
+if mode == settings.NVM_MODE_WRITE and settings.SDCARD_CACHE_SAMPLES:
     # Write Mode: cache the requested HDD sample pack
     try:
         led = digitalio.DigitalInOut(board.LED)

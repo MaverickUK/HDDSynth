@@ -52,12 +52,13 @@ def _load_samples():
     except OSError:
         print(f"[hddsynth] Jingle not found: {settings.JINGLE_FILE}")
 
+    paths = sample_changer.get_sample_paths()
     return {
-        "jingle": jingle,
-        "spinup": SampleContainer(settings.SAMPLE_SPINUP_FILE),
-        "idle": SampleContainer(settings.SAMPLE_IDLE_FILE),
-        "access": SampleContainer(settings.SAMPLE_ACCESS_FILE),
-        "spindown": SampleContainer(settings.SAMPLE_SPINDOWN_FILE),
+        "jingle":   jingle,
+        "spinup":   SampleContainer(paths["spinup"]),
+        "idle":     SampleContainer(paths["idle"]),
+        "access":   SampleContainer(paths["access"]),
+        "spindown": SampleContainer(paths["spindown"]),
     }
 
 
@@ -154,6 +155,30 @@ def _apply_sd_settings(sd_overrides):
     if "BALANCE_DEFAULT" in sd_overrides:
         settings.BALANCE_DEFAULT = sd_overrides["BALANCE_DEFAULT"]
         print(f"[SD Settings] BALANCE_DEFAULT = {settings.BALANCE_DEFAULT}")
+    if "SDCARD_CACHE_SAMPLES" in sd_overrides:
+        settings.SDCARD_CACHE_SAMPLES = sd_overrides["SDCARD_CACHE_SAMPLES"]
+        print(f"[SD Settings] SDCARD_CACHE_SAMPLES = {settings.SDCARD_CACHE_SAMPLES}")
+
+
+def _make_reload_callback(samples):
+    """Returns a closure that hot-swaps the active sample pack in-place."""
+    def reload(mixer):
+        audio.stop_all(mixer)
+        try:
+            new_samples = _load_samples()
+        except Exception as e:
+            print(f"[hddsynth] Pack reload failed: {e}")
+            if settings.MIXER_VOICES == 2:
+                _start_dual_voice_loops(mixer, samples)
+            return
+        for s in samples.values():
+            if s is not None:
+                s.deinit()
+        samples.update(new_samples)
+        if settings.MIXER_VOICES == 2:
+            _start_dual_voice_loops(mixer, samples)
+        print("HDD Sample Pack: " + sample_changer.get_desired_pack())
+    return reload
 
 
 def _no_op_action_button_handler(mixer):
@@ -196,7 +221,7 @@ def run_synth():
 
     # Handle SDCARD_REQUIRED logic
     if not sd_available:
-        if settings.SDCARD_REQUIRED:
+        if settings.SDCARD_REQUIRED or not settings.SDCARD_CACHE_SAMPLES:
             print("[hddsynth] SD card required but not available, exiting")
             beep.play_beep_type(mixer, "NO_SD_CARD")
             _wait_for_power_and_reset()
@@ -221,6 +246,9 @@ def run_synth():
             beep.play_beep_type(mixer, "PACK_NOT_FOUND")
 
     samples = _load_samples()
+
+    if not settings.SDCARD_CACHE_SAMPLES:
+        action_button.set_reload_callback(_make_reload_callback(samples))
 
     _maybe_play_jingle(mixer, samples)
     audio.set_volume(mixer)

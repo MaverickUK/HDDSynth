@@ -73,10 +73,36 @@ def next_pack(reboot_after=True):
     print(f"[Changer] Target set to: {new_selection}")
 
     if reboot_after:
-        sample_cache.trigger_write_mode()
+        if settings.SDCARD_CACHE_SAMPLES:
+            sample_cache.trigger_write_mode()
+        else:
+            import microcontroller
+            microcontroller.reset()
         
 
 # --- Public Abstraction Methods ---
+
+def get_sample_paths():
+    """Returns a dict of sample file paths for the current pack.
+    When SDCARD_CACHE_SAMPLES is True, paths point to Pico flash (/cache).
+    When False, paths point directly to the SD card pack directory.
+    """
+    if settings.SDCARD_CACHE_SAMPLES:
+        return {
+            "spinup":   settings.SAMPLE_SPINUP_FILE,
+            "spindown": settings.SAMPLE_SPINDOWN_FILE,
+            "idle":     settings.SAMPLE_IDLE_FILE,
+            "access":   settings.SAMPLE_ACCESS_FILE,
+        }
+    pack = get_desired_pack()
+    base = f"{settings.SDCARD_SAMPLE_DIR}/{pack}"
+    return {
+        "spinup":   f"{base}/spinup.wav",
+        "spindown": f"{base}/spindown.wav",
+        "idle":     f"{base}/idle.wav",
+        "access":   f"{base}/access.wav",
+    }
+
 
 def get_desired_pack():
     """Reads the 'Desired' pack name from nvm_wrapper."""

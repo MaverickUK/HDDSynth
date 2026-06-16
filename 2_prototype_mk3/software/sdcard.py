@@ -1,14 +1,13 @@
 import busio
-import digitalio
+import sdcardio
 import storage
-import time
 
 import settings
 import beep
 
 
 def _test_spi_connection():
-    """Initialise the SPI bus and chip-select pin. Returns (spi, cs) or (None, None)."""
+    """Initialise the SPI bus. Returns spi or None."""
     print("Testing SPI connection...")
 
     try:
@@ -18,38 +17,22 @@ def _test_spi_connection():
             settings.SDCARD_MISO_PIN,
         )
         print("  SPI bus initialized")
-
-        cs = digitalio.DigitalInOut(settings.SDCARD_CS_PIN)
-        cs.direction = digitalio.Direction.OUTPUT
-        cs.value = True  # Start with CS high (inactive)
-        print("  Chip select pin configured")
-
-        return spi, cs
+        return spi
 
     except Exception as e:
         print(f"  SPI initialization failed: {e}")
-        return None, None
+        return None
 
 
-def _test_sd_card_detection(spi, cs):
+def _test_sd_card_detection(spi):
     """Probe the SD card. Returns the SDCard object or None."""
     print("Testing SD card detection...")
 
     try:
-        import adafruit_sdcard
-        sd = adafruit_sdcard.SDCard(spi, cs)
-        print("  SD card object created")
-
-        cs.value = False
-        time.sleep(0.001)
-        cs.value = True
-        print("  Basic SD card communication successful")
-
+        sd = sdcardio.SDCard(spi, settings.SDCARD_CS_PIN, baudrate=settings.SDCARD_BAUDRATE)
+        print("  SD card detected")
         return sd
 
-    except ImportError:
-        print("  adafruit_sdcard library not found")
-        return None
     except Exception as e:
         print(f"  SD card detection failed: {e}")
         return None
@@ -72,12 +55,12 @@ def _mount_sd_card(sd):
 def initialise(mixer=None):
     """Bring the SD card up. Returns True if successful, False otherwise.
     Beeps NO_SD_CARD on failure when a mixer is given."""
-    spi, cs = _test_spi_connection()
+    spi = _test_spi_connection()
     if not spi:
         print("SD init failed: cannot initialize SPI")
         return False
 
-    sd = _test_sd_card_detection(spi, cs)
+    sd = _test_sd_card_detection(spi)
     if not sd:
         print("SD init failed: cannot detect SD card")
         return False

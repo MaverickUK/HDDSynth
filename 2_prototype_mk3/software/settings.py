@@ -1,6 +1,6 @@
 import board
 
-SIMULATION_MODE = False # Simulate HDD activity
+SIMULATION_MODE = True # Simulate HDD activity
 PLAY_SPINUP = True
 PLAY_SPINDOWN = True
 PLAY_IDLE = True
@@ -47,6 +47,9 @@ BALANCE_PRINT = False         # Print balance changes to console
 
 # SD Card
 SDCARD_REQUIRED = False         # If True, device won't run without SD card. If False, device can run without SD (if sample pack is installed)
+SDCARD_CACHE_SAMPLES = False     # If True, sample packs are copied from SD to Pico flash before playback (faster, SD removable after boot).
+                                # If False, samples stream directly from SD card (no caching step, SD must remain inserted).
+SDCARD_BAUDRATE = 25_000_000    # SPI clock speed: 400_000 (init/safe), 8_000_000 (conservative), 12_500_000 (balanced), 25_000_000 (max)
 SDCARD_SCK_PIN = board.GP14    # SPI Clock
 SDCARD_MOSI_PIN = board.GP15   # SPI MOSI
 SDCARD_MISO_PIN = board.GP12   # SPI MISO

@@ -22,6 +22,7 @@ This can be used to configure the HDD Synth to operate in headless mode without 
 - **VOLUME_DEFAULT:** Number between 0 and 1. 0 is silence, 1 is full volume. Default 0.5
 - **BALANCE_DEFAULT:** Number between 0 and 1. 0 = idle only, 1 = access only, 0.5 balanced idle and access. Default 0.5
 - **SAMPLE_PACK:** Name of the sample pack directory on the SD card to use. E.g. If /samples/ibm is desired, this should be set to ibm
+- **SDCARD_CACHE_SAMPLES:** Boolean. True will copy the sample pack from the SD card to the Pico's internal flash before playback — the SD card can then be removed after boot. False will stream samples directly from the SD card, which is faster to start but requires the SD card to remain inserted. Default False
 
 ### Example settings.json
 ```
@@ -33,6 +34,7 @@ This can be used to configure the HDD Synth to operate in headless mode without 
     "ACCESS_HOLD_TIME_MS": 150,
     "VOLUME_DEFAULT": 0.7,
     "BALANCE_DEFAULT": 0.5,
-    "SAMPLE_PACK": "my_pack_name"
+    "SAMPLE_PACK": "my_pack_name",
+    "SDCARD_CACHE_SAMPLES": false
 }
 ```
