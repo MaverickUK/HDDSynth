@@ -3916,7 +3916,7 @@
 				)
 			)
 		)
-		(property "Description" "High-performance microcontroller module featuring the RP2350 chip; dual-core ARM Cortex-M33 or Hazard3 RISC-V processors up to 150 MHz, 520kB SRAM, and 4MB off-chip QSPI flash"
+		(property "Description" "SC1631 - High-performance microcontroller module featuring the RP2350 chip; dual-core ARM Cortex-M33 or Hazard3 RISC-V processors up to 150 MHz, 520kB SRAM, and 4MB off-chip QSPI flash"
 			(at 144.78 149.86 0)
 			(hide yes)
 			(show_name no)

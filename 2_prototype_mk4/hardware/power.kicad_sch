@@ -2009,7 +2009,7 @@
 				)
 			)
 		)
-		(property "Description" "Resistor"
+		(property "Description" "Resistor 33 OHM 1% 1/2W 1206 ANTI-SURGE"
 			(at 167.64 90.17 0)
 			(hide yes)
 			(show_name no)
@@ -2020,7 +2020,7 @@
 				)
 			)
 		)
-		(property "Manufacturer_Part_Number" "RC0603FR-0733RL"
+		(property "Manufacturer_Part_Number" "SR1206FR-7W33RL"
 			(at 167.64 90.17 0)
 			(hide yes)
 			(show_name no)
