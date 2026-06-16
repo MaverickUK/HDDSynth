@@ -21200,13 +21200,13 @@
 			(justify left bottom)
 		)
 	)
-	(gr_text "Device \n0 | 1"
-		(at 151.698425 115.341693 90)
+	(gr_text "Device \n1 | 0"
+		(at 151.513163 113.916837 90)
 		(layer "F.SilkS")
 		(uuid "fa6b8214-6744-462a-8f58-489e6a6a353a")
 		(effects
 			(font
-				(size 1.5 1.5)
+				(size 1 1)
 				(thickness 0.1875)
 			)
 			(justify left bottom)
