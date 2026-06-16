@@ -110,12 +110,12 @@ def _main_loop(mixer, samples, led):
                 mixer.voice[0].stop()
 
             # Idle
-            if not access and not mixer.voice[0].playing and settings.PLAY_IDLE:
+            if not access and not mixer.voice[0].playing and settings.PLAY_IDLE and samples.get("idle"):
                 mixer.voice[0].play(samples["idle"].sample)
                 print(".", end="")
 
             # Access
-            if access and not mixer.voice[0].playing:
+            if access and not mixer.voice[0].playing and samples.get("access"):
                 mixer.voice[0].play(samples["access"].sample)
                 print(",", end="")
 
@@ -163,21 +163,34 @@ def _apply_sd_settings(sd_overrides):
 def _make_reload_callback(samples):
     """Returns a closure that hot-swaps the active sample pack in-place."""
     def reload(mixer):
+        import gc
+        print("[hddsynth] Reloading sample pack...")
         audio.stop_all(mixer)
+
+        # Free the three playback samples before allocating new ones.
+        # Spinup and jingle are not reloaded — spinup is only played once at boot
+        # and jingle is only played once at first boot.
+        for key in ("idle", "access", "spindown"):
+            s = samples.get(key)
+            if s is not None:
+                try:
+                    s.deinit()
+                except Exception as e:
+                    print(f"[hddsynth] deinit warning ({key}): {e}")
+                samples[key] = None
+        gc.collect()
+
         try:
-            new_samples = _load_samples()
+            paths = sample_changer.get_sample_paths()
+            samples["idle"]     = SampleContainer(paths["idle"])
+            samples["access"]   = SampleContainer(paths["access"])
+            samples["spindown"] = SampleContainer(paths["spindown"])
+            print("[hddsynth] Pack reloaded: " + sample_changer.get_desired_pack())
         except Exception as e:
             print(f"[hddsynth] Pack reload failed: {e}")
-            if settings.MIXER_VOICES == 2:
+        finally:
+            if settings.MIXER_VOICES == 2 and samples.get("idle") and samples.get("access"):
                 _start_dual_voice_loops(mixer, samples)
-            return
-        for s in samples.values():
-            if s is not None:
-                s.deinit()
-        samples.update(new_samples)
-        if settings.MIXER_VOICES == 2:
-            _start_dual_voice_loops(mixer, samples)
-        print("HDD Sample Pack: " + sample_changer.get_desired_pack())
     return reload
 
 
@@ -251,12 +264,19 @@ def run_synth():
         action_button.set_reload_callback(_make_reload_callback(samples))
 
     _maybe_play_jingle(mixer, samples)
+    if samples.get("jingle") is not None:
+        samples["jingle"].deinit()
+        samples["jingle"] = None
+
     audio.set_volume(mixer)
 
     if settings.PLAY_SPINUP:
         print("Playing spinup")
         audio.play_sample_active_pause(mixer, samples["spinup"])
         print("Spin up complete")
+    if samples.get("spinup") is not None:
+        samples["spinup"].deinit()
+        samples["spinup"] = None
 
     _main_loop(mixer, samples, led)
     _spindown(mixer, samples)
