@@ -1,7 +1,8 @@
 #!/bin/bash
 
 # Define paths
-SOURCE_DIR="/Users/peterbridger/Code/HDDSynth/2_prototype_mk3/software/"
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+SOURCE_DIR="$SCRIPT_DIR/software/"
 DEST_DIR="/Volumes/CIRCUITPY/"
 
 # Check if the Pico is actually mounted
