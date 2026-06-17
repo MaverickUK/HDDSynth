@@ -1,0 +1,593 @@
+(kicad_sch
+	(version 20260306)
+	(generator "eeschema")
+	(generator_version "10.0")
+	(uuid "2ff0f6fe-076b-43e5-b9c3-c2ea9a9ca3e0")
+	(paper "A4")
+	(lib_symbols)
+	(sheet
+		(at 35.56 90.17)
+		(size 22.86 10.16)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "08249eb8-b771-41b3-993d-d7f9b90aff6d")
+		(property "Sheetname" "OLED"
+			(at 35.56 89.4584 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "OLED.kicad_sch"
+			(at 35.56 100.9146 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "OLED_SDA" bidirectional
+			(at 35.56 90.17 90)
+			(uuid "ab27031e-944e-48da-bf2f-e8c29fc80113")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "OLED_SCL" bidirectional
+			(at 37.1793 90.17 90)
+			(uuid "0ef8f7e9-a825-4ad3-85b4-3f625667892d")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(instances
+			(project "HDD Synth Prototype MK5"
+				(path "/2ff0f6fe-076b-43e5-b9c3-c2ea9a9ca3e0"
+					(page "4")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 68.58 72.39)
+		(size 21.59 10.16)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "0e66708b-3ff3-47a5-9921-1fccaaad7689")
+		(property "Sheetname" "Reset"
+			(at 68.58 71.6784 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "Reset.kicad_sch"
+			(at 68.58 83.1346 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "PICO_RUN" input
+			(at 68.58 72.39 90)
+			(uuid "0df31ed7-1e8e-4581-866f-27145777dad3")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "IDE_RESET" input
+			(at 70.1993 72.39 90)
+			(uuid "24e1cbc5-fbe0-4ab8-bbf4-1d2795332b91")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(instances
+			(project "HDD Synth Prototype MK5"
+				(path "/2ff0f6fe-076b-43e5-b9c3-c2ea9a9ca3e0"
+					(page "6")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 68.58 57.15)
+		(size 21.59 8.89)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "4958925a-fb43-4050-886d-d423fe2111f6")
+		(property "Sheetname" "Power"
+			(at 68.58 56.4384 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "power.kicad_sch"
+			(at 68.58 66.6246 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Field2" ""
+			(at 68.58 57.15 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "VCC_DETECT_POWER" output
+			(at 68.58 57.15 90)
+			(uuid "3be4a275-1239-453c-b356-7c2fa73f4781")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "5V_POWER" output
+			(at 70.1993 57.15 90)
+			(uuid "d53070a9-75fc-455f-b0d1-2454658d8efc")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(instances
+			(project "HDD Synth Prototype MK5"
+				(path "/2ff0f6fe-076b-43e5-b9c3-c2ea9a9ca3e0"
+					(page "5")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 35.56 41.91)
+		(size 22.86 8.89)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "6e4b76a5-ca79-45a0-a40f-3d4bae6e1969")
+		(property "Sheetname" "Amplifier"
+			(at 35.56 41.1984 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "Amplifier.kicad_sch"
+			(at 35.56 51.3846 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "SD_MODE" input
+			(at 35.56 41.91 90)
+			(uuid "137ec196-aef2-4fa1-807f-d18d860b416e")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "DIN" input
+			(at 37.1793 41.91 90)
+			(uuid "e7441914-4577-45f8-8f93-a26ed834df3d")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "BCLK" input
+			(at 38.7986 41.91 90)
+			(uuid "96e65bd3-e8e3-4719-b839-dc19f98d8c8f")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "LRCLK" input
+			(at 40.4179 41.91 90)
+			(uuid "94a90d9d-cc7d-43c8-aa6e-c3d2e319800a")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(instances
+			(project "HDD Synth Prototype MK5"
+				(path "/2ff0f6fe-076b-43e5-b9c3-c2ea9a9ca3e0"
+					(page "2")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 68.58 90.17)
+		(size 21.59 10.16)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "900dfa8c-976e-465b-a6af-8a0861f466a1")
+		(property "Sheetname" "RGB LED"
+			(at 68.58 89.4584 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "rgb_led.kicad_sch"
+			(at 68.58 100.9146 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "RGB_DATA" input
+			(at 68.58 90.17 90)
+			(uuid "3cb256a7-fb4b-429c-a0bf-e3796f5cebd6")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(instances
+			(project "HDD Synth Prototype MK5"
+				(path "/2ff0f6fe-076b-43e5-b9c3-c2ea9a9ca3e0"
+					(page "7")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 35.56 57.15)
+		(size 22.86 8.89)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "af358dc7-e679-4c1f-9bf0-5fae38e55934")
+		(property "Sheetname" "SD card reader"
+			(at 34.8484 66.04 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "sdcard_reader.kicad_sch"
+			(at 59.0046 66.04 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "SD_MISO" input
+			(at 35.56 57.15 90)
+			(uuid "df541eee-a70f-468b-8477-ef34c24364b8")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "SD_CS" input
+			(at 37.1793 57.15 90)
+			(uuid "277ea6de-e522-4a8a-9a5c-699a592d60f9")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "SD_MOSI" input
+			(at 38.7986 57.15 90)
+			(uuid "602ff796-cfed-426f-8870-e3caaef6f3e7")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "SD_CLK" input
+			(at 40.4179 57.15 90)
+			(uuid "fdaeed2b-2eda-41a3-8fbe-b3c58f049abe")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(instances
+			(project "HDD Synth Prototype MK5"
+				(path "/2ff0f6fe-076b-43e5-b9c3-c2ea9a9ca3e0"
+					(page "9")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 68.58 41.91)
+		(size 21.59 8.89)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "c1cabb0e-bb18-4b18-a499-e36b81fa9546")
+		(property "Sheetname" "Rotary encoder"
+			(at 68.58 41.1984 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "rotary_encoder.kicad_sch"
+			(at 68.58 51.3846 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "ENC_SWITCH" output
+			(at 68.58 41.91 90)
+			(uuid "8202e5fd-9ef7-4837-acea-233f21344086")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "ENC_B" output
+			(at 70.1993 41.91 90)
+			(uuid "044e9aa6-bb35-4038-a7e2-4e2dbdfe2cee")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "ENC_A" output
+			(at 71.8186 41.91 90)
+			(uuid "a8296292-c362-4e2e-a931-d5b3e895ae76")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(instances
+			(project "HDD Synth Prototype MK5"
+				(path "/2ff0f6fe-076b-43e5-b9c3-c2ea9a9ca3e0"
+					(page "8")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 35.56 72.39)
+		(size 22.86 10.16)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "d4306324-6382-41a7-97f2-e6657576e153")
+		(property "Sheetname" "IDE"
+			(at 35.56 71.6784 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "IDE.kicad_sch"
+			(at 35.56 83.1346 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "IDE_ACTIVITY" output
+			(at 35.56 72.39 90)
+			(uuid "2b55ebb4-8b1f-4210-876e-f69d3e44b628")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "IDE_RESET" output
+			(at 37.1793 72.39 90)
+			(uuid "d96fc032-c188-4cc3-97ee-ffd46a6f6813")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(instances
+			(project "HDD Synth Prototype MK5"
+				(path "/2ff0f6fe-076b-43e5-b9c3-c2ea9a9ca3e0"
+					(page "3")
+				)
+			)
+		)
+	)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+	(embedded_fonts no)
+)
