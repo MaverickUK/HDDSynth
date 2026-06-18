@@ -2440,6 +2440,7 @@
 		(property "Reference" "H12"
 			(at 0 -4.15 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "69ae283b-e6a1-4baf-877e-97a8a88faa07")
 			(effects
 				(font
@@ -2451,6 +2452,7 @@
 		(property "Value" "MountingHole"
 			(at 0 4.15 0)
 			(layer "F.Fab")
+			(hide yes)
 			(uuid "578731e6-7909-4dde-8506-2f08b73cec46")
 			(effects
 				(font
@@ -3270,6 +3272,7 @@
 		(property "Reference" "H13"
 			(at 0 -4.15 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "efe34022-794e-4101-92d0-e36b8f160fdd")
 			(effects
 				(font
@@ -3281,6 +3284,7 @@
 		(property "Value" "MountingHole"
 			(at 0 4.15 0)
 			(layer "F.Fab")
+			(hide yes)
 			(uuid "604d4866-4056-4da9-bb1d-fda8513bc671")
 			(effects
 				(font
@@ -5868,6 +5872,7 @@
 		(property "Reference" "H11"
 			(at 0 -4.15 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "46312bd1-8fec-4401-bd60-21ec0abd61ba")
 			(effects
 				(font
@@ -5879,6 +5884,7 @@
 		(property "Value" "MountingHole"
 			(at 0 4.15 0)
 			(layer "F.Fab")
+			(hide yes)
 			(uuid "548fdc7e-65b8-4d64-97b2-4fee56e9612a")
 			(effects
 				(font
@@ -14414,6 +14420,7 @@
 		(property "Reference" "H10"
 			(at 0 -4.15 0)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "7c7002ca-b7e4-491b-be35-92dd373486e9")
 			(effects
 				(font
@@ -14425,6 +14432,7 @@
 		(property "Value" "MountingHole"
 			(at 0 4.15 0)
 			(layer "F.Fab")
+			(hide yes)
 			(uuid "8d75227c-516b-46e4-8c23-974f95a4c440")
 			(effects
 				(font
@@ -23311,7 +23319,7 @@
 		)
 	)
 	(gr_text "Peter Bridger\nwww.strifestreams.com/hddsynth"
-		(at 76.2001 114.3 270)
+		(at 74.93 99.06 270)
 		(layer "B.SilkS")
 		(uuid "a662479f-4f4f-4706-afef-3049a9724be4")
 		(effects
