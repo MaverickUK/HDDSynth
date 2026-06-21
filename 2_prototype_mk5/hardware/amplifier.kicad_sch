@@ -1943,7 +1943,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "5b532e19-c183-4ef4-b2e1-4bce0cc12a68")
-		(property "Reference" "H1"
+		(property "Reference" "H12"
 			(at 214.63 100.3301 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2029,7 +2029,7 @@
 		(instances
 			(project "HDD Synth Prototype MK5"
 				(path "/1a22431a-ba36-40a0-9a7e-c2a82ec69c53/2950dfc3-c685-4e23-94aa-d1af22619645"
-					(reference "H1")
+					(reference "H12")
 					(unit 1)
 				)
 			)
@@ -2289,7 +2289,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "85abdcc1-91ae-46cb-b3e7-94d98b840bf6")
-		(property "Reference" "#PWR028"
+		(property "Reference" "#PWR08"
 			(at 147.32 130.81 0)
 			(hide yes)
 			(show_name no)
@@ -2349,7 +2349,7 @@
 		(instances
 			(project "HDD Synth Prototype MK5"
 				(path "/1a22431a-ba36-40a0-9a7e-c2a82ec69c53/2950dfc3-c685-4e23-94aa-d1af22619645"
-					(reference "#PWR028")
+					(reference "#PWR08")
 					(unit 1)
 				)
 			)
@@ -2379,7 +2379,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "9365c4b6-43c0-4384-b056-ceb8ff4dcb38")
-		(property "Reference" "U1"
+		(property "Reference" "U2"
 			(at 152.0033 90.17 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2510,7 +2510,7 @@
 		(instances
 			(project "HDD Synth Prototype MK5"
 				(path "/1a22431a-ba36-40a0-9a7e-c2a82ec69c53/2950dfc3-c685-4e23-94aa-d1af22619645"
-					(reference "U1")
+					(reference "U2")
 					(unit 1)
 				)
 			)
@@ -2884,7 +2884,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e5bc9c59-a270-47f2-b1c3-e98c2c5f12f9")
-		(property "Reference" "#PWR034"
+		(property "Reference" "#PWR07"
 			(at 143.51 80.01 0)
 			(hide yes)
 			(show_name no)
@@ -2944,7 +2944,7 @@
 		(instances
 			(project "HDD Synth Prototype MK5"
 				(path "/1a22431a-ba36-40a0-9a7e-c2a82ec69c53/2950dfc3-c685-4e23-94aa-d1af22619645"
-					(reference "#PWR034")
+					(reference "#PWR07")
 					(unit 1)
 				)
 			)

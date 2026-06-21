@@ -2,7 +2,7 @@
   "board": {
     "active_layer": 0,
     "active_layer_preset": "",
-    "auto_track_width": false,
+    "auto_track_width": true,
     "hidden_netclasses": [],
     "hidden_nets": [],
     "high_contrast_mode": 0,
@@ -21,7 +21,7 @@
       "footprints": true,
       "graphics": true,
       "keepouts": true,
-      "lockedItems": true,
+      "lockedItems": false,
       "otherItems": true,
       "pads": true,
       "text": true,
@@ -37,6 +37,7 @@
       "grid",
       "footprints_front",
       "footprints_back",
+      "footprint_values",
       "footprint_references",
       "tracks",
       "drc_errors",
@@ -52,7 +53,7 @@
       "board_outline_area",
       "ly_points"
     ],
-    "visible_layers": "ffffffff_ffffffff_ffffffff_ffffff7f",
+    "visible_layers": "00000000_00000000_00002aaa_aaaaaaaf",
     "zone_display_mode": 0
   },
   "git": {
@@ -62,7 +63,7 @@
     "ssh_key": ""
   },
   "meta": {
-    "filename": "HDD Synth Prototype MK5.kicad_prl",
+    "filename": "HDD Synth Prototype MK5b.kicad_prl",
     "version": 5
   },
   "net_inspector_panel": {

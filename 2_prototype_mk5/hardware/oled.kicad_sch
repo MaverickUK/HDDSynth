@@ -268,14 +268,10 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "power:+3.3V"
+		(symbol "power:+3V3"
 			(power global)
-			(pin_numbers
-				(hide yes)
-			)
 			(pin_names
 				(offset 0)
-				(hide yes)
 			)
 			(exclude_from_sim no)
 			(in_bom yes)
@@ -293,7 +289,7 @@
 					)
 				)
 			)
-			(property "Value" "+3.3V"
+			(property "Value" "+3V3"
 				(at 0 3.556 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -325,7 +321,7 @@
 					)
 				)
 			)
-			(property "Description" "Power symbol creates a global label with name \"+3.3V\""
+			(property "Description" "Power symbol creates a global label with name \"+3V3\""
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -347,7 +343,7 @@
 					)
 				)
 			)
-			(symbol "+3.3V_0_1"
+			(symbol "+3V3_0_1"
 				(polyline
 					(pts
 						(xy -0.762 1.27) (xy 0 2.54)
@@ -385,11 +381,12 @@
 					)
 				)
 			)
-			(symbol "+3.3V_1_1"
+			(symbol "+3V3_1_1"
 				(pin power_in line
 					(at 0 0 90)
 					(length 0)
-					(name ""
+					(hide yes)
+					(name "+3V3"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -629,7 +626,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "4a145ff3-1041-48b9-9e80-768a66608bec")
-		(property "Reference" "J7"
+		(property "Reference" "J6"
 			(at 128.905 86.36 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -697,7 +694,7 @@
 		(instances
 			(project "HDD Synth Prototype MK5"
 				(path "/1a22431a-ba36-40a0-9a7e-c2a82ec69c53/4f2241a1-46db-49da-aeae-e06acaad5be6"
-					(reference "J7")
+					(reference "J6")
 					(unit 1)
 				)
 			)
@@ -715,7 +712,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "a99397a4-2f09-480f-bef6-fe273e70dd0a")
-		(property "Reference" "#PWR030"
+		(property "Reference" "#PWR048"
 			(at 139.7 110.49 0)
 			(hide yes)
 			(show_name no)
@@ -775,14 +772,14 @@
 		(instances
 			(project "HDD Synth Prototype MK5"
 				(path "/1a22431a-ba36-40a0-9a7e-c2a82ec69c53/4f2241a1-46db-49da-aeae-e06acaad5be6"
-					(reference "#PWR030")
+					(reference "#PWR048")
 					(unit 1)
 				)
 			)
 		)
 	)
 	(symbol
-		(lib_id "power:+3.3V")
+		(lib_id "power:+3V3")
 		(at 139.7 85.09 0)
 		(unit 1)
 		(body_style 1)
@@ -791,9 +788,8 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "c4082c21-1041-4063-ae1b-1da67b5c3d76")
-		(property "Reference" "#PWR025"
+		(uuid "e51d88dd-0c5e-4ea6-ba99-a95f9763c423")
+		(property "Reference" "#PWR047"
 			(at 139.7 88.9 0)
 			(hide yes)
 			(show_name no)
@@ -804,8 +800,8 @@
 				)
 			)
 		)
-		(property "Value" "+3.3V"
-			(at 139.7 80.01 0)
+		(property "Value" "+3V3"
+			(at 140.081 80.6958 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -836,9 +832,8 @@
 				)
 			)
 		)
-		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
+		(property "Description" ""
 			(at 139.7 85.09 0)
-			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -848,12 +843,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "8a63aa1b-3069-49ef-944e-f91bc5771496")
+			(uuid "49af31cb-e9f4-478f-a411-96d1cbf0a221")
 		)
 		(instances
 			(project "HDD Synth Prototype MK5"
 				(path "/1a22431a-ba36-40a0-9a7e-c2a82ec69c53/4f2241a1-46db-49da-aeae-e06acaad5be6"
-					(reference "#PWR025")
+					(reference "#PWR047")
 					(unit 1)
 				)
 			)
