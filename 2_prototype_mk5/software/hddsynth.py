@@ -88,14 +88,28 @@ def _start_dual_voice_loops(mixer, samples):
     mixer.voice[1].level = 0  # Start with access muted
 
 
+_POWER_LOSS_DEBOUNCE_TICKS = 5  # consecutive "no power" reads required before treating power as lost
+
+
+def _power_present(unpowered_ticks):
+    """Debounced power check. Returns (still_powered, updated_unpowered_ticks)."""
+    if power.external_power():
+        return True, 0
+
+    unpowered_ticks += 1
+    return unpowered_ticks < _POWER_LOSS_DEBOUNCE_TICKS, unpowered_ticks
+
+
 def _main_loop(mixer, samples, led):
     """Run until external power is removed."""
     access = activity.get_access()
+    unpowered_ticks = 0
 
     if settings.MIXER_VOICES == 2:
         _start_dual_voice_loops(mixer, samples)
 
-    while power.external_power():
+    powered, unpowered_ticks = _power_present(unpowered_ticks)
+    while powered:
         last_access = access
         access = activity.get_access()
         led.value = access
@@ -124,6 +138,7 @@ def _main_loop(mixer, samples, led):
             audio.set_volume(mixer, access=access)
 
         time.sleep(0.01)
+        powered, unpowered_ticks = _power_present(unpowered_ticks)
 
 
 def _spindown(mixer, samples):

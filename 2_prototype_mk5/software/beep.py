@@ -8,7 +8,12 @@ from beep_profiles import PROFILE, PITCH_MEDIUM, LENGTH_SHORT, WAVE_SIN, WAVE_TR
 
 # --- Internal Helpers ---
 
-def _get_waveform(wave_type=WAVE_SIN):
+# Lookup tables are identical for every beep of a given wave type, so cache
+# them the first time they're generated instead of recomputing on every beep.
+_waveform_cache = {}
+
+
+def _build_waveform(wave_type):
     """Generates a 512-sample lookup table for the synthesizer."""
     size = 512
 
@@ -27,7 +32,14 @@ def _get_waveform(wave_type=WAVE_SIN):
                 samples[i] = int(32767 - ((i - size // 2) * 65535 / (size // 2)))
         return samples
 
-    return _get_waveform(WAVE_SIN)
+    return _build_waveform(WAVE_SIN)
+
+
+def _get_waveform(wave_type=WAVE_SIN):
+    """Returns the cached lookup table for wave_type, building it on first use."""
+    if wave_type not in _waveform_cache:
+        _waveform_cache[wave_type] = _build_waveform(wave_type)
+    return _waveform_cache[wave_type]
 
 
 def _get_envelope():

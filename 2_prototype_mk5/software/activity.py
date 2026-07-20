@@ -17,9 +17,9 @@ _phys_input.pull = digitalio.Pull.UP
 _last_active_time = 0
 
 
-def _detect_physical_access(hold_time_ms=settings.ACCESS_HOLD_TIME_MS):
+def _detect_physical_access():
     """Sensitive physical access detection.
-    Triggers instantly on a LOW signal and holds 'True' for hold_time_ms after.
+    Triggers instantly on a LOW signal and holds 'True' for ACCESS_HOLD_TIME_MS after.
     """
     global _last_active_time
 
@@ -32,7 +32,7 @@ def _detect_physical_access(hold_time_ms=settings.ACCESS_HOLD_TIME_MS):
         return True
 
     # Slow release: stay 'True' if we saw activity within the last X milliseconds
-    return (now - _last_active_time) < (hold_time_ms / 1000.0)
+    return (now - _last_active_time) < (settings.ACCESS_HOLD_TIME_MS / 1000.0)
 
 
 def _get_simulated_access():
