@@ -1,0 +1,139 @@
+import os
+
+import settings
+import sample_cache
+import nvm_wrapper
+
+def initialize():
+    """
+    Checks if NVM values are set. If not, picks the first 
+    available directory from the SD card as the default.
+    """
+    current = get_desired_pack()
+    
+    # If desired is empty, we've never run this or NVM was cleared
+    if not current:
+        print("[Changer] NVM empty. Performing first-time setup...")
+        try:
+            print(f"Scanning {settings.SDCARD_SAMPLE_DIR} for sample packs...")
+            all_items = os.listdir(settings.SDCARD_SAMPLE_DIR)
+
+            packs = sorted([
+                f for f in all_items 
+                if _is_dir(f"{settings.SDCARD_SAMPLE_DIR}/{f}") and not f.startswith(".") # Ignore hidden directories
+            ])
+            
+            if packs:
+                first_pack = packs[0]
+                set_desired_pack(first_pack)
+                print(f"[Changer] Default pack set to: {first_pack}")
+            else:
+                print("[Changer] Warning: No packs found on SD during init.")
+        except OSError:
+            print("[Changer] Error: SD card not available during init.")
+    else:
+        print(f"[Changer] Initialization complete. Desired target: {get_desired_pack()}")
+
+def wipe_settings():
+    """Clears the Desired pack NVM slot."""
+    print("[Changer] Wiping NVM sample pack settings...")
+
+    empty_block = b'\x00' * settings.NVM_PACK_LENGTH
+    nvm_wrapper.write_bytes(settings.NVM_ADDRESS_START_PACK_DESIRED, empty_block)
+
+    print("[Changer] Wipe complete.")
+
+def next_pack(reboot_after=True):
+    """Scans SD, determines the next alphabetical pack, and sets it as desired."""
+    try:
+        # Get directories, sorted alphabetically
+        all_items = os.listdir(settings.SDCARD_SAMPLE_DIR)
+        packs = sorted([
+            f for f in all_items 
+            if _is_dir(f"{settings.SDCARD_SAMPLE_DIR}/{f}") and not f.startswith(".") # Ignore hidden directories
+        ])
+    except OSError:
+        print("[Changer] Error: SD not accessible.")
+        return
+
+    if not packs:
+        print("[Changer] No packs found.")
+        return
+
+    # Determine next pack
+    current_desired = get_desired_pack()
+    
+    if current_desired in packs:
+        next_index = (packs.index(current_desired) + 1) % len(packs)
+    else:
+        next_index = 0
+    
+    new_selection = packs[next_index]
+    set_desired_pack(new_selection)
+    print(f"[Changer] Target set to: {new_selection}")
+
+    if reboot_after:
+        if settings.SDCARD_CACHE_SAMPLES:
+            sample_cache.trigger_write_mode()
+        else:
+            import microcontroller
+            microcontroller.reset()
+        
+
+# --- Public Abstraction Methods ---
+
+def get_sample_paths():
+    """Returns a dict of sample file paths for the current pack.
+    When SDCARD_CACHE_SAMPLES is True, paths point to Pico flash (/cache).
+    When False, paths point directly to the SD card pack directory.
+    """
+    if settings.SDCARD_CACHE_SAMPLES:
+        return {
+            "spinup":   settings.SAMPLE_SPINUP_FILE,
+            "spindown": settings.SAMPLE_SPINDOWN_FILE,
+            "idle":     settings.SAMPLE_IDLE_FILE,
+            "access":   settings.SAMPLE_ACCESS_FILE,
+        }
+    pack = get_desired_pack()
+    base = f"{settings.SDCARD_SAMPLE_DIR}/{pack}"
+    return {
+        "spinup":   f"{base}/spinup.wav",
+        "spindown": f"{base}/spindown.wav",
+        "idle":     f"{base}/idle.wav",
+        "access":   f"{base}/access.wav",
+    }
+
+
+def get_desired_pack():
+    """Reads the 'Desired' pack name from nvm_wrapper."""
+    return _read_nvm_str(settings.NVM_ADDRESS_START_PACK_DESIRED)
+
+def set_desired_pack(name):
+    """Writes the 'Desired' pack name to nvm_wrapper."""
+    _write_nvm_str(settings.NVM_ADDRESS_START_PACK_DESIRED, name)
+
+# --- Private Helpers ---
+
+def _is_dir(path):
+    try:
+        return (os.stat(path)[0] & 0x4000) != 0
+    except OSError:
+        return False
+
+def _write_nvm_str(start, text):
+    """Encodes string and pads with null bytes to clear previous data."""
+    encoded = text.encode('utf-8')[:settings.NVM_PACK_LENGTH]
+    padded = encoded + b'\x00' * (settings.NVM_PACK_LENGTH - len(encoded))
+    nvm_wrapper.write_bytes(start, padded)
+
+
+def _read_nvm_str(start):
+    """Reads bytes and stops at the first null terminator."""
+    raw = nvm_wrapper.read_bytes(start, settings.NVM_PACK_LENGTH)
+    end = raw.find(b'\x00')
+    if end == -1:
+        end = settings.NVM_PACK_LENGTH
+    try:
+        return raw[:end].decode('utf-8').strip()
+    except UnicodeError:
+        return ""

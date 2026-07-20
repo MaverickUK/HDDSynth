@@ -1864,7 +1864,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "33R"
+		(property "Value" "47R"
 			(at 171.45 68.5799 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1897,7 +1897,7 @@
 				)
 			)
 		)
-		(property "Description" "Resistor 33 OHM 1% 1/2W 1206 ANTI-SURGE"
+		(property "Description" "Yageo, 47Ω, ±1%, 2W, anti-surge, 2512"
 			(at 168.91 67.31 0)
 			(hide yes)
 			(show_name no)
@@ -1908,7 +1908,7 @@
 				)
 			)
 		)
-		(property "Manufacturer_Part_Number" "SR1206FR-7W33RL"
+		(property "Manufacturer_Part_Number" "SR2512FK-7W47RL"
 			(at 168.91 67.31 0)
 			(hide yes)
 			(show_name no)
@@ -1919,7 +1919,7 @@
 				)
 			)
 		)
-		(property "LCSC_Part_Number" ""
+		(property "LCSC_Part_Number" "C3013388"
 			(at 168.91 67.31 0)
 			(hide yes)
 			(show_name no)
