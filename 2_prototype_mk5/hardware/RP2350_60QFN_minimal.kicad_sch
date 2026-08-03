@@ -4188,6 +4188,121 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "power:PWR_FLAG"
+			(power global)
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "#FLG"
+				(at 0 1.905 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "PWR_FLAG"
+				(at 0 3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Special symbol for telling ERC where power comes from"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "flag power"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "PWR_FLAG_0_0"
+				(pin power_out line
+					(at 0 0 90)
+					(length 0)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "PWR_FLAG_0_1"
+				(polyline
+					(pts
+						(xy 0 0) (xy 0 1.27) (xy -1.016 1.905) (xy 0 2.54) (xy 1.016 1.905) (xy 0 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "power:VBUS"
 			(power global)
 			(pin_names
@@ -4683,6 +4798,12 @@
 		(uuid "9f61ff84-61ca-4918-ade8-c18479946c8d")
 	)
 	(junction
+		(at 236.22 66.04)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "a6e4d9d9-4ad4-4866-9153-715772b76d99")
+	)
+	(junction
 		(at 295.91 54.61)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -4705,6 +4826,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "cd06faeb-9e22-4844-8d01-60d84230ac91")
+	)
+	(junction
+		(at 224.79 86.36)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "cd318b73-24d0-4d8f-aab6-783580fbb479")
 	)
 	(junction
 		(at 72.39 229.87)
@@ -4779,12 +4906,8 @@
 		(uuid "ff351be1-1aea-4453-ad4b-aedbec9d2466")
 	)
 	(no_connect
-		(at 306.07 115.57)
-		(uuid "04a31d26-ee23-48cd-8753-fb6f2174f098")
-	)
-	(no_connect
-		(at 306.07 118.11)
-		(uuid "2b2ce0a4-cdee-4adf-ba3d-4c33d097f10f")
+		(at 306.07 123.19)
+		(uuid "00cce8ee-47b5-44e1-ba72-6722257d596e")
 	)
 	(no_connect
 		(at 306.07 113.03)
@@ -4801,10 +4924,6 @@
 	(no_connect
 		(at 306.07 181.61)
 		(uuid "62189a5f-bd55-4511-a281-434936105d24")
-	)
-	(no_connect
-		(at 306.07 120.65)
-		(uuid "77195770-15a7-4769-8fad-2cd6ec934f50")
 	)
 	(no_connect
 		(at 306.07 168.91)
@@ -4946,7 +5065,7 @@
 	)
 	(wire
 		(pts
-			(xy 224.79 83.82) (xy 224.79 99.06)
+			(xy 224.79 83.82) (xy 224.79 86.36)
 		)
 		(stroke
 			(width 0)
@@ -5336,7 +5455,7 @@
 	)
 	(wire
 		(pts
-			(xy 236.22 54.61) (xy 236.22 74.93)
+			(xy 236.22 54.61) (xy 236.22 66.04)
 		)
 		(stroke
 			(width 0)
@@ -5443,6 +5562,16 @@
 			(type default)
 		)
 		(uuid "4d48904c-6984-4751-b670-a8f98eb17c47")
+	)
+	(wire
+		(pts
+			(xy 224.79 86.36) (xy 224.79 99.06)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4d805ad2-4c31-4df3-a77c-922cbaa8da62")
 	)
 	(wire
 		(pts
@@ -6526,6 +6655,16 @@
 	)
 	(wire
 		(pts
+			(xy 236.22 66.04) (xy 236.22 74.93)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c7fb03a0-5e38-4182-b3fc-5dc0be50fe45")
+	)
+	(wire
+		(pts
 			(xy 290.83 151.13) (xy 306.07 151.13)
 		)
 		(stroke
@@ -7224,7 +7363,7 @@
 		)
 		(uuid "78b4213c-a68c-4eeb-8534-cca2aab518cf")
 	)
-	(label "GPIO4"
+	(label "RGB_LED_RED"
 		(at 306.07 115.57 180)
 		(effects
 			(font
@@ -7244,7 +7383,7 @@
 		)
 		(uuid "7e4a5e30-d0b7-4603-be7c-7048e91a3d2a")
 	)
-	(label "GPIO5"
+	(label "RGB_LED_GREEN"
 		(at 306.07 118.11 180)
 		(effects
 			(font
@@ -7544,7 +7683,7 @@
 		)
 		(uuid "ebdafcfb-0531-4b00-a68b-e4fdc32a18d3")
 	)
-	(label "GPIO6"
+	(label "RBG_LED_BLUE"
 		(at 306.07 120.65 180)
 		(effects
 			(font
@@ -7638,6 +7777,17 @@
 			)
 		)
 	)
+	(hierarchical_label "GPIO06_RGB_LED_BLUE"
+		(shape bidirectional)
+		(at 306.07 120.65 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "192fdc26-ca68-478e-b788-3f1f691e851c")
+	)
 	(hierarchical_label "GPIO19_BTN"
 		(shape bidirectional)
 		(at 306.07 153.67 0)
@@ -7692,17 +7842,6 @@
 			(justify left)
 		)
 		(uuid "524e39dc-406b-45bd-9d8d-c7313056e1c4")
-	)
-	(hierarchical_label "GPIO07_LED_DATA"
-		(shape bidirectional)
-		(at 306.07 123.19 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "66c48e2d-efaf-40b8-9ac5-8219ae29d5f1")
 	)
 	(hierarchical_label "GPIO18_HDD_LED_IN"
 		(shape bidirectional)
@@ -7847,6 +7986,28 @@
 		)
 		(uuid "d92565ab-ef13-49b9-ae7f-e318010c15a3")
 	)
+	(hierarchical_label "GPIO05_RGB_LED_GREEN"
+		(shape bidirectional)
+		(at 306.07 118.11 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "f7295895-7fcf-4929-a318-ca4eba86bfc9")
+	)
+	(hierarchical_label "GPIO04_RGB_LED_RED"
+		(shape bidirectional)
+		(at 306.07 115.57 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "fda455fd-4a9d-42ad-b07a-c4ddb04939f3")
+	)
 	(symbol
 		(lib_id "Memory_Flash:W25Q128JVS")
 		(at 76.2 55.88 0)
@@ -7868,7 +8029,7 @@
 				)
 			)
 		)
-		(property "Value" "W25Q128JVS"
+		(property "Value" "W25Q32JVSSIQ"
 			(at 83.82 66.04 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8042,7 +8203,7 @@
 				)
 			)
 		)
-		(property "LCSC_Part_Number" "C83140"
+		(property "LCSC Part Number" "C179173"
 			(at 76.2 55.88 0)
 			(hide yes)
 			(show_name no)
@@ -8262,10 +8423,10 @@
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(in_pos_files yes)
-		(dnp no)
+		(dnp yes)
 		(uuid "00000000-0000-0000-0000-00005edac067")
 		(property "Reference" "R9"
 			(at 62.738 36.9316 0)
@@ -8453,7 +8614,7 @@
 				)
 			)
 		)
-		(property "LCSC_Part_Number" "C25105"
+		(property "LCSC Part Number" ""
 			(at 60.96 38.1 0)
 			(hide yes)
 			(show_name no)
@@ -8682,7 +8843,7 @@
 				)
 			)
 		)
-		(property "LCSC_Part_Number" "C1525"
+		(property "LCSC Part Number" "C1525"
 			(at 82.55 34.29 0)
 			(hide yes)
 			(show_name no)
@@ -9073,7 +9234,7 @@
 				)
 			)
 		)
-		(property "LCSC_Part_Number" "C138021"
+		(property "LCSC Part Number" "C138021"
 			(at 306.07 88.9 90)
 			(hide yes)
 			(show_name no)
@@ -9300,7 +9461,7 @@
 				)
 			)
 		)
-		(property "LCSC_Part_Number" "C138021"
+		(property "LCSC Part Number" "C138021"
 			(at 306.07 97.79 90)
 			(hide yes)
 			(show_name no)
@@ -9611,7 +9772,7 @@
 				)
 			)
 		)
-		(property "LCSC_Part_Number" "C1525"
+		(property "LCSC Part Number" "C1525"
 			(at 284.48 59.69 0)
 			(hide yes)
 			(show_name no)
@@ -9840,7 +10001,7 @@
 				)
 			)
 		)
-		(property "LCSC_Part_Number" "C1525"
+		(property "LCSC Part Number" "C1525"
 			(at 295.91 59.69 0)
 			(hide yes)
 			(show_name no)
@@ -10069,7 +10230,7 @@
 				)
 			)
 		)
-		(property "LCSC_Part_Number" "C1525"
+		(property "LCSC Part Number" "C1525"
 			(at 307.34 59.69 0)
 			(hide yes)
 			(show_name no)
@@ -10298,7 +10459,7 @@
 				)
 			)
 		)
-		(property "LCSC_Part_Number" "C1525"
+		(property "LCSC Part Number" "C1525"
 			(at 318.77 59.69 0)
 			(hide yes)
 			(show_name no)
@@ -10527,7 +10688,7 @@
 				)
 			)
 		)
-		(property "LCSC_Part_Number" "C1525"
+		(property "LCSC Part Number" "C1525"
 			(at 330.2 59.69 0)
 			(hide yes)
 			(show_name no)
@@ -10756,7 +10917,7 @@
 				)
 			)
 		)
-		(property "LCSC_Part_Number" "C1525"
+		(property "LCSC Part Number" "C1525"
 			(at 341.63 59.69 0)
 			(hide yes)
 			(show_name no)
@@ -11067,7 +11228,7 @@
 				)
 			)
 		)
-		(property "LCSC_Part_Number" "C15850"
+		(property "LCSC Part Number" "C15850"
 			(at 358.775 135.255 0)
 			(hide yes)
 			(show_name no)
@@ -11176,6 +11337,83 @@
 			(project "RP2350_60QFN_minimal"
 				(path "/94683f5c-9cd9-448e-be96-9792537b5cb8"
 					(reference "#PWR028")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:PWR_FLAG")
+		(at 224.79 86.36 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "00c422dc-10ac-4cc5-b47a-3c026bc1c2ca")
+		(property "Reference" "#FLG04"
+			(at 226.695 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "PWR_FLAG"
+			(at 229.87 88.9 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 224.79 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 224.79 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Special symbol for telling ERC where power comes from"
+			(at 224.79 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "29a513c6-ba71-4e19-93c2-e080d45846fd")
+		)
+		(instances
+			(project "HDD Synth Prototype MK5"
+				(path "/1a22431a-ba36-40a0-9a7e-c2a82ec69c53/3b7eed6c-967b-41df-92bd-957103357a3c"
+					(reference "#FLG04")
 					(unit 1)
 				)
 			)
@@ -11382,7 +11620,7 @@
 				(justify bottom)
 			)
 		)
-		(property "LCSC_Part_Number" "C318884"
+		(property "LCSC Part Number" "C318884"
 			(at 187.96 128.27 90)
 			(hide yes)
 			(show_name no)
@@ -11693,7 +11931,7 @@
 				)
 			)
 		)
-		(property "LCSC_Part_Number" "C1525"
+		(property "LCSC Part Number" "C1525"
 			(at 227.33 59.69 0)
 			(hide yes)
 			(show_name no)
@@ -11920,7 +12158,7 @@
 				)
 			)
 		)
-		(property "LCSC_Part_Number" "C11702"
+		(property "LCSC Part Number" "C11702"
 			(at 171.45 158.75 90)
 			(hide yes)
 			(show_name no)
@@ -12314,7 +12552,7 @@
 				)
 			)
 		)
-		(property "LCSC_Part_Number" "C42411118"
+		(property "LCSC Part Number" "C42411118"
 			(at 259.08 138.43 0)
 			(hide yes)
 			(show_name no)
@@ -12720,7 +12958,7 @@
 				)
 			)
 		)
-		(property "LCSC_Part_Number" "C1525"
+		(property "LCSC Part Number" "C1525"
 			(at 353.06 59.69 0)
 			(hide yes)
 			(show_name no)
@@ -13029,7 +13267,7 @@
 				)
 			)
 		)
-		(property "LCSC_Part_Number" "C11702"
+		(property "LCSC Part Number" "C11702"
 			(at 205.105 116.84 90)
 			(hide yes)
 			(show_name no)
@@ -13056,6 +13294,83 @@
 			(project "RP2350_60QFN_minimal"
 				(path "/94683f5c-9cd9-448e-be96-9792537b5cb8"
 					(reference "R6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:PWR_FLAG")
+		(at 236.22 66.04 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "3ab984d4-d4d2-489f-96d8-c6ce98e32e1f")
+		(property "Reference" "#FLG03"
+			(at 238.125 66.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "PWR_FLAG"
+			(at 241.3 68.58 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 236.22 66.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 236.22 66.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Special symbol for telling ERC where power comes from"
+			(at 236.22 66.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "78b7c747-e8ba-4d93-ad01-3d25491f62bf")
+		)
+		(instances
+			(project "HDD Synth Prototype MK5"
+				(path "/1a22431a-ba36-40a0-9a7e-c2a82ec69c53/3b7eed6c-967b-41df-92bd-957103357a3c"
+					(reference "#FLG03")
 					(unit 1)
 				)
 			)
@@ -13258,7 +13573,7 @@
 				)
 			)
 		)
-		(property "LCSC_Part_Number" "C25105"
+		(property "LCSC Part Number" "C25105"
 			(at 203.2 83.82 0)
 			(hide yes)
 			(show_name no)
@@ -13564,7 +13879,7 @@
 				)
 			)
 		)
-		(property "LCSC_Part_Number" "C23733"
+		(property "LCSC Part Number" "C23733"
 			(at 168.91 101.6 0)
 			(hide yes)
 			(show_name no)
@@ -13793,7 +14108,7 @@
 				)
 			)
 		)
-		(property "LCSC_Part_Number" "C165948"
+		(property "LCSC Part Number" "C165948"
 			(at 35.56 237.49 0)
 			(hide yes)
 			(show_name no)
@@ -14228,7 +14543,7 @@
 				)
 			)
 		)
-		(property "LCSC_Part_Number" "C49257"
+		(property "LCSC Part Number" "C49257"
 			(at 52.07 154.94 0)
 			(hide yes)
 			(show_name no)
@@ -14610,7 +14925,7 @@
 				)
 			)
 		)
-		(property "LCSC_Part_Number" "C26537"
+		(property "LCSC Part Number" "C26537"
 			(at 93.98 203.2 0)
 			(hide yes)
 			(show_name no)
@@ -14836,7 +15151,7 @@
 				)
 			)
 		)
-		(property "LCSC_Part_Number" "C1548"
+		(property "LCSC Part Number" "C1548"
 			(at 30.48 109.22 0)
 			(hide yes)
 			(show_name no)
@@ -15066,7 +15381,7 @@
 				)
 			)
 		)
-		(property "LCSC_Part_Number" "C23733"
+		(property "LCSC Part Number" "C23733"
 			(at 180.34 101.6 0)
 			(hide yes)
 			(show_name no)
@@ -15372,7 +15687,7 @@
 				)
 			)
 		)
-		(property "LCSC_Part_Number" "C23733"
+		(property "LCSC Part Number" "C23733"
 			(at 214.63 88.9 0)
 			(hide yes)
 			(show_name no)
@@ -15761,7 +16076,7 @@
 				)
 			)
 		)
-		(property "LCSC_Part_Number" "C11702"
+		(property "LCSC Part Number" "C11702"
 			(at 63.5 109.22 90)
 			(hide yes)
 			(show_name no)
@@ -15990,7 +16305,7 @@
 				)
 			)
 		)
-		(property "LCSC_Part_Number" "C1525"
+		(property "LCSC Part Number" "C1525"
 			(at 204.47 59.69 0)
 			(hide yes)
 			(show_name no)
@@ -16219,7 +16534,7 @@
 				)
 			)
 		)
-		(property "LCSC_Part_Number" "C23733"
+		(property "LCSC Part Number" "C23733"
 			(at 215.9 59.69 0)
 			(hide yes)
 			(show_name no)
@@ -16448,7 +16763,7 @@
 				)
 			)
 		)
-		(property "LCSC_Part_Number" "C25905"
+		(property "LCSC Part Number" "C25905"
 			(at 57.15 227.33 90)
 			(hide yes)
 			(show_name no)
@@ -16671,7 +16986,7 @@
 				)
 			)
 		)
-		(property "LCSC_Part_Number" "C25905"
+		(property "LCSC Part Number" "C25905"
 			(at 64.77 229.87 90)
 			(hide yes)
 			(show_name no)
@@ -16894,7 +17209,7 @@
 				)
 			)
 		)
-		(property "LCSC_Part_Number" "C17168"
+		(property "LCSC Part Number" "C17168"
 			(at 40.64 53.34 0)
 			(hide yes)
 			(show_name no)
@@ -16932,10 +17247,10 @@
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(in_pos_files yes)
-		(dnp no)
+		(dnp yes)
 		(uuid "c3bba709-ca2f-44d9-85d3-c0a520436e98")
 		(property "Reference" "R6"
 			(at 39.4716 42.672 0)
@@ -17123,7 +17438,7 @@
 				)
 			)
 		)
-		(property "LCSC_Part_Number" "C25105"
+		(property "LCSC Part Number" ""
 			(at 40.64 44.45 0)
 			(hide yes)
 			(show_name no)
@@ -17434,7 +17749,7 @@
 				)
 			)
 		)
-		(property "LCSC_Part_Number" "C15850"
+		(property "LCSC Part Number" "C15850"
 			(at 76.2 208.28 0)
 			(hide yes)
 			(show_name no)
@@ -17820,7 +18135,7 @@
 				)
 			)
 		)
-		(property "LCSC_Part_Number" "C42411119"
+		(property "LCSC Part Number" "C42411119"
 			(at 195.58 101.6 0)
 			(hide yes)
 			(show_name no)
@@ -18049,7 +18364,7 @@
 				)
 			)
 		)
-		(property "LCSC_Part_Number" "C20625731"
+		(property "LCSC Part Number" "C20625731"
 			(at 45.72 104.14 90)
 			(hide yes)
 			(show_name no)
@@ -18360,7 +18675,7 @@
 				)
 			)
 		)
-		(property "LCSC_Part_Number" "C15850"
+		(property "LCSC Part Number" "C15850"
 			(at 111.76 208.28 0)
 			(hide yes)
 			(show_name no)
@@ -18667,7 +18982,7 @@
 				(justify bottom)
 			)
 		)
-		(property "LCSC_Part_Number" "C318884"
+		(property "LCSC Part Number" "C318884"
 			(at 187.96 158.75 0)
 			(hide yes)
 			(show_name no)
@@ -19055,7 +19370,7 @@
 				)
 			)
 		)
-		(property "LCSC_Part_Number" "C1548"
+		(property "LCSC Part Number" "C1548"
 			(at 30.48 99.06 0)
 			(hide yes)
 			(show_name no)

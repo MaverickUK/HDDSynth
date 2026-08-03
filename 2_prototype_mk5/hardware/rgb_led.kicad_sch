@@ -5,42 +5,40 @@
 	(uuid "12931b7e-7f82-4dd8-89ce-095c16370e06")
 	(paper "A4")
 	(lib_symbols
-		(symbol "Device:C"
+		(symbol "Device:R"
 			(pin_numbers
 				(hide yes)
 			)
 			(pin_names
-				(offset 0.254)
+				(offset 0)
 			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
 			(in_pos_files yes)
 			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "C"
-				(at 0.635 2.54 0)
+			(property "Reference" "R"
+				(at 2.032 0 90)
 				(show_name no)
 				(do_not_autoplace no)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(justify left)
 				)
 			)
-			(property "Value" "C"
-				(at 0.635 -2.54 0)
+			(property "Value" "R"
+				(at 0 0 90)
 				(show_name no)
 				(do_not_autoplace no)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(justify left)
 				)
 			)
 			(property "Footprint" ""
-				(at 0.9652 -3.81 0)
+				(at -1.778 0 90)
 				(show_name no)
 				(do_not_autoplace no)
 				(hide yes)
@@ -61,7 +59,7 @@
 					)
 				)
 			)
-			(property "Description" "Unpolarized capacitor"
+			(property "Description" "Resistor"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -72,7 +70,7 @@
 					)
 				)
 			)
-			(property "ki_keywords" "cap capacitor"
+			(property "ki_keywords" "R res resistor"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -83,7 +81,7 @@
 					)
 				)
 			)
-			(property "ki_fp_filters" "C_*"
+			(property "ki_fp_filters" "R_*"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -94,25 +92,12 @@
 					)
 				)
 			)
-			(symbol "C_0_1"
-				(polyline
-					(pts
-						(xy -2.032 0.762) (xy 2.032 0.762)
-					)
+			(symbol "R_0_1"
+				(rectangle
+					(start -1.016 -2.54)
+					(end 1.016 2.54)
 					(stroke
-						(width 0.508)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -2.032 -0.762) (xy 2.032 -0.762)
-					)
-					(stroke
-						(width 0.508)
+						(width 0.254)
 						(type default)
 					)
 					(fill
@@ -120,10 +105,10 @@
 					)
 				)
 			)
-			(symbol "C_1_1"
+			(symbol "R_1_1"
 				(pin passive line
 					(at 0 3.81 270)
-					(length 2.794)
+					(length 1.27)
 					(name ""
 						(effects
 							(font
@@ -141,7 +126,7 @@
 				)
 				(pin passive line
 					(at 0 -3.81 90)
-					(length 2.794)
+					(length 1.27)
 					(name ""
 						(effects
 							(font
@@ -160,51 +145,34 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "LED:WS2812B"
-			(pin_names
-				(offset 0.254)
-			)
+		(symbol "Project symbols:XL-3528RGBW-HM"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
 			(in_pos_files yes)
 			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "D"
-				(at 5.08 5.715 0)
+			(property "Reference" "LED"
+				(at 0 7.62 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(justify right bottom)
 				)
 			)
-			(property "Value" "WS2812B"
-				(at 1.27 -5.715 0)
+			(property "Value" "XL-3528RGBW-HM"
+				(at 0 -10.16 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(justify left top)
 				)
 			)
-			(property "Footprint" "LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm"
-				(at 1.27 -7.62 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left top)
-				)
-			)
-			(property "Datasheet" "https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf"
-				(at 2.54 -9.525 0)
+			(property "Footprint" "easyeda2kicad:LED-SMD_4P-L3.2-W2.8-LS3.5-XL-3528RGBW-HM5"
+				(at 0 -12.7 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(hide yes)
@@ -212,10 +180,20 @@
 					(font
 						(size 1.27 1.27)
 					)
-					(justify left top)
 				)
 			)
-			(property "Description" "RGB LED with integrated controller"
+			(property "Datasheet" "https://www.lcsc.com/datasheet/C2843813.pdf"
+				(at 0 -15.24 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" ""
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -226,7 +204,40 @@
 					)
 				)
 			)
-			(property "ki_keywords" "RGB LED NeoPixel addressable"
+			(property "Manufacturer" "XINGLIGHT(成兴光)"
+				(at 0 -17.78 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "MPN" "XL-3528RGBW-HM"
+				(at 0 -20.32 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "LCSC Part" "C2843813"
+				(at 0 -22.86 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "Light Emitting Diodes (LED)"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -237,129 +248,335 @@
 					)
 				)
 			)
-			(property "ki_fp_filters" "LED*WS2812*PLCC*5.0x5.0mm*P3.2mm*"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(symbol "WS2812B_0_0"
-				(text "RGB"
-					(at 2.286 -4.191 0)
-					(effects
-						(font
-							(size 0.762 0.762)
-						)
-					)
-				)
-			)
-			(symbol "WS2812B_0_1"
+			(symbol "XL-3528RGBW-HM_0_1"
 				(polyline
 					(pts
-						(xy 1.27 -2.54) (xy 1.778 -2.54)
+						(xy -9.14 5.84) (xy -8.13 5.33) (xy -8.64 4.83) (xy -9.14 5.84)
 					)
 					(stroke
 						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.27 -3.556) (xy 1.778 -3.556)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 2.286 -1.524) (xy 1.27 -2.54) (xy 1.27 -2.032)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 2.286 -2.54) (xy 1.27 -3.556) (xy 1.27 -3.048)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 3.683 -1.016) (xy 3.683 -3.556) (xy 3.683 -4.064)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 4.699 -1.524) (xy 2.667 -1.524) (xy 3.683 -3.556) (xy 4.699 -1.524)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 4.699 -3.556) (xy 2.667 -3.556)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(rectangle
-					(start 5.08 5.08)
-					(end -5.08 -5.08)
-					(stroke
-						(width 0.254)
 						(type default)
 					)
 					(fill
 						(type background)
 					)
 				)
-			)
-			(symbol "WS2812B_1_1"
-				(pin power_in line
-					(at 0 7.62 270)
-					(length 2.54)
-					(name "VDD"
+				(polyline
+					(pts
+						(xy -8.13 6.86) (xy -7.11 6.35) (xy -7.62 5.84) (xy -8.13 6.86)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(polyline
+					(pts
+						(xy -7.62 -4.83) (xy 2.54 -4.83)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -7.37 4.06) (xy -8.38 5.08)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -6.35 5.08) (xy -7.37 6.1)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -6.35 4.32) (xy -6.35 0.76)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -6.35 2.54) (xy -7.62 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -3.81 4.32) (xy -6.35 2.54) (xy -3.81 0.76) (xy -3.81 4.32)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.54 2.54) (xy -3.81 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.54 2.54) (xy 2.29 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -0.51 2.54) (xy -0.51 -4.83)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.29 2.54) (xy 3.56 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.29 -4.83) (xy 3.56 -4.83)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.56 4.32) (xy 6.1 2.54) (xy 3.56 0.76) (xy 3.56 4.32)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.56 -3.05) (xy 6.1 -4.83) (xy 3.56 -6.6) (xy 3.56 -3.05)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(polyline
+					(pts
+						(xy 6.1 5.08) (xy 7.11 6.1)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 6.1 4.32) (xy 6.1 0.76)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 6.1 2.54) (xy 7.37 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 6.1 -2.29) (xy 7.11 -1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 6.1 -3.05) (xy 6.1 -6.6)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 6.1 -4.83) (xy 7.37 -4.83)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 7.11 4.06) (xy 8.13 5.08)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 7.11 -3.3) (xy 8.13 -2.29)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 7.87 6.86) (xy 6.86 6.35) (xy 7.37 5.84) (xy 7.87 6.86)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(polyline
+					(pts
+						(xy 7.87 -0.51) (xy 6.86 -1.02) (xy 7.37 -1.52) (xy 7.87 -0.51)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(polyline
+					(pts
+						(xy 8.89 5.84) (xy 7.87 5.33) (xy 8.38 4.83) (xy 8.89 5.84)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(polyline
+					(pts
+						(xy 8.89 -1.52) (xy 7.87 -2.03) (xy 8.38 -2.54) (xy 8.89 -1.52)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(pin unspecified line
+					(at 12.7 -5.08 180)
+					(length 5.08)
+					(name "R-"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -374,10 +591,10 @@
 						)
 					)
 				)
-				(pin output line
-					(at 7.62 0 180)
-					(length 2.54)
-					(name "DOUT"
+				(pin unspecified line
+					(at -12.7 -5.08 0)
+					(length 5.08)
+					(name "+"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -392,10 +609,10 @@
 						)
 					)
 				)
-				(pin power_in line
-					(at 0 -7.62 90)
-					(length 2.54)
-					(name "VSS"
+				(pin unspecified line
+					(at 12.7 2.54 180)
+					(length 5.08)
+					(name "G-"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -410,10 +627,10 @@
 						)
 					)
 				)
-				(pin input line
-					(at -7.62 0 0)
-					(length 2.54)
-					(name "DIN"
+				(pin unspecified line
+					(at -12.7 2.54 0)
+					(length 5.08)
+					(name "B-"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -431,7 +648,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "power:GND"
+		(symbol "power:+3V3"
 			(power global)
 			(pin_numbers
 				(hide yes)
@@ -446,7 +663,7 @@
 			(in_pos_files yes)
 			(duplicate_pin_numbers_are_jumpers no)
 			(property "Reference" "#PWR"
-				(at 0 -6.35 0)
+				(at 0 -3.81 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(hide yes)
@@ -456,8 +673,8 @@
 					)
 				)
 			)
-			(property "Value" "GND"
-				(at 0 -3.81 0)
+			(property "Value" "+3V3"
+				(at 0 3.556 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(effects
@@ -488,7 +705,7 @@
 					)
 				)
 			)
-			(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(property "Description" "Power symbol creates a global label with name \"+3V3\""
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -510,10 +727,34 @@
 					)
 				)
 			)
-			(symbol "GND_0_1"
+			(symbol "+3V3_0_1"
 				(polyline
 					(pts
-						(xy 0 0) (xy 0 -1.27) (xy 1.27 -1.27) (xy 0 -2.54) (xy -1.27 -1.27) (xy 0 -1.27)
+						(xy -0.762 1.27) (xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 2.54) (xy 0.762 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 0) (xy 0 2.54)
 					)
 					(stroke
 						(width 0)
@@ -524,9 +765,9 @@
 					)
 				)
 			)
-			(symbol "GND_1_1"
+			(symbol "+3V3_1_1"
 				(pin power_in line
-					(at 0 0 270)
+					(at 0 0 90)
 					(length 0)
 					(name ""
 						(effects
@@ -547,20 +788,19 @@
 			(embedded_fonts no)
 		)
 	)
-	(text "Used for daisy chaining\nmultiple LEDs"
+	(text "https://www.lcsc.com/product-detail/C2843813.html?s_z=n_q_C2843813&globalKeyword=C2843813"
 		(exclude_from_sim no)
-		(at 152.654 100.076 0)
+		(at 141.732 96.52 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify left)
 		)
-		(uuid "21e59df4-9478-43b9-aa51-227b53d6889e")
+		(uuid "112c482e-6377-4956-ac26-eda6aaebc777")
 	)
-	(text "Neopixels addressable RBG LED"
+	(text "Common anode RGB LED"
 		(exclude_from_sim no)
-		(at 163.83 82.55 0)
+		(at 134.62 100.076 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -568,116 +808,154 @@
 				(bold yes)
 			)
 		)
-		(uuid "4e388738-2e73-4309-9720-9c8199d16af2")
-	)
-	(junction
-		(at 142.24 87.63)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "b674250b-5012-48a2-abdf-92c951f3fd7f")
-	)
-	(no_connect
-		(at 149.86 99.06)
-		(uuid "d1db9c4c-5816-4e09-94ae-e607aa18d231")
+		(uuid "516c35fa-45a6-4bd7-907a-e315442d0f18")
 	)
 	(wire
 		(pts
-			(xy 142.24 87.63) (xy 142.24 91.44)
+			(xy 114.3 120.65) (xy 120.65 120.65)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "1a900ce8-e8af-4011-9f0c-a6c70ca8d27a")
+		(uuid "376c3b73-3f10-4ab2-bd59-fda96deea89a")
 	)
 	(wire
 		(pts
-			(xy 142.24 83.82) (xy 142.24 87.63)
+			(xy 161.29 120.65) (xy 161.29 129.54)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "1d42c251-1c1d-4375-a238-fee719805828")
+		(uuid "4d1ba205-a7f4-4574-9f71-5f96a5534a03")
 	)
 	(wire
 		(pts
-			(xy 138.43 87.63) (xy 142.24 87.63)
+			(xy 102.87 113.03) (xy 107.95 113.03)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "2e463ffc-7ca3-4119-9d9a-b4e7ed84b310")
+		(uuid "555c02d9-7dd3-4260-858b-6c4966d2d27c")
 	)
 	(wire
 		(pts
-			(xy 125.73 87.63) (xy 130.81 87.63)
+			(xy 102.87 139.7) (xy 107.95 139.7)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "35b93d06-4a63-44c1-b5af-14cff2a9249d")
+		(uuid "666464aa-d8b7-4087-95e1-107c4ec023fd")
 	)
 	(wire
 		(pts
-			(xy 125.73 99.06) (xy 134.62 99.06)
+			(xy 161.29 129.54) (xy 115.57 129.54)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "73f836b6-574d-45ae-87d5-44387539eae4")
+		(uuid "809164d3-148f-46de-9098-0797e499b615")
 	)
 	(wire
 		(pts
-			(xy 142.24 106.68) (xy 142.24 111.76)
+			(xy 115.57 139.7) (xy 168.91 139.7)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "9db8267d-e3cd-4ce1-b6cc-ef31cfcd566b")
+		(uuid "81bb5beb-bbf3-452c-b9c1-7228fe3ad994")
 	)
-	(global_label "POWER_5V_SUP"
-		(shape bidirectional)
-		(at 142.24 83.82 90)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
+	(wire
+		(pts
+			(xy 168.91 139.7) (xy 168.91 113.03)
 		)
-		(uuid "b2c23375-f07f-47eb-ae1f-b2c3e5b4bbb9")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 142.24 65.2093 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
+		(stroke
+			(width 0)
+			(type default)
 		)
+		(uuid "8332f092-f3e1-452b-996c-cc68f97cf697")
 	)
-	(hierarchical_label "RGB_DATA"
+	(wire
+		(pts
+			(xy 146.05 120.65) (xy 161.29 120.65)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "acae994b-bb6e-4109-86a3-b39206594829")
+	)
+	(wire
+		(pts
+			(xy 115.57 113.03) (xy 120.65 113.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c35cee00-3435-4b1b-b8b8-04d8ac05df89")
+	)
+	(wire
+		(pts
+			(xy 102.87 129.54) (xy 107.95 129.54)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dce6a3f6-8db3-4bac-97db-bcd8d28f5670")
+	)
+	(wire
+		(pts
+			(xy 168.91 113.03) (xy 146.05 113.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f10bdc71-5784-4c47-b386-dd40bab2d848")
+	)
+	(hierarchical_label "RGB_LED_BLUE"
 		(shape input)
-		(at 125.73 99.06 180)
+		(at 102.87 113.03 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify right)
 		)
-		(uuid "09a3cdb7-639f-4bee-b8f3-3d2c26529d10")
+		(uuid "38165b7e-d2b4-4d6f-8200-fee661d8cc1d")
+	)
+	(hierarchical_label "RGB_LED_RED"
+		(shape input)
+		(at 102.87 129.54 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "93be356e-833e-4102-8d1a-adc50435d7d6")
+	)
+	(hierarchical_label "RGB_LED_GREEN"
+		(shape input)
+		(at 102.87 139.7 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "b9bbf4fa-f145-4142-bfa7-a54efd7ce759")
 	)
 	(symbol
-		(lib_id "power:GND")
-		(at 142.24 111.76 0)
+		(lib_id "power:+3V3")
+		(at 114.3 120.65 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -686,9 +964,9 @@
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "467b7e60-08ea-410c-ad4d-44bd0392a6f2")
-		(property "Reference" "#PWR056"
-			(at 142.24 118.11 0)
+		(uuid "0ec627ff-18f2-4924-b272-79566d64e287")
+		(property "Reference" "#PWR010"
+			(at 114.3 124.46 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -698,8 +976,8 @@
 				)
 			)
 		)
-		(property "Value" "GND"
-			(at 142.24 116.84 0)
+		(property "Value" "+3V3"
+			(at 114.3 115.57 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -709,7 +987,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 142.24 111.76 0)
+			(at 114.3 120.65 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -720,7 +998,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 142.24 111.76 0)
+			(at 114.3 120.65 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -730,8 +1008,8 @@
 				)
 			)
 		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 142.24 111.76 0)
+		(property "Description" "Power symbol creates a global label with name \"+3V3\""
+			(at 114.3 120.65 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -742,20 +1020,20 @@
 			)
 		)
 		(pin "1"
-			(uuid "aa7981a7-3f5a-4c4f-ba3a-0979e53c7e24")
+			(uuid "a287310b-7803-47b2-b7ee-eef08045656a")
 		)
 		(instances
 			(project "HDD Synth Prototype MK5"
 				(path "/1a22431a-ba36-40a0-9a7e-c2a82ec69c53/779dbbe7-9583-41dc-a633-b3a85967b109"
-					(reference "#PWR056")
+					(reference "#PWR010")
 					(unit 1)
 				)
 			)
 		)
 	)
 	(symbol
-		(lib_id "LED:WS2812B")
-		(at 142.24 99.06 0)
+		(lib_id "Device:R")
+		(at 111.76 139.7 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -764,9 +1042,9 @@
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "a710e6d6-ea24-48aa-94d1-9e67a4e3ca9b")
-		(property "Reference" "D4"
-			(at 153.67 92.6398 0)
+		(uuid "798de58a-c976-4e38-8a0f-85e0a71641a9")
+		(property "Reference" "R18"
+			(at 111.76 133.35 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -775,8 +1053,8 @@
 				)
 			)
 		)
-		(property "Value" "WS2812B"
-			(at 153.67 95.1798 0)
+		(property "Value" "56R"
+			(at 111.76 135.89 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -785,8 +1063,8 @@
 				)
 			)
 		)
-		(property "Footprint" "LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm"
-			(at 143.51 106.68 0)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 111.76 141.478 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -794,11 +1072,10 @@
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left top)
 			)
 		)
-		(property "Datasheet" "https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf"
-			(at 144.78 108.585 0)
+		(property "Datasheet" ""
+			(at 111.76 139.7 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -806,11 +1083,10 @@
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left top)
 			)
 		)
-		(property "Description" "RGB LED with integrated controller"
-			(at 142.24 99.06 0)
+		(property "Description" "Resistor"
+			(at 111.76 139.7 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -821,7 +1097,7 @@
 			)
 		)
 		(property "Availability" ""
-			(at 142.24 99.06 0)
+			(at 111.76 139.7 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -832,7 +1108,7 @@
 			)
 		)
 		(property "Check_prices" ""
-			(at 142.24 99.06 0)
+			(at 111.76 139.7 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -843,7 +1119,7 @@
 			)
 		)
 		(property "Comment" ""
-			(at 142.24 99.06 0)
+			(at 111.76 139.7 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -854,7 +1130,7 @@
 			)
 		)
 		(property "EU_RoHS_Compliance" ""
-			(at 142.24 99.06 0)
+			(at 111.76 139.7 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -865,7 +1141,7 @@
 			)
 		)
 		(property "MF" ""
-			(at 142.24 99.06 0)
+			(at 111.76 139.7 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -876,7 +1152,7 @@
 			)
 		)
 		(property "MP" ""
-			(at 142.24 99.06 0)
+			(at 111.76 139.7 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -887,7 +1163,7 @@
 			)
 		)
 		(property "PARTREV" ""
-			(at 142.24 99.06 0)
+			(at 111.76 139.7 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -898,7 +1174,7 @@
 			)
 		)
 		(property "Package" ""
-			(at 142.24 99.06 0)
+			(at 111.76 139.7 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -909,7 +1185,7 @@
 			)
 		)
 		(property "Price" ""
-			(at 142.24 99.06 0)
+			(at 111.76 139.7 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -920,7 +1196,7 @@
 			)
 		)
 		(property "Purchase-URL" ""
-			(at 142.24 99.06 0)
+			(at 111.76 139.7 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -931,7 +1207,7 @@
 			)
 		)
 		(property "STANDARD" ""
-			(at 142.24 99.06 0)
+			(at 111.76 139.7 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -942,7 +1218,7 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
-			(at 142.24 99.06 0)
+			(at 111.76 139.7 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -952,8 +1228,8 @@
 				)
 			)
 		)
-		(property "LCSC_Part_Number" "C2761795"
-			(at 142.24 99.06 0)
+		(property "LCSC Part Number" "C25173"
+			(at 111.76 139.7 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -964,29 +1240,376 @@
 			)
 		)
 		(pin "2"
-			(uuid "16d3d825-03f4-46ca-a89f-7a9b11ca1e43")
+			(uuid "1de69dc4-88d3-4724-a2dd-08167b5a6a6f")
 		)
-		(pin "4"
-			(uuid "1092d142-4ea4-46c2-8552-719f4b55eda1")
+		(pin "1"
+			(uuid "2296576b-6bbe-40cf-b125-f3d6cb7e496f")
+		)
+		(instances
+			(project "HDD Synth Prototype MK5"
+				(path "/1a22431a-ba36-40a0-9a7e-c2a82ec69c53/779dbbe7-9583-41dc-a633-b3a85967b109"
+					(reference "R18")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 111.76 129.54 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "977a0f01-93b8-4207-940c-2ba7df40d970")
+		(property "Reference" "R19"
+			(at 111.76 123.19 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "270R"
+			(at 111.76 125.73 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 111.76 131.318 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 111.76 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 111.76 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Availability" ""
+			(at 111.76 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Check_prices" ""
+			(at 111.76 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Comment" ""
+			(at 111.76 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "EU_RoHS_Compliance" ""
+			(at 111.76 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MF" ""
+			(at 111.76 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MP" ""
+			(at 111.76 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PARTREV" ""
+			(at 111.76 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Package" ""
+			(at 111.76 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Price" ""
+			(at 111.76 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Purchase-URL" ""
+			(at 111.76 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "STANDARD" ""
+			(at 111.76 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SnapEDA_Link" ""
+			(at 111.76 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part Number" "C137892"
+			(at 111.76 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "4b65363c-3d53-497f-ae32-8c098a9848b8")
+		)
+		(pin "1"
+			(uuid "96203e6b-23f8-44f2-b0ff-3a37949a73d8")
+		)
+		(instances
+			(project "HDD Synth Prototype MK5"
+				(path "/1a22431a-ba36-40a0-9a7e-c2a82ec69c53/779dbbe7-9583-41dc-a633-b3a85967b109"
+					(reference "R19")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Project symbols:XL-3528RGBW-HM")
+		(at 133.35 115.57 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "a4e6654e-519a-433b-b009-1b5ae4254588")
+		(property "Reference" "LED1"
+			(at 133.225 104.14 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "XL-3528RGBW-HM"
+			(at 133.225 106.68 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Custom:LED-SMD_4P-L3.2-W2.8-LS3.5-XL-3528RGBW-HM5"
+			(at 133.35 128.27 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C2843813.pdf"
+			(at 133.35 130.81 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 133.35 115.57 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "XINGLIGHT(成兴光)"
+			(at 133.35 133.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "XL-3528RGBW-HM"
+			(at 133.35 135.89 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part" "C2843813"
+			(at 133.35 138.43 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part Number" "C2843813"
+			(at 133.35 115.57 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "98b97686-6a60-4036-97a4-c401df6ce95c")
+		)
+		(pin "2"
+			(uuid "0711ddfe-fd25-4051-944b-7f48f7b1eadc")
 		)
 		(pin "3"
-			(uuid "9d5586b4-3fbb-4f59-a449-3ad3c4e4b918")
+			(uuid "3f1be338-3d1d-4353-842e-ccf8a443a70e")
 		)
-		(pin "1"
-			(uuid "462e2915-0803-4f77-b299-20cbe0b9d54b")
+		(pin "4"
+			(uuid "89589422-c034-4959-97bf-f2e5558c7a1e")
 		)
 		(instances
 			(project "HDD Synth Prototype MK5"
 				(path "/1a22431a-ba36-40a0-9a7e-c2a82ec69c53/779dbbe7-9583-41dc-a633-b3a85967b109"
-					(reference "D4")
+					(reference "LED1")
 					(unit 1)
 				)
 			)
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
-		(at 125.73 87.63 0)
+		(lib_id "Device:R")
+		(at 111.76 113.03 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -995,10 +1618,9 @@
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "b947cc91-70fa-44fc-a4dc-9e14730a7f5c")
-		(property "Reference" "#PWR055"
-			(at 125.73 93.98 0)
-			(hide yes)
+		(uuid "ee144bf1-bc27-47ae-b5a6-181ebd16d520")
+		(property "Reference" "R20"
+			(at 111.76 106.68 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1007,8 +1629,8 @@
 				)
 			)
 		)
-		(property "Value" "GND"
-			(at 125.73 92.71 0)
+		(property "Value" "33R"
+			(at 111.76 109.22 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1017,8 +1639,8 @@
 				)
 			)
 		)
-		(property "Footprint" ""
-			(at 125.73 87.63 0)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 111.76 114.808 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1029,7 +1651,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 125.73 87.63 0)
+			(at 111.76 113.03 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1039,107 +1661,8 @@
 				)
 			)
 		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 125.73 87.63 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "6c267c1b-d267-48e3-8832-c2a276b5ca6a")
-		)
-		(instances
-			(project "HDD Synth Prototype MK5"
-				(path "/1a22431a-ba36-40a0-9a7e-c2a82ec69c53/779dbbe7-9583-41dc-a633-b3a85967b109"
-					(reference "#PWR055")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:C")
-		(at 134.62 87.63 90)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "eb4476ef-39a6-4d53-a711-6a2ff445a45f")
-		(property "Reference" "C27"
-			(at 134.62 80.01 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "0.1uF"
-			(at 134.62 82.55 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
-			(at 138.43 86.6648 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 134.62 87.63 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Unpolarized capacitor"
-			(at 134.62 87.63 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Manufacturer_Part_Number" "CL10B104KO8NNNC"
-			(at 134.62 87.63 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC_Part_Number" "C14663"
-			(at 134.62 87.63 0)
+		(property "Description" "Resistor"
+			(at 111.76 113.03 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1150,7 +1673,7 @@
 			)
 		)
 		(property "Availability" ""
-			(at 134.62 87.63 90)
+			(at 111.76 113.03 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1161,7 +1684,7 @@
 			)
 		)
 		(property "Check_prices" ""
-			(at 134.62 87.63 90)
+			(at 111.76 113.03 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1172,7 +1695,7 @@
 			)
 		)
 		(property "Comment" ""
-			(at 134.62 87.63 90)
+			(at 111.76 113.03 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1183,7 +1706,7 @@
 			)
 		)
 		(property "EU_RoHS_Compliance" ""
-			(at 134.62 87.63 90)
+			(at 111.76 113.03 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1194,7 +1717,7 @@
 			)
 		)
 		(property "MF" ""
-			(at 134.62 87.63 90)
+			(at 111.76 113.03 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1205,7 +1728,7 @@
 			)
 		)
 		(property "MP" ""
-			(at 134.62 87.63 90)
+			(at 111.76 113.03 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1216,7 +1739,7 @@
 			)
 		)
 		(property "PARTREV" ""
-			(at 134.62 87.63 90)
+			(at 111.76 113.03 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1227,7 +1750,7 @@
 			)
 		)
 		(property "Package" ""
-			(at 134.62 87.63 90)
+			(at 111.76 113.03 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1238,7 +1761,7 @@
 			)
 		)
 		(property "Price" ""
-			(at 134.62 87.63 90)
+			(at 111.76 113.03 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1249,7 +1772,7 @@
 			)
 		)
 		(property "Purchase-URL" ""
-			(at 134.62 87.63 90)
+			(at 111.76 113.03 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1260,7 +1783,7 @@
 			)
 		)
 		(property "STANDARD" ""
-			(at 134.62 87.63 90)
+			(at 111.76 113.03 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1271,7 +1794,18 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
-			(at 134.62 87.63 90)
+			(at 111.76 113.03 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part Number" "C25105"
+			(at 111.76 113.03 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1282,15 +1816,15 @@
 			)
 		)
 		(pin "2"
-			(uuid "cbb578c9-59b8-40ac-9481-2aabd7e8c626")
+			(uuid "7aabcd9b-31f0-46d6-a03f-37af13f89b66")
 		)
 		(pin "1"
-			(uuid "73503e94-3e69-455a-b1da-6cd116e2aead")
+			(uuid "34df9906-5ff4-4783-9297-b151c7b22360")
 		)
 		(instances
 			(project "HDD Synth Prototype MK5"
 				(path "/1a22431a-ba36-40a0-9a7e-c2a82ec69c53/779dbbe7-9583-41dc-a633-b3a85967b109"
-					(reference "C27")
+					(reference "R20")
 					(unit 1)
 				)
 			)

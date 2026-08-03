@@ -1962,17 +1962,6 @@
 				)
 			)
 		)
-		(property "LCSC_Part_Number" "C779384"
-			(at 88.9 77.47 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Availability" ""
 			(at 88.9 77.47 0)
 			(hide yes)
@@ -2095,6 +2084,17 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 88.9 77.47 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part Number" "C779384"
 			(at 88.9 77.47 0)
 			(hide yes)
 			(show_name no)
@@ -2228,17 +2228,6 @@
 				)
 			)
 		)
-		(property "LCSC_Part_Number" "C14663"
-			(at 113.03 60.96 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Availability" ""
 			(at 113.03 60.96 0)
 			(hide yes)
@@ -2361,6 +2350,17 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 113.03 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part Number" "C14663"
 			(at 113.03 60.96 0)
 			(hide yes)
 			(show_name no)
@@ -2474,17 +2474,6 @@
 				)
 			)
 		)
-		(property "LCSC_Part_Number" "C719027"
-			(at 147.32 92.71 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Availability" ""
 			(at 147.32 92.71 0)
 			(hide yes)
@@ -2607,6 +2596,17 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 147.32 92.71 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part Number" "C719027"
 			(at 147.32 92.71 0)
 			(hide yes)
 			(show_name no)
@@ -2743,17 +2743,6 @@
 				)
 			)
 		)
-		(property "LCSC_Part_Number" "C77093"
-			(at 97.79 60.96 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Availability" ""
 			(at 97.79 60.96 0)
 			(hide yes)
@@ -2876,6 +2865,17 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 97.79 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part Number" "C14860"
 			(at 97.79 60.96 0)
 			(hide yes)
 			(show_name no)

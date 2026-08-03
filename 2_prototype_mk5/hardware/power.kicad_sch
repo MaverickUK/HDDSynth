@@ -5,6 +5,164 @@
 	(uuid "582f42f8-ba0c-4f1f-8326-0c479e4baeba")
 	(paper "A4")
 	(lib_symbols
+		(symbol "Connector_Generic:Conn_01x02"
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "J"
+				(at 0 2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Conn_01x02"
+				(at 0 -5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "connector"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "Connector*:*_1x??_*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "Conn_01x02_1_1"
+				(rectangle
+					(start -1.27 1.27)
+					(end 1.27 -3.81)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(rectangle
+					(start -1.27 0.127)
+					(end 0 -0.127)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 -2.413)
+					(end 0 -2.667)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at -5.08 0 0)
+					(length 3.81)
+					(name "Pin_1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -2.54 0)
+					(length 3.81)
+					(name "Pin_2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Device:C_Small"
 			(pin_numbers
 				(hide yes)
@@ -1021,6 +1179,16 @@
 		)
 		(uuid "9dd6c67e-4907-44a4-b5ae-6db3ee09f34a")
 	)
+	(text "Auxiliary power input"
+		(exclude_from_sim no)
+		(at 134.366 24.13 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "f17900ef-5f38-49fd-a7b5-08a21f46b6eb")
+	)
 	(junction
 		(at 162.56 50.8)
 		(diameter 0)
@@ -1034,16 +1202,16 @@
 		(uuid "20ae7928-346e-4787-b6e5-e7bb8bd3647a")
 	)
 	(junction
-		(at 184.15 50.8)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "3f26b23a-b384-41b4-a5ea-2330942fc15e")
-	)
-	(junction
 		(at 125.73 50.8)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "96cdd27e-8efb-4648-b9d7-ec34d729938b")
+	)
+	(junction
+		(at 132.08 50.8)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "dd253b3c-950b-4903-b377-22fe30900069")
 	)
 	(junction
 		(at 162.56 63.5)
@@ -1065,16 +1233,6 @@
 	)
 	(wire
 		(pts
-			(xy 184.15 43.18) (xy 191.77 43.18)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0231da25-9810-4002-8c9c-bfc1f0aa29bf")
-	)
-	(wire
-		(pts
 			(xy 233.68 81.28) (xy 233.68 85.09)
 		)
 		(stroke
@@ -1082,16 +1240,6 @@
 			(type default)
 		)
 		(uuid "07d0593b-0e50-4ca7-9f5b-f9d2c1fb8cc4")
-	)
-	(wire
-		(pts
-			(xy 184.15 50.8) (xy 193.04 50.8)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "1829a799-324e-47f1-979f-abaf448567ef")
 	)
 	(wire
 		(pts
@@ -1105,7 +1253,7 @@
 	)
 	(wire
 		(pts
-			(xy 162.56 50.8) (xy 184.15 50.8)
+			(xy 162.56 50.8) (xy 191.77 50.8)
 		)
 		(stroke
 			(width 0)
@@ -1145,7 +1293,7 @@
 	)
 	(wire
 		(pts
-			(xy 125.73 50.8) (xy 133.35 50.8)
+			(xy 125.73 50.8) (xy 132.08 50.8)
 		)
 		(stroke
 			(width 0)
@@ -1182,6 +1330,16 @@
 			(type default)
 		)
 		(uuid "5e70331b-1fbc-493c-9469-18cc26bfdf3a")
+	)
+	(wire
+		(pts
+			(xy 134.62 34.29) (xy 134.62 36.83)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6cf54ae2-ce0e-43a3-ad76-4667dba5b4d6")
 	)
 	(wire
 		(pts
@@ -1265,13 +1423,13 @@
 	)
 	(wire
 		(pts
-			(xy 184.15 43.18) (xy 184.15 50.8)
+			(xy 132.08 50.8) (xy 133.35 50.8)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "da6d1919-f9fa-446a-957c-1250badc80cd")
+		(uuid "cec43f4c-42b3-476b-a25f-58abc850492f")
 	)
 	(wire
 		(pts
@@ -1282,6 +1440,16 @@
 			(type default)
 		)
 		(uuid "dff03e92-2aab-4741-a810-6ba3d49c864a")
+	)
+	(wire
+		(pts
+			(xy 132.08 34.29) (xy 132.08 50.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e9a60fa9-9761-4458-9c1d-f73375339966")
 	)
 	(label "VCC_DETECT"
 		(at 223.52 71.12 0)
@@ -1295,7 +1463,7 @@
 	)
 	(global_label "POWER_5V_SUP"
 		(shape bidirectional)
-		(at 191.77 43.18 0)
+		(at 191.77 50.8 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1305,7 +1473,7 @@
 		)
 		(uuid "d9272123-ad98-4895-a039-692663c08ab4")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 210.3807 43.18 0)
+			(at 210.3807 50.8 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1316,17 +1484,6 @@
 				(justify left)
 			)
 		)
-	)
-	(hierarchical_label "5V_POWER"
-		(shape output)
-		(at 193.04 50.8 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "0c899a42-e8f5-4506-8d2a-8125fd9f0fb0")
 	)
 	(hierarchical_label "VCC_DETECT_POWER"
 		(shape output)
@@ -1450,10 +1607,10 @@
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(in_pos_files yes)
-		(dnp no)
+		(dnp yes)
 		(uuid "260a05b9-2133-494e-906b-b1f88c2fe2ba")
 		(property "Reference" "Super_Cap1"
 			(at 165.354 79.756 0)
@@ -1511,17 +1668,6 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" ""
-			(at 162.56 76.2 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC_Part_Number" ""
 			(at 162.56 76.2 0)
 			(hide yes)
 			(show_name no)
@@ -1842,6 +1988,320 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 134.62 36.83 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "358fa920-f39f-47a5-bc61-3776366fe7c2")
+		(property "Reference" "#PWR04"
+			(at 134.62 43.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 134.62 41.91 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 134.62 36.83 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 134.62 36.83 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 134.62 36.83 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "7baaf148-b800-4ab9-a0f8-998904af9879")
+		)
+		(instances
+			(project "HDD Synth Prototype MK5"
+				(path "/1a22431a-ba36-40a0-9a7e-c2a82ec69c53/045d9081-4e75-4a6b-9321-784f56d8310c"
+					(reference "#PWR04")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_01x02")
+		(at 132.08 29.21 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "5d9748ca-6c43-46ee-9746-715573eada8f")
+		(property "Reference" "H14"
+			(at 137.16 27.9399 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "Conn_01x02"
+			(at 137.16 30.4799 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"
+			(at 132.08 29.21 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 132.08 29.21 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 132.08 29.21 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer_Part_Number" ""
+			(at 132.08 29.21 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Availability" ""
+			(at 132.08 29.21 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Check_prices" ""
+			(at 132.08 29.21 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Comment" ""
+			(at 132.08 29.21 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "EU_RoHS_Compliance" ""
+			(at 132.08 29.21 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MF" ""
+			(at 132.08 29.21 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MP" ""
+			(at 132.08 29.21 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PARTREV" ""
+			(at 132.08 29.21 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Package" ""
+			(at 132.08 29.21 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Price" ""
+			(at 132.08 29.21 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Purchase-URL" ""
+			(at 132.08 29.21 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "STANDARD" ""
+			(at 132.08 29.21 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SnapEDA_Link" ""
+			(at 132.08 29.21 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part Number" "C124375"
+			(at 132.08 29.21 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "997d37f3-dd76-456a-823d-70b7222f2d34")
+		)
+		(pin "2"
+			(uuid "c1804bb5-7031-490e-b029-b928ea829def")
+		)
+		(instances
+			(project "HDD Synth Prototype MK5"
+				(path "/1a22431a-ba36-40a0-9a7e-c2a82ec69c53/045d9081-4e75-4a6b-9321-784f56d8310c"
+					(reference "H14")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R")
 		(at 168.91 67.31 0)
 		(unit 1)
@@ -1864,7 +2324,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "47R"
+		(property "Value" "22R"
 			(at 171.45 68.5799 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1897,7 +2357,7 @@
 				)
 			)
 		)
-		(property "Description" "Yageo, 47Ω, ±1%, 2W, anti-surge, 2512"
+		(property "Description" "Yageo, 22Ω, ±1%, 2W, anti-surge, 2512"
 			(at 168.91 67.31 0)
 			(hide yes)
 			(show_name no)
@@ -1908,18 +2368,7 @@
 				)
 			)
 		)
-		(property "Manufacturer_Part_Number" "SR2512FK-7W47RL"
-			(at 168.91 67.31 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC_Part_Number" "C3013388"
+		(property "Manufacturer_Part_Number" "SR2512FK-7W22RL"
 			(at 168.91 67.31 0)
 			(hide yes)
 			(show_name no)
@@ -2052,6 +2501,17 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 168.91 67.31 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part Number" "C5204054"
 			(at 168.91 67.31 0)
 			(hide yes)
 			(show_name no)
@@ -2350,7 +2810,7 @@
 				)
 			)
 		)
-		(property "LCSC_Part_Number" "C2480"
+		(property "LCSC Part Number" "C2480"
 			(at 146.05 50.8 0)
 			(hide yes)
 			(show_name no)
@@ -2450,17 +2910,6 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "SS12"
-			(at 156.21 67.31 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC_Part_Number" "C2479"
 			(at 156.21 67.31 90)
 			(hide yes)
 			(show_name no)
@@ -2593,6 +3042,17 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 156.21 67.31 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part Number" "C2479"
 			(at 156.21 67.31 90)
 			(hide yes)
 			(show_name no)
@@ -2852,17 +3312,6 @@
 				)
 			)
 		)
-		(property "LCSC_Part_Number" "C21190"
-			(at 233.68 77.47 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Availability" ""
 			(at 233.68 77.47 0)
 			(hide yes)
@@ -2985,6 +3434,17 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 233.68 77.47 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part Number" "C21190"
 			(at 233.68 77.47 0)
 			(hide yes)
 			(show_name no)
@@ -3166,17 +3626,6 @@
 				)
 			)
 		)
-		(property "LCSC_Part_Number" "C4184"
-			(at 243.84 77.47 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Availability" ""
 			(at 243.84 77.47 0)
 			(hide yes)
@@ -3299,6 +3748,17 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 243.84 77.47 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part Number" "C4184"
 			(at 243.84 77.47 0)
 			(hide yes)
 			(show_name no)

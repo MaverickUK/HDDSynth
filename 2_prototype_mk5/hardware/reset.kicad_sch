@@ -1600,7 +1600,7 @@
 				)
 			)
 		)
-		(property "LCSC_Part_Number" "C60491"
+		(property "LCSC Part Number" "C60491"
 			(at 146.05 114.3 0)
 			(hide yes)
 			(show_name no)
@@ -1694,17 +1694,6 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "CL10B104KO8NNNC"
-			(at 146.05 95.25 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC_Part_Number" "C14663"
 			(at 146.05 95.25 0)
 			(hide yes)
 			(show_name no)
@@ -1837,6 +1826,17 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 146.05 95.25 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part Number" "C14663"
 			(at 146.05 95.25 0)
 			(hide yes)
 			(show_name no)
@@ -2096,17 +2096,6 @@
 				)
 			)
 		)
-		(property "LCSC_Part_Number" "C124375"
-			(at 201.93 95.25 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Availability" ""
 			(at 201.93 95.25 90)
 			(hide yes)
@@ -2229,6 +2218,17 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 201.93 95.25 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part Number" "C124375"
 			(at 201.93 95.25 90)
 			(hide yes)
 			(show_name no)
@@ -2631,7 +2631,7 @@
 				)
 			)
 		)
-		(property "LCSC_Part_Number" "C81598"
+		(property "LCSC Part Number" "C81598"
 			(at 162.56 114.3 90)
 			(hide yes)
 			(show_name no)
@@ -2859,7 +2859,7 @@
 				)
 			)
 		)
-		(property "LCSC_Part_Number" "C332103"
+		(property "LCSC Part Number" "C332103"
 			(at 177.8 104.14 0)
 			(hide yes)
 			(show_name no)

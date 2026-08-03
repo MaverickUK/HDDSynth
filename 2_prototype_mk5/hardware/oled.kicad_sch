@@ -811,7 +811,7 @@
 				)
 			)
 		)
-		(property "LCSC_Part_Number" "C124378"
+		(property "LCSC Part Number" "C124378"
 			(at 128.27 93.98 0)
 			(hide yes)
 			(show_name no)

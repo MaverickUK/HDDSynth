@@ -277,6 +277,10 @@
       [
         "pin_to_pin|1676400|1206500|637c315e-f1da-4028-a075-83db480b82a4|9957f76a-5f3b-4e6d-9d20-dde86aa2afa1|/1a22431a-ba36-40a0-9a7e-c2a82ec69c53|/1a22431a-ba36-40a0-9a7e-c2a82ec69c53|/1a22431a-ba36-40a0-9a7e-c2a82ec69c53",
         ""
+      ],
+      [
+        "power_pin_not_driven|2565400|1295400|de7981e4-0e9f-4fa2-b86c-9f5087723abc|00000000-0000-0000-0000-000000000000|/1a22431a-ba36-40a0-9a7e-c2a82ec69c53|/1a22431a-ba36-40a0-9a7e-c2a82ec69c53|",
+        ""
       ]
     ],
     "meta": {
@@ -678,8 +682,8 @@
         },
         {
           "group_by": false,
-          "label": "LCSC",
-          "name": "LCSC_Part_Number",
+          "label": "LCSC Part Number",
+          "name": "LCSC Part Number",
           "show": true
         },
         {
@@ -807,6 +811,18 @@
           "label": "MAXIMUM_PACKAGE_HEIGHT",
           "name": "MAXIMUM_PACKAGE_HEIGHT",
           "show": false
+        },
+        {
+          "group_by": false,
+          "label": "MPN",
+          "name": "MPN",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "LCSC Part",
+          "name": "LCSC Part",
+          "show": false
         }
       ],
       "filter_string": "",
@@ -857,7 +873,7 @@
         "uuid": "1a22431a-ba36-40a0-9a7e-c2a82ec69c53"
       }
     ],
-    "used_designators": "S1-2",
+    "used_designators": "R18-20,#PWR10,LED1",
     "variants": []
   },
   "sheets": [

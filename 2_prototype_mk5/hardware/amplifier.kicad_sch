@@ -1165,6 +1165,121 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "power:PWR_FLAG"
+			(power global)
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "#FLG"
+				(at 0 1.905 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "PWR_FLAG"
+				(at 0 3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Special symbol for telling ERC where power comes from"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "flag power"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "PWR_FLAG_0_0"
+				(pin power_out line
+					(at 0 0 90)
+					(length 0)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "PWR_FLAG_0_1"
+				(polyline
+					(pts
+						(xy 0 0) (xy 0 1.27) (xy -1.016 1.905) (xy 0 2.54) (xy 1.016 1.905) (xy 0 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 	)
 	(text "Connect to GND: 9dB gain (Quiet/Cleanest).\nConnect to VDD (5V): 12dB gain (Standard).\nConnect to VDD through a 100kOhm resistor: 15dB (Loud).\nLeave Floating (Unconnected): 6dB (Very quiet)."
 		(exclude_from_sim no)
@@ -1228,6 +1343,12 @@
 		(uuid "83272d6f-fa6a-49fa-9048-d9f81439c715")
 	)
 	(junction
+		(at 149.86 77.47)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "a8ad5fe2-7f75-4db6-ad73-9ac5ecc13eda")
+	)
+	(junction
 		(at 149.86 60.96)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1265,7 +1386,7 @@
 	)
 	(wire
 		(pts
-			(xy 149.86 60.96) (xy 149.86 92.71)
+			(xy 149.86 60.96) (xy 149.86 77.47)
 		)
 		(stroke
 			(width 0)
@@ -1562,6 +1683,16 @@
 			(type default)
 		)
 		(uuid "dc7533d5-79d2-4b0c-84ef-95337c57a328")
+	)
+	(wire
+		(pts
+			(xy 149.86 77.47) (xy 149.86 92.71)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e240297b-6543-401f-9c22-b0e255f0ce27")
 	)
 	(global_label "POWER_5V_SUP"
 		(shape bidirectional)
@@ -1893,17 +2024,6 @@
 				)
 			)
 		)
-		(property "LCSC_Part_Number" "C1588"
-			(at 187.96 96.52 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Availability" ""
 			(at 187.96 96.52 0)
 			(hide yes)
@@ -2036,6 +2156,17 @@
 				)
 			)
 		)
+		(property "LCSC Part Number" "C1588"
+			(at 187.96 96.52 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "c3ceb8eb-e75f-428b-ac86-6aa59d9a8e61")
 		)
@@ -2058,6 +2189,83 @@
 			(project "FDD Synth prototype MK1"
 				(path "/ed113b11-1722-4efb-9669-9e8c19f5c8fd/ceef9c1f-e4ce-45b2-b9fe-22340e8232b8"
 					(reference "C1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:PWR_FLAG")
+		(at 149.86 77.47 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "2a43f86d-b613-463c-a3d9-198ad1c848d0")
+		(property "Reference" "#FLG05"
+			(at 151.765 77.47 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "PWR_FLAG"
+			(at 154.94 80.01 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 149.86 77.47 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 149.86 77.47 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Special symbol for telling ERC where power comes from"
+			(at 149.86 77.47 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "c27c0515-2b6a-480e-93ac-c639083bf52b")
+		)
+		(instances
+			(project "HDD Synth Prototype MK5"
+				(path "/1a22431a-ba36-40a0-9a7e-c2a82ec69c53/2950dfc3-c685-4e23-94aa-d1af22619645"
+					(reference "#FLG05")
 					(unit 1)
 				)
 			)
@@ -2141,17 +2349,6 @@
 				)
 			)
 		)
-		(property "LCSC_Part_Number" "C3819527"
-			(at 212.09 100.33 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Availability" ""
 			(at 212.09 100.33 0)
 			(hide yes)
@@ -2274,6 +2471,17 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 212.09 100.33 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part Number" "C3819527"
 			(at 212.09 100.33 0)
 			(hide yes)
 			(show_name no)
@@ -2389,17 +2597,6 @@
 				)
 			)
 		)
-		(property "LCSC_Part_Number" "C14663"
-			(at 143.51 64.77 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Availability" ""
 			(at 143.51 64.77 0)
 			(hide yes)
@@ -2522,6 +2719,17 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 143.51 64.77 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part Number" "C14663"
 			(at 143.51 64.77 0)
 			(hide yes)
 			(show_name no)
@@ -2636,17 +2844,6 @@
 				)
 			)
 		)
-		(property "LCSC_Part_Number" "C77093"
-			(at 160.02 64.77 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Availability" ""
 			(at 160.02 64.77 0)
 			(hide yes)
@@ -2769,6 +2966,17 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 160.02 64.77 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part Number" "C14860"
 			(at 160.02 64.77 0)
 			(hide yes)
 			(show_name no)
@@ -2973,17 +3181,6 @@
 				)
 			)
 		)
-		(property "LCSC_Part_Number" "C910544"
-			(at 149.86 105.41 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Availability" ""
 			(at 149.86 105.41 0)
 			(hide yes)
@@ -3106,6 +3303,17 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 149.86 105.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part Number" "C910544"
 			(at 149.86 105.41 0)
 			(hide yes)
 			(show_name no)
@@ -3264,17 +3472,6 @@
 				)
 			)
 		)
-		(property "LCSC_Part_Number" "C85840"
-			(at 177.8 91.44 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Availability" ""
 			(at 177.8 91.44 90)
 			(hide yes)
@@ -3397,6 +3594,17 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 177.8 91.44 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part Number" "C85840"
 			(at 177.8 91.44 90)
 			(hide yes)
 			(show_name no)
@@ -3512,17 +3720,6 @@
 				)
 			)
 		)
-		(property "LCSC_Part_Number" "C1588"
-			(at 193.04 101.6 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Availability" ""
 			(at 193.04 101.6 0)
 			(hide yes)
@@ -3645,6 +3842,17 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 193.04 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part Number" "C1588"
 			(at 193.04 101.6 0)
 			(hide yes)
 			(show_name no)
@@ -3758,17 +3966,6 @@
 				)
 			)
 		)
-		(property "LCSC_Part_Number" "C85840"
-			(at 177.8 106.68 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "Availability" ""
 			(at 177.8 106.68 90)
 			(hide yes)
@@ -3891,6 +4088,17 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
+			(at 177.8 106.68 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part Number" "C85840"
 			(at 177.8 106.68 90)
 			(hide yes)
 			(show_name no)
