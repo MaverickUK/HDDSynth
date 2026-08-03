@@ -72,8 +72,9 @@ Project website at [www.strifestreams.com/hddsynth](https://www.strifestreams.co
 Thanks to [PCBWay](https://www.pcbway.com) for their PCB manufacturing and assembly services. This is my first PCB based project and they've been a great way to get quality PCB prototypes created along with component assembly at competitive prices. Recommended if you're thinking about creating a simular project yourself.
 
 ## License
-This project is licensed under the GNU General Public License v3.0.
+This project is dual-licensed:
 
-- **Permissions:** Commercial use, modification, and distribution are allowed.
-- **Conditions:** You must include a copy of the license and the source code for any derivative works.
-- **Prohibitions:** You cannot close the source or use a different license for derivative works.
+- **Software/firmware** is licensed under the [GNU GPL v3.0](LICENSE-CODE).
+- **Hardware designs** (schematics, PCB files, BOM) are licensed under
+  [CC BY-NC-SA 4.0](LICENSE-HARDWARE) — free for personal, non-commercial
+  use and modification, but commercial use requires my permission.
