@@ -3,8 +3,30 @@ import math
 import array
 import synthio
 
+import rgb_led
 import settings
-from beep_profiles import PROFILE, PITCH_MEDIUM, LENGTH_SHORT, WAVE_SIN, WAVE_TRIANGLE
+from beep_profiles import (
+    PROFILE,
+    PITCH_MEDIUM,
+    LENGTH_SHORT,
+    WAVE_SIN,
+    WAVE_TRIANGLE,
+    CATEGORY_ERROR,
+    CATEGORY_OPERATION,
+)
+
+# Buffer after each note so the envelope release finishes before the next gap.
+# Shared so a replayed LED-only pattern can reproduce the same cadence.
+RELEASE_BUFFER_S = 0.05
+
+
+def _category_colour(category):
+    """Status LED colour that flashes alongside this category of beep."""
+    if category == CATEGORY_ERROR:
+        return settings.RGB_LED_ERROR_COLOUR
+    if category == CATEGORY_OPERATION:
+        return settings.RGB_LED_OPERATION_COLOUR
+    return None
 
 # --- Internal Helpers ---
 
@@ -53,8 +75,12 @@ def _get_envelope():
 
 # --- Public API ---
 
-def play_beep(mixer, pitch=PITCH_MEDIUM, count=1, length=LENGTH_SHORT, volume=0.8, wave=WAVE_SIN):
-    """Plays a smooth beep tone on the dedicated beep voice."""
+def play_beep(mixer, pitch=PITCH_MEDIUM, count=1, length=LENGTH_SHORT, volume=0.8,
+              wave=WAVE_SIN, led_colour=None):
+    """Plays a smooth beep tone on the dedicated beep voice.
+
+    If led_colour is given, the RGB status LED flashes in time with the beeps.
+    """
     waveform = _get_waveform(wave)
     envelope = _get_envelope()
     synth = synthio.Synthesizer(sample_rate=mixer.sample_rate)
@@ -67,12 +93,18 @@ def play_beep(mixer, pitch=PITCH_MEDIUM, count=1, length=LENGTH_SHORT, volume=0.
     for i in range(count):
         note = synthio.Note(frequency=pitch, waveform=waveform, envelope=envelope)
 
+        if led_colour:
+            rgb_led.set_rgb(*led_colour)
+
         synth.press(note)
         time.sleep(length)
         synth.release(note)
 
+        if led_colour:
+            rgb_led.off()
+
         # Small buffer for the envelope release to finish
-        time.sleep(0.05)
+        time.sleep(RELEASE_BUFFER_S)
 
         # Inter-beep gap
         if i < count - 1:
@@ -80,6 +112,9 @@ def play_beep(mixer, pitch=PITCH_MEDIUM, count=1, length=LENGTH_SHORT, volume=0.
 
     beep_voice.stop()
     synth.deinit()
+
+    if led_colour:
+        rgb_led.invalidate_activity()
 
 
 def play_beep_type(mixer, beep_type):
@@ -96,4 +131,5 @@ def play_beep_type(mixer, beep_type):
         count=config.get("count", 1),
         length=config.get("length", LENGTH_SHORT),
         wave=config.get("wave", WAVE_SIN),
+        led_colour=_category_colour(config.get("category")),
     )

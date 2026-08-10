@@ -10,6 +10,7 @@ import digitalio
 import first_boot
 import hddsynth
 import nvm_wrapper
+import rgb_led
 import sample_cache
 import sample_changer
 import sdcard
@@ -25,6 +26,8 @@ if mode == settings.NVM_MODE_WRITE:
         led = digitalio.DigitalInOut(board.LED)
         led.direction = digitalio.Direction.OUTPUT
         led.value = True
+
+        rgb_led.busy_tick()
 
         desired_pack = sample_changer.get_desired_pack()
         base_path = f"{settings.SDCARD_SAMPLE_DIR}/{desired_pack}"

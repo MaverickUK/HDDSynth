@@ -1,6 +1,4 @@
-import board
 import analogio
-import digitalio
 import settings
 
 # --- Calculated Internal Threshold ---
@@ -17,19 +15,12 @@ ADC_THRESHOLD = int((pin_voltage_target / settings.POWER_ADC_REF_VOLTAGE) * sett
 ADC_THRESHOLD = min(max(ADC_THRESHOLD, 0), settings.POWER_MAX_ADC_VALUE)
 
 # --- Hardware Setup ---
-usb_vbus = digitalio.DigitalInOut(board.VBUS_SENSE)
-usb_vbus.direction = digitalio.Direction.INPUT
 power_sense_adc = analogio.AnalogIn(settings.POWER_SENSE_PIN)
 
-def is_usb_powered():
-    return usb_vbus.value
 
 def external_power():
     if not settings.POWER_DETECTION:
         return True # If power detection is disabled, assume we have external power
-
-    if is_usb_powered():
-        return True
 
     # Compare raw ADC value to our dynamically calculated threshold
     return power_sense_adc.value > ADC_THRESHOLD

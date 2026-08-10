@@ -23,6 +23,8 @@ This can be used to configure the HDD Synth to operate in headless mode without 
 - **BALANCE_DEFAULT:** Number between 0 and 1. 0 = idle only, 1 = access only, 0.5 balanced idle and access. Default 0.5
 - **SAMPLE_PACK:** Name of the sample pack directory on the SD card to use. E.g. If /samples/ibm is desired, this should be set to ibm
 - **SDCARD_CACHE_SAMPLES:** Boolean. True will copy the sample pack from the SD card to the Pico's internal flash before playback — the SD card can then be removed after boot. False will stream samples directly from the SD card, which is faster to start but requires the SD card to remain inserted. Default False
+- **ACTIVITY_LED_ENABLED:** Boolean. True lights the RGB status LED while the HDD is being accessed, False disables the activity indication entirely. Default True
+- **ACTIVITY_LED_COLOUR:** The colour shown on the RGB status LED during HDD activity. Either a hex string such as `"#00FF00"` or an array of three 0-255 values such as `[0, 255, 0]`. Default green
 
 ### Example settings.json
 ```
@@ -35,6 +37,8 @@ This can be used to configure the HDD Synth to operate in headless mode without 
     "VOLUME_DEFAULT": 0.7,
     "BALANCE_DEFAULT": 0.5,
     "SAMPLE_PACK": "my_pack_name",
-    "SDCARD_CACHE_SAMPLES": false
+    "SDCARD_CACHE_SAMPLES": false,
+    "ACTIVITY_LED_ENABLED": true,
+    "ACTIVITY_LED_COLOUR": "#00FF00"
 }
 ```

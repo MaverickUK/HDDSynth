@@ -19,10 +19,12 @@ import action_button
 import rotary_enc
 import power
 import hdd_led
+import rgb_led
 import nvm_wrapper
 import sd_settings
 import beep
 import amp
+from beep_profiles import PROFILE
 
 
 def _init_audio():
@@ -114,6 +116,7 @@ def _main_loop(mixer, samples, led):
         access = activity.get_access()
         led.value = access
         hdd_led.set_active(access)
+        rgb_led.set_activity(access)
         action_button.handler(mixer)
         rotary_enc.handler(mixer)
 
@@ -175,6 +178,16 @@ def _apply_sd_settings(sd_overrides):
     if "SDCARD_CACHE_SAMPLES" in sd_overrides:
         settings.SDCARD_CACHE_SAMPLES = sd_overrides["SDCARD_CACHE_SAMPLES"]
         print(f"[SD Settings] SDCARD_CACHE_SAMPLES = {settings.SDCARD_CACHE_SAMPLES}")
+    if "ACTIVITY_LED_ENABLED" in sd_overrides:
+        settings.ACTIVITY_LED_ENABLED = sd_overrides["ACTIVITY_LED_ENABLED"]
+        print(f"[SD Settings] ACTIVITY_LED_ENABLED = {settings.ACTIVITY_LED_ENABLED}")
+    if "ACTIVITY_LED_COLOUR" in sd_overrides:
+        colour = rgb_led.parse_colour(sd_overrides["ACTIVITY_LED_COLOUR"])
+        if colour is None:
+            print(f"[SD Settings] Ignoring invalid ACTIVITY_LED_COLOUR: {sd_overrides['ACTIVITY_LED_COLOUR']}")
+        else:
+            settings.ACTIVITY_LED_COLOUR = colour
+            print(f"[SD Settings] ACTIVITY_LED_COLOUR = {settings.ACTIVITY_LED_COLOUR}")
 
 
 def _make_reload_callback(samples):
@@ -222,14 +235,30 @@ def _wait_for_power_and_reset():
     microcontroller.reset()
 
 
-def _halt_on_boot_error():
+def _halt_on_boot_error(beep_type=None):
     """Stop here after a boot-time error (e.g. no SD card) instead of resetting.
 
     Unlike _wait_for_power_and_reset(), power hasn't actually changed here —
     resetting immediately would loop forever while USB-powered.
+
+    The beep has already sounded once; from here the status LED keeps repeating
+    the same flash pattern in red so the fault stays visible.
     """
+    profile = PROFILE.get(beep_type) if beep_type else None
+
     while True:
-        time.sleep(1)
+        if profile is None:
+            time.sleep(1)
+            continue
+
+        length = profile.get("length", 0.1)
+        rgb_led.flash(
+            settings.RGB_LED_ERROR_COLOUR,
+            profile.get("count", 1),
+            length,
+            gap_time=(length * 0.4) + beep.RELEASE_BUFFER_S,
+        )
+        time.sleep(settings.RGB_LED_ERROR_REPEAT_S)
 
 
 def _check_sample_pack_installed():
@@ -244,10 +273,19 @@ def run_synth():
     led = digitalio.DigitalInOut(board.LED)
     led.direction = digitalio.Direction.OUTPUT
 
+    # Power-on check that all three RGB channels light.
+    rgb_led.startup_test()
+
+    # Yellow flashing from here until spinup: the synth isn't in normal
+    # operation yet, so the user knows to wait.
+    rgb_led.busy_tick()
+
     _, mixer = _init_audio()
+    rgb_led.busy_tick()
 
     # Try to initialize SD card
     sd_available = sdcard.initialise(mixer)
+    rgb_led.busy_tick()
 
     # Load and apply settings from SD card if available
     if sd_available:
@@ -255,6 +293,7 @@ def run_synth():
         _apply_sd_settings(sd_overrides)
     else:
         sd_overrides = {}
+    rgb_led.busy_tick()
 
     # Check if sample pack is installed
     sample_pack_installed = _check_sample_pack_installed()
@@ -264,13 +303,13 @@ def run_synth():
         if settings.SDCARD_REQUIRED or not settings.SDCARD_CACHE_SAMPLES:
             print("[hddsynth] SD card required but not available, exiting")
             beep.play_beep_type(mixer, "NO_SD_CARD")
-            _halt_on_boot_error()
+            _halt_on_boot_error("NO_SD_CARD")
             return
 
         if not sample_pack_installed:
             print("[hddsynth] No sample pack installed and SD card not available, playing error beep")
             beep.play_beep_type(mixer, "PACK_NOT_FOUND")
-            _halt_on_boot_error()
+            _halt_on_boot_error("PACK_NOT_FOUND")
             return
 
         print("[hddsynth] SD card not available but sample pack is installed, disabling action button")
@@ -285,10 +324,16 @@ def run_synth():
             print("[hddsynth] Sample pack from SD settings not found, playing error beep")
             beep.play_beep_type(mixer, "PACK_NOT_FOUND")
 
+    rgb_led.busy_tick()
     samples = _load_samples()
+    rgb_led.busy_tick()
 
     if not settings.SDCARD_CACHE_SAMPLES:
         action_button.set_reload_callback(_make_reload_callback(samples))
+
+    # Startup work is done — stop the "please wait" indication before the jingle
+    # and spinup, which are part of normal operation.
+    rgb_led.busy_end()
 
     _maybe_play_jingle(mixer, samples)
     if samples.get("jingle") is not None:

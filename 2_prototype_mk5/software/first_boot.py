@@ -2,6 +2,7 @@ import board
 import digitalio
 
 import nvm_wrapper
+import rgb_led
 import sample_changer
 import sdcard
 import settings
@@ -24,9 +25,13 @@ def run_if_needed():
     led.direction = digitalio.Direction.OUTPUT
     led.value = True
 
+    rgb_led.busy_tick()
     sdcard.initialise()
+    rgb_led.busy_tick()
     sample_changer.wipe_settings()
+    rgb_led.busy_tick()
     sample_changer.initialize()
+    rgb_led.busy_end()
 
     nvm_wrapper.safe_write(settings.NVM_ADDRESS_JINGLE, settings.NVM_JINGLE_NOT_PLAYED)
     nvm_wrapper.safe_write(settings.NVM_ADDRESS_MODE, settings.NVM_MODE_WRITE, reset=True)

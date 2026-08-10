@@ -1,5 +1,6 @@
 import os
 
+import rgb_led
 import settings
 import nvm_wrapper
 
@@ -48,6 +49,7 @@ def update_cache_files(source_file_paths):
         finally:
             # 3. Fail-Safe: Always revert to USB mode
             print("[Cache] Reverting to USB Mode...")
+            rgb_led.busy_end()
             trigger_usb_mode()
 
 def trigger_write_mode():
@@ -112,6 +114,8 @@ def _stream_copy(source_handle, dest_handle, chunk_size=512):
         if not chunk:
             break
         dest_handle.write(chunk)
+        # Caching can take a while — keep the "please wait" flash running.
+        rgb_led.busy_tick()
 
 def _stat(path):
     """Helper to check if a file/dir exists without crashing."""
