@@ -181,6 +181,14 @@ def _apply_sd_settings(sd_overrides):
     if "ACTIVITY_LED_ENABLED" in sd_overrides:
         settings.ACTIVITY_LED_ENABLED = sd_overrides["ACTIVITY_LED_ENABLED"]
         print(f"[SD Settings] ACTIVITY_LED_ENABLED = {settings.ACTIVITY_LED_ENABLED}")
+    if "RGB_LED_BRIGHTNESS" in sd_overrides:
+        brightness = rgb_led.parse_brightness(sd_overrides["RGB_LED_BRIGHTNESS"])
+        if brightness is None:
+            print(f"[SD Settings] Ignoring invalid RGB_LED_BRIGHTNESS: {sd_overrides['RGB_LED_BRIGHTNESS']}")
+        else:
+            settings.RGB_LED_BRIGHTNESS = brightness
+            rgb_led.invalidate_activity()
+            print(f"[SD Settings] RGB_LED_BRIGHTNESS = {settings.RGB_LED_BRIGHTNESS}")
     if "ACTIVITY_LED_COLOUR" in sd_overrides:
         colour = rgb_led.parse_colour(sd_overrides["ACTIVITY_LED_COLOUR"])
         if colour is None:

@@ -46,6 +46,9 @@ RGB_LED_BUSY_COLOUR = (255, 255, 0)      # Internal activity before normal opera
 RGB_LED_ERROR_REPEAT_S = 4.0             # Gap before a latched error pattern repeats
 RGB_LED_BUSY_FLASH_S = 0.25              # Half-period of the busy flash
 
+# Master brightness (0.0 - 1.0) scaling every colour the status LED shows.
+RGB_LED_BRIGHTNESS = 0.5
+
 # Action Button
 ACTION_BUTTON_PIN = board.GP19              # GPIO pin the action button is wired to
 ACTION_BUTTON_SHORT_PRESS_MAX_S = 1.0      # Max press duration to register as a short press

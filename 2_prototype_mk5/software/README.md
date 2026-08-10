@@ -25,6 +25,7 @@ This can be used to configure the HDD Synth to operate in headless mode without 
 - **SDCARD_CACHE_SAMPLES:** Boolean. True will copy the sample pack from the SD card to the Pico's internal flash before playback — the SD card can then be removed after boot. False will stream samples directly from the SD card, which is faster to start but requires the SD card to remain inserted. Default False
 - **ACTIVITY_LED_ENABLED:** Boolean. True lights the RGB status LED while the HDD is being accessed, False disables the activity indication entirely. Default True
 - **ACTIVITY_LED_COLOUR:** The colour shown on the RGB status LED during HDD activity. Either a hex string such as `"#00FF00"` or an array of three 0-255 values such as `[0, 255, 0]`. Default green
+- **RGB_LED_BRIGHTNESS:** Number between 0 and 1. Master brightness applied to every colour the RGB status LED shows — activity, error and operation flashes, and the busy indicator. 0 turns the LED off entirely, 1 is full brightness. Default 0.5
 
 ### Example settings.json
 ```
@@ -39,6 +40,7 @@ This can be used to configure the HDD Synth to operate in headless mode without 
     "SAMPLE_PACK": "my_pack_name",
     "SDCARD_CACHE_SAMPLES": false,
     "ACTIVITY_LED_ENABLED": true,
-    "ACTIVITY_LED_COLOUR": "#00FF00"
+    "ACTIVITY_LED_COLOUR": "#00FF00",
+    "RGB_LED_BRIGHTNESS": 0.5
 }
 ```

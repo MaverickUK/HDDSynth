@@ -25,8 +25,16 @@ _blue = pwmio.PWMOut(settings.RGB_LED_BLUE_PIN,
 
 
 def _duty(level):
-    """Map a 0-255 brightness to an inverted 16-bit duty cycle."""
+    """Map a 0-255 channel level to an inverted 16-bit duty cycle.
+
+    The master brightness is applied here, so every colour the LED shows —
+    activity, beep flashes, the busy indicator and the startup sweep — is
+    scaled by it. Read at call time so an SD card override still takes effect
+    after this module has been imported.
+    """
     level = min(max(int(level), 0), 255)
+    brightness = min(max(float(settings.RGB_LED_BRIGHTNESS), 0.0), 1.0)
+    level = int(level * brightness)
     return _FULL_DUTY - (level * _FULL_DUTY) // 255
 
 
@@ -64,6 +72,20 @@ def parse_colour(value):
             return None
 
     return None
+
+
+def parse_brightness(value):
+    """Parse a 0.0-1.0 master brightness.
+
+    Returns a clamped float, or None if the value isn't a number.
+    """
+    if isinstance(value, bool):
+        return None
+    try:
+        level = float(value)
+    except (TypeError, ValueError):
+        return None
+    return min(max(level, 0.0), 1.0)
 
 
 # Cached so the main loop only writes to the PWM channels when the state changes.
