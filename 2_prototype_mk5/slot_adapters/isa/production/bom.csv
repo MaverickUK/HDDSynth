@@ -1,0 +1,5 @@
+﻿Designator,Footprint,Quantity,Value,LCSC Part #
+"J1, J4",PinSocket_1x02_P2.54mm_Vertical,2,Conn_01x02_Socket,
+J2,PinSocket_1x05_P2.54mm_Vertical,1,Conn_01x05_Socket,
+SW1,PTS645VL582LFS,1,SW_Push,
+SW2,RotaryEncoder_Bourns_Horizontal_PEC12R-2x17F-Sxxxx,1,PEC12R-2120F-S0012,

@@ -788,6 +788,17 @@
 			(embedded_fonts no)
 		)
 	)
+	(text "Was 270R\nChanged to save money\non LCSC basic part"
+		(exclude_from_sim no)
+		(at 81.534 123.698 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "0c577b68-9fef-44a4-9d1e-78af5747f7bd")
+	)
 	(text "https://www.lcsc.com/product-detail/C2843813.html?s_z=n_q_C2843813&globalKeyword=C2843813"
 		(exclude_from_sim no)
 		(at 141.732 96.52 0)
@@ -809,6 +820,17 @@
 			)
 		)
 		(uuid "516c35fa-45a6-4bd7-907a-e315442d0f18")
+	)
+	(text "Was 56R\nChanged to save money\non LCSC basic part"
+		(exclude_from_sim no)
+		(at 81.026 135.128 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "d3ba2ebf-f7bf-49e5-a6ea-e4fcfcd6c70a")
 	)
 	(wire
 		(pts
@@ -1053,7 +1075,7 @@
 				)
 			)
 		)
-		(property "Value" "56R"
+		(property "Value" "33R"
 			(at 111.76 135.89 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1228,7 +1250,7 @@
 				)
 			)
 		)
-		(property "LCSC Part Number" "C25173"
+		(property "LCSC Part Number" "C25105"
 			(at 111.76 139.7 0)
 			(hide yes)
 			(show_name no)
@@ -1276,7 +1298,7 @@
 				)
 			)
 		)
-		(property "Value" "270R"
+		(property "Value" "200R"
 			(at 111.76 125.73 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1451,7 +1473,7 @@
 				)
 			)
 		)
-		(property "LCSC Part Number" "C137892"
+		(property "LCSC Part Number" "C25087"
 			(at 111.76 129.54 0)
 			(hide yes)
 			(show_name no)

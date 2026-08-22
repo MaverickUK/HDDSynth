@@ -1620,7 +1620,7 @@
 				)
 			)
 		)
-		(property "LCSC Part Number" "C60491"
+		(property "LCSC Part Number" "C25741"
 			(at 146.05 114.3 0)
 			(hide yes)
 			(show_name no)
@@ -2235,7 +2235,7 @@
 				)
 			)
 		)
-		(property "LCSC Part Number" ""
+		(property "LCSC Part Number" "C11702"
 			(at 189.23 90.17 0)
 			(hide yes)
 			(show_name no)
@@ -2267,10 +2267,10 @@
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(in_pos_files yes)
-		(dnp no)
+		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "9aa7f12f-0552-4c37-9ce6-a90a3fbb199d")
 		(property "Reference" "H13"
@@ -2774,7 +2774,7 @@
 				)
 			)
 		)
-		(property "LCSC Part Number" ""
+		(property "LCSC Part Number" "C25744"
 			(at 146.05 95.25 0)
 			(hide yes)
 			(show_name no)
@@ -3327,7 +3327,7 @@
 				)
 			)
 		)
-		(property "LCSC Part Number" "C332103"
+		(property "LCSC Part Number" "C8545"
 			(at 177.8 104.14 0)
 			(hide yes)
 			(show_name no)

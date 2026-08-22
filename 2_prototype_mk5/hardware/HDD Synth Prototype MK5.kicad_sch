@@ -1550,10 +1550,10 @@
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(in_pos_files yes)
-		(dnp no)
+		(dnp yes)
 		(uuid "129bda2b-5b24-444c-bdba-e8e81e0bc975")
 		(property "Reference" "H2"
 			(at 29.21 137.1599 0)
@@ -2440,10 +2440,10 @@
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(in_pos_files yes)
-		(dnp no)
+		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "64236aa8-ca67-4ff0-a88e-e2d8f5d37735")
 		(property "Reference" "H3"
@@ -3287,10 +3287,10 @@
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(in_pos_files yes)
-		(dnp no)
+		(dnp yes)
 		(uuid "b1f24d19-ed8e-440a-aabf-ac73b45a8022")
 		(property "Reference" "H1"
 			(at 27.94 102.8699 0)
@@ -4086,16 +4086,6 @@
 				(justify left)
 			)
 		)
-		(pin "PG_STATUS" output
-			(at 182.88 111.76 180)
-			(uuid "0b0b7f6e-4f88-404d-8679-1365f67446b8")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
 		(pin "VCAP_DETECT" output
 			(at 182.88 109.22 180)
 			(uuid "d80e177e-0a95-4a8a-a591-2072dd550daa")
@@ -4474,26 +4464,6 @@
 				(justify right)
 			)
 		)
-		(pin "GPIO23_OLED_SDA" bidirectional
-			(at 123.19 85.09 180)
-			(uuid "4b0d2655-ec75-4752-857c-031281612b06")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(pin "GPIO24_OLED_SCL" bidirectional
-			(at 123.19 87.63 180)
-			(uuid "369283b5-c9bc-4d40-b75f-a61020a8d0c0")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
 		(pin "GPIO04_RGB_LED_RED" bidirectional
 			(at 123.19 114.3 180)
 			(uuid "8625b447-ab22-4581-9787-1151675f22e2")
@@ -4532,6 +4502,26 @@
 					(size 1.27 1.27)
 				)
 				(justify right)
+			)
+		)
+		(pin "GPIO24_OLED_SDA" bidirectional
+			(at 123.19 85.09 180)
+			(uuid "dc4a45ce-857c-4e54-b5dc-8d0f6f3ec835")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "GPIO25_OLED_SCL" bidirectional
+			(at 123.19 87.63 180)
+			(uuid "d772b353-6e70-4bdb-8faf-a51a75ce5e91")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 		(instances
