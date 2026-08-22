@@ -69,13 +69,7 @@
           "thermal_relief_spoke_width": 0.5
         }
       },
-      "diff_pair_dimensions": [
-        {
-          "gap": 0.0,
-          "via_gap": 0.0,
-          "width": 0.0
-        }
-      ],
+      "diff_pair_dimensions": [],
       "drc_exclusions": [],
       "meta": {
         "version": 2
@@ -116,15 +110,15 @@
         "missing_tuning_profile": "warning",
         "net_conflict": "warning",
         "nonmirrored_text_on_back_layer": "warning",
-        "npth_inside_courtyard": "error",
+        "npth_inside_courtyard": "ignore",
         "padstack": "warning",
-        "pth_inside_courtyard": "error",
+        "pth_inside_courtyard": "ignore",
         "shorting_items": "error",
         "silk_edge_clearance": "warning",
         "silk_over_copper": "warning",
         "silk_overlap": "warning",
         "skew_out_of_range": "error",
-        "solder_mask_bridge": "error",
+        "solder_mask_bridge": "warning",
         "starved_thermal": "error",
         "text_height": "warning",
         "text_on_edge_cuts": "error",
@@ -148,21 +142,21 @@
         "max_error": 0.005,
         "min_clearance": 0.0,
         "min_connection": 0.0,
-        "min_copper_edge_clearance": 0.5,
+        "min_copper_edge_clearance": 0.3,
         "min_groove_width": 0.0,
-        "min_hole_clearance": 0.2,
-        "min_hole_to_hole": 0.2,
+        "min_hole_clearance": 0.25,
+        "min_hole_to_hole": 0.25,
         "min_microvia_diameter": 0.2,
         "min_microvia_drill": 0.1,
         "min_resolved_spokes": 2,
         "min_silk_clearance": 0.0,
         "min_text_height": 0.8,
         "min_text_thickness": 0.08,
-        "min_through_hole_diameter": 0.2,
-        "min_track_width": 0.127,
-        "min_via_annular_width": 0.1,
+        "min_through_hole_diameter": 0.3,
+        "min_track_width": 0.0,
+        "min_via_annular_width": 0.08,
         "min_via_diameter": 0.5,
-        "solder_mask_to_copper_clearance": 0.005,
+        "solder_mask_to_copper_clearance": 0.0,
         "use_height_for_length_calcs": true
       },
       "teardrop_options": [
@@ -209,9 +203,7 @@
           "td_width_to_size_filter_ratio": 0.9
         }
       ],
-      "track_widths": [
-        0.0
-      ],
+      "track_widths": [],
       "tuning_pattern_settings": {
         "diff_pair_defaults": {
           "corner_radius_percentage": 80,
@@ -238,12 +230,7 @@
           "spacing": 0.6
         }
       },
-      "via_dimensions": [
-        {
-          "diameter": 0.0,
-          "drill": 0.0
-        }
-      ],
+      "via_dimensions": [],
       "zones_allow_external_fillets": false
     },
     "ipc2581": {
@@ -253,7 +240,7 @@
       "internal_id": "",
       "mfg": "",
       "mpn": "",
-      "sch_revision": ""
+      "sch_revision": "MKIII"
     },
     "layer_pairs": [],
     "layer_presets": [],
@@ -273,16 +260,7 @@
     "equivalence_files": []
   },
   "erc": {
-    "erc_exclusions": [
-      [
-        "pin_to_pin|1676400|1206500|637c315e-f1da-4028-a075-83db480b82a4|9957f76a-5f3b-4e6d-9d20-dde86aa2afa1|/1a22431a-ba36-40a0-9a7e-c2a82ec69c53|/1a22431a-ba36-40a0-9a7e-c2a82ec69c53|/1a22431a-ba36-40a0-9a7e-c2a82ec69c53",
-        ""
-      ],
-      [
-        "power_pin_not_driven|2565400|1295400|de7981e4-0e9f-4fa2-b86c-9f5087723abc|00000000-0000-0000-0000-000000000000|/1a22431a-ba36-40a0-9a7e-c2a82ec69c53|/1a22431a-ba36-40a0-9a7e-c2a82ec69c53|",
-        ""
-      ]
-    ],
+    "erc_exclusions": [],
     "meta": {
       "version": 0
     },
@@ -471,6 +449,7 @@
       "footprint_filter": "ignore",
       "footprint_link_issues": "warning",
       "four_way_junction": "ignore",
+      "global_label_dangling": "warning",
       "ground_pin_not_ground": "warning",
       "hier_label_mismatch": "error",
       "isolated_pin_label": "warning",
@@ -510,17 +489,17 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "HDD Synth Prototype MK5.kicad_pro",
+    "filename": "HDD Synth ISA adapter.kicad_pro",
     "version": 3
   },
   "net_settings": {
     "classes": [
       {
         "bus_width": 12,
-        "clearance": 0.15,
-        "diff_pair_gap": 0.15,
+        "clearance": 0.2,
+        "diff_pair_gap": 0.25,
         "diff_pair_via_gap": 0.25,
-        "diff_pair_width": 0.25,
+        "diff_pair_width": 0.2,
         "line_style": 0,
         "microvia_diameter": 0.3,
         "microvia_drill": 0.1,
@@ -535,93 +514,68 @@
         "wire_width": 6
       },
       {
-        "bus_width": 12,
-        "clearance": 0.127,
-        "diff_pair_gap": 0.15,
-        "diff_pair_width": 0.25,
-        "line_style": 0,
-        "microvia_diameter": 0.2,
+        "clearance": 0.2,
+        "diff_pair_gap": 0.25,
+        "diff_pair_width": 0.2,
+        "microvia_diameter": 0.3,
         "microvia_drill": 0.1,
-        "name": "CF_IDE_Signals",
-        "pcb_color": "rgb(255, 129, 0)",
-        "priority": 0,
-        "schematic_color": "rgb(255, 123, 0)",
-        "track_width": 0.127,
-        "tuning_profile": "",
-        "via_diameter": 0.5,
-        "via_drill": 0.2,
-        "wire_width": 6
-      },
-      {
-        "bus_width": 12,
-        "clearance": 0.15,
-        "diff_pair_gap": 0.15,
-        "diff_pair_width": 0.25,
-        "line_style": 1,
-        "microvia_diameter": 0.4,
-        "microvia_drill": 0.1,
-        "name": "Power",
-        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "name": "POWER_3_3V",
+        "pcb_color": "rgb(255, 85, 73)",
         "priority": 1,
         "schematic_color": "rgba(0, 0, 0, 0.000)",
-        "track_width": 0.5,
+        "track_width": 0.4,
+        "tuning_profile": "",
+        "via_diameter": 0.6,
+        "via_drill": 0.3
+      },
+      {
+        "clearance": 0.25,
+        "diff_pair_gap": 0.25,
+        "diff_pair_width": 0.2,
+        "microvia_diameter": 0.4,
+        "microvia_drill": 0.1,
+        "name": "POWER_5V_SUP",
+        "pcb_color": "rgb(193, 115, 255)",
+        "priority": 0,
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 1.0,
         "tuning_profile": "",
         "via_diameter": 0.8,
-        "via_drill": 0.4,
-        "wire_width": 10
+        "via_drill": 0.4
+      },
+      {
+        "clearance": 0.25,
+        "diff_pair_gap": 0.25,
+        "diff_pair_width": 0.2,
+        "microvia_diameter": 0.4,
+        "microvia_drill": 0.1,
+        "name": "POWER_5v",
+        "pcb_color": "rgb(54, 59, 255)",
+        "priority": 2,
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 1.0,
+        "tuning_profile": "",
+        "via_diameter": 0.8,
+        "via_drill": 0.4
       }
     ],
     "meta": {
       "version": 5
     },
     "net_colors": null,
-    "netclass_assignments": {
-      "+3.3V": [
-        "Power"
-      ],
-      "+3V3": [
-        "Power"
-      ],
-      "+5V": [
-        "Power"
-      ],
-      "/Power/VCAP_RAW": [
-        "Power"
-      ],
-      "Net-(D2-A)": [
-        "Power"
-      ],
-      "Net-(D3-A)": [
-        "POWER_5V_SUP"
-      ],
-      "Net-(D4-A)": [
-        "Power"
-      ],
-      "POWER_5V_SUP": [
-        "Power"
-      ]
-    },
-    "netclass_patterns": [
-      {
-        "netclass": "CF_IDE_Signals",
-        "pattern": "*/IDE_*"
-      },
-      {
-        "netclass": "CF_IDE_Signals",
-        "pattern": "/IDE/CF_*"
-      },
-      {
-        "netclass": "CF_IDE_Signals",
-        "pattern": "/IDE/D*"
-      }
-    ]
+    "netclass_assignments": null,
+    "netclass_patterns": []
   },
   "pcbnew": {
     "last_paths": {
+      "gencad": "",
       "idf": "",
       "netlist": "",
-      "plot": "gerbers",
+      "plot": "Fab files/",
+      "pos_files": "",
       "specctra_dsn": "",
+      "step": "HDD Synth prototype MK3 - 1mm mounting move X.step",
+      "svg": "",
       "vrml": ""
     },
     "page_layout_descr_file": ""
@@ -632,7 +586,7 @@
       "method": 0,
       "sort_order": 0
     },
-    "bom_export_filename": "gerbers/HDD Synth Prototype MK5-BOM.csv",
+    "bom_export_filename": "${PROJECTNAME}.csv",
     "bom_fmt_presets": [],
     "bom_fmt_settings": {
       "field_delimiter": ",",
@@ -685,8 +639,8 @@
         },
         {
           "group_by": false,
-          "label": "LCSC Part Number",
-          "name": "LCSC Part Number",
+          "label": "Datasheet",
+          "name": "Datasheet",
           "show": true
         },
         {
@@ -697,26 +651,14 @@
         },
         {
           "group_by": false,
-          "label": "Datasheet",
-          "name": "Datasheet",
-          "show": true
-        },
-        {
-          "group_by": false,
-          "label": "Check_prices",
-          "name": "Check_prices",
+          "label": "Description",
+          "name": "Description",
           "show": false
         },
         {
           "group_by": false,
-          "label": "Comment",
-          "name": "Comment",
-          "show": false
-        },
-        {
-          "group_by": false,
-          "label": "EU_RoHS_Compliance",
-          "name": "EU_RoHS_Compliance",
+          "label": "#",
+          "name": "${ITEM_NUMBER}",
           "show": false
         },
         {
@@ -733,18 +675,6 @@
         },
         {
           "group_by": false,
-          "label": "Manufacturer_Part_Number",
-          "name": "Manufacturer_Part_Number",
-          "show": false
-        },
-        {
-          "group_by": false,
-          "label": "PARTREV",
-          "name": "PARTREV",
-          "show": false
-        },
-        {
-          "group_by": false,
           "label": "Package",
           "name": "Package",
           "show": false
@@ -753,30 +683,6 @@
           "group_by": false,
           "label": "Price",
           "name": "Price",
-          "show": false
-        },
-        {
-          "group_by": false,
-          "label": "Purchase-URL",
-          "name": "Purchase-URL",
-          "show": false
-        },
-        {
-          "group_by": false,
-          "label": "STANDARD",
-          "name": "STANDARD",
-          "show": false
-        },
-        {
-          "group_by": false,
-          "label": "Sim.Device",
-          "name": "Sim.Device",
-          "show": false
-        },
-        {
-          "group_by": false,
-          "label": "Sim.Pins",
-          "name": "Sim.Pins",
           "show": false
         },
         {
@@ -793,39 +699,33 @@
         },
         {
           "group_by": false,
-          "label": "Description",
-          "name": "Description",
+          "label": "Check_prices",
+          "name": "Check_prices",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Description_1",
+          "name": "Description_1",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Manufacturer_Part_Number",
+          "name": "Manufacturer_Part_Number",
           "show": true
         },
         {
           "group_by": false,
-          "label": "#",
-          "name": "${ITEM_NUMBER}",
-          "show": false
-        },
-        {
-          "group_by": false,
-          "label": "MANUFACTURER",
+          "label": "Manufacturer",
           "name": "Manufacturer",
-          "show": false
+          "show": true
         },
         {
           "group_by": false,
-          "label": "MAXIMUM_PACKAGE_HEIGHT",
-          "name": "MAXIMUM_PACKAGE_HEIGHT",
-          "show": false
-        },
-        {
-          "group_by": false,
-          "label": "MPN",
-          "name": "MPN",
-          "show": false
-        },
-        {
-          "group_by": false,
-          "label": "LCSC Part",
-          "name": "LCSC Part",
-          "show": false
+          "label": "LCSC_Part_Number",
+          "name": "LCSC_Part_Number",
+          "show": true
         }
       ],
       "filter_string": "",
@@ -864,57 +764,41 @@
     "meta": {
       "version": 1
     },
+    "net_format_name": "KiCad",
+    "ngspice": {
+      "fix_include_paths": true,
+      "meta": {
+        "version": 0
+      },
+      "model_mode": 4,
+      "workbook_filename": ""
+    },
     "page_layout_descr_file": "",
     "plot_directory": "",
     "reuse_designators": true,
+    "space_save_all_events": true,
+    "spice_current_sheet_as_root": false,
+    "spice_external_command": "spice \"%I\"",
+    "spice_model_current_sheet_as_root": true,
+    "spice_save_all_currents": false,
+    "spice_save_all_dissipations": false,
+    "spice_save_all_voltages": false,
     "subpart_first_id": 65,
     "subpart_id_separator": 0,
     "top_level_sheets": [
       {
-        "filename": "HDD Synth Prototype MK5.kicad_sch",
-        "name": "Root",
-        "uuid": "1a22431a-ba36-40a0-9a7e-c2a82ec69c53"
+        "filename": "HDD Synth ISA adapter.kicad_sch",
+        "name": "HDD Synth ISA adapter",
+        "uuid": "5a2f0aa7-670f-4d0d-8d56-ad98c847383a"
       }
     ],
-    "used_designators": "R23,R26",
+    "used_designators": "#PWR1,J1-4",
     "variants": []
   },
   "sheets": [
     [
-      "1a22431a-ba36-40a0-9a7e-c2a82ec69c53",
-      "Root"
-    ],
-    [
-      "2950dfc3-c685-4e23-94aa-d1af22619645",
-      "Amplifer"
-    ],
-    [
-      "d1519e40-91bf-450d-a5bd-0730e6716e0a",
-      "SD card reader"
-    ],
-    [
-      "045d9081-4e75-4a6b-9321-784f56d8310c",
-      "Power"
-    ],
-    [
-      "3b7eed6c-967b-41df-92bd-957103357a3c",
-      "RP2350"
-    ],
-    [
-      "4f2241a1-46db-49da-aeae-e06acaad5be6",
-      "OLED"
-    ],
-    [
-      "293c32c0-b0ed-4b60-a32a-d04548ae7be6",
-      "Rotary encoder"
-    ],
-    [
-      "793258e2-de63-4f09-86a3-fe48790268bf",
-      "Reset"
-    ],
-    [
-      "779dbbe7-9583-41dc-a633-b3a85967b109",
-      "RGB LED"
+      "5a2f0aa7-670f-4d0d-8d56-ad98c847383a",
+      "HDD Synth ISA adapter"
     ]
   ],
   "text_variables": {},

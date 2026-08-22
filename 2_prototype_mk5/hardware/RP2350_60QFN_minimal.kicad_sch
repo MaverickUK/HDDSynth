@@ -4938,10 +4938,6 @@
 		(uuid "aab1b24f-25be-494a-925d-9c58ba7307a7")
 	)
 	(no_connect
-		(at 306.07 176.53)
-		(uuid "b9f5cfeb-2823-4b6d-8b8c-6e0c22657020")
-	)
-	(no_connect
 		(at 50.8 252.73)
 		(uuid "d0d11881-54ba-46e5-8b76-6c55d3393db7")
 	)
@@ -7613,7 +7609,7 @@
 		)
 		(uuid "d9241751-32b7-4bd5-8c64-a1bc7f35f29c")
 	)
-	(label "GPIO27_ADC1"
+	(label "VCAP_DETECT"
 		(at 306.07 176.53 180)
 		(effects
 			(font
@@ -7798,6 +7794,17 @@
 			(justify left)
 		)
 		(uuid "21be44d2-d128-4276-8b2c-0f117e10ff74")
+	)
+	(hierarchical_label "GPIO27_ADC1_VCAP_DETECT"
+		(shape bidirectional)
+		(at 306.07 176.53 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "3582c945-0172-4258-8cc8-d43e2a8843cc")
 	)
 	(hierarchical_label "GPIO10_SD_SCK"
 		(shape bidirectional)

@@ -1247,6 +1247,16 @@
 	)
 	(wire
 		(pts
+			(xy 166.37 109.22) (xy 182.88 109.22)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a59bea2e-dbda-42af-85fb-be35dddba58c")
+	)
+	(wire
+		(pts
 			(xy 166.37 82.55) (xy 181.61 82.55)
 		)
 		(stroke
@@ -4030,7 +4040,7 @@
 	)
 	(sheet
 		(at 182.88 104.14)
-		(size 24.13 7.62)
+		(size 24.13 8.89)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
@@ -4056,7 +4066,7 @@
 			)
 		)
 		(property "Sheetfile" "power.kicad_sch"
-			(at 182.88 112.3446 0)
+			(at 182.88 113.6146 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4069,6 +4079,26 @@
 		(pin "VCC_DETECT_POWER" output
 			(at 182.88 106.68 180)
 			(uuid "e78a8266-f83e-41e8-81f3-9a7e1246a753")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "PG_STATUS" output
+			(at 182.88 111.76 180)
+			(uuid "0b0b7f6e-4f88-404d-8679-1365f67446b8")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "VCAP_DETECT" output
+			(at 182.88 109.22 180)
+			(uuid "d80e177e-0a95-4a8a-a591-2072dd550daa")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4492,6 +4522,16 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
+			)
+		)
+		(pin "GPIO27_ADC1_VCAP_DETECT" bidirectional
+			(at 166.37 109.22 0)
+			(uuid "c1a513db-0577-4682-813c-19f9b4c6fecd")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
 			)
 		)
 		(instances
