@@ -12,8 +12,8 @@ POWER_DETECTION = True # If True, use the power.py logic to detect if we have ex
 
 # Power Sensing (external power detection via voltage divider)
 POWER_SENSE_PIN = board.GP28        # ADC pin reading the divided external voltage
-POWER_RESISTOR_TO_5V = 1000         # 1k Ohm (upper resistor in divider)
-POWER_RESISTOR_TO_GND = 2000        # 2k Ohm (lower resistor in divider)
+POWER_RESISTOR_TO_5V = 10000        # 10k Ohm (upper resistor in divider)
+POWER_RESISTOR_TO_GND = 10000       # 10k Ohm (lower resistor in divider)
 POWER_ADC_REF_VOLTAGE = 3.3         # Pico's internal reference
 POWER_MAX_ADC_VALUE = 65535         # CircuitPython 16-bit scaling
 POWER_VOLTAGE_THRESHOLD_EXT = 4.0   # External voltage (0V-5V) that triggers "powered" state
@@ -61,6 +61,10 @@ MIXER_VOICES = 2 # If 1, swap out idle for access. If 2, play idle loop with acc
 ENCODER_A_PIN = board.GP20       # Rotary encoder channel A
 ENCODER_B_PIN = board.GP21       # Rotary encoder channel B
 ENCODER_BUTTON_PIN = board.GP22  # Encoder push button (toggles volume <-> balance mode)
+
+# OLED display (I2C)
+OLED_SDA_PIN = board.GP24        # I2C SDA (data)
+OLED_SCL_PIN = board.GP25        # I2C SCL (clock)
 
 # Volume
 VOLUME_DEFAULT = 0.5          # Starting volume (0.0 - 1.0)
@@ -142,6 +146,8 @@ USED_GPIO_PINS = (
     AMP_WS_PIN,
     AMP_SD_PIN,
     AMP_SDMODE_PIN,
+    OLED_SDA_PIN,
+    OLED_SCL_PIN,
 )
 
 # Defaults used when SD is disabled but audio is still required

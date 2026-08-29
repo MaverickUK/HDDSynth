@@ -145,6 +145,8 @@ def _main_loop(mixer, samples, led):
 
 
 def _spindown(mixer, samples):
+    rgb_led.off()
+    rgb_led.invalidate_activity()
     if settings.PLAY_SPINDOWN:
         print("Playing spindown")
         audio.stop_all(mixer)
