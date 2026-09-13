@@ -1439,10 +1439,10 @@
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
-		(in_bom no)
+		(in_bom yes)
 		(on_board yes)
 		(in_pos_files yes)
-		(dnp yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "ff320ef3-42c7-434a-96ee-ef7fd018eaf7")
 		(property "Reference" "J7"

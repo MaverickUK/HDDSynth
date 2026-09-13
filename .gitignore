@@ -151,3 +151,6 @@ temp/
 # KiCad lock files
 *.lck
 .DS_Store
+
+# VSCode local history extension
+.history/

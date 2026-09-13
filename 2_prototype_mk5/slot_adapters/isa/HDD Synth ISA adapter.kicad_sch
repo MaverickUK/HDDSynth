@@ -2555,6 +2555,26 @@
 		)
 		(uuid "8a82a241-7726-42b4-9404-0000d185699c")
 	)
+	(text "LED out"
+		(exclude_from_sim no)
+		(at 57.404 24.384 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "cb815335-2a2f-4e59-879e-cbb981d6bd3f")
+	)
+	(text "LED in"
+		(exclude_from_sim no)
+		(at 24.384 24.384 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "fa365146-18dc-4d1a-9233-371aca81e524")
+	)
 	(junction
 		(at 25.4 180.34)
 		(diameter 0)
@@ -2589,6 +2609,16 @@
 	)
 	(wire
 		(pts
+			(xy 52.07 35.56) (xy 55.88 35.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "05d7a105-bb31-4f53-97cc-ad70a50ff8cc")
+	)
+	(wire
+		(pts
 			(xy 20.32 180.34) (xy 25.4 180.34)
 		)
 		(stroke
@@ -2596,6 +2626,16 @@
 			(type default)
 		)
 		(uuid "0675ca38-bbee-4653-afac-96610bf342eb")
+	)
+	(wire
+		(pts
+			(xy 55.88 27.94) (xy 52.07 27.94)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1457832e-5577-449c-ada5-650f5ef15387")
 	)
 	(wire
 		(pts
@@ -2639,6 +2679,16 @@
 	)
 	(wire
 		(pts
+			(xy 53.34 30.48) (xy 53.34 38.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2074f887-1157-488a-a985-fa35e2a5cdae")
+	)
+	(wire
+		(pts
 			(xy 125.73 49.53) (xy 125.73 54.61)
 		)
 		(stroke
@@ -2646,6 +2696,16 @@
 			(type default)
 		)
 		(uuid "247f838f-198e-4825-bead-e7ae526a9608")
+	)
+	(wire
+		(pts
+			(xy 20.32 30.48) (xy 20.32 38.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "38048c43-6055-44d6-8197-a103e82ae4ae")
 	)
 	(wire
 		(pts
@@ -2709,6 +2769,26 @@
 	)
 	(wire
 		(pts
+			(xy 53.34 38.1) (xy 55.88 38.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7214b4ea-0e0a-42f1-aebf-a18490093d51")
+	)
+	(wire
+		(pts
+			(xy 19.05 35.56) (xy 22.86 35.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "738fa7bd-8900-4376-8e51-63ec342bbbf6")
+	)
+	(wire
+		(pts
 			(xy 39.37 97.79) (xy 39.37 116.84)
 		)
 		(stroke
@@ -2769,6 +2849,36 @@
 	)
 	(wire
 		(pts
+			(xy 20.32 38.1) (xy 22.86 38.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8801c718-9ef7-4b81-87fc-7dbed8bc16fb")
+	)
+	(wire
+		(pts
+			(xy 19.05 27.94) (xy 19.05 35.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8c7aa4b9-3a30-4446-954d-0eeff169164d")
+	)
+	(wire
+		(pts
+			(xy 22.86 30.48) (xy 20.32 30.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8fe434cf-db8f-43a8-939e-c2f94c4bdcf7")
+	)
+	(wire
+		(pts
 			(xy 54.61 69.85) (xy 54.61 72.39)
 		)
 		(stroke
@@ -2786,6 +2896,16 @@
 			(type default)
 		)
 		(uuid "9f0e865c-29cb-4b9d-815f-364fee93738f")
+	)
+	(wire
+		(pts
+			(xy 22.86 27.94) (xy 19.05 27.94)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9f713048-f22b-4870-95c5-65573ba63170")
 	)
 	(wire
 		(pts
@@ -2869,6 +2989,16 @@
 	)
 	(wire
 		(pts
+			(xy 55.88 30.48) (xy 53.34 30.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e9ccb9d7-36ef-4de3-bae9-a453ef9cfef6")
+	)
+	(wire
+		(pts
 			(xy 31.75 124.46) (xy 31.75 106.68)
 		)
 		(stroke
@@ -2876,6 +3006,16 @@
 			(type default)
 		)
 		(uuid "efe7f63f-faba-4a37-b531-bda16144771e")
+	)
+	(wire
+		(pts
+			(xy 52.07 27.94) (xy 52.07 35.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f830a8e3-33a2-4678-8c9b-6f5c7a477e8b")
 	)
 	(label "ENC_A"
 		(at 27.94 95.25 0)
@@ -3172,6 +3312,88 @@
 			(project "HDD Synth ISA adapter"
 				(path "/5a2f0aa7-670f-4d0d-8d56-ad98c847383a"
 					(reference "J4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:Conn_01x02_Socket")
+		(at 60.96 35.56 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "87e68e60-4e2a-426f-970f-be428298edc0")
+		(property "Reference" "J5"
+			(at 62.23 35.5599 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Conn_01x02_Socket"
+			(at 62.23 38.0999 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Connector_PinSocket_2.54mm:PinSocket_1x02_P2.54mm_Vertical"
+			(at 60.96 35.56 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 60.96 35.56 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x02, script generated"
+			(at 60.96 35.56 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "4fb6a850-b9e5-4537-80e5-b5ab158a9ac2")
+		)
+		(pin "1"
+			(uuid "63fb7f14-77e7-45aa-a2e6-d750d7b25caf")
+		)
+		(instances
+			(project "HDD Synth ISA adapter"
+				(path "/5a2f0aa7-670f-4d0d-8d56-ad98c847383a"
+					(reference "J5")
 					(unit 1)
 				)
 			)
@@ -3778,6 +4000,88 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector:Conn_01x02_Socket")
+		(at 27.94 27.94 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "a00bce19-5d2a-45b6-8ca0-d59da8e82ccd")
+		(property "Reference" "J7"
+			(at 29.21 27.9399 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Conn_01x02_Socket"
+			(at 29.21 30.4799 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Connector_PinSocket_2.54mm:PinSocket_1x02_P2.54mm_Vertical"
+			(at 27.94 27.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 27.94 27.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x02, script generated"
+			(at 27.94 27.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "34c72c3c-28f7-410f-9afc-7112c14bf723")
+		)
+		(pin "1"
+			(uuid "61af70c5-d1cb-4f05-ac1b-37ea9b50fdb7")
+		)
+		(instances
+			(project "HDD Synth ISA adapter"
+				(path "/5a2f0aa7-670f-4d0d-8d56-ad98c847383a"
+					(reference "J7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:RotaryEncoder_Switch")
 		(at 50.8 97.79 0)
 		(unit 1)
@@ -3900,6 +4204,88 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector:Conn_01x02_Socket")
+		(at 27.94 35.56 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "b8b92e70-623b-4a01-876a-54f74d36b6c5")
+		(property "Reference" "J8"
+			(at 29.21 35.5599 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Conn_01x02_Socket"
+			(at 29.21 38.0999 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Connector_PinSocket_2.54mm:PinSocket_1x02_P2.54mm_Vertical"
+			(at 27.94 35.56 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 27.94 35.56 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x02, script generated"
+			(at 27.94 35.56 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "7c5b8a96-3f91-41db-976c-378a381e82c0")
+		)
+		(pin "1"
+			(uuid "e02c5948-f2e5-40ba-9e0c-b78ae4e9efa2")
+		)
+		(instances
+			(project "HDD Synth ISA adapter"
+				(path "/5a2f0aa7-670f-4d0d-8d56-ad98c847383a"
+					(reference "J8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Connector:Conn_01x05_Socket")
 		(at 71.12 121.92 0)
 		(unit 1)
@@ -3985,6 +4371,88 @@
 			(project "HDD Synth ISA adapter"
 				(path "/5a2f0aa7-670f-4d0d-8d56-ad98c847383a"
 					(reference "J2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:Conn_01x02_Socket")
+		(at 60.96 27.94 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "ef61391a-fb9f-445a-8463-b83f52f47689")
+		(property "Reference" "J6"
+			(at 62.23 27.9399 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Conn_01x02_Socket"
+			(at 62.23 30.4799 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Connector_PinSocket_2.54mm:PinSocket_1x02_P2.54mm_Vertical"
+			(at 60.96 27.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 60.96 27.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x02, script generated"
+			(at 60.96 27.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "6442131b-16f7-42d8-8f06-411074b52664")
+		)
+		(pin "1"
+			(uuid "7ab3da61-b976-4cb7-8acb-52502bb70fed")
+		)
+		(instances
+			(project "HDD Synth ISA adapter"
+				(path "/5a2f0aa7-670f-4d0d-8d56-ad98c847383a"
+					(reference "J6")
 					(unit 1)
 				)
 			)

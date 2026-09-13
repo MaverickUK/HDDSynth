@@ -14357,10 +14357,10 @@
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
-		(in_bom no)
+		(in_bom yes)
 		(on_board yes)
 		(in_pos_files yes)
-		(dnp yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "525ba609-8685-4ad6-83e0-5dc20b062c01")
 		(property "Reference" "J2"

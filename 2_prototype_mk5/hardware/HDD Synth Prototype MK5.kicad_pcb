@@ -5796,7 +5796,7 @@
 				(pins "1" "2" "3" "4" "5")
 			)
 		)
-		(attr through_hole exclude_from_bom dnp)
+		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
 			(start -1.38 -1.38)
@@ -11100,7 +11100,7 @@
 				(pins "1" "2")
 			)
 		)
-		(attr through_hole exclude_from_bom dnp)
+		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
 			(start -1.38 -1.38)
@@ -26322,7 +26322,7 @@
 				(pins "1" "2")
 			)
 		)
-		(attr through_hole exclude_from_bom dnp)
+		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
 			(start -1.38 -1.38)
@@ -29546,7 +29546,7 @@
 				(pins "1" "2")
 			)
 		)
-		(attr through_hole exclude_from_bom dnp)
+		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
 			(start -1.38 -1.38)
@@ -32550,7 +32550,7 @@
 				(pins "1" "2" "3" "4")
 			)
 		)
-		(attr through_hole exclude_from_bom dnp)
+		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
 			(start -1.38 -1.38)
@@ -32995,7 +32995,7 @@
 				(pins "1" "2" "3")
 			)
 		)
-		(attr through_hole exclude_from_bom dnp)
+		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
 			(start -1.38 -1.38)
@@ -33782,7 +33782,7 @@
 				(pins "1" "2")
 			)
 		)
-		(attr through_hole exclude_from_bom dnp)
+		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
 			(start -1.38 -1.38)
@@ -34924,7 +34924,7 @@
 				(pins "1" "2")
 			)
 		)
-		(attr through_hole exclude_from_bom dnp)
+		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
 			(start -1.38 -1.38)
