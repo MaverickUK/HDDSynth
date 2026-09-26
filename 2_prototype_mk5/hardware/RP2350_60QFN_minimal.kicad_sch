@@ -7331,7 +7331,7 @@
 		)
 		(uuid "d0dce646-150e-41c4-9ce2-9addf6940c99")
 	)
-	(label "VCC_DETECT"
+	(label "PWR_FAULT_N"
 		(at 306.07 179.07 180)
 		(effects
 			(font
