@@ -2963,33 +2963,19 @@
 		)
 		(uuid "25d85e87-af13-48a2-bd86-59371a59f0a8")
 	)
-	(text "It's an open-drain output that goes low on three conditions: \nundervoltage, overvoltage, and thermal shutdown. \nA nuisance fast-trip doesn't trigger it. Connect to GPIO to detect\n- So external power off"
+	(text "Open-drain output that goes \nlow on three conditions: \n- undervoltage\n- overvoltage\n- thermal shutdown"
 		(exclude_from_sim no)
-		(at 111.506 20.32 0)
+		(at 160.02 33.02 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 				(thickness 0.254)
 				(bold yes)
-				(color 255 0 13 1)
+				(color 0 0 255 1)
 			)
 			(justify left)
 		)
 		(uuid "417d687a-f9c4-43b1-9dfa-f9e1d2293b0f")
-	)
-	(text "Not needed anymore (Check)"
-		(exclude_from_sim no)
-		(at 236.22 149.606 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-				(thickness 0.254)
-				(bold yes)
-				(color 255 0 13 1)
-			)
-			(justify left)
-		)
-		(uuid "4eea52d4-d490-4ed0-a11e-81b10b420fa2")
 	)
 	(text "Super cap voltage"
 		(exclude_from_sim no)
@@ -3811,7 +3797,7 @@
 	)
 	(wire
 		(pts
-			(xy 139.7 27.94) (xy 139.7 60.96)
+			(xy 139.7 29.21) (xy 139.7 60.96)
 		)
 		(stroke
 			(width 0)
@@ -4118,6 +4104,16 @@
 			(type default)
 		)
 		(uuid "85e16621-d53e-4268-901c-6bfa645150f5")
+	)
+	(wire
+		(pts
+			(xy 139.7 29.21) (xy 142.24 29.21)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "87a35c56-8ddb-4889-9d10-5dfe0160f907")
 	)
 	(wire
 		(pts
@@ -4809,7 +4805,7 @@
 		)
 		(uuid "2639e0fb-d98d-48ff-8456-58006e57fa11")
 	)
-	(label "VCAP_DETECT"
+	(label "VSUP_SENSE"
 		(at 236.22 144.78 0)
 		(effects
 			(font
@@ -4855,7 +4851,18 @@
 			)
 		)
 	)
-	(hierarchical_label "VCAP_DETECT"
+	(hierarchical_label "PWR_FAULT_N"
+		(shape output)
+		(at 142.24 29.21 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "6db38e1b-ed84-47f5-9fc6-55fec6595bc4")
+	)
+	(hierarchical_label "VSUP_SENSE"
 		(shape output)
 		(at 251.46 144.78 0)
 		(effects

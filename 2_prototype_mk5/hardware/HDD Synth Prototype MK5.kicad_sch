@@ -4076,9 +4076,9 @@
 				(justify left top)
 			)
 		)
-		(pin "VCC_DETECT_POWER" output
+		(pin "PWR_FAULT_N" output
 			(at 182.88 106.68 180)
-			(uuid "e78a8266-f83e-41e8-81f3-9a7e1246a753")
+			(uuid "4d1d2f1c-b538-4bae-8706-b1c2807738e6")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4086,9 +4086,9 @@
 				(justify left)
 			)
 		)
-		(pin "VCAP_DETECT" output
+		(pin "VSUP_SENSE" output
 			(at 182.88 109.22 180)
-			(uuid "d80e177e-0a95-4a8a-a591-2072dd550daa")
+			(uuid "e5f5747d-e7d0-490b-adf9-f9685ed71acb")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4454,16 +4454,6 @@
 				(justify right)
 			)
 		)
-		(pin "GPIO28_ADC2_VCC_DETECT" bidirectional
-			(at 166.37 106.68 0)
-			(uuid "b4c635a1-3340-4aa2-8fc0-a43bc6105443")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
 		(pin "GPIO04_RGB_LED_RED" bidirectional
 			(at 123.19 114.3 180)
 			(uuid "8625b447-ab22-4581-9787-1151675f22e2")
@@ -4494,16 +4484,6 @@
 				(justify left)
 			)
 		)
-		(pin "GPIO27_ADC1_VCAP_DETECT" bidirectional
-			(at 166.37 109.22 0)
-			(uuid "c1a513db-0577-4682-813c-19f9b4c6fecd")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
 		(pin "GPIO24_OLED_SDA" bidirectional
 			(at 123.19 85.09 180)
 			(uuid "dc4a45ce-857c-4e54-b5dc-8d0f6f3ec835")
@@ -4522,6 +4502,26 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
+			)
+		)
+		(pin "GPIO27_ADC1_PWR_FAULT_N" bidirectional
+			(at 166.37 106.68 0)
+			(uuid "5fa353bd-ba39-497d-9416-4f8aa26cf341")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "GPIO28_ADC2_VSUP_SENSE" bidirectional
+			(at 166.37 109.22 0)
+			(uuid "b74b2c0d-6fb3-4b45-bcde-8a1c8e3807fe")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
 			)
 		)
 		(instances
