@@ -14601,7 +14601,7 @@
 				)
 			)
 		)
-		(property "Value" "VBUS"
+		(property "Value" "VIN_RAW"
 			(at 51.181 198.8058 0)
 			(show_name no)
 			(do_not_autoplace no)

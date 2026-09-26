@@ -588,6 +588,9 @@
       "/Power/VCAP_RAW": [
         "Power"
       ],
+      "/Power/VIN_PROT": [
+        "Power"
+      ],
       "Net-(D2-A)": [
         "Power"
       ],
@@ -876,7 +879,7 @@
         "uuid": "1a22431a-ba36-40a0-9a7e-c2a82ec69c53"
       }
     ],
-    "used_designators": "",
+    "used_designators": "L2,#PWR19,#PWR55,#PWR60,#PWR63-74,C34-37,R32-41,Super_Cap1,U8-9",
     "variants": []
   },
   "sheets": [
