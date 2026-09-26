@@ -3306,16 +3306,16 @@
 		(uuid "20ee93e7-7c03-4f3f-98e7-7a82bf8cbca4")
 	)
 	(junction
+		(at 50.8 63.5)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "250764bb-445c-49a2-bea1-4057a32cf02d")
+	)
+	(junction
 		(at 105.41 119.38)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "29fd4f04-7a35-461e-839b-6d3590213597")
-	)
-	(junction
-		(at 27.94 63.5)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "2ac78af1-417d-47ed-b4af-11bd17eb14f6")
 	)
 	(junction
 		(at 196.85 129.54)
@@ -3384,6 +3384,18 @@
 		(uuid "8d82eb98-b31e-4361-a799-6746beed2c08")
 	)
 	(junction
+		(at 27.94 63.5)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "8f9a0dbd-1a98-4910-b134-959cc210f0cb")
+	)
+	(junction
+		(at 39.37 63.5)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "97f5dbf3-f8d7-4e90-bce9-99ebb1e3c6d0")
+	)
+	(junction
 		(at 78.74 63.5)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3412,6 +3424,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "a87959aa-8aef-48a6-abe3-673a1041acb6")
+	)
+	(junction
+		(at 119.38 119.38)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "a894a1ae-c2f0-482c-baae-9c8517b0671b")
 	)
 	(junction
 		(at 196.85 100.33)
@@ -3474,6 +3492,12 @@
 		(uuid "d7900ecf-faf1-487e-b2ec-2eae2b4d13c1")
 	)
 	(junction
+		(at 130.81 129.54)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "df7f51ba-947b-403b-b9ff-00ebbafe335b")
+	)
+	(junction
 		(at 85.09 129.54)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3497,15 +3521,9 @@
 		(color 0 0 0 0)
 		(uuid "f4bdcd96-0c9f-4358-a976-4760e7c24127")
 	)
-	(junction
-		(at 50.8 63.5)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "ffbd455c-3468-449c-b0a7-457ba7db4a60")
-	)
 	(no_connect
 		(at 118.11 139.7)
-		(uuid "3358f7c2-d4b2-44f3-aff8-88d1825f1701")
+		(uuid "21f0e2c6-3793-4900-a39b-6c326cb4c4ba")
 	)
 	(wire
 		(pts
@@ -3759,6 +3777,16 @@
 	)
 	(wire
 		(pts
+			(xy 130.81 129.54) (xy 133.35 129.54)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1b7aca15-2438-4d2e-b65d-ed561ac9d9ff")
+	)
+	(wire
+		(pts
 			(xy 242.57 95.25) (xy 245.11 95.25)
 		)
 		(stroke
@@ -3999,6 +4027,16 @@
 	)
 	(wire
 		(pts
+			(xy 27.94 63.5) (xy 39.37 63.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4e8a03ca-b507-4450-a9fc-c605e3807d74")
+	)
+	(wire
+		(pts
 			(xy 60.96 60.96) (xy 62.23 60.96)
 		)
 		(stroke
@@ -4156,6 +4194,16 @@
 			(type default)
 		)
 		(uuid "68e9d7b5-6922-4a6c-b27d-276eb9e0afd3")
+	)
+	(wire
+		(pts
+			(xy 39.37 73.66) (xy 39.37 77.47)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6dfe7b81-41d7-4fca-9b7d-14ccfa3e1fb8")
 	)
 	(wire
 		(pts
@@ -4559,16 +4607,6 @@
 	)
 	(wire
 		(pts
-			(xy 27.94 63.5) (xy 40.64 63.5)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b6267b96-45f8-41fd-8ece-617d2d3c7a7e")
-	)
-	(wire
-		(pts
 			(xy 73.66 49.53) (xy 73.66 50.8)
 		)
 		(stroke
@@ -4609,7 +4647,17 @@
 	)
 	(wire
 		(pts
-			(xy 119.38 129.54) (xy 133.35 129.54)
+			(xy 130.81 127) (xy 130.81 129.54)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bdab9119-ae8a-48a8-a20d-f9e38f986f6d")
+	)
+	(wire
+		(pts
+			(xy 119.38 129.54) (xy 130.81 129.54)
 		)
 		(stroke
 			(width 0)
@@ -4769,13 +4817,13 @@
 	)
 	(wire
 		(pts
-			(xy 48.26 63.5) (xy 50.8 63.5)
+			(xy 39.37 63.5) (xy 50.8 63.5)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "d9be3d9e-024b-42e1-8fba-3a83b7cfa70c")
+		(uuid "d8556135-5a8e-43f7-a54c-add8d8903af3")
 	)
 	(wire
 		(pts
@@ -4816,6 +4864,16 @@
 			(type default)
 		)
 		(uuid "e1c5bd8d-9191-4279-8948-6a9feb68332b")
+	)
+	(wire
+		(pts
+			(xy 119.38 119.38) (xy 130.81 119.38)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e1f7e019-b917-4140-98f6-aaf17a53d760")
 	)
 	(wire
 		(pts
@@ -4876,6 +4934,16 @@
 			(type default)
 		)
 		(uuid "ef76f538-5dc8-4e32-8fdd-333f546185ea")
+	)
+	(wire
+		(pts
+			(xy 39.37 63.5) (xy 39.37 66.04)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f1053817-c426-4316-8829-ddcb89205100")
 	)
 	(wire
 		(pts
@@ -9712,7 +9780,7 @@
 	)
 	(symbol
 		(lib_id "Device:D_Zener")
-		(at 44.45 63.5 180)
+		(at 39.37 69.85 270)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -9723,27 +9791,29 @@
 		(fields_autoplaced yes)
 		(uuid "8b6b6c03-23f0-4488-a49a-44135ebcc08d")
 		(property "Reference" "D1"
-			(at 44.45 57.15 0)
+			(at 41.91 68.5799 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Value" "SMAJ5.0A"
-			(at 44.45 59.69 0)
+			(at 41.91 71.1199 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" "Diode_SMD:D_SMA"
-			(at 44.45 63.5 0)
+			(at 39.37 69.85 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9754,7 +9824,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 44.45 63.5 0)
+			(at 39.37 69.85 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9765,7 +9835,7 @@
 			)
 		)
 		(property "Description" "Zener diode"
-			(at 44.45 63.5 0)
+			(at 39.37 69.85 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13290,6 +13360,84 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 39.37 77.47 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "d166fc03-c378-44ce-b250-acd2b4500ae4")
+		(property "Reference" "#PWR018"
+			(at 39.37 83.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 39.37 82.55 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 39.37 77.47 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 39.37 77.47 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 39.37 77.47 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "e329e5f1-b669-4ee9-b87a-a08e65bcf733")
+		)
+		(instances
+			(project "HDD Synth Prototype MK5"
+				(path "/1a22431a-ba36-40a0-9a7e-c2a82ec69c53/045d9081-4e75-4a6b-9321-784f56d8310c"
+					(reference "#PWR018")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "easyeda2kicad:TPS61094DSSR")
 		(at 231.14 100.33 0)
 		(unit 1)
@@ -14338,6 +14486,229 @@
 			(project "HDD Synth Prototype MK5"
 				(path "/1a22431a-ba36-40a0-9a7e-c2a82ec69c53/045d9081-4e75-4a6b-9321-784f56d8310c"
 					(reference "C37")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 130.81 123.19 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "f6fbc054-ec7e-487f-ab6e-83aa07bd93d6")
+		(property "Reference" "C39"
+			(at 127.889 124.3584 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "22uF"
+			(at 127.889 122.047 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
+			(at 129.8448 119.38 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 130.81 123.19 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 130.81 123.19 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Availability" ""
+			(at 130.81 123.19 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Check_prices" ""
+			(at 130.81 123.19 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Comment" ""
+			(at 130.81 123.19 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "EU_RoHS_Compliance" ""
+			(at 130.81 123.19 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MF" ""
+			(at 130.81 123.19 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MP" ""
+			(at 130.81 123.19 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PARTREV" ""
+			(at 130.81 123.19 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Package" ""
+			(at 130.81 123.19 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Price" ""
+			(at 130.81 123.19 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Purchase-URL" ""
+			(at 130.81 123.19 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "STANDARD" ""
+			(at 130.81 123.19 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SnapEDA_Link" ""
+			(at 130.81 123.19 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part Number" "C45783"
+			(at 130.81 123.19 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "0fe786ec-f9a2-48a7-83f8-1a0cdb123df8")
+		)
+		(pin "2"
+			(uuid "a92ec1bf-aa45-4c28-b136-efec8b2ed1d0")
+		)
+		(instances
+			(project "HDD Synth Prototype MK5"
+				(path "/1a22431a-ba36-40a0-9a7e-c2a82ec69c53/045d9081-4e75-4a6b-9321-784f56d8310c"
+					(reference "C39")
 					(unit 1)
 				)
 			)
