@@ -1701,7 +1701,7 @@
 		)
 		(uuid "e240297b-6543-401f-9c22-b0e255f0ce27")
 	)
-	(global_label "POWER_5V_SUP"
+	(global_label "VSYS"
 		(shape bidirectional)
 		(at 149.86 55.88 90)
 		(fields_autoplaced yes)
@@ -1711,9 +1711,9 @@
 			)
 			(justify left)
 		)
-		(uuid "04146a39-755c-4e2d-b1d8-7049d4c457bc")
+		(uuid "a2f2cf96-cb4c-4b4c-ab48-fe6c6290080b")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 149.86 37.2693 90)
+			(at 149.86 47.1873 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
