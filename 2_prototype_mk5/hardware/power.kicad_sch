@@ -3020,7 +3020,7 @@
 		(uuid "d101133d-38b1-44cc-be52-73813b391450")
 	)
 	(rectangle
-		(start 49.53 26.67)
+		(start 49.53 20.32)
 		(end 158.75 87.63)
 		(stroke
 			(width 0)
@@ -3055,9 +3055,9 @@
 		)
 		(uuid "02a5add4-29a3-402f-a7f0-5bf8e24cf326")
 	)
-	(text "- 4.5 V to 18 V operating range \n- Programmable 0.4 A to 1.6 A current limit\n- Integrated 90ohm  power MOSFET\n- Overcurrent & fast short-circuit protection\n- Overvoltage protection (OVP) & UVLO\n- Soft-start inrush current control"
+	(text "- Configured for 5 V input\n- Overvoltage cutoff at 5.76 V, \n  undervoltage at 4.14 V\n- Programmable current limit set to 1.16 A \n  (1.92 A fast short-circuit trip)\n- Integrated 87 mΩ power MOSFET\n- 4.9 ms soft-start ramp limits inrush to ~110 mA\n- Open-drain fault flag to GP28 for \n  hardware power-fail detection"
 		(exclude_from_sim no)
-		(at 51.308 36.576 0)
+		(at 51.562 33.528 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3105,7 +3105,7 @@
 	)
 	(text "eFuse"
 		(exclude_from_sim no)
-		(at 54.356 28.956 0)
+		(at 54.356 23.114 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3180,19 +3180,6 @@
 			)
 		)
 		(uuid "861c0f1b-aef2-4612-b53d-dec2a6d0a1f9")
-	)
-	(text "What current limit is set?"
-		(exclude_from_sim no)
-		(at 72.644 24.384 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-				(thickness 0.254)
-				(bold yes)
-				(color 255 0 0 1)
-			)
-		)
-		(uuid "913876d5-f341-4395-8c82-97eeb198f987")
 	)
 	(text "Spin down power reserve"
 		(exclude_from_sim no)
@@ -7383,7 +7370,7 @@
 				)
 			)
 		)
-		(property "Value" "33K"
+		(property "Value" "47K"
 			(at 116.84 52.07 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13605,7 +13592,7 @@
 				)
 			)
 		)
-		(property "Value" "360K"
+		(property "Value" "330K"
 			(at 57.15 57.15 90)
 			(show_name no)
 			(do_not_autoplace no)
