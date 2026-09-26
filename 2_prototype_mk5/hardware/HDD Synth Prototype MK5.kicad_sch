@@ -4504,9 +4504,9 @@
 				(justify left)
 			)
 		)
-		(pin "GPIO27_ADC1_PWR_FAULT_N" bidirectional
+		(pin "GPIO28_ADC2_PWR_FAULT_N" bidirectional
 			(at 166.37 106.68 0)
-			(uuid "5fa353bd-ba39-497d-9416-4f8aa26cf341")
+			(uuid "5db37fd9-76a5-457f-81ce-95dee61240bc")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4514,9 +4514,9 @@
 				(justify right)
 			)
 		)
-		(pin "GPIO28_ADC2_VSUP_SENSE" bidirectional
+		(pin "GPIO27_ADC1_VSUP_SENSE" bidirectional
 			(at 166.37 109.22 0)
-			(uuid "b74b2c0d-6fb3-4b45-bcde-8a1c8e3807fe")
+			(uuid "eb608c9e-6d9d-4026-bc28-6cf3ee2a7fbc")
 			(effects
 				(font
 					(size 1.27 1.27)

@@ -7351,7 +7351,7 @@
 		)
 		(uuid "d9241751-32b7-4bd5-8c64-a1bc7f35f29c")
 	)
-	(label "VCAP_DETECT"
+	(label "VSUP_SENSE"
 		(at 306.07 176.53 180)
 		(effects
 			(font
@@ -7513,7 +7513,7 @@
 		)
 		(uuid "21be44d2-d128-4276-8b2c-0f117e10ff74")
 	)
-	(hierarchical_label "GPIO27_ADC1_PWR_FAULT_N"
+	(hierarchical_label "GPIO27_ADC1_VSUP_SENSE"
 		(shape bidirectional)
 		(at 306.07 176.53 0)
 		(effects
@@ -7590,7 +7590,7 @@
 		)
 		(uuid "9a6b94b9-3a09-4c49-8486-7fbf72b9ffe6")
 	)
-	(hierarchical_label "GPIO28_ADC2_VSUP_SENSE"
+	(hierarchical_label "GPIO28_ADC2_PWR_FAULT_N"
 		(shape bidirectional)
 		(at 306.07 179.07 0)
 		(effects

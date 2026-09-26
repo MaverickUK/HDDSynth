@@ -651,6 +651,172 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Device:D_Zener"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "D"
+				(at 0 2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "D_Zener"
+				(at 0 -2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Zener diode"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "diode"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "TO-???* *_Diode_* *SingleDiode* D_*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "D_Zener_0_1"
+				(polyline
+					(pts
+						(xy -1.27 -1.27) (xy -1.27 1.27) (xy -0.762 1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 0) (xy -1.27 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 -1.27) (xy 1.27 1.27) (xy -1.27 0) (xy 1.27 -1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "D_Zener_1_1"
+				(pin passive line
+					(at -3.81 0 0)
+					(length 2.54)
+					(name "K"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 3.81 0 180)
+					(length 2.54)
+					(name "A"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Device:L"
 			(pin_numbers
 				(hide yes)
@@ -3054,7 +3220,7 @@
 	)
 	(text "USB C power"
 		(exclude_from_sim no)
-		(at 15.24 56.388 0)
+		(at 13.208 56.388 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3110,12 +3276,6 @@
 		(uuid "010aa092-10a1-4107-8b4a-19752c667847")
 	)
 	(junction
-		(at 50.8 63.5)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "08828b1a-f7f0-4410-b834-f36628d6e784")
-	)
-	(junction
 		(at 215.9 113.03)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3150,6 +3310,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "29fd4f04-7a35-461e-839b-6d3590213597")
+	)
+	(junction
+		(at 27.94 63.5)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "2ac78af1-417d-47ed-b4af-11bd17eb14f6")
 	)
 	(junction
 		(at 196.85 129.54)
@@ -3188,16 +3354,16 @@
 		(uuid "6af27a73-c46b-47d2-b43d-7ed4ccf6b46a")
 	)
 	(junction
-		(at 41.91 63.5)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "6ecda8b1-dd8b-4e3c-a655-4107d2e6d8cb")
-	)
-	(junction
 		(at 107.95 129.54)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "72f70a3b-bb33-4743-adde-f7f7acb3ea98")
+	)
+	(junction
+		(at 19.05 63.5)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "7ad4af9c-4890-4007-b1cb-f3616c14154b")
 	)
 	(junction
 		(at 179.07 102.87)
@@ -3216,12 +3382,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "8d82eb98-b31e-4361-a799-6746beed2c08")
-	)
-	(junction
-		(at 27.94 63.5)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "96cdd27e-8efb-4648-b9d7-ec34d729938b")
 	)
 	(junction
 		(at 78.74 63.5)
@@ -3246,6 +3406,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "a8627b7f-9003-41aa-8750-9f4bfe2fae7e")
+	)
+	(junction
+		(at 31.75 147.32)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "a87959aa-8aef-48a6-abe3-673a1041acb6")
 	)
 	(junction
 		(at 196.85 100.33)
@@ -3331,6 +3497,12 @@
 		(color 0 0 0 0)
 		(uuid "f4bdcd96-0c9f-4358-a976-4760e7c24127")
 	)
+	(junction
+		(at 50.8 63.5)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "ffbd455c-3468-449c-b0a7-457ba7db4a60")
+	)
 	(no_connect
 		(at 118.11 139.7)
 		(uuid "3358f7c2-d4b2-44f3-aff8-88d1825f1701")
@@ -3404,6 +3576,16 @@
 			(type default)
 		)
 		(uuid "02c7a73f-9b62-4eee-b3f5-aa61d41c7a00")
+	)
+	(wire
+		(pts
+			(xy 31.75 147.32) (xy 39.37 147.32)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0546b386-6d52-424a-89ee-6a7431e26942")
 	)
 	(wire
 		(pts
@@ -3667,16 +3849,6 @@
 	)
 	(wire
 		(pts
-			(xy 31.75 63.5) (xy 41.91 63.5)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2b45d3b8-ed32-4794-911f-dfd926a94a46")
-	)
-	(wire
-		(pts
 			(xy 120.65 38.1) (xy 125.73 38.1)
 		)
 		(stroke
@@ -3847,16 +4019,6 @@
 	)
 	(wire
 		(pts
-			(xy 27.94 63.5) (xy 31.75 63.5)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "51c9687b-9a05-4c3e-887b-2568cf871cde")
-	)
-	(wire
-		(pts
 			(xy 53.34 134.62) (xy 57.15 134.62)
 		)
 		(stroke
@@ -3884,16 +4046,6 @@
 			(type default)
 		)
 		(uuid "583ca1ef-b9b6-4437-a39f-51d04be7bf4a")
-	)
-	(wire
-		(pts
-			(xy 27.94 68.58) (xy 27.94 63.5)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "587bb2cb-0f9a-4162-b3ef-7fa5227886bb")
 	)
 	(wire
 		(pts
@@ -4137,7 +4289,7 @@
 	)
 	(wire
 		(pts
-			(xy 22.86 147.32) (xy 39.37 147.32)
+			(xy 22.86 147.32) (xy 31.75 147.32)
 		)
 		(stroke
 			(width 0)
@@ -4407,6 +4559,16 @@
 	)
 	(wire
 		(pts
+			(xy 27.94 63.5) (xy 40.64 63.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b6267b96-45f8-41fd-8ece-617d2d3c7a7e")
+	)
+	(wire
+		(pts
 			(xy 73.66 49.53) (xy 73.66 50.8)
 		)
 		(stroke
@@ -4434,16 +4596,6 @@
 			(type default)
 		)
 		(uuid "b7e2cfbe-7ce9-48d8-855b-a09016dafcb6")
-	)
-	(wire
-		(pts
-			(xy 41.91 63.5) (xy 50.8 63.5)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ba49faf5-c238-4757-84d6-06cf1b7187fb")
 	)
 	(wire
 		(pts
@@ -4487,7 +4639,7 @@
 	)
 	(wire
 		(pts
-			(xy 22.86 63.5) (xy 27.94 63.5)
+			(xy 19.05 63.5) (xy 27.94 63.5)
 		)
 		(stroke
 			(width 0)
@@ -4604,6 +4756,26 @@
 			(type default)
 		)
 		(uuid "d5ac2133-b336-4354-9acf-18ec4703d2e0")
+	)
+	(wire
+		(pts
+			(xy 19.05 63.5) (xy 19.05 69.85)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d7a3e882-b0c2-4a89-bddd-f37e4bd68979")
+	)
+	(wire
+		(pts
+			(xy 48.26 63.5) (xy 50.8 63.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d9be3d9e-024b-42e1-8fba-3a83b7cfa70c")
 	)
 	(wire
 		(pts
@@ -4878,7 +5050,7 @@
 	(netclass_flag ""
 		(length 2.54)
 		(shape round)
-		(at 41.91 63.5 0)
+		(at 35.56 63.5 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4888,7 +5060,7 @@
 		)
 		(uuid "b6902794-5135-4902-94b9-19d3e2aedc8b")
 		(property "Net Class" "Power"
-			(at 42.6085 60.96 0)
+			(at 36.2585 60.96 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4899,7 +5071,7 @@
 			)
 		)
 		(property "Component Class" ""
-			(at -175.26 -12.7 0)
+			(at -181.61 -12.7 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6545,93 +6717,8 @@
 		)
 	)
 	(symbol
-		(lib_id "power:+5V")
-		(at 27.94 68.58 180)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "30de36a3-ccda-4320-9248-cdaaaa675789")
-		(property "Reference" "#PWR013"
-			(at 27.94 64.77 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+5V"
-			(at 30.48 69.8499 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" ""
-			(at 27.94 68.58 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 27.94 68.58 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 27.94 68.58 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "132de8c3-5371-4656-9852-87e627dd548c")
-		)
-		(instances
-			(project "HDD Synth Prototype MK5"
-				(path "/1a22431a-ba36-40a0-9a7e-c2a82ec69c53/045d9081-4e75-4a6b-9321-784f56d8310c"
-					(reference "#PWR013")
-					(unit 1)
-				)
-			)
-			(project "FDD Synth prototype MK1"
-				(path "/ed113b11-1722-4efb-9669-9e8c19f5c8fd/c4fff946-c3ba-4a7b-ae26-49b27e5a2cee"
-					(reference "#PWR014")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:PWR_FLAG")
-		(at 41.91 63.5 180)
+		(at 27.94 63.5 180)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -6641,7 +6728,7 @@
 		(dnp no)
 		(uuid "34a36acc-3195-4f4d-8433-89f514253f3d")
 		(property "Reference" "#FLG02"
-			(at 41.91 65.405 0)
+			(at 27.94 65.405 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6652,7 +6739,7 @@
 			)
 		)
 		(property "Value" "PWR_FLAG"
-			(at 39.37 68.58 0)
+			(at 28.448 68.58 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6662,7 +6749,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 41.91 63.5 0)
+			(at 27.94 63.5 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6673,7 +6760,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 41.91 63.5 0)
+			(at 27.94 63.5 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6684,7 +6771,7 @@
 			)
 		)
 		(property "Description" "Special symbol for telling ERC where power comes from"
-			(at 41.91 63.5 0)
+			(at 27.94 63.5 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9106,7 +9193,7 @@
 	)
 	(symbol
 		(lib_id "power:VBUS")
-		(at 22.86 63.5 0)
+		(at 19.05 63.5 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -9116,7 +9203,7 @@
 		(dnp no)
 		(uuid "6bf61c66-209b-4480-b8a1-75e42fa7bc0b")
 		(property "Reference" "#PWR057"
-			(at 22.86 67.31 0)
+			(at 19.05 67.31 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9127,7 +9214,7 @@
 			)
 		)
 		(property "Value" "VIN_RAW"
-			(at 23.241 59.1058 0)
+			(at 19.431 59.1058 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9137,7 +9224,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 22.86 63.5 0)
+			(at 19.05 63.5 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9148,7 +9235,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 22.86 63.5 0)
+			(at 19.05 63.5 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9159,7 +9246,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 22.86 63.5 0)
+			(at 19.05 63.5 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9618,6 +9705,86 @@
 			(project "HDD Synth Prototype MK5"
 				(path "/1a22431a-ba36-40a0-9a7e-c2a82ec69c53/045d9081-4e75-4a6b-9321-784f56d8310c"
 					(reference "#PWR073")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:D_Zener")
+		(at 44.45 63.5 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "8b6b6c03-23f0-4488-a49a-44135ebcc08d")
+		(property "Reference" "D1"
+			(at 44.45 57.15 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "SMAJ5.0A"
+			(at 44.45 59.69 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Diode_SMD:D_SMA"
+			(at 44.45 63.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 44.45 63.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Zener diode"
+			(at 44.45 63.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "f347ac5c-d9f8-4f11-b0dc-12f93d7ede1a")
+		)
+		(pin "2"
+			(uuid "8175d65c-7d2a-4fa4-bd17-cbd783d1187d")
+		)
+		(instances
+			(project "HDD Synth Prototype MK5"
+				(path "/1a22431a-ba36-40a0-9a7e-c2a82ec69c53/045d9081-4e75-4a6b-9321-784f56d8310c"
+					(reference "D1")
 					(unit 1)
 				)
 			)
@@ -11208,6 +11375,83 @@
 		)
 	)
 	(symbol
+		(lib_id "power:PWR_FLAG")
+		(at 31.75 147.32 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "a536e343-068d-4645-ab07-f63e01a502a3")
+		(property "Reference" "#FLG06"
+			(at 31.75 145.415 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "PWR_FLAG"
+			(at 34.29 142.24 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 31.75 147.32 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 31.75 147.32 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Special symbol for telling ERC where power comes from"
+			(at 31.75 147.32 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "f23b8d70-c1f1-48cc-9c8c-931f12a10b98")
+		)
+		(instances
+			(project "HDD Synth Prototype MK5"
+				(path "/1a22431a-ba36-40a0-9a7e-c2a82ec69c53/045d9081-4e75-4a6b-9321-784f56d8310c"
+					(reference "#FLG06")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:C")
 		(at 85.09 123.19 180)
 		(unit 1)
@@ -12350,6 +12594,84 @@
 			(project "HDD Synth Prototype MK5"
 				(path "/1a22431a-ba36-40a0-9a7e-c2a82ec69c53/045d9081-4e75-4a6b-9321-784f56d8310c"
 					(reference "R24")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 19.05 69.85 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "c2a6f18a-394b-47d5-b2bf-159ecc3ad639")
+		(property "Reference" "#PWR013"
+			(at 19.05 66.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "+5V"
+			(at 19.05 74.93 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 19.05 69.85 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 19.05 69.85 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 19.05 69.85 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "31377a97-a078-44dc-8399-68ae04307c5f")
+		)
+		(instances
+			(project "HDD Synth Prototype MK5"
+				(path "/1a22431a-ba36-40a0-9a7e-c2a82ec69c53/045d9081-4e75-4a6b-9321-784f56d8310c"
+					(reference "#PWR013")
 					(unit 1)
 				)
 			)
