@@ -1683,7 +1683,7 @@
 	)
 	(wire
 		(pts
-			(xy 121.92 110.49) (xy 137.16 110.49)
+			(xy 102.87 110.49) (xy 137.16 110.49)
 		)
 		(stroke
 			(width 0)
@@ -1725,9 +1725,9 @@
 			)
 		)
 	)
-	(global_label "POWER_5V_SUP"
+	(global_label "VSYS"
 		(shape bidirectional)
-		(at 121.92 110.49 180)
+		(at 102.87 110.49 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1737,7 +1737,7 @@
 		)
 		(uuid "b49755ad-0ef3-4bf9-942f-f94a5de8fee9")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 103.3093 110.49 0)
+			(at 94.1773 110.49 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)

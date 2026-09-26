@@ -602,6 +602,9 @@
       ],
       "POWER_5V_SUP": [
         "Power"
+      ],
+      "VSYS": [
+        "Power"
       ]
     },
     "netclass_patterns": [
@@ -879,7 +882,7 @@
         "uuid": "1a22431a-ba36-40a0-9a7e-c2a82ec69c53"
       }
     ],
-    "used_designators": "L2,#PWR19,#PWR55,#PWR60,#PWR63-74,C34-37,R32-41,Super_Cap1,U8-9",
+    "used_designators": "L2,#PWR19,#PWR55,#PWR60,#PWR63-75,C31-32,C34-38,R32-41,Super_Cap1,U8-9",
     "variants": []
   },
   "sheets": [
