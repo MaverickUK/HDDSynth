@@ -7604,7 +7604,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_THT:CP_Radial_D14.0mm_P5.00mm"
+		(property "Footprint" "Custom:SuperCap_Eaton_PHV_9.0x17.3mm_P11.80mm"
 			(at 215.9 116.84 0)
 			(hide yes)
 			(show_name no)

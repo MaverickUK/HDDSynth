@@ -1,0 +1,189 @@
+(footprint "SuperCap_Eaton_PHV_9.0x17.3mm_P11.80mm"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(descr "Eaton PHV-5R4V155-R supercapacitor, 1.5F 5.4V, 11.8mm pitch, 22mm height")
+	(tags "supercapacitor EDLC PHV Eaton")
+	(property "Reference" "REF**"
+		(at 0 -0.5 0)
+		(unlocked yes)
+		(layer "F.SilkS")
+		(uuid "1e621f45-d4b9-4abe-a183-90701f1b3605")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.1)
+			)
+		)
+	)
+	(property "Value" "SuperCap_Eaton_PHV_9.0x17.3mm_P11.80mm"
+		(at 0 1 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "3ec82f9c-9c84-4410-bc90-44d1de8d2ae0")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "54768818-2e11-4abe-811b-6e62d6db5e7d")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" "Eaton PHV-5R4V155-R supercapacitor, 1.5F 5.4V, 11.8mm pitch, 22mm height"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "95bb93e3-1bad-4e21-beff-56505132c688")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr smd)
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_line
+		(start -8.5 -4.5)
+		(end 8.5 -4.5)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "d0b04680-60ef-4d0e-b3a2-1db17bf1e954")
+	)
+	(fp_line
+		(start -8.5 4.5)
+		(end -8.5 -4.5)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "c4501567-1e2d-4468-939b-361860c6343e")
+	)
+	(fp_line
+		(start 8.5 -4.5)
+		(end 8.5 4.5)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "fc7cbc62-fd26-47d9-a3bb-e75ba65d0fdb")
+	)
+	(fp_line
+		(start 8.5 4.5)
+		(end -8.5 4.5)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "0a97cbde-73a1-4a72-b06e-a8910861ed6f")
+	)
+	(fp_rect
+		(start -8.9 -4.75)
+		(end 8.9 4.5)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.CrtYd")
+		(uuid "b0a4bd40-6b0b-44e3-9f6b-cca0a06ff9eb")
+	)
+	(fp_rect
+		(start -8.65 -26)
+		(end 8.65 -4.5)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill hatch)
+		(layer "F.Fab")
+		(uuid "afdf604e-02e9-424d-83ab-d0366ebe82d8")
+	)
+	(fp_rect
+		(start -8.65 -4.5)
+		(end 8.65 4.5)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "77a6c9e7-d8ba-416f-879e-0803ad62af6e")
+	)
+	(fp_text user "+"
+		(at -6.5 -1 0)
+		(unlocked yes)
+		(layer "F.SilkS")
+		(uuid "855c7490-6b2b-4fe9-a137-b8a67dd7c59f")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.1)
+			)
+			(justify left bottom)
+		)
+	)
+	(fp_text user "-"
+		(at 5.5 -1 0)
+		(unlocked yes)
+		(layer "F.SilkS")
+		(uuid "5dad7dfa-cda0-41b7-93dc-c57fbcb74e10")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.1)
+			)
+			(justify left bottom)
+		)
+	)
+	(fp_text user "${REFERENCE}"
+		(at 0 2.5 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "6828b0b1-aaa3-4889-bc22-2eef0abd7f62")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(pad "1" thru_hole roundrect
+		(at -5.9 0)
+		(size 1.8 1.8)
+		(drill 0.9)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(roundrect_rratio 0.15)
+		(uuid "c898c082-fe9e-4b60-93f5-0c88575b4085")
+	)
+	(pad "2" thru_hole circle
+		(at 5.9 0)
+		(size 1.8 1.8)
+		(drill 0.9)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "64ad9cf5-11f3-49d4-8d99-be4ba946d575")
+	)
+	(embedded_fonts no)
+)
