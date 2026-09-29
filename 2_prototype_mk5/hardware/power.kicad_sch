@@ -5540,6 +5540,17 @@
 				)
 			)
 		)
+		(property "LCSC Part Number" "C167804"
+			(at 199.39 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "72225ea6-b3c1-49a5-a3a8-5175573ebe3e")
 		)
@@ -6355,7 +6366,7 @@
 				)
 			)
 		)
-		(property "LCSC Part Number" ""
+		(property "LCSC Part Number" "C25750"
 			(at 116.84 38.1 90)
 			(hide yes)
 			(show_name no)
@@ -6491,7 +6502,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 200.66 98.552 90)
 			(hide yes)
 			(show_name no)
@@ -6667,7 +6678,7 @@
 				)
 			)
 		)
-		(property "LCSC Part Number" ""
+		(property "LCSC Part Number" "C25741"
 			(at 200.66 100.33 0)
 			(hide yes)
 			(show_name no)
@@ -7091,8 +7102,19 @@
 				)
 			)
 		)
-		(property "LCSC Part" "C167802"
+		(property "LCSC Part" ""
 			(at 102.87 190.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part Number" "C167802"
+			(at 102.87 172.72 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7204,8 +7226,19 @@
 				)
 			)
 		)
-		(property "LCSC Part" "C15483"
+		(property "LCSC Part" ""
 			(at 102.87 180.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part Number" "C15483"
+			(at 102.87 149.86 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7545,7 +7578,7 @@
 				)
 			)
 		)
-		(property "LCSC Part Number" ""
+		(property "LCSC Part Number" "C25792"
 			(at 116.84 55.88 90)
 			(hide yes)
 			(show_name no)
@@ -8128,7 +8161,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 214.63 93.472 90)
 			(hide yes)
 			(show_name no)
@@ -8304,7 +8337,7 @@
 				)
 			)
 		)
-		(property "LCSC Part Number" ""
+		(property "LCSC Part Number" "C25798"
 			(at 214.63 95.25 0)
 			(hide yes)
 			(show_name no)
@@ -9142,7 +9175,7 @@
 				)
 			)
 		)
-		(property "LCSC Part Number" ""
+		(property "LCSC Part Number" "C25744"
 			(at 144.78 60.96 90)
 			(hide yes)
 			(show_name no)
@@ -9354,7 +9387,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 248.92 93.472 90)
 			(hide yes)
 			(show_name no)
@@ -9530,7 +9563,7 @@
 				)
 			)
 		)
-		(property "LCSC Part Number" ""
+		(property "LCSC Part Number" "C25798"
 			(at 248.92 95.25 0)
 			(hide yes)
 			(show_name no)
@@ -9643,8 +9676,19 @@
 				)
 			)
 		)
-		(property "LCSC Part" "C189199"
+		(property "LCSC Part" ""
 			(at 96.52 81.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part Number" "C189199"
+			(at 96.52 59.69 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9879,7 +9923,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 208.28 96.012 90)
 			(hide yes)
 			(show_name no)
@@ -10055,7 +10099,7 @@
 				)
 			)
 		)
-		(property "LCSC Part Number" ""
+		(property "LCSC Part Number" "C25741"
 			(at 208.28 97.79 0)
 			(hide yes)
 			(show_name no)
@@ -11763,7 +11807,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 256.54 96.012 90)
 			(hide yes)
 			(show_name no)
@@ -11939,7 +11983,7 @@
 				)
 			)
 		)
-		(property "LCSC Part Number" ""
+		(property "LCSC Part Number" "C25798"
 			(at 256.54 97.79 0)
 			(hide yes)
 			(show_name no)
@@ -13145,7 +13189,7 @@
 				)
 			)
 		)
-		(property "Value" "24K"
+		(property "Value" "22K"
 			(at 57.15 140.97 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13320,7 +13364,7 @@
 				)
 			)
 		)
-		(property "LCSC Part Number" ""
+		(property "LCSC Part Number" "C25768"
 			(at 57.15 144.78 90)
 			(hide yes)
 			(show_name no)
@@ -13511,8 +13555,19 @@
 				)
 			)
 		)
-		(property "LCSC Part" "C3034939"
+		(property "LCSC Part" ""
 			(at 231.14 125.73 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part Number" "C3034939"
+			(at 231.14 100.33 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13767,7 +13822,7 @@
 				)
 			)
 		)
-		(property "LCSC Part Number" ""
+		(property "LCSC Part Number" "C25778"
 			(at 57.15 60.96 90)
 			(hide yes)
 			(show_name no)
@@ -14017,6 +14072,17 @@
 				)
 			)
 		)
+		(property "LCSC Part Number" "C134801"
+			(at 179.07 99.06 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "2608e6e9-8a83-4199-bfe6-fc1aaa25a59b")
 		)
@@ -14054,7 +14120,7 @@
 				)
 			)
 		)
-		(property "Value" "110K"
+		(property "Value" "120K"
 			(at 128.27 54.61 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14229,7 +14295,7 @@
 				)
 			)
 		)
-		(property "LCSC Part Number" ""
+		(property "LCSC Part Number" "C25750"
 			(at 128.27 58.42 90)
 			(hide yes)
 			(show_name no)

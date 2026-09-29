@@ -2026,8 +2026,19 @@
 				)
 			)
 		)
-		(property "LCSC Part" "C113206"
+		(property "LCSC Part" ""
 			(at 153.67 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part Number" "C113206"
+			(at 153.67 93.98 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
