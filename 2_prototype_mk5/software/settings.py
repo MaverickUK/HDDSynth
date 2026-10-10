@@ -10,13 +10,18 @@ ACCESS_HOLD_TIME_MS = 100 # How long to hold the access sample after an access i
 
 POWER_DETECTION = True # If True, use the power.py logic to detect if we have external power. If False, assume we always have power
 
-# Power Sensing (external power detection via voltage divider)
-POWER_SENSE_PIN = board.GP28        # ADC pin reading the divided external voltage
-POWER_RESISTOR_TO_5V = 10000        # 10k Ohm (upper resistor in divider)
-POWER_RESISTOR_TO_GND = 10000       # 10k Ohm (lower resistor in divider)
-POWER_ADC_REF_VOLTAGE = 3.3         # Pico's internal reference
+# Power monitoring (TPS25921A eFuse + TPS61094 supercap boost/charger)
+POWER_FAULT_PIN = board.GP28        # eFuse #FLT, open-drain with R35 10k pull-up. LOW = undervoltage/overvoltage/thermal fault
+
+# Supercap voltage sensing (via voltage divider)
+SUPERCAP_SENSE_PIN = board.GP27     # ADC pin reading the divided supercap voltage
+SUPERCAP_RESISTOR_TOP = 22000       # 22k Ohm (R24, upper resistor in divider)
+SUPERCAP_RESISTOR_BOTTOM = 22000    # 22k Ohm (R25, lower resistor in divider)
+SUPERCAP_FULL_V = 4.15              # TPS61094 charge termination voltage (set by R39 on VCHG)
+SUPERCAP_RESTORE_RISE_V = 0.05      # Supercap rise required to confirm the charger is running again after power loss
+SUPERCAP_RESTORE_WINDOW_S = 1.0     # Window the rise must happen in (~0.17V/s at 250mA into 1.5F)
+POWER_ADC_REF_VOLTAGE = 3.3         # ADC_AVDD reference (+3V3 rail)
 POWER_MAX_ADC_VALUE = 65535         # CircuitPython 16-bit scaling
-POWER_VOLTAGE_THRESHOLD_EXT = 4.0   # External voltage (0V-5V) that triggers "powered" state
 
 # HDD Activity
 ACTIVITY_INPUT_PIN = board.GP18    # Optocoupler output from HDD activity signal (LOW = active)
@@ -134,7 +139,8 @@ USED_GPIO_PINS = (
     RGB_LED_BLUE_PIN,
     ACTION_BUTTON_PIN,
     ACTIVITY_INPUT_PIN,
-    POWER_SENSE_PIN,
+    POWER_FAULT_PIN,
+    SUPERCAP_SENSE_PIN,
     ENCODER_A_PIN,
     ENCODER_B_PIN,
     ENCODER_BUTTON_PIN,

@@ -143,6 +143,12 @@ def _main_loop(mixer, samples, led):
         time.sleep(0.01)
         powered, unpowered_ticks = _power_present(unpowered_ticks)
 
+    _log_supercap("Power loss detected")
+
+
+def _log_supercap(event):
+    print(f"[power] {event}, supercap: {power.supercap_voltage():.2f} V")
+
 
 def _spindown(mixer, samples):
     rgb_led.off()
@@ -152,6 +158,7 @@ def _spindown(mixer, samples):
         audio.stop_all(mixer)
         audio.play_sample_active_pause(mixer, samples["spindown"])
     amp.power_off()
+    _log_supercap("Spindown complete")
 
 
 def _apply_sd_settings(sd_overrides):
@@ -240,8 +247,7 @@ def _no_op_action_button_handler(mixer):
 
 
 def _wait_for_power_and_reset():
-    while not power.external_power():
-        time.sleep(0.1)
+    power.wait_for_power_restored()
     microcontroller.reset()
 
 
@@ -352,6 +358,7 @@ def run_synth():
 
     audio.set_volume(mixer)
 
+    _log_supercap("Startup")
     amp.power_on()
 
     if settings.PLAY_SPINUP:
