@@ -1,4 +1,5 @@
 import os
+import random
 
 import settings
 import sample_cache
@@ -16,12 +17,7 @@ def initialize():
         print("[Changer] NVM empty. Performing first-time setup...")
         try:
             print(f"Scanning {settings.SDCARD_SAMPLE_DIR} for sample packs...")
-            all_items = os.listdir(settings.SDCARD_SAMPLE_DIR)
-
-            packs = sorted([
-                f for f in all_items 
-                if _is_dir(f"{settings.SDCARD_SAMPLE_DIR}/{f}") and not f.startswith(".") # Ignore hidden directories
-            ])
+            packs = _list_packs()
             
             if packs:
                 first_pack = packs[0]
@@ -46,12 +42,7 @@ def wipe_settings():
 def next_pack(reboot_after=True):
     """Scans SD, determines the next alphabetical pack, and sets it as desired."""
     try:
-        # Get directories, sorted alphabetically
-        all_items = os.listdir(settings.SDCARD_SAMPLE_DIR)
-        packs = sorted([
-            f for f in all_items 
-            if _is_dir(f"{settings.SDCARD_SAMPLE_DIR}/{f}") and not f.startswith(".") # Ignore hidden directories
-        ])
+        packs = _list_packs()
     except OSError:
         print("[Changer] Error: SD not accessible.")
         return
@@ -79,6 +70,30 @@ def next_pack(reboot_after=True):
             import microcontroller
             microcontroller.reset()
         
+
+def random_pack():
+    """Scans SD, picks a random pack and sets it as desired.
+    Avoids re-selecting the current pack when more than one is available.
+    Returns the selected pack name, or None if no packs could be found.
+    """
+    try:
+        packs = _list_packs()
+    except OSError:
+        print("[Changer] Error: SD not accessible.")
+        return None
+
+    if not packs:
+        print("[Changer] No packs found.")
+        return None
+
+    current_desired = get_desired_pack()
+    candidates = [p for p in packs if p != current_desired] or packs
+
+    new_selection = random.choice(candidates)
+    set_desired_pack(new_selection)
+    print(f"[Changer] Random target set to: {new_selection}")
+    return new_selection
+
 
 # --- Public Abstraction Methods ---
 
@@ -113,6 +128,16 @@ def set_desired_pack(name):
     _write_nvm_str(settings.NVM_ADDRESS_START_PACK_DESIRED, name)
 
 # --- Private Helpers ---
+
+def _list_packs():
+    """Returns pack directory names on the SD card, sorted alphabetically.
+    Raises OSError if the SD card is not accessible.
+    """
+    all_items = os.listdir(settings.SDCARD_SAMPLE_DIR)
+    return sorted([
+        f for f in all_items
+        if _is_dir(f"{settings.SDCARD_SAMPLE_DIR}/{f}") and not f.startswith(".") # Ignore hidden directories
+    ])
 
 def _is_dir(path):
     try:

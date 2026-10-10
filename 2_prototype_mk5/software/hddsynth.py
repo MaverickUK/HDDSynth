@@ -187,6 +187,9 @@ def _apply_sd_settings(sd_overrides):
     if "SDCARD_CACHE_SAMPLES" in sd_overrides:
         settings.SDCARD_CACHE_SAMPLES = sd_overrides["SDCARD_CACHE_SAMPLES"]
         print(f"[SD Settings] SDCARD_CACHE_SAMPLES = {settings.SDCARD_CACHE_SAMPLES}")
+    if "RANDOM_SAMPLE_PACK" in sd_overrides:
+        settings.RANDOM_SAMPLE_PACK = sd_overrides["RANDOM_SAMPLE_PACK"]
+        print(f"[SD Settings] RANDOM_SAMPLE_PACK = {settings.RANDOM_SAMPLE_PACK}")
     if "ACTIVITY_LED_ENABLED" in sd_overrides:
         settings.ACTIVITY_LED_ENABLED = sd_overrides["ACTIVITY_LED_ENABLED"]
         print(f"[SD Settings] ACTIVITY_LED_ENABLED = {settings.ACTIVITY_LED_ENABLED}")
@@ -331,14 +334,14 @@ def run_synth():
         print("[hddsynth] SD card not available but sample pack is installed, disabling action button")
         action_button.handler = _no_op_action_button_handler
 
-    print("HDD Sample Pack: " + sample_changer.get_desired_pack())
-
     # Handle sample pack installation from SD card (only if SD is available)
     if sd_available:
         pack_install_ok = sd_settings.install_sample_pack_if_needed(sd_overrides)
         if not pack_install_ok:
             print("[hddsynth] Sample pack from SD settings not found, playing error beep")
             beep.play_beep_type(mixer, "PACK_NOT_FOUND")
+
+    print("HDD Sample Pack: " + sample_changer.get_desired_pack())
 
     rgb_led.busy_tick()
     samples = _load_samples()

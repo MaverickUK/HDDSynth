@@ -33,10 +33,19 @@ def get_sample_pack_from_sd(sd_settings):
 
 def install_sample_pack_if_needed(sd_settings):
     """
-    If SAMPLE_PACK is specified in SD settings and differs from current,
+    If RANDOM_SAMPLE_PACK is enabled, select a random pack from the SD card.
+    Otherwise, if SAMPLE_PACK is specified in SD settings and differs from current,
     attempt to install it. Returns True if successful or no change needed,
     False if pack not found on SD card.
     """
+    if settings.RANDOM_SAMPLE_PACK:
+        if settings.SDCARD_CACHE_SAMPLES:
+            # Caching a new pack reboots via write mode, which would pick
+            # another random pack on the next boot and loop forever.
+            print("[SD Settings] RANDOM_SAMPLE_PACK ignored: not supported with SDCARD_CACHE_SAMPLES")
+        else:
+            return sample_changer.random_pack() is not None
+
     pack_name = get_sample_pack_from_sd(sd_settings)
 
     if not pack_name:

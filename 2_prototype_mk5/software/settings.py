@@ -5,6 +5,7 @@ PLAY_SPINUP = True
 PLAY_SPINDOWN = True
 PLAY_IDLE = True
 ALWAYS_PLAY_JINGLE = False
+RANDOM_SAMPLE_PACK = False # If True, a random sample pack is selected from the SD card at startup (overrides SAMPLE_PACK)
 
 ACCESS_HOLD_TIME_MS = 100 # How long to hold the access sample after an access is detected (in ms)
 
@@ -36,7 +37,7 @@ RGB_LED_RED_PIN = board.GP4
 RGB_LED_GREEN_PIN = board.GP5
 RGB_LED_BLUE_PIN = board.GP6
 RGB_LED_PWM_FREQUENCY = 1000   # Hz — well above flicker, well below audio pickup concerns
-RGB_LED_STARTUP_TEST_S = 1.0   # Duration of the power-on hue sweep (0 to disable)
+RGB_LED_STARTUP_TEST_S = 0   # Duration of the power-on hue sweep (0 to disable)
 RGB_LED_STARTUP_TEST_STEPS = 60
 
 # HDD activity indication on the RGB status LED
