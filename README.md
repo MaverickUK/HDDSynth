@@ -7,7 +7,7 @@
 
 Inspired by seeing the HDD Clicker project and wanting to more faithfully recreate the sound of old mechanical hard drives spinning up and accessing data. Because the hard drive sounds come from samples, it's possible to replace them with any hard drive recording you'd like or something completely different!
 
-  <img src="images/pcbway_mk3.jpg" alt="Photo of the HDD Synth MKIII prototype PCB">
+  <img src="images/HDDSynthBeta.jpg" alt="Photo of the HDD Synth MK5 beta testing PCB">
 
 ## Features
 
@@ -19,31 +19,21 @@ Inspired by seeing the HDD Clicker project and wanting to more faithfully recrea
 - **SD card** to hold multiple HDD sample packs, to recreate the sound of different mechanical hard disk drives
 - **Volume control** to make it very loud or silent
 - **Balance** to alter the amount of idle to access sounds
-- **CompactFlash adapte**r to act as full HDD replacement
 - **HDD detection** via HDD LED
+- **HDD LED** to connect to your case
+- **OLED screen** to view activity, volume and more
+
 
 ## Progress
-### ✅ [Phase 1: Breadboard prototype](1_breadboard/README.md) 
-### 🔄 Phase 2: PCB prototypes
-#### [MKI prototype](2_prototype_mk1/)
-Initial ISA PCB test
+### Beta test is active
+The MKV prototype boards are with a small group of beta testers to shake out any last issues before the boards are made available for sale.
 
-#### [MKII prototype](2_prototype_mk2/) 
-Adds volume control, ability to change sample pack, spin down
+It's been a long road, but the end is in sight
 
-#### [MKIII prototype](2_prototype_mk3/) 
-Adds ISA based HDD detection, metal back bracket, external status LED, 3.5" drive bay adapter kit, balance (between access and idle sound)
-
-#### [MKIV prototype](2_prototype_mk4/) 
-Smaller and more cost effective than the MKIII. Adds a CompactFlash adapter so can act as full HDD replacement. Headless by default, optional controls and OLED screen can be added
-
-### 🌱 Phase 3: PCB final 
-*Awaiting completion of prototyping stages*
-
+  <img src="images/HDDSynthHistory.jpg" alt="Photo of the different HDD Synth prototypes">
 
 ## Media
 [View gallery](media.md)
-
 
 
 <!--

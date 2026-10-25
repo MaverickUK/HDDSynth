@@ -127,6 +127,15 @@ def set_desired_pack(name):
     """Writes the 'Desired' pack name to nvm_wrapper."""
     _write_nvm_str(settings.NVM_ADDRESS_START_PACK_DESIRED, name)
 
+# --- Public Helpers ---
+
+def list_packs():
+    """Returns pack directory names on the SD card, sorted alphabetically.
+    Raises OSError if the SD card is not accessible.
+    """
+    return _list_packs()
+
+
 # --- Private Helpers ---
 
 def _list_packs():

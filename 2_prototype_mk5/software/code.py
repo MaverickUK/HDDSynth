@@ -28,20 +28,34 @@ if mode == settings.NVM_MODE_WRITE:
         led.value = True
 
         rgb_led.busy_tick()
-
-        desired_pack = sample_changer.get_desired_pack()
-        base_path = f"{settings.SDCARD_SAMPLE_DIR}/{desired_pack}"
-
-        # TODO: Refactor this
-        pack_files = [
-            f"{base_path}/spinup.wav",
-            f"{base_path}/spindown.wav",
-            f"{base_path}/idle.wav",
-            f"{base_path}/access.wav",
-        ]
-
         sdcard.initialise()
-        sample_cache.update_cache_files(pack_files)
+
+        packs = sample_changer.list_packs()
+        tried = 0
+
+        while tried < len(packs):
+            desired_pack = sample_changer.get_desired_pack()
+            base_path = f"{settings.SDCARD_SAMPLE_DIR}/{desired_pack}"
+            pack_files = [
+                f"{base_path}/spinup.wav",
+                f"{base_path}/spindown.wav",
+                f"{base_path}/idle.wav",
+                f"{base_path}/access.wav",
+            ]
+
+            rgb_led.busy_tick()
+            fits, reason = sample_cache.check_pack_fits(pack_files)
+            if fits:
+                sample_cache.update_cache_files(pack_files)
+                break  # update_cache_files triggers USB-mode reboot internally
+            else:
+                print(f"[Main] Pack '{desired_pack}' skipped: {reason}")
+                sample_changer.next_pack(reboot_after=False)
+                tried += 1
+        else:
+            print("[Main] No pack fits in available flash. Reverting to USB mode.")
+            rgb_led.flash(settings.RGB_LED_ERROR_COLOUR, 5, 0.15)
+
     finally:
         sample_cache.trigger_usb_mode()  # Fail safe, always revert to USB
 else:
